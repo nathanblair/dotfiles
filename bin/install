@@ -1,0 +1,85 @@
+#!/bin/bash
+
+backDir="~/.config-backups"
+
+function backup_config {
+	mkdir -p ~/.config-backups/.config
+
+	mv ~/.aliases ~/.config-backups
+
+	mv ~/.bashrc ~/.config-backups
+
+	mv ~/.gitignore ~/.config-backups
+
+	mv ~/.gitignore_global ~/.config-backups
+
+	mv ~/.profile ~/.config-backups
+
+	mv ~/.tmux.conf ~/.config-backups
+
+	mv ~/.vimrc ~/.config-backups
+
+	mv ~/.zprofile ~/.config-backups
+
+	mv ~/.zshrc ~/.config-backups
+
+	mv ~/.irssi/config ~/.config-backups
+
+	mv ~/.config/mutt ~/.config-backups/.config
+
+	mv ~/.config/neofetch ~/.config-backups/.config
+
+	mv ~/.config/nvim ~/.config-backups/.config
+
+	mv ~/.config/qutebrowser ~/.config-backups/.config
+
+	mv ~/.config/sway ~/.config-backups/.config
+
+	mv ~/.config/termite ~/.config-backups/.config
+
+	mv ~/bin ~/.config-backups/.config
+
+	mv ~/themes ~/.config-backups/.config
+
+
+	rm ~/LICENCE
+
+	rm ~/README.md
+}
+
+myconfig() {
+	git --git-dir=$configDir --work-tree=$HOME $@
+}
+
+configDir=$HOME/.myconfig
+
+git clone --bare https://github.com/nathanblair/dotfiles $configDir
+if [ $? != 0 ]; then
+	echo "The git repo could not be properly cloned"
+	exit
+fi
+
+myconfig checkout
+
+if [ $? == 0 ]; then
+	mkdir -p ~/.config/nvim
+	ln -ivs ~/.vim ~/.config/nvim
+	ln -ivs ~/.vim ~/.config/nvim
+	ln -ivs ~/.vimrc ~/.config/nvim/init.vim
+
+	echo "Your configuration has been restored!"
+	exit
+fi
+
+echo "Could not checkout old configuration"
+echo "Attempting to backup current configuration to "
+backup_config
+
+myconfig checkout
+
+if [ $? == 0 ]; then
+	echo "Your configuration has been restored!"
+else
+	echo "Something went wrong in restoring your configuration"
+fi
+

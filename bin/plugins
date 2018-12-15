@@ -1,0 +1,41 @@
+#!/bin/bash
+
+if [ ! -d ~/.oh-my-zsh ]; then
+	echo Installing oh-my-zsh...
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
+mkdir -p ~/plugins
+cd ~/plugins
+
+if [ ! -d ~/plugins/spaceship-prompt ]; then
+	echo Installing spacehip-prompt...
+	git clone https://github.com/denysdovhan/spaceship-prompt
+	ln -s ~/plugins/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+fi
+
+if [ ! -d ~/plugins/fast-syntax-highlighting ]; then
+	echo Installing fast-syntax-highlighting...
+	git clone https://github.com/nathanblair/fast-syntax-highlighting
+	ln -s ~/plugins/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+fi
+
+if [ ! -d ~/plugins/zsh-autosuggestions ]; then
+	echo Installing zsh-autosuggestions...
+	git clone https://github.com/zsh-users/zsh-autosuggestions
+	ln -s ~/plugins/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+fi
+
+if [ ! -d ~/plugins/gnome-terminal ]; then
+	echo Installing gnome-terminal...
+	git clone https://github.com/dracula/gnome-terminal
+fi
+
+if [ ! -d ~/plugins/qtcreator ]; then
+	echo Installing qtcreator...
+	git clone https://github.com/dracula/qtcreator
+fi
+
+{ pip show jedi || sudo pip install jedi } &>/dev/null
+
+{ pip show pynvim || sudo pip install pynvim } &>/dev/null
