@@ -1,6 +1,7 @@
 " Basic options
 set nocompatible
 set number
+set relativenumber
 set laststatus=2
 set noshowmode
 set nostartofline
@@ -34,10 +35,6 @@ set softtabstop=4
 
 " Completion
 set completeopt=menuone,preview,noinsert,noselect
-
-" Vim colorscheme
-color dracula
-
 
 if (empty($TMUX))
 	if (has("nvim"))
@@ -81,6 +78,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'mattn/emmet-vim', {'for': 'html'}
 call plug#end()
+
+" Vim colorscheme
+color dracula
+
 
 " -------------------------------------------------------------"
 " vim-plug settings
@@ -198,8 +199,7 @@ set statusline+=\ [%{&fileformat}]
 set statusline+=\ %{&fileencoding}
 set statusline+=\ %#Include#
 set statusline+=\ %{GetFileSize()}
-set statusline+=\ %L\ lines
-set statusline+=\ 
+set statusline+=\ %*
 
 
 " -------------------------------------------------------------"
