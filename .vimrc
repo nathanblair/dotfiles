@@ -1,10 +1,8 @@
 " Basic options
-set nocompatible
 set number
-set relativenumber
+set nocompatible
 set laststatus=2
 set noshowmode
-set nostartofline
 set wildmenu
 set encoding=utf8
 set background=dark
@@ -45,7 +43,7 @@ if (empty($TMUX))
 	endif
 endif
 
-autocmd VimEnter * call SetCDToGitRoot()
+autocmd VimEnter * call s:CDToGitRoot()
 
 " -------------------------------------------------------------"
 " vim-plug
@@ -72,9 +70,10 @@ Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim', {'for': 'vim'}
 Plug 'raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
-Plug 'nathanblair/vim-dracula-theme' ", {'as': 'vim-dracula-theme'}
+Plug 'nathanblair/vim-dracula-theme' , {'as': 'vim-dracula-theme'}
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
 Plug 'mattn/emmet-vim', {'for': 'html'}
 call plug#end()
@@ -179,15 +178,13 @@ imap <C-c> <plug>NERDCommenterInsert
 " -------------------------------------------------------------"
 " Statusbar
 " -------------------------------------------------
-"  Left-align
 set statusline=
-set statusline+=\ %{GetMode()}
-set statusline+=\ %#Normal#
-set statusline+=%(\ %{getcwd()}\ %)
+set statusline+=%(\ %{PrettyPrintCurrentDirectory()}\ %)
 set statusline+=%#IncSearch#
-set statusline+=%(\ %{GetGitBranch()}\ %)
+" Current Git branch if applicable
+"set statusline+=
 set statusline+=%#Normal#
-set statusline+=%(\ %{PrettifyPath()}%)
+set statusline+=%(\ %{PrettyPrintCurrentFilePath()}%)
 set statusline+=%(\ \[%n\]%)
 set statusline+=%(\ %r%w%)
 set statusline+=%(\ %m%)
@@ -205,26 +202,33 @@ set statusline+=\ %*
 " -------------------------------------------------------------"
 " Helper functions
 " -------------------------------------------------
-function! SetCDToGitRoot()
+function! s:CDToGitRoot()
 	let l:dir_path = system("git rev-parse --git-dir &>/dev/null") ?
 				   \ system("git rev-parse --show-top-level") : expand('%:p:h')
 	lcd `=l:dir_path`
 endfunction
 
-function! GetGitBranch()
-	" Get current branch if in repository
-	" TODO
-	
-	"return "(master)"
-	return ""
+function! PrettyPrintCurrentDirectory() abort
+	let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~:."))
+	return l:dir_path
 endfunction
 
-function! PrettifyPath()
-	return substitute(expand('%:p'), getcwd() . "/", "", "g") 
+function! GetGitHEAD()
+	let l:git_head = system("git rev-parse --git-dir &>/dev/null") ?
+				   \ system("git branch") : "Not a repo"
+	return l:git_head
 endfunction
 
-function! GetMode()
-	"set statusline+=\ %#QuickFixLine#
+function! PrettyPrintCurrentFilePath() abort
+	let l:dir_path = pathshorten(expand("%:~:."))
+	return l:dir_path
+endfunction
+
+function! GetFileSize()
+	return "0 MB"
+endfunction
+
+function! s:GetMode()
 	let l:mode = mode()[0]
 	if l:mode == 'v'
 		" Highlight pink
@@ -243,10 +247,6 @@ function! GetMode()
 		" TODO
 	endif
 	return g:currentmode[mode()]
-endfunction
-
-function! GetFileSize()
-	return "0 MB"
 endfunction
 
 let g:currentmode = {
