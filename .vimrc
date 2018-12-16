@@ -224,8 +224,24 @@ function! PrettyPrintCurrentFilePath() abort
 	return l:dir_path
 endfunction
 
-function! GetFileSize()
-	return "0 MB"
+function! GetFileSize() abort
+	let l:bytes = getfsize(expand("%"))
+	let l:divisor = 1.0
+	let l:suffix = " Bytes"
+
+	if l:bytes <= 0
+		return 0
+	elseif l:bytes >= 1000000
+		let l:divisor = 10000000.0
+		let l:suffix = " MB"
+	elseif l:bytes >= 1000
+		let l:divisor = 1000.0
+		let l:suffix = "KB"
+	endif
+
+	let l:bytes = l:bytes / l:divisor
+
+	return printf("%5.1f %s", l:bytes, l:suffix)
 endfunction
 
 function! s:GetMode()
