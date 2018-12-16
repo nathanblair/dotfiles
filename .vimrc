@@ -84,7 +84,7 @@ color dracula
 
 " -------------------------------------------------------------"
 " vim-plug settings
-" -------------------------------------------------
+" -------------------------------------------------------------"
 " Signify
 let g:signify_vcs_list=['git']
 
@@ -106,7 +106,7 @@ let g:deoplete#sources#jedi#show_docstring=1
 
 " -------------------------------------------------------------"
 " keymaps
-" -------------------------------------------------
+" -------------------------------------------------------------"
 " Edit vim config file
 nnoremap <silent> <Leader>vim :e! ~/.vimrc<CR>
 
@@ -170,14 +170,14 @@ inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " -------------------------------------------------------------"
 " vim-plug keymaps
-" -------------------------------------------------
+" -------------------------------------------------------------"
 " Commenting
 imap <C-c> <plug>NERDCommenterInsert
 
 
 " -------------------------------------------------------------"
 " Statusbar
-" -------------------------------------------------
+" -------------------------------------------------------------"
 set statusline=
 set statusline+=%(\ %{GetMode()}\ %)
 set statusline+=%(\ %{PrettyPrintCurrentDirectory()}\ %)
@@ -185,7 +185,6 @@ set statusline+=%#IncSearch#
 " Current Git branch if applicable
 "set statusline+=
 set statusline+=%#Normal#
-set statusline+=%(\ \[%n\]%)
 set statusline+=%(\ <<\ %{PrettyPrintCurrentFilePath()}\ >>\ %)
 set statusline+=%(\ %r%w%)
 set statusline+=%(\ %m%)
@@ -202,7 +201,7 @@ set statusline+=\ %*
 
 " -------------------------------------------------------------"
 " Helper functions
-" -------------------------------------------------
+" -------------------------------------------------------------"
 function! s:CDToGitRoot()
 	let l:dir_path = system("git rev-parse --git-dir &>/dev/null") ?
 				   \ system("git rev-parse --show-top-level") : expand('%:p:h')
@@ -210,7 +209,7 @@ function! s:CDToGitRoot()
 endfunction
 
 function! PrettyPrintCurrentDirectory() abort
-	let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~:"))
+	let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~"))
 	return l:dir_path
 endfunction
 
