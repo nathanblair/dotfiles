@@ -179,13 +179,14 @@ imap <C-c> <plug>NERDCommenterInsert
 " Statusbar
 " -------------------------------------------------
 set statusline=
+set statusline+=%(\ %{GetMode()}\ %)
 set statusline+=%(\ %{PrettyPrintCurrentDirectory()}\ %)
 set statusline+=%#IncSearch#
 " Current Git branch if applicable
 "set statusline+=
 set statusline+=%#Normal#
-set statusline+=%(\ %{PrettyPrintCurrentFilePath()}%)
 set statusline+=%(\ \[%n\]%)
+set statusline+=%(\ <<\ %{PrettyPrintCurrentFilePath()}\ >>\ %)
 set statusline+=%(\ %r%w%)
 set statusline+=%(\ %m%)
 set statusline+=\ %#LineNr#
@@ -209,7 +210,7 @@ function! s:CDToGitRoot()
 endfunction
 
 function! PrettyPrintCurrentDirectory() abort
-	let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~:."))
+	let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~:"))
 	return l:dir_path
 endfunction
 
@@ -244,7 +245,7 @@ function! GetFileSize() abort
 	return printf("%5.1f %s", l:bytes, l:suffix)
 endfunction
 
-function! s:GetMode()
+function! GetMode() abort
 	let l:mode = mode()[0]
 	if l:mode == 'v'
 		" Highlight pink
@@ -280,11 +281,11 @@ let g:currentmode = {
 	\ 'i'   		: 'I',
 	\ 'ic'  		: 'I',
 	\ 'ix'  		: 'I',
-	\ 'R'   		: 'R',
+	\ 'R'   		: 'Replace',
 	\ 'Rc'  		: 'R',
 	\ 'Rv'  		: 'V-Replace',
 	\ 'Rx'  		: 'R',
-	\ 'c'   		: 'C',
+	\ 'c'   		: 'Command',
 	\ 'cv'  		: 'Vim-Ex',
 	\ 'ce'  		: 'Ex',
 	\ 'r'   		: 'Prompt',
