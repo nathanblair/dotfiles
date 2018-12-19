@@ -43,7 +43,7 @@ if (empty($TMUX))
 	endif
 endif
 
-autocmd VimEnter * call s:CDToGitRoot()
+autocmd BufEnter * call s:CDToGitRoot()
 
 " -------------------------------------------------------------"
 " vim-plug
@@ -179,33 +179,49 @@ imap <C-c> <plug>NERDCommenterInsert
 " Statusbar
 " -------------------------------------------------------------"
 set statusline=
-set statusline+=%(\ %{GetMode()}\ %)
-set statusline+=%(\ %{PrettyPrintCurrentDirectory()}\ %)
-set statusline+=%#IncSearch#
-" Current Git branch if applicable
-"set statusline+=
-set statusline+=%#Normal#
-set statusline+=%(\ <<\ %{PrettyPrintCurrentFilePath()}\ >>\ %)
-set statusline+=%(\ %r%w%)
-set statusline+=%(\ %m%)
-set statusline+=\ %#LineNr#
+set statusline+=\ %{LeftStatusline()}
+"set statusline+=%!SetCenterBarColor()
 set statusline+=%=
-set statusline+=\ %#Visual#
-set statusline+=\ %y
-set statusline+=\ [%{&fileformat}]
-set statusline+=\ %{&fileencoding}
-set statusline+=\ %#Include#
-set statusline+=\ %{GetFileSize()}
-set statusline+=\ %*
-
+set statusline+=%{RightStatusLine()}
+set statusline+=%*
 
 " -------------------------------------------------------------"
 " Helper functions
 " -------------------------------------------------------------"
-function! s:CDToGitRoot()
-	let l:dir_path = system("git rev-parse --git-dir &>/dev/null") ?
-				   \ system("git rev-parse --show-top-level") : expand('%:p:h')
+function! s:CDToGitRoot() abort
+	silent let g:is_git_dir = len(system('git rev-parse --git-dir 2>/dev/null')) > 0
+	let l:dir_path = expand("%:p:h")
+	if g:is_git_dir
+		silent let l:dir_path = system("git rev-parse --show-toplevel")
+	endif
 	lcd `=l:dir_path`
+endfunction
+
+function! LeftStatusline() abort
+	let l:readonly = &readonly ? '[RO]' : ''
+	let l:preview  = &previewwindow ? '[PREVIEW]' : ''
+	let l:modified = &modified ? '[+]' : ''
+
+	let l:line_string = GetMode() . ' '
+	let l:line_string = l:line_string . PrettyPrintCurrentDirectory() . ' '
+	let l:line_string = l:line_string . ShowGitBranch() . ' '
+	let l:line_string = l:line_string . PrettyPrintCurrentFilePath() . ' '
+	let l:line_string = l:line_string . ShowGitDiffSummary() . ' '
+	let l:line_string = l:line_string . l:readonly . l:preview .  l:modified .  ' '
+	return substitute(l:line_string, '  ', ' ', 'g')
+endfunction
+
+function! RightStatusLine() abort
+	let l:filetype = len(&filetype) ? &filetype . ' ' : ''
+	let l:fileformat = len(&fileformat) ? &fileformat . ' ' : ''
+	let l:fileencoding = len(&fileencoding) ? '[' . &fileencoding . '] ' : ''
+
+	let l:line_string = l:filetype
+	let l:line_string = l:line_string . l:fileformat . ' '
+	let l:line_string = l:line_string . l:fileencoding
+	let l:line_string = l:line_string . GetFileSize() . ' '
+
+	return substitute(l:line_string, '  ', ' ', 'g')
 endfunction
 
 function! PrettyPrintCurrentDirectory() abort
@@ -213,15 +229,30 @@ function! PrettyPrintCurrentDirectory() abort
 	return l:dir_path
 endfunction
 
-function! GetGitHEAD()
-	let l:git_head = system("git rev-parse --git-dir &>/dev/null") ?
-				   \ system("git branch") : "Not a repo"
-	return l:git_head
+function! ShowGitBranch() abort
+	if g:is_git_dir
+		silent let l:git_branch = system('git rev-parse --abbrev-ref HEAD')[:-2]
+		return l:git_branch
+	endif
+	return ""
 endfunction
 
 function! PrettyPrintCurrentFilePath() abort
 	let l:dir_path = pathshorten(expand("%:~:."))
-	return l:dir_path
+	return len(l:dir_path) ? l:dir_path : '[NO NAME]'
+endfunction
+
+function! ShowGitDiffSummary() abort
+	if len(expand("%f")) == 0
+		return ""
+	endif
+
+	if g:is_git_dir > 0
+		silent let l:git_hunks = system('git  diff --numstat ' .  expand("%f"))[:-2]
+		let l:git_hunks = substitute(l:git_hunks, expand("%f"), '', '')
+		return '{ ' . l:git_hunks . ' }'
+	endif
+	return ""
 endfunction
 
 function! GetFileSize() abort
@@ -230,7 +261,7 @@ function! GetFileSize() abort
 	let l:suffix = " Bytes"
 
 	if l:bytes <= 0
-		return 0
+		return ''
 	elseif l:bytes >= 1000000
 		let l:divisor = 10000000.0
 		let l:suffix = " MB"
@@ -273,11 +304,10 @@ let g:currentmode = {
 	\ 'niV' 		: 'N',
 	\ 'v'   		: 'V',
 	\ 'V'   		: 'V-Line',
-	\ '\<CTRL-V>'   : 'V-Block',
+	\ ''  		: 'V-Block',
 	\ 's'   		: 'S',
 	\ 'S'   		: 'S-Line',
-	\ '\<CTRL-S>'   : 'S-Block',
-	\ 'i'   		: 'I',
+	\ 'i'   		: 'Insert',
 	\ 'ic'  		: 'I',
 	\ 'ix'  		: 'I',
 	\ 'R'   		: 'Replace',
