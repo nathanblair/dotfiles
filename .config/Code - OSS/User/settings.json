@@ -45,7 +45,7 @@
 	"zenMode.hideStatusBar": false,
 	"zenMode.hideTabs": false,
 	"vim.useSystemClipboard": true,
-	"workbench.colorTheme": "One Dark Pro Vivid",
+	"workbench.colorTheme": "Dracula",
 	"vim.disableExtension": false,
 	"gitlens.currentLine.enabled": false,
 	"gitlens.hovers.currentLine.enabled": false,
