@@ -24,12 +24,14 @@ set $menu rofi -show run
 # Client colors
 #	  <client class> <border> <background> <text> <indicator> <child_border>
 client.unfocused #333333 #222222 #888888 #292d2e #666666
-client.focused #333399 #285577 #ffffff #33ff33 #339922
+client.focused #333399 #101010 #ffffff #33ff33 #339922
+
+gaps inner 10
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /usr/share/backgrounds/sway/Earth.png fill
 #
 # Example configuration:
 #
@@ -80,7 +82,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Return exec $term
 
     # start a web browser
-    bindsym $mod+w exec $web
+    #bindsym $mod+w exec $web
 
     # kill focused window
     bindsym $mod+Shift+q kill
@@ -101,9 +103,15 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-	bindsym XF86MonBrightnessUp exec light -A 1
-	bindsym XF86MonBrightnessDown exec light -U 1
+	bindsym XF86AudioMute exec amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
+	bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec mplayer /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga; exec pkill -RTMIN+10 i3blocks
+	bindsym XF86AudioLowerVolume exec amixer set Master 5%-; exec mplayer /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga; exec pkill -RTMIN+10 i3blocks
 
+	bindsym XF86MonBrightnessUp exec light -A 5; exec pkill -RTMIN+13 i3blocks
+	bindsym XF86MonBrightnessDown exec light -U 5; exec pkill -RTMIN+13 i3blocks
+
+	#bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+	#bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 #
 # Moving around:
 #
@@ -226,7 +234,7 @@ bar {
 	font DejaVuSans
 	#gaps top right
 
-	status_command i3status
+	status_command i3blocks -c ~/.config/i3blocks/config
 
 	colors {
 		statusline #ffffff

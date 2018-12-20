@@ -45,21 +45,19 @@ interval=30
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-#label=VOL
 label=♪
 instance=Master
-#instance=PCM
 interval=once
 signal=10
 color=#7777ff
 
 # Brightness
 [brightness]
-#command=$HOME/brightness
+command=light -G
 label=☼
 interval=once
 signal=13
-color=#998888
+color=#ffff00
 
 # Memory usage
 #
@@ -81,7 +79,7 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=Disk:
+label=Home:
 #instance=/mnt/data
 interval=60
 
@@ -92,12 +90,13 @@ interval=60
 [iface]
 #instance=wlan0
 color=#00FF00
-interval=5
+interval=10
 separator=false
 
 [wifi]
+label=
 #instance=wlp3s0
-interval=5
+interval=10
 separator=false
 
 #[bandwidth]
@@ -121,10 +120,14 @@ separator=false
 #
 # The battery instance defaults to 0.
 [battery]
-#label=Batt:
-label=⚡
-#instance=1
+label=In ⚡
 interval=30
+separator=false
+[battery]
+instance=1
+label=Ex ⚡
+interval=30
+
 
 # Date Time
 #
@@ -158,7 +161,7 @@ interval=60
 #interval=once
 #signal=11
 
-[keyindicator]
-instance=NUM
-interval=once
-signal=11
+#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
