@@ -191,6 +191,7 @@ set statusline+=%*
 function! s:CDToGitRoot() abort
 	silent let g:is_git_dir = len(system('git rev-parse --git-dir 2>/dev/null')) > 0
 	let l:dir_path = expand("%:p:h")
+	"echo g:is_git_dir
 	if g:is_git_dir
 		silent let l:dir_path = system("git rev-parse --show-toplevel")
 	endif
@@ -200,7 +201,7 @@ endfunction
 function! LeftStatusline() abort
 	let l:readonly = &readonly ? '[RO]' : ''
 	let l:preview  = &previewwindow ? '[PREVIEW]' : ''
-	let l:modified = &modified ? '[+]' : ''
+	let l:modified = &modified ? '[*]' : ''
 
 	let l:line_string = GetMode() . ' '
 	let l:line_string = l:line_string . PrettyPrintCurrentDirectory() . ' '

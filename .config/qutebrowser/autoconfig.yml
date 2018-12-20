@@ -6,12 +6,10 @@ global:
   backend: webengine
   bindings.commands:
     normal:
-      '`': config-cycle content.user_stylesheets tomorrow_night.css ""
       d: null
       dd: tab-close
   colors.tabs.selected.even.bg: black
   colors.tabs.selected.even.fg: white
-  content.user_stylesheets: tomorrow_night.css
   content.webgl: true
   url.default_page: https://google.com
   url.incdec_segments:
