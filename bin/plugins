@@ -5,33 +5,33 @@ if [ ! -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-mkdir -p ~/plugins
-cd ~/plugins
+mkdir -p ~/repos
+cd ~/repos
 
-if [ ! -d ~/plugins/spaceship-prompt ]; then
+if [ ! -d ~/repos/spaceship-prompt ]; then
 	echo Installing spacehip-prompt...
 	git clone https://github.com/denysdovhan/spaceship-prompt
-	ln -s ~/plugins/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+	ln -sf ~/repos/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
 fi
 
-if [ ! -d ~/plugins/fast-syntax-highlighting ]; then
+if [ ! -d ~/repos/fast-syntax-highlighting ]; then
 	echo Installing fast-syntax-highlighting...
 	git clone https://github.com/nathanblair/fast-syntax-highlighting
-	ln -s ~/plugins/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+	ln -sf ~/repos/fast-syntax-highlighting ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 fi
 
-if [ ! -d ~/plugins/zsh-autosuggestions ]; then
+if [ ! -d ~/repos/zsh-autosuggestions ]; then
 	echo Installing zsh-autosuggestions...
 	git clone https://github.com/zsh-users/zsh-autosuggestions
-	ln -s ~/plugins/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	ln -sf ~/repos/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
 
-if [ ! -d ~/plugins/gnome-terminal ]; then
+if [ ! -d ~/repos/gnome-terminal ]; then
 	echo Installing gnome-terminal...
 	git clone https://github.com/dracula/gnome-terminal
 fi
 
-if [ ! -d ~/plugins/qtcreator ]; then
+if [ ! -d ~/repos/qtcreator ]; then
 	echo Installing qtcreator...
 	git clone https://github.com/dracula/qtcreator
 fi
