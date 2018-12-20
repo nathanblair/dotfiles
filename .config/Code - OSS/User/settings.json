@@ -96,4 +96,5 @@
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
 	"window.titleBarStyle": "custom",
+	"workbench.iconTheme": "material-icon-theme",
 }
