@@ -35,7 +35,6 @@ markup=none
 [mediaplayer]
 #instance=spotify
 label=♫
-instance=pianobar
 interval=30
 #signal=10
 
