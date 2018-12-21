@@ -6,6 +6,7 @@ settings:
   bindings.commands:
     global:
       normal:
+        '`': config-cycle 'content.user_stylesheets' ['tomorrow_night.css', '']
         d: null
         dd: tab-close
   content.user_stylesheets:
@@ -14,6 +15,7 @@ settings:
     global: https://google.com
   url.searchengines:
     global:
-      DEFAULT: https://google.com/?q={}
+      DEFAULT: https://www.google.com/search?hl=en&q={}
+      aw: https://wiki.archlinux.org/?search={}
   url.start_pages:
     global: https://google.com
