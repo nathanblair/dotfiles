@@ -18,15 +18,16 @@ set $term termite
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher
-set $menu rofi -show drun -show-icons -theme Arc-Dark
+set $menu rofi -show drun -show-icons -theme Monokai
 
 # Note: it's recommended that you pass the final command to sway
 # Client colors
 #	  <client class> <border> <background> <text> <indicator> <child_border>
-client.unfocused #333333 #222222 #888888 #292d2e #666666
+client.unfocused #222222 #222222 #888888 #222222 #222222
 client.focused #333399 #101010 #ffffff #33ff33 #339922
+default_border pixel 1
 
-gaps inner 5
+gaps inner 10
 
 ### Output configuration
 #

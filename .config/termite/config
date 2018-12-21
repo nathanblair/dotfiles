@@ -37,10 +37,8 @@ filter_unmatched_urls = true
 foreground = #F8F8F2
 foreground_bold = #ffffff
 #background = #282A36
-background = rgba(28, 20, 20, 0.85)
+background = rgba(28, 20, 20, 0.5)
 
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
 
 # if unset, will reverse foreground and background
 highlight = #2f2f2f

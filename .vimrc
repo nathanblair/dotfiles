@@ -34,15 +34,6 @@ set softtabstop=4
 " Completion
 set completeopt=menuone,preview,noinsert,noselect
 
-if (empty($TMUX))
-	if (has("nvim"))
-		let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-	endif
-	if (has("termguicolors"))
-		set termguicolors
-	endif
-endif
-
 autocmd BufEnter * call s:CDToGitRoot()
 
 " -------------------------------------------------------------"
@@ -79,7 +70,17 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 call plug#end()
 
 " Vim colorscheme
+if (empty($TMUX))
+	if (has("nvim"))
+		let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+	endif
+	if (has("termguicolors"))
+		set termguicolors
+	endif
+endif
+
 color dracula
+hi Normal guibg=NONE ctermbg=NONE
 
 
 " -------------------------------------------------------------"
@@ -179,7 +180,7 @@ imap <C-c> <plug>NERDCommenterInsert
 " Statusbar
 " -------------------------------------------------------------"
 set statusline=
-set statusline+=\ %{LeftStatusline()}
+set statusline+=%{LeftStatusline()}
 "set statusline+=%!SetCenterBarColor()
 set statusline+=%=
 set statusline+=%{RightStatusLine()}
@@ -294,7 +295,7 @@ function! GetMode() abort
 		" Highlight pink
 		" TODO
 	endif
-	return g:currentmode[mode()]
+	return '[' . g:currentmode[mode()] . ']'
 endfunction
 
 let g:currentmode = {
@@ -303,19 +304,19 @@ let g:currentmode = {
 	\ 'niI' 		: 'N',
 	\ 'niR' 		: 'N',
 	\ 'niV' 		: 'N',
-	\ 'v'   		: 'V',
+	\ 'v'   		: 'VISUAL',
 	\ 'V'   		: 'V-Line',
 	\ ''  		: 'V-Block',
 	\ 's'   		: 'S',
 	\ 'S'   		: 'S-Line',
-	\ 'i'   		: 'Insert',
+	\ 'i'   		: 'INSERT',
 	\ 'ic'  		: 'I',
 	\ 'ix'  		: 'I',
-	\ 'R'   		: 'Replace',
+	\ 'R'   		: 'REPLACE',
 	\ 'Rc'  		: 'R',
 	\ 'Rv'  		: 'V-Replace',
 	\ 'Rx'  		: 'R',
-	\ 'c'   		: 'Command',
+	\ 'c'   		: 'COMMAND',
 	\ 'cv'  		: 'Vim-Ex',
 	\ 'ce'  		: 'Ex',
 	\ 'r'   		: 'Prompt',
