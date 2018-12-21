@@ -18,15 +18,15 @@ set $term termite
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher
-# Note: it's recommended that you pass the final command to sway
-set $menu rofi -show run
+set $menu rofi -show drun -show-icons -theme Arc-Dark
 
+# Note: it's recommended that you pass the final command to sway
 # Client colors
 #	  <client class> <border> <background> <text> <indicator> <child_border>
 client.unfocused #333333 #222222 #888888 #292d2e #666666
 client.focused #333399 #101010 #ffffff #33ff33 #339922
 
-gaps inner 10
+gaps inner 5
 
 ### Output configuration
 #
@@ -88,7 +88,7 @@ output * bg /usr/share/backgrounds/sway/Earth.png fill
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -184,7 +184,7 @@ output * bg /usr/share/backgrounds/sway/Earth.png fill
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+m focus mode_toggle
 
     # move focus to the parent container
     bindsym $mod+a focus parent
