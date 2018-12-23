@@ -6,7 +6,7 @@ settings:
   bindings.commands:
     global:
       normal:
-        '`': config-cycle 'content.user_stylesheets' ['tomorrow_night.css', '']
+        '`': config-cycle 'content.user_stylesheets' tomorrow_night.css ""
         d: null
         dd: tab-close
   content.user_stylesheets:
