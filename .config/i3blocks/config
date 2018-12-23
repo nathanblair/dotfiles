@@ -25,8 +25,8 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/lib/i3blocks/$BLOCK_NAME
-separator_block_width=15
-markup=none
+separator_block_width=20
+markup=pango
 
 # Generic media player support
 #
@@ -44,11 +44,11 @@ interval=30
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=♪
+label=🕩
 instance=Master
 interval=once
 signal=10
-color=#7777ff
+#color=#7777ff
 
 # Brightness
 [brightness]
@@ -62,7 +62,6 @@ color=#ffff00
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=RAM:
 separator=false
 interval=30
 
@@ -78,9 +77,9 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=Home:
+label=/home
 #instance=/mnt/data
-interval=60
+interval=120
 
 # Network interface monitoring
 #
@@ -88,15 +87,16 @@ interval=60
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
+label=
 color=#00FF00
 interval=10
-separator=false
+separator=true
 
-[wifi]
-label=
+#[wifi]
+#label=wifi:
 #instance=wlp3s0
-interval=10
-separator=false
+#interval=10
+#separator=false
 
 #[bandwidth]
 #instance=eth0
@@ -119,19 +119,25 @@ separator=false
 #
 # The battery instance defaults to 0.
 [battery]
-label=In ⚡
+label=⚡
 interval=30
 separator=false
 [battery]
 instance=1
-label=Ex ⚡
+label=⚡
 interval=30
 
 
 # Date Time
 #
 [time]
-command=date '+%A | %b %d %I:%M %p'
+label=🗓 
+command=date '+%A %b %d'
+interval=60
+
+[time]
+label=⏲ 
+command=date '+%_I:%M %p '
 interval=60
 
 # OpenVPN support

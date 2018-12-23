@@ -51,14 +51,10 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 if (has('nvim'))
 	Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 	Plug 'zchee/deoplete-jedi', {'for': 'python'}
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
+	Plug 'Shougo/neco-syntax'
+	Plug 'Shougo/neco-vim', {'for': 'vim'}
 endif
 Plug 'carlitux/deoplete-ternjs', {'for': 'js'}
-Plug 'Shougo/neco-syntax'
-Plug 'Shougo/neco-vim', {'for': 'vim'}
 Plug 'raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'nathanblair/vim-dracula-theme' , {'as': 'vim-dracula-theme'}
@@ -203,12 +199,13 @@ function! LeftStatusline() abort
 	let l:readonly = &readonly ? '[RO]' : ''
 	let l:preview  = &previewwindow ? '[PREVIEW]' : ''
 	let l:modified = &modified ? '[*]' : ''
+	let l:git_branch = ShowGitBranch()
 
 	let l:line_string = GetMode() . ' '
 	let l:line_string = l:line_string . PrettyPrintCurrentDirectory() . ' '
 	let l:line_string = l:line_string . ShowGitBranch() . ' '
 	let l:line_string = l:line_string . PrettyPrintCurrentFilePath() . ' '
-	let l:line_string = l:line_string . ShowGitDiffSummary() . ' '
+	"let l:line_string = l:line_string . ShowGitDiffSummary() . ' '
 	let l:line_string = l:line_string . l:readonly . l:preview .  l:modified .  ' '
 	return substitute(l:line_string, '  ', ' ', 'g')
 endfunction
