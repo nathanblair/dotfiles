@@ -52,7 +52,7 @@ signal=10
 
 # Brightness
 [brightness]
-command=light -G
+command=backlight
 label=
 interval=once
 signal=13
