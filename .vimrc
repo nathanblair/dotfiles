@@ -65,6 +65,7 @@ Plug 'junegunn/gv.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'chrisbra/unicode.vim'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 " Vim colorscheme
