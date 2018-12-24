@@ -123,13 +123,12 @@ interval=10
 #
 # The battery instance defaults to 0.
 [battery]
-#command=~/repos/i3blocks-battery/battery 1 0 1
-command=~/repos/statusline-scripts/battery 1 0 1
+command=~/repos/statusline-scripts/battery 1 1 1
 interval=30
 separator=false
 
 [battery]
-command=~/repos/statusline-scripts/battery 1 0 1
+command=~/repos/statusline-scripts/battery 1 1 1
 instance=1
 interval=30
 

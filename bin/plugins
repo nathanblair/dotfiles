@@ -1,6 +1,0 @@
-#!/bin/bash
-
-{ pip show jedi || sudo pip install jedi } &>/dev/null
-
-{ pip show pynvim || sudo pip install pynvim } &>/dev/null
-
