@@ -26,7 +26,7 @@
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=20
-markup=pango
+markup=none
 
 # Generic media player support
 #
@@ -44,7 +44,7 @@ interval=30
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=🕩
+label=
 instance=Master
 interval=once
 signal=10
@@ -53,16 +53,16 @@ signal=10
 # Brightness
 [brightness]
 command=light -G
-label=☼
+label=
 interval=once
 signal=13
-color=#ffff00
+#color=#ffff00
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-separator=false
+label=
 interval=30
 
 #[memory]
@@ -77,26 +77,30 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=/home
-#instance=/mnt/data
+label=
+interval=120
+separator=false
+
+[disk]
+label=
+instance=/
 interval=120
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+[wifi]
+label=
+instance=wlp4s0
+interval=10
+separator=false
+
 [iface]
 #instance=wlan0
-label=
-color=#00FF00
+label=
+#color=#00FF00
 interval=10
-separator=true
-
-#[wifi]
-#label=wifi:
-#instance=wlp3s0
-#interval=10
-#separator=false
 
 #[bandwidth]
 #instance=eth0
@@ -119,25 +123,26 @@ separator=true
 #
 # The battery instance defaults to 0.
 [battery]
-label=⚡
+#command=~/repos/i3blocks-battery/battery 1 0 1
+command=~/repos/statusline-scripts/battery 1 0 1
 interval=30
 separator=false
+
 [battery]
+command=~/repos/statusline-scripts/battery 1 0 1
 instance=1
-label=⚡
 interval=30
 
 
 # Date Time
-#
 [time]
-label=🗓 
-command=date '+%A %b %d'
+label=
+command=date '+%a %B %d %Y'
 interval=60
 
 [time]
-label=⏲ 
-command=date '+%_I:%M %p '
+label=
+command=date '+%_I:%M %p %Z '
 interval=60
 
 # OpenVPN support

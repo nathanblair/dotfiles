@@ -62,7 +62,9 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/gv.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'chrisbra/unicode.vim'
 call plug#end()
 
 " Vim colorscheme
@@ -74,9 +76,6 @@ if (empty($TMUX))
 		set termguicolors
 	endif
 endif
-
-color dracula
-hi Normal guibg=NONE ctermbg=NONE
 
 
 " -------------------------------------------------------------"
@@ -93,6 +92,12 @@ let delimitMate_expand_cr=1
 let delimitMate_expand_space=1
 let delimitMate_jump_expansion=1
 
+" Airline
+let g:airline_powerline_fonts = 1
+
+" Dracula
+color dracula
+hi Normal guibg=NONE ctermbg=NONE
 
 " -------------------------------------------------------------"
 " Language settings
@@ -173,54 +178,15 @@ imap <C-c> <plug>NERDCommenterInsert
 
 
 " -------------------------------------------------------------"
-" Statusbar
-" -------------------------------------------------------------"
-set statusline=
-set statusline+=%{LeftStatusline()}
-"set statusline+=%!SetCenterBarColor()
-set statusline+=%=
-set statusline+=%{RightStatusLine()}
-set statusline+=%*
-
-" -------------------------------------------------------------"
 " Helper functions
 " -------------------------------------------------------------"
 function! s:CDToGitRoot() abort
 	silent let g:is_git_dir = len(system('git rev-parse --git-dir 2>/dev/null')) > 0
 	let l:dir_path = expand("%:p:h")
-	"echo g:is_git_dir
 	if g:is_git_dir
 		silent let l:dir_path = system("git rev-parse --show-toplevel")
 	endif
 	lcd `=l:dir_path`
-endfunction
-
-function! LeftStatusline() abort
-	let l:readonly = &readonly ? '[RO]' : ''
-	let l:preview  = &previewwindow ? '[PREVIEW]' : ''
-	let l:modified = &modified ? '[*]' : ''
-	let l:git_branch = ShowGitBranch()
-
-	let l:line_string = GetMode() . ' '
-	let l:line_string = l:line_string . PrettyPrintCurrentDirectory() . ' '
-	let l:line_string = l:line_string . ShowGitBranch() . ' '
-	let l:line_string = l:line_string . PrettyPrintCurrentFilePath() . ' '
-	"let l:line_string = l:line_string . ShowGitDiffSummary() . ' '
-	let l:line_string = l:line_string . l:readonly . l:preview .  l:modified .  ' '
-	return substitute(l:line_string, '  ', ' ', 'g')
-endfunction
-
-function! RightStatusLine() abort
-	let l:filetype = len(&filetype) ? &filetype . ' ' : ''
-	let l:fileformat = len(&fileformat) ? &fileformat . ' ' : ''
-	let l:fileencoding = len(&fileencoding) ? '[' . &fileencoding . '] ' : ''
-
-	let l:line_string = l:filetype
-	let l:line_string = l:line_string . l:fileformat . ' '
-	let l:line_string = l:line_string . l:fileencoding
-	let l:line_string = l:line_string . GetFileSize() . ' '
-
-	return substitute(l:line_string, '  ', ' ', 'g')
 endfunction
 
 function! PrettyPrintCurrentDirectory() abort
@@ -228,30 +194,9 @@ function! PrettyPrintCurrentDirectory() abort
 	return l:dir_path
 endfunction
 
-function! ShowGitBranch() abort
-	if g:is_git_dir
-		silent let l:git_branch = system('git rev-parse --abbrev-ref HEAD')[:-2]
-		return l:git_branch
-	endif
-	return ""
-endfunction
-
 function! PrettyPrintCurrentFilePath() abort
 	let l:dir_path = pathshorten(expand("%:~:."))
 	return len(l:dir_path) ? l:dir_path : '[NO NAME]'
-endfunction
-
-function! ShowGitDiffSummary() abort
-	if len(expand("%f")) == 0
-		return ""
-	endif
-
-	if g:is_git_dir > 0
-		silent let l:git_hunks = system('git  diff --numstat ' .  expand("%f"))[:-2]
-		let l:git_hunks = substitute(l:git_hunks, expand("%f"), '', '')
-		return '{ ' . l:git_hunks . ' }'
-	endif
-	return ""
 endfunction
 
 function! GetFileSize() abort
@@ -273,53 +218,4 @@ function! GetFileSize() abort
 
 	return printf("%5.1f %s", l:bytes, l:suffix)
 endfunction
-
-function! GetMode() abort
-	let l:mode = mode()[0]
-	if l:mode == 'v'
-		" Highlight pink
-		" TODO
-	elseif l:mode == 'i'
-		" Highlight pink
-		" TODO
-	elseif l:mode == 'c'
-		" Highlight pink
-		" TODO
-	elseif l:mode == 'R'
-		" Highlight pink
-		" TODO
-	elseif l:mode == 'N'
-		" Highlight pink
-		" TODO
-	endif
-	return '[' . g:currentmode[mode()] . ']'
-endfunction
-
-let g:currentmode = {
-	\ 'n'   		: 'N',
-	\ 'no'  		: 'N-Operator Pending',
-	\ 'niI' 		: 'N',
-	\ 'niR' 		: 'N',
-	\ 'niV' 		: 'N',
-	\ 'v'   		: 'VISUAL',
-	\ 'V'   		: 'V-Line',
-	\ ''  		: 'V-Block',
-	\ 's'   		: 'S',
-	\ 'S'   		: 'S-Line',
-	\ 'i'   		: 'INSERT',
-	\ 'ic'  		: 'I',
-	\ 'ix'  		: 'I',
-	\ 'R'   		: 'REPLACE',
-	\ 'Rc'  		: 'R',
-	\ 'Rv'  		: 'V-Replace',
-	\ 'Rx'  		: 'R',
-	\ 'c'   		: 'COMMAND',
-	\ 'cv'  		: 'Vim-Ex',
-	\ 'ce'  		: 'Ex',
-	\ 'r'   		: 'Prompt',
-	\ 'rm'  		: 'More',
-	\ 'r?'  		: 'Confirm',
-	\ '!'   		: 'Shell',
-	\ 't'   		: 'Terminal',
-\}
 

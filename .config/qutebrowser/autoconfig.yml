@@ -11,8 +11,50 @@ settings:
         dd: tab-close
   content.user_stylesheets:
     global: tomorrow_night.css
+  editor.encoding:
+    global: utf-8
+  fonts.completion.entry:
+    global: 14pt Hack, monospace
+  fonts.debug_console:
+    global: 14pt Hack, 14pt monospace
+  fonts.downloads:
+    global: 14pt Hack, 14pt monospace
+  fonts.hints:
+    global: 14pt Hack, 13pt monospace
+  fonts.keyhint:
+    global: 14pt Hack, 14pt monospace
+  fonts.messages.error:
+    global: 14pt Hack, 14pt monospace
+  fonts.messages.info:
+    global: 14pt Hack, 14pt monospace
+  fonts.messages.warning:
+    global: 14pt Hack, 14pt monospace
+  fonts.monospace:
+    global: 14pt Hack, Menlo, Terminus, Monospace
+  fonts.prompts:
+    global: 18pt Hack, Monospace
+  fonts.statusbar:
+    global: 14pt Sans
+  fonts.tabs:
+    global: 14pt DejaVu Sans
+  fonts.web.family.cursive:
+    global: Cursive
+  fonts.web.family.fantasy:
+    global: Fantasy
+  fonts.web.family.fixed:
+    global: Hack, DejaVu Sans Mono, Symbola
+  fonts.web.family.sans_serif:
+    global: DejaVu Sans
+  fonts.web.family.serif:
+    global: DejaVu Serif
   fonts.web.family.standard:
-    global: DejaVu
+    global: DejaVu Sans
+  fonts.web.size.default:
+    global: 16
+  fonts.web.size.default_fixed:
+    global: 14
+  fonts.web.size.minimum:
+    global: 16
   url.default_page:
     global: https://google.com
   url.searchengines:

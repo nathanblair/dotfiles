@@ -4,10 +4,10 @@ scroll_on_keystroke = true
 audible_bell = false
 mouse_autohide = true
 allow_bold = true
-dynamic_title = true
+dynamic_title = false
 urgent_on_bell = true
 clickable_url = true
-font = Hack 13
+font = Hack 14
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -23,7 +23,7 @@ cursor_shape = block
 #browser = xdg-open
 
 # set size hints for the window
-#size_hints = false
+size_hints = 14
 
 # Hide links that are no longer valid in url select overlay mode
 filter_unmatched_urls = true
@@ -37,8 +37,7 @@ filter_unmatched_urls = true
 foreground = #F8F8F2
 foreground_bold = #ffffff
 #background = #282A36
-background = rgba(28, 20, 20, 0.5)
-
+background = rgba(28, 20, 20, 0.1)
 
 # if unset, will reverse foreground and background
 highlight = #2f2f2f
