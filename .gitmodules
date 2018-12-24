@@ -1,0 +1,3 @@
+[submodule "repos/statusline-scripts"]
+	path = repos/statusline-scripts
+	url = https://github.com/nathanblair/statusline-scripts
