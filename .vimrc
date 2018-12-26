@@ -95,6 +95,7 @@ let delimitMate_jump_expansion=1
 
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Dracula
 color dracula
@@ -177,6 +178,8 @@ inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Commenting
 imap <C-c> <plug>NERDCommenterInsert
 
+" NERDTree
+"nnoremap <Leader>b :NERDTreeToggle<CR>
 
 " -------------------------------------------------------------"
 " Helper functions
