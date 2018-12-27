@@ -19,6 +19,22 @@ fi
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_12H=true
 SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_PROMPT_ORDER=(
+	user
+	dir
+	host
+	char
+)
+SPACESHIP_RPROMPT_ORDER=(
+	time
+	git
+	exec_time
+	exit_code
+	node
+	dotnet
+	jobs
+	line_sep
+)
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
@@ -26,4 +42,8 @@ zstyle ':completion:*' menu yes select
 zmodload zsh/complist
 setopt MENU_COMPLETE
 bindkey -M menuselect '^[[Z' reverse-menu-complete
-#
+
+export EDITOR=vim
+export CC=$(which clang)
+export CXX=$(which clang++)
+
