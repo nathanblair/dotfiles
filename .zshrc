@@ -14,15 +14,18 @@ if ! zgen saved; then
 
 	zgen save
 fi
-#
+
 # Plugin configuration
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_SHOW_HOST=always
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_12H=true
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_PROMPT_ORDER=(
 	user
-	dir
 	host
+	dir
 	char
 )
 SPACESHIP_RPROMPT_ORDER=(
