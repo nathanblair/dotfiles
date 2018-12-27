@@ -36,6 +36,8 @@ set completeopt=menuone,preview,noinsert,noselect
 
 autocmd BufEnter * call s:CDToGitRoot()
 
+set backspace=indent,eol,start
+
 " -------------------------------------------------------------"
 " vim-plug
 " -------------------------------------------------------------"
@@ -177,6 +179,9 @@ inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " -------------------------------------------------------------"
 " Commenting
 imap <C-c> <plug>NERDCommenterInsert
+
+" Ctrl-P
+nnoremap <C-m> :CtrlPMRU<CR>
 
 " NERDTree
 "nnoremap <Leader>b :NERDTreeToggle<CR>
