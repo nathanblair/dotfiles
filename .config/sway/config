@@ -34,10 +34,10 @@ gaps inner 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/archlinux.png fill
+output * bg /usr/share/backgrounds/sway/archlinux.png fill
 #output * bg /usr/share/backgrounds/sway/linux.jpg fill
 #output * bg /usr/share/backgrounds/sway/allstartshere.jpg fill
-output * bg /usr/share/backgrounds/sway/babygnulinux.jpg fill
+#output * bg /usr/share/backgrounds/sway/babygnulinux.jpg fill
 #
 # Example configuration:
 #
@@ -50,11 +50,11 @@ output * bg /usr/share/backgrounds/sway/babygnulinux.jpg fill
 # Example configuration:
 #
 exec swayidle \
-    timeout 300 'swaylock -c 222222' \
-    timeout 360 'swaymsg "output * dpms off"' \
+    timeout 300 'swaymsg "output * dpms off"' \
        resume 'swaymsg "output * dpms on"' \
+    timeout 360 'swaylock -c 010101' \
     timeout 600 'systemctl suspend' \
-    before-sleep 'swaylock -c 222222'
+    before-sleep 'swaylock -c 010101'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
