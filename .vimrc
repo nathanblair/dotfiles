@@ -1,6 +1,6 @@
 " Basic options
-set number
 set nocompatible
+set number
 set laststatus=2
 set noshowmode
 set wildmenu
@@ -26,17 +26,17 @@ set colorcolumn=81
 set t_Co=256
 
 " Tabbing and indentation
-set noexpandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set backspace=indent,eol,start
 
 " Completion
 set completeopt=menuone,preview,noinsert,noselect
 
 autocmd BufEnter * call s:CDToGitRoot()
 
-set backspace=indent,eol,start
 
 " -------------------------------------------------------------"
 " vim-plug
@@ -63,10 +63,8 @@ Plug 'nathanblair/vim-dracula-theme' , {'as': 'vim-dracula-theme'}
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/gv.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim', {'for': 'html'}
-Plug 'chrisbra/unicode.vim'
 Plug 'kien/ctrlp.vim'
 call plug#end()
 

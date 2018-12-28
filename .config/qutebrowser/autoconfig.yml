@@ -10,7 +10,7 @@ settings:
         d: null
         dd: tab-close
   content.user_stylesheets:
-    global: tomorrow_night.css
+    global: null
   editor.encoding:
     global: utf-8
   fonts.completion.entry:

@@ -40,6 +40,7 @@ SPACESHIP_RPROMPT_ORDER=(
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 zstyle ':completion:*' menu yes select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 zmodload zsh/complist
 setopt MENU_COMPLETE
 
