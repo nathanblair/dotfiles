@@ -55,14 +55,19 @@ if (has('nvim'))
 	Plug 'zchee/deoplete-jedi', {'for': 'python'}
 	Plug 'Shougo/neco-syntax'
 	Plug 'Shougo/neco-vim', {'for': 'vim'}
+	Plug 'Shougo/deoplete-clangx', {'for': 'cpp'}
+	Plug 'Shougo/neoinclude.vim', {'for': 'cpp'}
 endif
 Plug 'carlitux/deoplete-ternjs', {'for': 'js'}
 Plug 'raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'nathanblair/vim-dracula-theme' , {'as': 'vim-dracula-theme'}
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'kien/ctrlp.vim'
@@ -182,7 +187,10 @@ imap <C-c> <plug>NERDCommenterInsert
 nnoremap <C-m> :CtrlPMRU<CR>
 
 " NERDTree
-"nnoremap <Leader>b :NERDTreeToggle<CR>
+nnoremap <Leader>b :NERDTreeToggle<CR>
+
+" Tagbar
+nnoremap <Leader>t :TagbarToggle<CR>
 
 " -------------------------------------------------------------"
 " Helper functions
