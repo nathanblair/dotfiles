@@ -1,4 +1,6 @@
-" Basic options
+" -------------------------------------------------------------"
+" Basic options                                             BO
+" -------------------------------------------------------------"
 set nocompatible
 set number
 set laststatus=2
@@ -7,7 +9,7 @@ set wildmenu
 set encoding=utf8
 set background=dark
 set nowrap
-set cursorline
+"set cursorline
 set noswapfile
 set nobackup
 
@@ -39,56 +41,47 @@ autocmd BufEnter * call s:CDToGitRoot()
 
 
 " -------------------------------------------------------------"
-" vim-plug
+" vim-plug                                                  VP
 " -------------------------------------------------------------"
 " Plugin loading and handling
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/bundle')
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 if (has('nvim'))
-	Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-	Plug 'zchee/deoplete-jedi', {'for': 'python'}
-	Plug 'Shougo/neco-syntax'
-	Plug 'Shougo/neco-vim', {'for': 'vim'}
-	Plug 'Shougo/deoplete-clangx', {'for': 'cpp'}
-	Plug 'Shougo/neoinclude.vim', {'for': 'cpp'}
+    Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+    Plug 'zchee/deoplete-jedi', {'for': 'python'}
+    Plug 'Shougo/neco-syntax'
+    Plug 'Shougo/neco-vim', {'for': 'vim'}
+    Plug 'Shougo/deoplete-clangx', {'for': 'cpp'}
+    Plug 'Shougo/neoinclude.vim', {'for': 'cpp'}
+    Plug 'carlitux/deoplete-ternjs', {'for': 'js'}
 endif
-Plug 'carlitux/deoplete-ternjs', {'for': 'js'}
 Plug 'raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
-Plug 'nathanblair/vim-dracula-theme' , {'as': 'vim-dracula-theme'}
+"Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+"Plug 'xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
 Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar', { 'for': 'cpp' }
+"Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim', {'for': 'html'}
-Plug 'kien/ctrlp.vim'
+"Plug 'kien/ctrlp.vim'
 call plug#end()
-
-" Vim colorscheme
-if (empty($TMUX))
-	if (has("nvim"))
-		let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-	endif
-	if (has("termguicolors"))
-		set termguicolors
-	endif
-endif
 
 
 " -------------------------------------------------------------"
-" vim-plug settings
+" vim-plug settings                                         PS
 " -------------------------------------------------------------"
 " Signify
 let g:signify_vcs_list=['git']
+let g:signify_disable_by_default = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup=1
@@ -98,23 +91,24 @@ let delimitMate_expand_cr=1
 let delimitMate_expand_space=1
 let delimitMate_jump_expansion=1
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" NERDTree
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeStatusline = -1
+let g:NERDTreeChDirMode = 2
 
-" Dracula
+" Color scheme
+set termguicolors
 color dracula
-hi Normal guibg=NONE ctermbg=NONE
 
 " -------------------------------------------------------------"
-" Language settings
+" Language settings                                         LS
 " -------------------------------------------------------------"
 " Python
 let g:deoplete#sources#jedi#show_docstring=1
 
 
 " -------------------------------------------------------------"
-" keymaps
+" keymaps                                                   KM
 " -------------------------------------------------------------"
 " Edit vim config file
 nnoremap <silent> <Leader>vim :e! ~/.vimrc<CR>
@@ -128,8 +122,6 @@ nmap <Space> \
 
 " Write buffer to filesystem
 nnoremap <silent> <Leader>w :w<CR>
-
-" Exit vim
 nnoremap <silent> <Leader>Q :qa<CR>
 
 " Substitute
@@ -178,59 +170,117 @@ inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 " -------------------------------------------------------------"
-" vim-plug keymaps
+" vim-plug keymaps                                          PK
 " -------------------------------------------------------------"
+" Vim-Signify
+nnoremap <silent> <Leader>g :SignifyToggle<CR>
+"
 " Commenting
-imap <C-c> <plug>NERDCommenterInsert
+imap <silent> <C-c> <plug>NERDCommenterInsert
 
 " Ctrl-P
-nnoremap <C-m> :CtrlPMRU<CR>
+"nnoremap <silent> <C-m> :CtrlPMRU<CR>
 
 " NERDTree
-nnoremap <Leader>b :NERDTreeToggle<CR>
+"nnoremap <Leader>b :NERDTreeToggle<CR>
 
 " Tagbar
-nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 " -------------------------------------------------------------"
-" Helper functions
+" Statusline Customization                                  SC
+" -------------------------------------------------------------"
+set statusline=
+set statusline+=%#type#
+set statusline+=%(\ %{PrettyPrintCurrentDirectory()}%)
+set statusline+=%(\ %{PrettyPrintCurrentFilePath()}%)
+" TODO
+" Show git status
+set statusline+=%#keyword#
+set statusline+=\ [%{toupper(&filetype)}]
+set statusline+=%#modemsg#
+set statusline+=\ %(%m%r%w\ %)
+set statusline+=%{ChangeStatuslineColor()}
+set statusline+=%#statusline#
+set statusline+=%=
+set statusline+=\ %#rubyinstancevariable#
+set statusline+=\ %{toupper(&fileencoding)}
+set statusline+=\ <%{&fileformat}>
+set statusline+=\ %#string#
+set statusline+=\ %{PrintIndentStyle()}
+set statusline+=\ %#rubyfunction#
+set statusline+=\ col:%v
+set statusline+=\ %#normal#
+set statusline+=%(\ %{GetFileSize()}%)
+set statusline+=\ %*
+
+" -------------------------------------------------------------"
+" Helper functions                                          HF
 " -------------------------------------------------------------"
 function! s:CDToGitRoot() abort
-	silent let g:is_git_dir = len(system('git rev-parse --git-dir 2>/dev/null')) > 0
-	let l:dir_path = expand("%:p:h")
-	if g:is_git_dir
-		silent let l:dir_path = system("git rev-parse --show-toplevel")
-	endif
-	lcd `=l:dir_path`
+    silent let g:is_git_dir = len(system('git rev-parse --git-dir 2>/dev/null')) > 0
+    let l:dir_path = expand("%:p:h")
+    if g:is_git_dir
+        silent let l:dir_path = system("git rev-parse --show-toplevel")
+    endif
+    lcd `=l:dir_path`
+endfunction
+
+function! ChangeStatuslineColor() abort
+    let l:mode=mode()
+    if (l:mode =~# '\v(n|no)')
+        execute 'hi! StatusLine guibg=#282a36'
+    elseif (l:mode =~# '\v(c|cv|ce)')
+        execute 'hi! StatusLine guibg=#f1fa8c'
+    elseif (l:mode =~# '\v(i|ic|ix)')
+        execute 'hi! StatusLine guibg=#50fa7b'
+    elseif (l:mode =~# '\v(R|Rc|Rx)')
+        execute 'hi! StatusLine guibg=#8be9fd'
+    elseif (l:mode ==# 't')
+        execute 'hi! StatusLine guibg=#ff5555'
+    elseif (l:mode ==? 'v' || l:mode ==? '')
+        execute 'hi! StatusLine guibg=#ff79c6'
+    else
+        execute 'hi! StatusLine guibg=#282a36'
+    endif
+    return ''
 endfunction
 
 function! PrettyPrintCurrentDirectory() abort
-	let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~"))
-	return l:dir_path
+    if &filetype=="help" | return '' | endif
+
+    let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~"))
+    return l:dir_path
 endfunction
 
 function! PrettyPrintCurrentFilePath() abort
-	let l:dir_path = pathshorten(expand("%:~:."))
-	return len(l:dir_path) ? l:dir_path : '[NO NAME]'
+    if &filetype=="help" | return '' | endif
+
+    let l:dir_path = pathshorten(expand("%:~:."))
+    return len(l:dir_path) ? l:dir_path : '[NO NAME]'
+endfunction
+
+function! PrintIndentStyle() abort
+    return &expandtab ? "[Spaces]" : "[Tabs]"
 endfunction
 
 function! GetFileSize() abort
-	let l:bytes = getfsize(expand("%"))
-	let l:divisor = 1.0
-	let l:suffix = " Bytes"
+    let l:bytes = getfsize(expand("%"))
+    let l:divisor = 1.0
+    let l:suffix = " Bytes"
 
-	if l:bytes <= 0
-		return ''
-	elseif l:bytes >= 1000000
-		let l:divisor = 10000000.0
-		let l:suffix = " MB"
-	elseif l:bytes >= 1000
-		let l:divisor = 1000.0
-		let l:suffix = "KB"
-	endif
+    if l:bytes <= 0
+        return ''
+    elseif l:bytes >= 1000000
+        let l:divisor = 10000000.0
+        let l:suffix = " MB"
+    elseif l:bytes >= 1000
+        let l:divisor = 1000.0
+        let l:suffix = "KB"
+    endif
 
-	let l:bytes = l:bytes / l:divisor
+    let l:bytes = l:bytes / l:divisor
 
-	return printf("%5.1f %s", l:bytes, l:suffix)
+    return printf("%5.1f %s", l:bytes, l:suffix)
 endfunction
 
