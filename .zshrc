@@ -7,24 +7,31 @@ fi
 source ~/.zgen/zgen.zsh
 
 if ! zgen saved; then
-	zgen load zsh-users/zsh-history-substring-search
-	zgen load zsh-users/zsh-autosuggestions
-	zgen load nathanblair/fast-syntax-highlighting
-	zgen load denysdovhan/spaceship-prompt spaceship
+    zgen load zsh-users/zsh-history-substring-search
+    zgen load zsh-users/zsh-autosuggestions
+    zgen load nathanblair/fast-syntax-highlighting
+    zgen load denysdovhan/spaceship-prompt spaceship
+    zgen load dracula/zsh
 
-	zgen save
+    zgen save
 fi
 
 # Plugin configuration
+SPACESHIP_CHAR_SYMBOL_ROOT=#
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
+SPACESHIP_PROMPT_PREFIXES_SHOW=true
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_SHOW_HOST=always
+SPACESHIP_USER_SHOW=always
+SPACESHIP_HOST_SHOW=always
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_12H=true
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_PROMPT_ORDER=(
-	dir
-	char
+    user
+    dir
+    host
+    char
 )
 SPACESHIP_RPROMPT_ORDER=(
 	git
@@ -70,13 +77,20 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
-# Use beam shape cursor on startup.
-echo -ne '\e[5 q'
+if [[ -n "$DISPLAY" ]]; then
+    # Use beam shape cursor on startup.
+    echo -ne '\e[5 q'
+    # Use beam shape cursor for each new prompt.
+    preexec() {
+        echo -ne '\e[5 q'
+    }
 
-# Use beam shape cursor for each new prompt.
-preexec() {
-	echo -ne '\e[5 q'
-}
+else
+    SPACESHIP_CHAR_SYMBOL=\>
+    SPACESHIP_CHAR_SUFFIX=\ 
+    SPACESHIP_GIT_SYMBOL=√
+    SPACESHIP_GIT_BRANCH_PREFIX=√\ 
+fi
 
 export EDITOR=vim
 export VISUAL=vim
