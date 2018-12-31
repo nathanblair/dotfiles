@@ -25,10 +25,13 @@ set $menu rofi -show drun -show-icons -theme Monokai
 # Note: it's recommended that you pass the final command to sway
 # Client colors
 #	  <client class> <border> <background> <text> <indicator> <child_border>
-client.unfocused #222222 #222222 #888888 #222222 #222222
-client.focused #333399 #101010 #ffffff #33ff33 #339922
+client.unfocused #000000 #000000 #000000 #000000 #000000
+client.focused_inactive #000000 #000000 #000000 #000000 #000000
+client.focused #000000 #000000 #000000 #ffffff #555555
 default_border pixel 1
 
+smart_borders no_gaps
+smart_gaps on
 gaps inner 10
 
 ### Output configuration
@@ -77,6 +80,11 @@ exec swayidle \
        #natural_scroll enabled
        #middle_emulation enabled
    #}
+   #
+    input "1:1:AT_Translated_Set_2_keyboard" {
+        repeat_rate 40
+        repeat_delay 200
+    }
 
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -111,7 +119,7 @@ exec swayidle \
     bindsym $mod+Shift+c reload
 
     # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+e exec swaymsg exit
 
 	bindsym XF86AudioMute exec amixer set Master toggle; exec pkill -RTMIN+10 i3blocks
 	bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec mplayer /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga; exec pkill -RTMIN+10 i3blocks
