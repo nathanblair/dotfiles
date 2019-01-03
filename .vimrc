@@ -188,7 +188,7 @@ imap <silent> <C-c> <plug>NERDCommenterInsert
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 " -------------------------------------------------------------"
-" Statusline Customization                                  SC
+" Statusline Customization                                  SL
 " -------------------------------------------------------------"
 set statusline=
 set statusline+=%#type#
@@ -197,20 +197,23 @@ set statusline+=%(\ %{PrettyPrintCurrentFilePath()}%)
 " TODO
 " Show git status
 set statusline+=%#keyword#
-set statusline+=\ [%{toupper(&filetype)}]
+set statusline+=%(\ [%{toupper(&filetype)}]%)
+set statusline+=\%#rubyfunction#
+set statusline+=%(\ \ %{g:git_branch}%)
+set statusline+=%(\ %)
 set statusline+=%#modemsg#
 set statusline+=\ %(%m%r%w\ %)
 set statusline+=%{ChangeStatuslineColor()}
 set statusline+=%#statusline#
 set statusline+=%=
 set statusline+=\ %#rubyinstancevariable#
-set statusline+=\ %{toupper(&fileencoding)}
+set statusline+=%(\ %{toupper(&fileencoding)}%)
 set statusline+=\ <%{&fileformat}>
-set statusline+=\ %#string#
+set statusline+=\%#string#
 set statusline+=\ %{PrintIndentStyle()}
-set statusline+=\ %#rubyfunction#
+set statusline+=\%#rubyfunction#
 set statusline+=\ col:%v
-set statusline+=\ %#normal#
+set statusline+=\%#normal#
 set statusline+=%(\ %{GetFileSize()}%)
 set statusline+=\ %*
 
@@ -219,9 +222,11 @@ set statusline+=\ %*
 " -------------------------------------------------------------"
 function! s:CDToGitRoot() abort
     silent let g:is_git_dir = len(system('git rev-parse --git-dir 2>/dev/null')) > 0
+    let g:git_branch = ''
     let l:dir_path = expand("%:p:h")
     if g:is_git_dir
         silent let l:dir_path = system("git rev-parse --show-toplevel")
+        silent let g:git_branch = system("git rev-parse --abbrev-ref HEAD")[:-2]
     endif
     lcd `=l:dir_path`
 endfunction
@@ -243,6 +248,13 @@ function! ChangeStatuslineColor() abort
     else
         execute 'hi! StatusLine guibg=#282a36'
     endif
+    return ''
+endfunction
+
+function! GetGitDiffNumstat() abort
+    let l:added = ''
+    let l:deleted = ''
+
     return ''
 endfunction
 
