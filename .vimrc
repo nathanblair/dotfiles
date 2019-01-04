@@ -252,8 +252,7 @@ function! ChangeStatuslineColor() abort
 endfunction
 
 function! GetGitDiffNumstat() abort
-    let l:added = ''
-    let l:deleted = ''
+    " git diff --numstat expand(%) | awk '{print '[+]'$1' [-]'$2}'
 
     return ''
 endfunction
