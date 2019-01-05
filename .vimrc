@@ -38,6 +38,7 @@ set backspace=indent,eol,start
 set completeopt=menuone,preview,noinsert,noselect
 
 autocmd BufEnter * call s:CDToGitRoot()
+autocmd BufWritePost * call s:GetGitDiffNumstat()
 
 
 " -------------------------------------------------------------"
@@ -251,8 +252,10 @@ function! ChangeStatuslineColor() abort
     return ''
 endfunction
 
-function! GetGitDiffNumstat() abort
+function! s:GetGitDiffNumstat() abort
     " git diff --numstat expand(%) | awk '{print '[+]'$1' [-]'$2}'
+    silent let g:git_numstat = system("git diff --numstat")[:-2]
+    "echom l:git_numstat
 
     return ''
 endfunction
@@ -275,6 +278,7 @@ function! PrintIndentStyle() abort
     return &expandtab ? "[Spaces]" : "[Tabs]"
 endfunction
 
+" This should happen on bufwritepost as well
 function! GetFileSize() abort
     let l:bytes = getfsize(expand("%"))
     let l:divisor = 1.0
