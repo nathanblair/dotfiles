@@ -10,11 +10,11 @@ settings:
         d: null
         dd: tab-close
   content.user_stylesheets:
-    global: null
+    global: tomorrow_night.css
   editor.encoding:
     global: utf-8
   fonts.completion.entry:
-    global: 14pt Hack, monospace
+    global: 14pt monospace
   fonts.debug_console:
     global: 14pt Hack, 14pt monospace
   fonts.downloads:
@@ -50,11 +50,13 @@ settings:
   fonts.web.family.standard:
     global: DejaVu Sans
   fonts.web.size.default:
-    global: 16
+    global: 20
   fonts.web.size.default_fixed:
-    global: 14
+    global: 20
   fonts.web.size.minimum:
-    global: 16
+    global: 20
+  fonts.web.size.minimum_logical:
+    global: 6
   url.default_page:
     global: https://google.com
   url.searchengines:

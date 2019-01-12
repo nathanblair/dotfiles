@@ -21,6 +21,8 @@ set splitbelow
 set splitright
 set ttimeoutlen=10
 set foldmethod=syntax
+set foldlevel=20
+set foldlevelstart=20
 set list
 set listchars=tab:\|\ 
 set linebreak
@@ -40,6 +42,9 @@ set completeopt=menuone,preview,noinsert,noselect
 autocmd BufEnter * call s:CDToGitRoot()
 autocmd BufWritePost * call s:GetGitDiffNumstat()
 
+" Make system
+let g:projectName=fnamemodify(getcwd(), ":t")
+set makeprg=meson\ build
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
@@ -64,16 +69,17 @@ if (has('nvim'))
 endif
 Plug 'raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-"Plug 'xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
 Plug 'mhinz/vim-signify'
-"Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar', { 'for': 'cpp' }
+Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
 "Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim', {'for': 'html'}
-"Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 
@@ -96,6 +102,7 @@ let delimitMate_jump_expansion=1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeStatusline = -1
 let g:NERDTreeChDirMode = 2
+let g:NERDTreeStatusline=" NERDTree"
 
 " Color scheme
 set termguicolors
@@ -111,6 +118,9 @@ let g:deoplete#sources#jedi#show_docstring=1
 " -------------------------------------------------------------"
 " keymaps                                                   KM
 " -------------------------------------------------------------"
+" Stupid fucking q key...
+nnoremap <silent> q <Nop>
+
 " Edit vim config file
 nnoremap <silent> <Leader>vim :e! ~/.vimrc<CR>
 
@@ -169,6 +179,11 @@ nnoremap <Leader>v :vs **/*
 inoremap <expr><Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" Make system
+nnoremap <C-b> :make<CR>
+nnoremap <F5> :!ninja -C build<CR>
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 
 " -------------------------------------------------------------"
 " vim-plug keymaps                                          PK
@@ -179,14 +194,14 @@ nnoremap <silent> <Leader>g :SignifyToggle<CR>
 " Commenting
 imap <silent> <C-c> <plug>NERDCommenterInsert
 
-" Ctrl-P
-"nnoremap <silent> <C-m> :CtrlPMRU<CR>
-
 " NERDTree
-"nnoremap <Leader>b :NERDTreeToggle<CR>
+nnoremap <Leader>b :NERDTreeToggle<CR>
 
 " Tagbar
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
+
+" FSwitch
+nnoremap <silent> <F4> :FSHere<CR>
 
 " -------------------------------------------------------------"
 " Statusline Customization                                  SL
@@ -194,11 +209,12 @@ nnoremap <silent> <Leader>t :TagbarToggle<CR>
 set statusline=
 set statusline+=%#type#
 set statusline+=%(\ %{PrettyPrintCurrentDirectory()}%)
+set statusline+=\ \|
 set statusline+=%(\ %{PrettyPrintCurrentFilePath()}%)
 " TODO
 " Show git status
-set statusline+=%#keyword#
-set statusline+=%(\ [%{toupper(&filetype)}]%)
+"set statusline+=%#keyword#
+"set statusline+=%(\ [%{toupper(&filetype)}]%)
 set statusline+=\%#rubyfunction#
 set statusline+=%(\ \ %{g:git_branch}%)
 set statusline+=%(\ %)
@@ -215,7 +231,7 @@ set statusline+=\ %{PrintIndentStyle()}
 set statusline+=\%#rubyfunction#
 set statusline+=\ col:%v
 set statusline+=\%#normal#
-set statusline+=%(\ %{GetFileSize()}%)
+set statusline+=%(\%{GetFileSize()}%)
 set statusline+=\ %*
 
 " -------------------------------------------------------------"
@@ -229,6 +245,8 @@ function! s:CDToGitRoot() abort
         silent let l:dir_path = system("git rev-parse --show-toplevel")
         silent let g:git_branch = system("git rev-parse --abbrev-ref HEAD")[:-2]
     endif
+    cd `=l:dir_path`
+    let $PWD = getcwd()
     lcd `=l:dir_path`
 endfunction
 
@@ -254,7 +272,7 @@ endfunction
 
 function! s:GetGitDiffNumstat() abort
     " git diff --numstat expand(%) | awk '{print '[+]'$1' [-]'$2}'
-    silent let g:git_numstat = system("git diff --numstat")[:-2]
+    "silent let g:git_numstat = system("git diff --numstat")[:-2]
     "echom l:git_numstat
 
     return ''
@@ -275,20 +293,20 @@ function! PrettyPrintCurrentFilePath() abort
 endfunction
 
 function! PrintIndentStyle() abort
-    return &expandtab ? "[Spaces]" : "[Tabs]"
+    return &expandtab ? "[ ]" : "[\\t]"
 endfunction
 
 " This should happen on bufwritepost as well
 function! GetFileSize() abort
     let l:bytes = getfsize(expand("%"))
     let l:divisor = 1.0
-    let l:suffix = " Bytes"
+    let l:suffix = "B "
 
     if l:bytes <= 0
         return ''
     elseif l:bytes >= 1000000
         let l:divisor = 10000000.0
-        let l:suffix = " MB"
+        let l:suffix = "MB"
     elseif l:bytes >= 1000
         let l:divisor = 1000.0
         let l:suffix = "KB"
@@ -296,6 +314,6 @@ function! GetFileSize() abort
 
     let l:bytes = l:bytes / l:divisor
 
-    return printf("%5.1f %s", l:bytes, l:suffix)
+    return printf("%6.1f %s", l:bytes, l:suffix)
 endfunction
 

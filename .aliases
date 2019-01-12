@@ -12,37 +12,25 @@ alias l='ls -h1'
 alias ll='ls -lh'
 alias la='ls -Ah1'
 alias lla='ls -lAh'
-
 alias dir='dir --color=auto'
 
 # CLI application launching
 alias tmux='tmux -2'
-alias mutt='mutt -F ~/.config/mutt/config'
-alias python='python3'
 
 # Git alias commands
+alias gd='git diff'
 alias ga='git add'
 alias gaa='git add --all'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias GC='git add --all && git commit'
+alias GCM='git add --all && git commit -m'
 alias gch='git checkout'
 alias gst='git status'
 alias glg='git log --graph'
 alias glgs='git log --graph --stat'
 alias glgp='git log --graph --patch'
 
-
-# Git alias for configuration repo
-alias myconfig='git --git-dir=$HOME/.myconfig --work-tree=$HOME'
-alias mca='myconfig add'
-alias mcaa='myconfig add --all'
-alias mcc='myconfig commit'
-alias mccm='myconfig commit -m'
-alias mcch='myconfig checkout'
-alias mcst='myconfig status'
-
-# Make alias for quiet make output
-#alias make='make -s'
-
 # Tree command should always show directories first
 alias tree='tree --dirsfirst --noreport'
+
