@@ -95,3 +95,5 @@ export CC=$(which clang)
 export CXX=$(which clang++)
 export LC_ALL=en_US.UTF-8
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

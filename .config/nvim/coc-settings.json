@@ -1,0 +1,15 @@
+
+{
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_commands.json"],
+      "filetypes": ["cpp", "c"]
+    }
+  },
+  "coc.preferences.preferCompleteThanJumpPlaceholder": true,
+  "coc.preferences.useQuickfixForLocations":true,
+  "coc.preferences.timeout":500
+  
+}
+

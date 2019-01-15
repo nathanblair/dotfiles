@@ -1,7 +1,6 @@
-import dracula.draw
-
 config.load_autoconfig()
 
+import dracula.draw
 dracula.draw.blood(c, {
     'spacing': {
         'vertical': 6,
@@ -11,4 +10,9 @@ dracula.draw.blood(c, {
         'family': 'Hack, Menlo, Terminus, Monospace',
         'size': 14
         }
-    })
+})
+
+c.fonts.web.size.default = 18
+c.fonts.web.size.default_fixed = 18
+c.fonts.web.size.minimum = 18
+

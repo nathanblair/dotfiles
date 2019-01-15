@@ -10,7 +10,7 @@ settings:
         d: null
         dd: tab-close
   content.user_stylesheets:
-    global: tomorrow_night.css
+    global: null
   editor.encoding:
     global: utf-8
   fonts.completion.entry:
@@ -50,9 +50,9 @@ settings:
   fonts.web.family.standard:
     global: DejaVu Sans
   fonts.web.size.default:
-    global: 20
+    global: 16
   fonts.web.size.default_fixed:
-    global: 20
+    global: 14
   fonts.web.size.minimum:
     global: 20
   fonts.web.size.minimum_logical:
