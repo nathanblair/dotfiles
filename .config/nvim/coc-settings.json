@@ -9,7 +9,8 @@
   },
   "coc.preferences.preferCompleteThanJumpPlaceholder": true,
   "coc.preferences.useQuickfixForLocations":true,
-  "coc.preferences.timeout":500
-  
+  "coc.preferences.timeout":500,
+  "coc.preferences.hoverTarget": "echo"
+
 }
 

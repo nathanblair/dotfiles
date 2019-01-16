@@ -16,6 +16,8 @@ set noswapfile
 set nobackup
 set shortmess=WIcF
 set updatetime=1000
+set nohlsearch
+set wildcharm=<C-z>
 
 " Viewing and getting around
 set cmdheight=2
@@ -46,6 +48,9 @@ let g:projectName=fnamemodify(getcwd(), ":t")
 
 " Make system
 set makeprg=meson\ build
+
+" Don't wrap if in preview window
+" TODO
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
@@ -88,8 +93,10 @@ color dracula
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Documentation
-autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-"autocmd! CursorHold *.cpp, *.py, *.js call CocActionAsync('doHover')
+autocmd! User CocJumpPlaceholder call CocActionAsync('doHover')
+"autocmd! CursorHold * call CocActionAsync('showSignatureHelp')
+"autocmd! CursorHold * call CocActionAsync('showSignatureHelp')
+autocmd CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
 
 " -------------------------------------------------------------"
 " keymaps                                                   KM
@@ -113,6 +120,9 @@ nnoremap <silent> <Leader>Q :qa<CR>
 
 " Substitute
 nnoremap <Leader>s :%s/
+
+" Highlight
+nnoremap <Leader>n :noh<CR>
 
 " Join lines
 nnoremap <silent> <C-j> :join<CR>
@@ -156,7 +166,7 @@ nnoremap <F4> :!ninja -C build<CR>
 " -------------------------------------------------------------"
 " Vim-Signify
 nnoremap <silent> <Leader>g :SignifyToggle<CR>
-"
+
 " FSwitch
 nnoremap <silent> <F4> :FSHere<CR>
 
@@ -165,16 +175,14 @@ nnoremap <silent> [c <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " Denite
-nnoremap <C-p> :Denite file/old<CR>
+nnoremap <C-Space> :Denite <C-z>
+nnoremap <C-p> :Denite file/old -mode='insert'<CR>
 nnoremap <C-o> :Denite outline<CR>
 nnoremap <Leader><Tab> :Denite buffer<CR>
 nnoremap <Leader>b :Denite file<CR>
-call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#option('default', 'winheight', 10)
+call denite#custom#option('default', 'winheight', 6)
 call denite#custom#option('default', 'auto-resize', 'true')
+call denite#custom#option('default', 'mode', 'normal')
 
 " LSP Autocompletion
 "inoremap <C-Space> <ESC>
@@ -202,7 +210,6 @@ nnoremap <Leader>x :<C-u>Denite coc-extension<CR>
 
 " LSP Documentation
 nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
-nnoremap <silent> <C-K> :call CocActionAsync('doHover')<CR>
 
 " LSP Format
 nmap <silent> <Leader>f <Plug>(coc-format)
