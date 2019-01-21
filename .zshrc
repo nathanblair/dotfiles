@@ -89,11 +89,13 @@ if [[ -n "$DISPLAY" ]]; then
     #SPACESHIP_GIT_BRANCH_PREFIX=√\ 
 fi
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=$(which nvim)
+export VISUAL=$(which nvim)
 export CC=$(which clang)
 export CXX=$(which clang++)
+export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
