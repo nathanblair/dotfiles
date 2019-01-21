@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/lib/i3blocks/$BLOCK_NAME
-separator_block_width=20
+separator_block_width=15
 markup=none
 
 # Generic media player support
@@ -94,13 +94,13 @@ interval=120
 label=
 instance=wlp4s0
 interval=10
-separator=false
+#separator=false
 
-[iface]
+#[iface]
 #instance=wlan0
-label=
+#label=
 #color=#00FF00
-interval=10
+#interval=10
 
 #[bandwidth]
 #instance=eth0
@@ -138,10 +138,11 @@ interval=30
 label=
 command=date '+%a %B %d %Y'
 interval=60
+separator=false
 
 [time]
 label=
-command=date '+%_I:%M %p %Z '
+command=date '+%_I:%M %p %Z'
 interval=60
 
 # OpenVPN support
