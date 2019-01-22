@@ -23,7 +23,7 @@
 	"zenMode.hideStatusBar": false,
 	"zenMode.hideTabs": false,
 	"vim.useSystemClipboard": true,
-	"workbench.colorTheme": "Material Theme Palenight High Contrast",
+	"workbench.colorTheme": "Material Theme Darker High Contrast",
 	"vim.disableExtension": false,
 	"editor.wordWrap": "off",
 	"editor.wordWrapColumn": 80,
@@ -60,6 +60,6 @@
 	"editor.cursorStyle": "block",
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
-	"workbench.iconTheme": "eq-material-theme-icons-palenight",
+	"workbench.iconTheme": "eq-material-theme-icons-darker",
 	"editor.roundedSelection": false
 }
