@@ -161,16 +161,16 @@ exec swayidle \
 #
 #
 # Workspace names
-    set $ws1 1:>_
-    set $ws2 2:</>
-    set $ws3 3:
-    set $ws4 4:>_
-    set $ws5 5:>_
-    set $ws6 6:>_
-    set $ws7 7:>_
-    set $ws8 8:>_
-    set $ws9 9:>_
-    set $ws10 10:>_
+    set $ws1 1: >_
+    set $ws2 2: </>
+    set $ws3 3: 
+    set $ws4 4: >_
+    set $ws5 5: >_
+    set $ws6 6: >_
+    set $ws7 7: >_
+    set $ws8 8: >_
+    set $ws9 9: >_
+    set $ws10 10: >_
 #
     # switch to workspace
     bindsym $mod+1 workspace $ws1
@@ -196,6 +196,8 @@ exec swayidle \
     bindsym $mod+Shift+0 move container to workspace $ws10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    # assign [class="vim"] $ws2
 #
 # Layout stuff:
 #
