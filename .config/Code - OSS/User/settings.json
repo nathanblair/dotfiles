@@ -23,7 +23,7 @@
 	"zenMode.hideStatusBar": false,
 	"zenMode.hideTabs": false,
 	"vim.useSystemClipboard": true,
-	"workbench.colorTheme": "Material Theme Ocean",
+	"workbench.colorTheme": "Material Theme Palenight High Contrast",
 	"vim.disableExtension": false,
 	"editor.wordWrap": "off",
 	"editor.wordWrapColumn": 80,
@@ -39,23 +39,27 @@
 		"**/bin": true,
 		"**/obj": true,
 		"**/lib": true,
-		"**/dist": true,
+		"**/dist": true
 	},
 	"vim.leader": "<space>",
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
+			"before": ["<space>", "w"],
+			"after": [":","w","<CR>"]
+		},
+		{
 			"before": ["J"],
-			"after": ["m","a","o","<ESC>","`","a"],
+			"after": ["m","a","o","<ESC>","`","a"]
 		},
 		{
 			"before": ["K"],
 			"after": ["m","a","O","<ESC>","`","a"]
-		},
+		}
 	],
 	"files.trimTrailingWhitespace": true,
 	"editor.cursorStyle": "block",
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
-	"workbench.iconTheme": "eq-material-theme-icons-ocean",
-	"editor.roundedSelection": false,
+	"workbench.iconTheme": "eq-material-theme-icons-palenight",
+	"editor.roundedSelection": false
 }

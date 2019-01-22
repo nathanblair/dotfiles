@@ -105,13 +105,5 @@
 		"key": "f5",
 		"command": "workbench.action.tasks.runTask",
 		"args": "compile and run"
-	},
-	{
-		"key": "ctrl+shift+j",
-		"command": "workbench.view.explorer"
-	},
-	{
-		"key": "ctrl+shift+e",
-		"command": "-workbench.view.explorer"
 	}
 ]
