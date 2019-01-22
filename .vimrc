@@ -10,8 +10,6 @@ set wildmenu
 set signcolumn=yes
 set encoding=utf8
 set background=dark
-set nowrap
-"set cursorline
 set noswapfile
 set nobackup
 set shortmess=WIcF
@@ -20,6 +18,7 @@ set nohlsearch
 set wildcharm=<C-z>
 
 " Viewing and getting around
+set numberwidth=1
 set cmdheight=2
 set previewheight=6
 set sidescroll=1
@@ -32,6 +31,7 @@ set foldmethod=syntax
 set foldlevel=20
 set foldlevelstart=20
 set colorcolumn=80
+set nowrap
 set t_Co=256
 
 " Tabbing and indentation
@@ -51,6 +51,7 @@ set makeprg=meson\ build
 
 " Don't wrap if in preview window
 " TODO
+" autocmd BufAdd * if &previewwindow | setlocal wrap | echom Hello! endif
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
@@ -107,6 +108,10 @@ nnoremap <silent> q <Nop>
 " Edit vim config file
 nnoremap <silent> <Leader>vim :e! ~/.vimrc<CR>
 
+" Move using visual lines
+"nnoremap <silent> j gj
+"nnoremap <silent> k gk
+
 " Source file
 nnoremap <silent> <Leader>r :source ~/.vimrc<CR>
 
@@ -114,9 +119,17 @@ nnoremap <silent> <Leader>r :source ~/.vimrc<CR>
 nnoremap ; za
 map <Space> \
 
+" Sizing vim windows
+nnoremap = <C-w>+
+nnoremap + <C-w>_
+nnoremap - <C-w>-
+
 " Write buffer to filesystem
 nnoremap <silent> <Leader>w :silent w<CR>
 nnoremap <silent> <Leader>Q :qa<CR>
+
+" Toggle wrap
+nnoremap <silent> <Leader>z :set wrap!<CR>
 
 " Substitute
 nnoremap <Leader>s :%s/
@@ -171,6 +184,7 @@ nnoremap <silent> <Leader>g :SignifyToggle<CR>
 nnoremap <silent> <F4> :FSHere<CR>
 
 " LSP Diagnostics
+nnoremap <Leader>i :<C-u>Denite coc-diagnostic<CR>
 nnoremap <silent> [c <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]c <Plug>(coc-diagnostic-next)
 
@@ -186,7 +200,7 @@ call denite#custom#option('default', 'mode', 'normal')
 
 " LSP Autocompletion
 "inoremap <C-Space> <ESC>
-inoremap <silent> <expr><c-space> coc#refresh()
+"inoremap <silent> <expr><c-space> coc#refresh()
 inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 
 " LSP Snippets
@@ -204,7 +218,6 @@ nmap <Leader>cn <Plug>(coc-rename)
 
 " LSP CodeAction
 nmap <Leader>a <Plug>(coc-codeaction)
-nnoremap <Leader>i :<C-u>Denite coc-diagnostic<CR>
 nnoremap <Leader>t :<C-u>Denite coc-symbols<CR>
 nnoremap <Leader>x :<C-u>Denite coc-extension<CR>
 
