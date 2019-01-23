@@ -18,8 +18,6 @@ set nohlsearch
 set wildcharm=<C-z>
 
 " Viewing and getting around
-set numberwidth=1
-set cmdheight=2
 set previewheight=6
 set sidescroll=1
 set sidescrolloff=5
@@ -42,7 +40,9 @@ set softtabstop=2
 set backspace=indent,eol,start
 
 " Project Management
-autocmd BufEnter * call s:CDToGitRoot()
+if !has("win32")
+  autocmd BufEnter * call s:CDToGitRoot()
+endif
 "autocmd BufWritePost * call s:GetGitDiffNumstat()
 let g:projectName=fnamemodify(getcwd(), ":t")
 
@@ -197,6 +197,8 @@ nnoremap <Leader>b :Denite file<CR>
 call denite#custom#option('default', 'winheight', 6)
 call denite#custom#option('default', 'auto-resize', 'true')
 call denite#custom#option('default', 'mode', 'normal')
+call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
 
 " LSP Autocompletion
 "inoremap <silent> <expr><c-space> coc#refresh()
