@@ -50,8 +50,7 @@ let g:projectName=fnamemodify(getcwd(), ":t")
 set makeprg=meson\ build
 
 " Don't wrap if in preview window
-" TODO
-" autocmd BufAdd * if &previewwindow | setlocal wrap | echom Hello! endif
+autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
@@ -118,6 +117,7 @@ nnoremap <silent> <Leader>r :source ~/.vimrc<CR>
 " Folding and leader remaps
 nnoremap ; za
 map <Space> \
+"inoremap <C-Space> <ESC>
 
 " Sizing vim windows
 nnoremap = <C-w>+
@@ -199,7 +199,6 @@ call denite#custom#option('default', 'auto-resize', 'true')
 call denite#custom#option('default', 'mode', 'normal')
 
 " LSP Autocompletion
-"inoremap <C-Space> <ESC>
 "inoremap <silent> <expr><c-space> coc#refresh()
 inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 
