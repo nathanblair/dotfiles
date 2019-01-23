@@ -34,5 +34,3 @@ alias glgp='git log --graph --patch'
 # Tree command should always show directories first
 alias tree='tree --dirsfirst --noreport'
 
-# Hub alias
-alias git=hub
