@@ -7,10 +7,6 @@
       "filetypes": ["cpp", "c"]
     }
   },
-  "coc.preferences.preferCompleteThanJumpPlaceholder": true,
-  "coc.preferences.useQuickfixForLocations":true,
-  "coc.preferences.timeout":500,
-  "coc.preferences.hoverTarget": "echo"
-
+  "coc.preferences.preferCompleteThanJumpPlaceholder": true
 }
 
