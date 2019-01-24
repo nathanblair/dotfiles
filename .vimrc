@@ -12,12 +12,13 @@ set encoding=utf8
 set background=dark
 set noswapfile
 set nobackup
-set shortmess=WIcF
+set shortmess=WIcFT
 set updatetime=1000
 set nohlsearch
 set wildcharm=<C-z>
 
 " Viewing and getting around
+set cmdheight=2
 set previewheight=6
 set sidescroll=1
 set sidescrolloff=5
@@ -64,7 +65,6 @@ endif
 
 call plug#begin('~/.vim/bundle')
     Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
-    Plug 'shougo/denite.nvim'
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
@@ -85,18 +85,21 @@ let g:signify_disable_by_default=0
 set termguicolors
 color dracula
 
-
 " -------------------------------------------------------------"
 " Language Server Protocol settings                         LS
 " -------------------------------------------------------------"
 " Completion
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+"autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+set keywordprg=:call\ <SID>show_documentation()
 
 " Documentation
-autocmd! User CocJumpPlaceholder call CocActionAsync('doHover')
-"autocmd! CursorHold * call CocActionAsync('showSignatureHelp')
-"autocmd! CursorHold * call CocActionAsync('showSignatureHelp')
-autocmd CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
+autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+autocmd! User CocLocationsChange CocList --normal -A location
+autocmd! CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
+
+" LSP Snippets
+let g:coc_snippet_next='<TAB>'
+let g:coc_snippet_prev='<S-TAB>'
 
 " -------------------------------------------------------------"
 " keymaps                                                   KM
@@ -173,7 +176,6 @@ noremap <Leader>e :e **/*
 nnoremap <C-b> :make<CR>
 nnoremap <F4> :!ninja -C build<CR>
 
-
 " -------------------------------------------------------------"
 " vim-plug keymaps                                          PK
 " -------------------------------------------------------------"
@@ -184,33 +186,19 @@ nnoremap <silent> <Leader>g :SignifyToggle<CR>
 nnoremap <silent> <F4> :FSHere<CR>
 
 " LSP Diagnostics
-nnoremap <Leader>i :<C-u>Denite coc-diagnostic<CR>
+nnoremap <Leader>i :<C-u>CocList --normal --no-sort diagnostics<CR>
 nnoremap <silent> [c <Plug>(coc-diagnostic-prev)
 nnoremap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" Denite
-nnoremap <C-Space> :Denite <C-z>
-nnoremap <C-p> :Denite file/old -mode='insert'<CR>
-nnoremap <C-o> :Denite outline<CR>
-nnoremap <Leader><Tab> :Denite buffer<CR>
-nnoremap <Leader>b :Denite file<CR>
-call denite#custom#option('default', 'winheight', 6)
-call denite#custom#option('default', 'auto-resize', 'true')
-call denite#custom#option('default', 'mode', 'normal')
-call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-
 " LSP Autocompletion
-"inoremap <silent> <expr><c-space> coc#refresh()
+inoremap <silent> <expr><c-space> coc#refresh()
 inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
-
-" LSP Snippets
-let g:coc_snippet_next='<TAB>'
-let g:coc_snippet_prev='<S-TAB>'
+"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " LSP Gotos
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-defintion)
+nmap <silent> gt <Plug>(coc-type-defintion)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
@@ -219,8 +207,8 @@ nmap <Leader>cn <Plug>(coc-rename)
 
 " LSP CodeAction
 nmap <Leader>a <Plug>(coc-codeaction)
-nnoremap <Leader>t :<C-u>Denite coc-symbols<CR>
-nnoremap <Leader>x :<C-u>Denite coc-extension<CR>
+nnoremap <Leader>t :<C-u>CocList --normal --no-sort symbols<CR>
+nnoremap <Leader>x :<C-u>CocList --normal --no-sort extensions<CR>
 
 " LSP Documentation
 nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
