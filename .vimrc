@@ -41,7 +41,7 @@ set softtabstop=2
 set backspace=indent,eol,start
 
 " Project Management
-if !has("win32")
+if (system('uname -o') !~ 'Msys')
   autocmd BufEnter * call s:CDToGitRoot()
 endif
 "autocmd BufWritePost * call s:GetGitDiffNumstat()
@@ -93,9 +93,9 @@ color dracula
 set keywordprg=:call\ <SID>show_documentation()
 
 " Documentation
-autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+"autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 autocmd! User CocLocationsChange CocList --normal -A location
-autocmd! CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
+"autocmd! CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
 
 " LSP Snippets
 let g:coc_snippet_next='<TAB>'
