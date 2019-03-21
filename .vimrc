@@ -29,15 +29,15 @@ set ttimeoutlen=10
 set foldmethod=syntax
 set foldlevel=20
 set foldlevelstart=20
-set colorcolumn=80
+set colorcolumn=79
 set nowrap
 set t_Co=256
 
 " Tabbing and indentation
 set expandtab
 set tabstop=4
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set backspace=indent,eol,start
 
 " Project Management
@@ -173,8 +173,8 @@ nnoremap <silent> <Up> <C-y>
 noremap <Leader>e :e **/*
 
 " Make system
-nnoremap <C-b> :make<CR>
-nnoremap <F4> :!ninja -C build<CR>
+" nnoremap <C-b> :make<CR>
+nnoremap <F3> :!ninja -C build<CR>
 
 " -------------------------------------------------------------"
 " vim-plug keymaps                                          PK
@@ -226,8 +226,6 @@ set statusline+=%(\ %{PrettyPrintCurrentDirectory()}%)
 set statusline+=%(\ \|\ %{PrettyPrintCurrentFilePath()}%)
 " TODO
 " Show git status
-"set statusline+=%#keyword#
-"set statusline+=%(\ [%{toupper(&filetype)}]%)
 "set statusline+=\%#rubyfunction#
 "set statusline+=%(\ \ %{b:git_branch}%)
 set statusline+=%#modemsg#
@@ -235,13 +233,15 @@ set statusline+=\ %(%m%r%w\ %)
 set statusline+=%{ChangeStatuslineColor()}
 set statusline+=%#statusline#
 set statusline+=%=
-"set statusline+=\ %#rubyinstancevariable#
+set statusline+=%#keyword#
+set statusline+=%(\ [%{toupper(&filetype)}]%)
+set statusline+=\%#rubyinstancevariable#
 "set statusline+=%(\ %{toupper(&fileencoding)}%)
-"set statusline+=\ <%{&fileformat}>
+set statusline+=\ <%{&fileformat}>
 "set statusline+=\%#string#
 "set statusline+=\ %{PrintIndentStyle()}
-"set statusline+=\%#rubyfunction#
-"set statusline+=\ col:%v
+set statusline+=\%#rubyfunction#
+set statusline+=\ col:%v
 set statusline+=\%#normal#
 set statusline+=%(\%{GetFileSize()}%)
 set statusline+=\ %*

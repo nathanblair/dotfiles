@@ -7,7 +7,7 @@ alias cp='cp -vi'
 alias ln='ln -vi'
 
 # File listing
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls --color=auto --group-directories-first -v'
 alias l='ls -h1'
 alias ll='ls -lh'
 alias la='ls -Ah1'

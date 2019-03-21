@@ -11,7 +11,7 @@
 	"editor.smoothScrolling": false,
 	"window.restoreWindows": "folders",
 	"files.insertFinalNewline": true,
-	"window.zoomLevel": 1.5,
+	"window.zoomLevel": 3,
 	"editor.minimap.enabled": false,
 	"workbench.colorCustomizations": {
 	},
@@ -23,7 +23,7 @@
 	"zenMode.hideStatusBar": false,
 	"zenMode.hideTabs": false,
 	"vim.useSystemClipboard": true,
-	"workbench.colorTheme": "Material Theme Darker High Contrast",
+	"workbench.colorTheme": "Dracula At Night",
 	"vim.disableExtension": false,
 	"editor.wordWrap": "off",
 	"editor.wordWrapColumn": 80,
@@ -60,6 +60,17 @@
 	"editor.cursorStyle": "block",
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
-	"workbench.iconTheme": "eq-material-theme-icons-darker",
-	"editor.roundedSelection": false
+	"workbench.iconTheme": "material-icon-theme",
+	"editor.roundedSelection": false,
+	"vim.foldfix": true,
+	"git.autofetch": true,
+	"git.decorations.enabled": false,
+	"editor.codeLens": false,
+	"editor.showFoldingControls": "always",
+	"workbench.statusBar.feedback.visible": false,
+	"workbench.editor.enablePreview": false,
+	"workbench.settings.enableNaturalLanguageSearch": false,
+	"update.enableWindowsBackgroundUpdates": false,
+	"telemetry.enableCrashReporter": false,
+	"telemetry.enableTelemetry": false
 }

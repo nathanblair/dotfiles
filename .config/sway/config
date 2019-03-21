@@ -70,19 +70,19 @@ exec swayidle \
 # Example configuration:
 #
    input "2:7:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
+       dwt enabled
+       #tap enabled
        natural_scroll enabled
        middle_emulation enabled
    }
 
-   #input "2:10:TPPS/2_IBM_Trackpoint" {
-#       dwt enabled
-#       tap enabled
+   input "2:10:TPPS/2_IBM_Trackpoint" {
+       #dwt enabled
+       #tap enabled
        #natural_scroll enabled
        #middle_emulation enabled
-   #}
-   #
+   }
+
     input "1:1:AT_Translated_Set_2_keyboard" {
         repeat_rate 40
         repeat_delay 200
@@ -197,7 +197,8 @@ exec swayidle \
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-    # assign [class="vim"] $ws2
+#    assign [title="nvim"] $ws2
+#    assign [title=$web] $ws2
 #
 # Layout stuff:
 #
