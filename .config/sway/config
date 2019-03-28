@@ -4,6 +4,8 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+#xwayland disable
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -102,7 +104,7 @@ exec swayidle \
     bindsym $mod+s exec $locker
 
     # start a web browser
-    #bindsym $mod+w exec $web
+    bindsym $mod+w exec $web
 
     # kill focused window
     bindsym $mod+q kill
@@ -141,10 +143,8 @@ exec swayidle \
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
     # or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+    #bindsym $mod+Left workspace previous
+    #bindsym $mod+Right workspace next
 
     # _move_ the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
@@ -268,7 +268,23 @@ bindsym $mod+r mode "resize"
 bar {
     position top
     font DejaVu Sans, FontAwesome5Free
+    status_command i3blocks -c ~/.config/i3blocks/top-config
+
+#    strip_workspace_name no
 #
+    colors {
+        statusline #ffffff
+        background #151515
+        focused_workspace #151515 #151515 #339922
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+
+bar {
+    position bottom
+    font DejaVu Sans, FontAwesome5Free
+#
+    workspace_buttons no
     status_command i3blocks -c ~/.config/i3blocks/config
 #    strip_workspace_name no
 #
