@@ -1,0 +1,36 @@
+{
+    "layer": "top",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": [
+        "network",
+        "custom/volume",
+        "backlight",
+        "battery", "battery#bat2",
+        "clock"
+    ],
+    "sway/window": {
+        "max-length": 50
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)"
+    },
+    "custom/volume": {
+
+    },
+    "backlight": {
+        "format": "{percent}% "
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT1",
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%a %D %I:%M %P}"
+    }
+}

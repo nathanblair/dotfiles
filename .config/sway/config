@@ -23,7 +23,7 @@ set $web qutebrowser
 set $menu rofi -show drun -show-icons -theme Monokai
 
 # The system background image
-set $bg ~/Pictures/wallpaper.jpg
+set $bg ~/Pictures/wallpaper2.jpg
 #
 # Your preferred screen locker
 set $locker swaylock -i $bg
@@ -161,9 +161,9 @@ exec swayidle \
 #
 #
 # Workspace names
-    set $ws1 1: >_
+    set $ws1 1: 
     set $ws2 2: </>
-    set $ws3 3: 
+    set $ws3 3: >_
     set $ws4 4: >_
     set $ws5 5: >_
     set $ws6 6: >_
@@ -266,34 +266,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-    font DejaVu Sans, FontAwesome5Free
-    status_command i3blocks -c ~/.config/i3blocks/top-config
-
-#    strip_workspace_name no
-#
-    colors {
-        statusline #ffffff
-        background #151515
-        focused_workspace #151515 #151515 #339922
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
-
-bar {
-    position bottom
-    font DejaVu Sans, FontAwesome5Free
-#
-    workspace_buttons no
-    status_command i3blocks -c ~/.config/i3blocks/config
-#    strip_workspace_name no
-#
-    colors {
-        statusline #ffffff
-        background #151515
-        focused_workspace #151515 #151515 #339922
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
