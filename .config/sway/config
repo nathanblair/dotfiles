@@ -19,17 +19,21 @@ set $right l
 set $term termite
 # Your preferred web browser
 set $web qutebrowser
-# Your preferred screen locker
-set $locker swaylock -c 222222
 # Your preferred application launcher
 set $menu rofi -show drun -show-icons -theme Monokai
+
+# The system background image
+set $bg ~/Pictures/wallpaper.jpg
+#
+# Your preferred screen locker
+set $locker swaylock -i $bg
 
 # Note: it's recommended that you pass the final command to sway
 # Client colors
 #   <client class> <border> <background> <text> <indicator> <child_border>
 client.unfocused #000000 #000000 #000000 #000000 #000000
 client.focused_inactive #000000 #000000 #000000 #000000 #000000
-client.focused #000000 #000000 #000000 #ffffff #555555
+client.focused #000000 #000000 #000000 #ffffff #229933
 default_border pixel 1
 
 smart_borders no_gaps
@@ -39,11 +43,7 @@ gaps inner 10
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/archlinux.png fill
-#output * bg /usr/share/backgrounds/sway/linux.jpg fill
-#output * bg /usr/share/backgrounds/sway/allstartshere.jpg fill
-#output * bg /usr/share/backgrounds/sway/babygnulinux.jpg fill
-output * bg /usr/share/backgrounds/sway/eso.jpg fill
+output * bg $bg fill
 #
 # Example configuration:
 #
@@ -59,9 +59,9 @@ output * bg /usr/share/backgrounds/sway/eso.jpg fill
 exec swayidle \
     timeout 300 'swaymsg "output * dpms off"' \
        resume 'swaymsg "output * dpms on"' \
-    timeout 360 'swaylock -c 010101' \
+    timeout 360 'swaylock -f -i $bg' \
     timeout 600 'systemctl suspend' \
-    before-sleep 'swaylock -c 010101'
+    before-sleep 'swaylock -f -i $bg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when

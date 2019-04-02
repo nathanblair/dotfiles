@@ -28,7 +28,8 @@ set splitright
 set ttimeoutlen=10
 set foldmethod=syntax
 set foldlevel=20
-set foldlevelstart=20
+set foldlevelstart=1
+set foldnestmax=2
 set colorcolumn=79
 set nowrap
 set t_Co=256
@@ -53,6 +54,10 @@ set makeprg=meson\ build
 " Don't wrap if in preview window
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 
+" Python-specific settings
+autocmd FileType python,vim setlocal foldmethod=indent
+
+
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
 " -------------------------------------------------------------"
@@ -65,6 +70,7 @@ endif
 
 call plug#begin('~/.vim/bundle')
     Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
+    Plug 'scrooloose/nerdtree'
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
@@ -80,6 +86,12 @@ call plug#end()
 " Signify
 let g:signify_vcs_list=['git']
 let g:signify_disable_by_default=0
+
+" NERDTree
+let g:NERDTreeSortHiddenFirst=1
+let g:NERDTreeChDirMode=2
+let g:NERDTreeHijackNetrw=1
+let g:NERDTreeMinimalUI=1
 
 " Color scheme
 set termguicolors
@@ -126,6 +138,8 @@ map <Space> \
 nnoremap = <C-w>+
 nnoremap + <C-w>_
 nnoremap - <C-w>-
+nnoremap <A-.> <C-w>>
+nnoremap <A-,> <C-w><
 
 " Write buffer to filesystem
 nnoremap <silent> <Leader>w :silent w<CR>
@@ -181,6 +195,9 @@ nnoremap <F3> :!ninja -C build<CR>
 " -------------------------------------------------------------"
 " Vim-Signify
 nnoremap <silent> <Leader>g :SignifyToggle<CR>
+
+" NERDTree
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " FSwitch
 nnoremap <silent> <F4> :FSHere<CR>
