@@ -4,33 +4,45 @@
     "modules-center": ["sway/window"],
     "modules-right": [
         "network",
-        "custom/volume",
         "backlight",
-        "battery", "battery#bat2",
+        "custom/volume",
+        "custom/battery",
+        "custom/battery#2",
         "clock"
     ],
     "sway/window": {
-        "max-length": 50
+        "max-length": 50,
+        "tooltip": false
     },
     "network": {
-        "format-wifi": " {essid} ({signalStrength}%)"
+        "format-wifi": " {essid} - {signalStrength}%",
+        "tooltip": false
     },
     "custom/volume": {
-
+        "exec": "volume",
+        "signal": 10,
+        "interval": 60,
+        "format": "{}",
+        "tooltip": false
     },
     "backlight": {
-        "format": "{percent}% "
+        "format": "{percent} ",
+        "tooltip": false
     },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+    "custom/battery": {
+        "exec": "battery 0 1 1 1",
+        "interval": 60,
+        "tooltip": false,
+        "format": "{}"
     },
-    "battery#bat2": {
-        "bat": "BAT1",
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+    "custom/battery#2": {
+        "exec": "battery 1 1 1 1",
+        "interval": 60,
+        "tooltip": false,
+        "format": "{}"
     },
     "clock": {
-        "format": "{:%a %D %I:%M %P}"
+        "format": "{:%a %D %I:%M %P}",
+        "tooltip": false
     }
 }

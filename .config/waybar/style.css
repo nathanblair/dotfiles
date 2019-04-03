@@ -4,7 +4,7 @@
 }
 
 window#waybar {
-    background-color: #282a36;
+    background-color: transparent;
     color: #f8f8f2;
 }
 
@@ -39,17 +39,42 @@ window#waybar {
     border-bottom: 3px solid #ff5555;
 }
 
+#custom-battery {
+    padding: 0 6px;
+    margin: 0 6px;
+}
+
+#custom-battery.FULL {
+    border-bottom: 3px solid #50fa7b;
+}
+
+#custom-battery.DIS {
+    border-bottom: 3px solid #f1fa8c;
+}
+
+#custom-battery.CHR {
+    border-bottom: 3px solid #ffb86c;
+}
+
+#custom-battery.CRI {
+    border-bottom: 3px solid #ff5555;
+}
+
 #cpu {
     color: #000000;
     border-bottom: 3px solid #8be9fd;
 }
 
 #backlight {
-    border-bottom: 3px solid #f1fa8c;
+    border-bottom: 3px solid #bd93f9;
 }
 
 #network {
     border-bottom: 3px solid #8be9fd;
+}
+
+#custom-volume {
+    border-bottom: 3px solid #ff5555;
 }
 
 #memory {
