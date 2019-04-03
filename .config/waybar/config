@@ -1,7 +1,6 @@
 {
     "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
     "modules-right": [
         "network",
         "backlight",
@@ -26,7 +25,7 @@
         "tooltip": false
     },
     "backlight": {
-        "format": "{percent} ",
+        "format": " {percent}",
         "tooltip": false
     },
     "custom/battery": {
