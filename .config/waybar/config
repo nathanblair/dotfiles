@@ -14,7 +14,7 @@
         "tooltip": false
     },
     "network": {
-        "format-wifi": " {essid} - {signalStrength}%",
+        "format-wifi": " {essid} - {signalStrength}",
         "tooltip": false
     },
     "custom/volume": {

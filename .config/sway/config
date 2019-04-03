@@ -23,7 +23,7 @@ set $web qutebrowser
 set $menu rofi -show drun -show-icons -theme Monokai
 
 # The system background image
-set $bg ~/Pictures/wallpaper2.jpg
+set $bg ~/Pictures/wallpaper.jpg
 #
 # Your preferred screen locker
 set $locker swaylock -i $bg

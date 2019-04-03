@@ -16,7 +16,6 @@ window#waybar {
 }
 
 #workspaces button.focused, #mode {
-    background: #44475a;
     border-bottom: 3px solid #6272a4;
 }
 
@@ -27,7 +26,7 @@ window#waybar {
 }
 
 #clock {
-    border-bottom: 3px solid #44475a;
+    border-bottom: 3px solid #f8f8f2;
 }
 
 #battery.charging {
