@@ -1,13 +1,17 @@
 {
     "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": ["clock"],
     "modules-right": [
         "network",
         "backlight",
         "custom/volume",
+        "custom/memory",
+        "custom/home",
+        "custom/root",
+        "temperature",
         "custom/battery",
-        "custom/battery#2",
-        "clock"
+        "custom/battery#2"
     ],
     "sway/window": {
         "max-length": 50,
@@ -15,6 +19,27 @@
     },
     "network": {
         "format-wifi": " {essid} - {signalStrength}",
+        "tooltip": false
+    },
+    "custom/memory": {
+        "exec": "echo  $(free -h --si | grep Mem: | awk -F ' ' '{ print $7 }')",
+        "signal": 10,
+        "interval": 60,
+        "format": "{}",
+        "tooltip": false
+    },
+    "custom/home": {
+        "exec": "echo  $(df -h ~ | awk -F ' ' 'FNR==2{print $4}')",
+        "signal": 10,
+        "interval": 60,
+        "format": "{}",
+        "tooltip": false
+    },
+    "custom/root": {
+        "exec": "echo  $(df -h / | awk -F ' ' 'FNR==2{print $4}')",
+        "signal": 10,
+        "interval": 60,
+        "format": "{}",
         "tooltip": false
     },
     "custom/volume": {
@@ -38,6 +63,10 @@
         "exec": "battery 1 1 1 1",
         "interval": 60,
         "tooltip": false,
+        "format": "{}"
+    },
+    "custom/system": {
+        "exec": "echo $(whoami) @ $(hostname)",
         "format": "{}"
     },
     "clock": {

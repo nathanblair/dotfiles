@@ -38,7 +38,8 @@ window#waybar {
     border-bottom: 3px solid #ff5555;
 }
 
-#custom-battery {
+#custom-battery, #custom-memory, #custom-home, #custom-root {
+    border-bottom: 3px solid #f8f8f2;
     padding: 0 6px;
     margin: 0 6px;
 }
