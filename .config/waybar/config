@@ -6,10 +6,6 @@
         "network",
         "backlight",
         "custom/volume",
-        "custom/memory",
-        "custom/home",
-        "custom/root",
-        "temperature",
         "custom/battery",
         "custom/battery#2"
     ],
