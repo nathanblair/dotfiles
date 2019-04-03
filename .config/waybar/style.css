@@ -1,0 +1,88 @@
+* {
+    font-family: Ubuntu;
+    font-size: 18px;
+}
+
+window#waybar {
+    background-color: #282a36;
+    color: #f8f8f2;
+}
+
+#workspaces button {
+    color: #f8f8f2;
+    padding: 0 8px;
+    margin: 0 6px;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused, #mode {
+    background: #44475a;
+    border-bottom: 3px solid #6272a4;
+}
+
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor {
+    padding: 0 6px;
+    margin: 0 6px;
+    border-bottom: 3px solid #50fa7b;
+}
+
+#clock {
+    border-bottom: 3px solid #44475a;
+}
+
+#battery.charging {
+    border-bottom: 3px solid #ffb86c;
+}
+
+#battery.critical:not(.charging) {
+    color: #ffffff;
+    border-bottom: 3px solid #ff5555;
+}
+
+#cpu {
+    color: #000000;
+    border-bottom: 3px solid #8be9fd;
+}
+
+#backlight {
+    border-bottom: 3px solid #f1fa8c;
+}
+
+#network {
+    border-bottom: 3px solid #8be9fd;
+}
+
+#memory {
+    border-bottom: 3px solid #bd93f9;
+}
+
+#pulseaudio {
+    border-bottom: 3px solid #50fa7b;
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    border-bottom: 3px solid #6272a4;
+    color: #2a5c45;
+}
+
+#custom-spotify {
+    border-bottom: 3px solid #66cc99;
+    color: #2a5c45;
+}
+
+#temperature {
+    border-bottom: 3px solid #44475a;
+}
+
+#temperature.critical {
+    border-bottom: 3px solid #ff5555;
+}
+
+#tray {
+    background-color: #44475a;
+}
+
+#idle_inhibitor.activated {
+    border-bottom: 3px solid #f8f8f2;
+}
