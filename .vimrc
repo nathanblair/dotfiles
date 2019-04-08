@@ -71,9 +71,9 @@ endif
 call plug#begin('~/.vim/bundle')
     Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
     Plug 'scrooloose/nerdtree'
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
@@ -142,7 +142,7 @@ nnoremap <A-.> <C-w>>
 nnoremap <A-,> <C-w><
 
 " Write buffer to filesystem
-nnoremap <silent> <Leader>w :silent w<CR>
+nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>Q :qa<CR>
 
 " Toggle wrap
