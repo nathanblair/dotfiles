@@ -3,6 +3,7 @@
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": ["clock"],
     "modules-right": [
+        "custom/media",
         "network",
         "backlight",
         "custom/volume",
@@ -11,6 +12,12 @@
     ],
     "sway/window": {
         "max-length": 50,
+        "tooltip": false
+    },
+    "custom/media": {
+        "interval": 30,
+        "exec": "echo  $(playerctl metadata artist) - $(playerctl metadata title)",
+        "exec-if": "playerctl status",
         "tooltip": false
     },
     "network": {
@@ -63,7 +70,8 @@
     },
     "custom/system": {
         "exec": "echo $(whoami) @ $(hostname)",
-        "format": "{}"
+        "format": "{}",
+        "tooltip": false
     },
     "clock": {
         "format": "{:%a %D %I:%M %P}",

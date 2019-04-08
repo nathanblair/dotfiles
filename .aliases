@@ -7,7 +7,7 @@ alias cp='cp -vi'
 alias ln='ln -vi'
 
 # File listing
-alias ls='ls --color=auto --group-directories-first -v'
+alias ls='ls --color=auto --group-directories-first -vX'
 alias l='ls -h1'
 alias ll='ls -lh'
 alias la='ls -Ah1'
@@ -16,6 +16,10 @@ alias dir='dir --color=auto'
 
 # CLI application launching
 alias tmux='tmux -2'
+
+# Disk usage
+alias dfh='df -h ~'
+alias dfr='df -h /'
 
 # Git alias commands
 alias gd='git diff'

@@ -73,6 +73,10 @@ window#waybar {
     border-bottom: 3px solid #8be9fd;
 }
 
+#custom-media {
+    border-bottom: 3px solid #6272a4;
+}
+
 #custom-volume {
     border-bottom: 3px solid #ff5555;
 }
