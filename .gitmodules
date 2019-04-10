@@ -1,6 +1,0 @@
-[submodule "repos/statusline-scripts"]
-	path = repos/statusline-scripts
-	url = https://github.com/nathanblair/statusline-scripts
-[submodule "repos/bin-utils"]
-	path = repos/bin-utils
-	url = https://github.com/nathanblair/bin-utils
