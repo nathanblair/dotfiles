@@ -4,7 +4,7 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-#xwayland disable
+xwayland disable
 
 ### Variables
 #
@@ -20,7 +20,7 @@ set $term termite
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher
-set $menu rofi -show drun -show-icons -theme Monokai
+set $menu j4-dmenu-desktop --dmenu='bemenu -ib -l 3 -p "" --nb "#222222" --nf "#ffffff" --fn "Hack 16"' --no-generic
 
 # The system background image
 set $bg ~/Pictures/wallpaper.jpg
@@ -56,7 +56,7 @@ output * bg $bg fill
 #
 # Example configuration:
 #
-exec swayidle \
+exec swayidle -w \
     timeout 300 'swaymsg "output * dpms off"' \
        resume 'swaymsg "output * dpms on"' \
     timeout 360 'swaylock -f -i $bg' \

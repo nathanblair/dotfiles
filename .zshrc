@@ -95,4 +95,9 @@ export LC_ALL=en_US.UTF-8
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
+export QT_QPA_PLATFORM=wayland
+export GDK_BACKEND=wayland
+export CLUTTER_BACKEND=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
