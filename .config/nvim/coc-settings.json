@@ -6,7 +6,6 @@
       "rootPatterns": ["compile_commands.json"],
       "filetypes": ["cpp", "c"]
     }
-  },
-  "coc.preferences.preferCompleteThanJumpPlaceholder": true
+  }
 }
 

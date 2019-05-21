@@ -18,7 +18,7 @@ set nohlsearch
 set wildcharm=<C-z>
 
 " Viewing and getting around
-set cmdheight=2
+set cmdheight=1
 set previewheight=6
 set sidescroll=1
 set sidescrolloff=5
@@ -36,9 +36,9 @@ set t_Co=256
 
 " Tabbing and indentation
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set backspace=indent,eol,start
 
 " Project Management
@@ -57,6 +57,9 @@ autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 " Python-specific settings
 autocmd FileType python,vim setlocal foldmethod=indent
 
+" Song files should be read as json
+autocmd BufRead *.song set filetype=json
+
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
@@ -71,12 +74,14 @@ endif
 call plug#begin('~/.vim/bundle')
     Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
     Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdcommenter'
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
+    Plug 'raimondi/delimitMate'
     Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
 call plug#end()
 
@@ -92,6 +97,11 @@ let g:NERDTreeSortHiddenFirst=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeMinimalUI=1
+
+" DelimitMate
+let delimitMate_expand_cr=1
+let delimitMate_expand_space=1
+let delimitMate_jump_expansion = 1
 
 " Color scheme
 set termguicolors
@@ -224,6 +234,7 @@ nmap <Leader>cn <Plug>(coc-rename)
 
 " LSP CodeAction
 nmap <Leader>a <Plug>(coc-codeaction)
+nnoremap <Leader>; :<C-u>CocList --normal --no-sort<CR>
 nnoremap <Leader>t :<C-u>CocList --normal --no-sort symbols<CR>
 nnoremap <Leader>x :<C-u>CocList --normal --no-sort extensions<CR>
 
@@ -258,7 +269,7 @@ set statusline+=\ <%{&fileformat}>
 "set statusline+=\%#string#
 "set statusline+=\ %{PrintIndentStyle()}
 set statusline+=\%#rubyfunction#
-set statusline+=\ col:%v
+"set statusline+=\ col:%v
 set statusline+=\%#normal#
 set statusline+=%(\%{GetFileSize()}%)
 set statusline+=\ %*

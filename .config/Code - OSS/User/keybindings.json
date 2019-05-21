@@ -103,7 +103,7 @@
 	},
 	{
 		"key": "f5",
-		"command": "workbench.action.tasks.runTask",
-		"args": "compile and run"
+		"command": "workbench.action.debug.start",
+		"when": "!inDebugMode"
 	}
 ]
