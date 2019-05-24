@@ -181,6 +181,7 @@ nnoremap <silent> <S-TAB> :bp!<CR>
 nnoremap <silent> <Leader>d :bp!\|bd #<CR>
 nnoremap <silent> <Leader>D :bd<CR>
 nnoremap <silent> <Leader>p :pc<CR>
+nnoremap <silent> <Leader>o :helpclose<CR>
 nnoremap <silent> <Leader>q :q<CR>
 
 " Move around windows
@@ -196,6 +197,9 @@ nnoremap <silent> <Up> <C-y>
 " Simple vim fuzzy search
 noremap <Leader>e :e **/*
 
+" Help shortcut
+nnoremap <C-h> :h 
+
 " Make system
 " nnoremap <C-b> :make<CR>
 nnoremap <F3> :!ninja -C build<CR>
@@ -204,7 +208,15 @@ nnoremap <F3> :!ninja -C build<CR>
 " vim-plug keymaps                                          PK
 " -------------------------------------------------------------"
 " Vim-Signify
-nnoremap <silent> <Leader>g :SignifyToggle<CR>
+nnoremap <silent> <Leader>- :SignifyToggle<CR>
+
+" Fugitive
+" Show git status window minimized
+nnoremap <silent> <Leader>gs :G<CR>8<C-w>_<C-w>p
+nnoremap <silent> <Leader>gh :bd .git/index<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+nnoremap <silent> <Leader>gu :Gpush<CR>
+nnoremap <silent> <Leader>gd :Gpull<CR>
 
 " NERDTree
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
@@ -251,6 +263,7 @@ vmap <silent> <Leader>f <Plug>(coc-format-selected)
 set statusline=
 set statusline+=%#type#
 set statusline+=%(\ %{PrettyPrintCurrentDirectory()}%)
+set statusline+=\%#normal#
 set statusline+=%(\ \|\ %{PrettyPrintCurrentFilePath()}%)
 " TODO
 " Show git status

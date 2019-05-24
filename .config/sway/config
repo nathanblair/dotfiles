@@ -166,7 +166,7 @@ exec swayidle -w \
     set $ws3 3: 
     set $ws4 4: 
     set $ws5 5: 
-    set $ws6 6: 
+    set $ws6 6: 
     set $ws7 7: 
     set $ws8 8: 
     set $ws9 9: 
@@ -197,8 +197,11 @@ exec swayidle -w \
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-#    assign [title="nvim"] $ws2
-#    assign [title=$web] $ws2
+    #assign [title="nvim"] $ws2
+    assign [title=$web] $ws3
+    assign [title="Chromium"] $ws3
+    assign [title="Slack"] $ws4
+    assign [title="gotop"] $ws6
 #
 # Layout stuff:
 #
