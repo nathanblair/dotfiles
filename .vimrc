@@ -216,8 +216,8 @@ nnoremap <silent> <Leader>gs :G<CR>8<C-w>_<C-w>p
 nnoremap <silent> <Leader>gh :bd .git/index<CR>
 nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gu :Gpush<CR>
-nnoremap <Leader>gd :Gpull<CR>
+nnoremap <Leader>gu :Git push<CR>
+nnoremap <Leader>gd :Git pull<CR>
 
 " NERDTree
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
