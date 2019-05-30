@@ -49,7 +49,7 @@ endif
 let g:projectName=fnamemodify(getcwd(), ":t")
 
 " Make system
-set makeprg=meson\ build
+set makeprg=ninja\ -C\ builds
 
 " Don't wrap if in preview window
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
@@ -200,10 +200,6 @@ noremap <Leader>e :e **/*
 " Help shortcut
 nnoremap <C-h> :h 
 
-" Make system
-" nnoremap <C-b> :make<CR>
-nnoremap <F3> :!ninja -C build<CR>
-
 " -------------------------------------------------------------"
 " vim-plug keymaps                                          PK
 " -------------------------------------------------------------"
@@ -216,6 +212,7 @@ nnoremap <silent> <Leader>gs :G<CR>8<C-w>_<C-w>p
 nnoremap <silent> <Leader>gh :bd .git/index<CR>
 nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
 nnoremap <Leader>gu :Git push<CR>
 nnoremap <Leader>gd :Git pull<CR>
 

@@ -33,7 +33,7 @@ set $locker swaylock -i $bg
 #   <client class> <border> <background> <text> <indicator> <child_border>
 client.unfocused #000000 #000000 #000000 #000000 #000000
 client.focused_inactive #000000 #000000 #000000 #000000 #000000
-client.focused #000000 #000000 #000000 #ffffff #229933
+client.focused #000000 #000000 #000000 #222222 #ffffff
 default_border pixel 1
 
 smart_borders no_gaps
@@ -166,8 +166,8 @@ exec swayidle -w \
     set $ws3 3: 
     set $ws4 4: 
     set $ws5 5: 
-    set $ws6 6: 
-    set $ws7 7: 
+    set $ws6 6: 
+    set $ws7 7: 
     set $ws8 8: 
     set $ws9 9: 
     set $ws10 10: 
@@ -201,7 +201,10 @@ exec swayidle -w \
     assign [title=$web] $ws3
     assign [title="Chromium"] $ws3
     assign [title="Slack"] $ws4
-    assign [title="gotop"] $ws6
+    assign [title="Spotify"] $ws5
+    assign [title="Zoom"] $ws6
+    assign [title="gotop"] $ws7
+
 #
 # Layout stuff:
 #
