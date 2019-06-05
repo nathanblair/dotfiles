@@ -18,6 +18,7 @@ set nohlsearch
 set wildcharm=<C-z>
 
 " Viewing and getting around
+set nostartofline
 set cmdheight=1
 set previewheight=6
 set sidescroll=1
@@ -26,7 +27,7 @@ set scrolloff=5
 set splitbelow
 set splitright
 set ttimeoutlen=10
-set foldmethod=syntax
+set foldmethod=manual
 set foldlevel=20
 set foldlevelstart=1
 set foldnestmax=2
@@ -40,6 +41,9 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set backspace=indent,eol,start
+
+" Folding and filetype specific settings
+let javaScript_fold=1
 
 " Project Management
 if (system('uname -o') !~ 'Msys')
@@ -56,10 +60,6 @@ autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 
 " Python-specific settings
 autocmd FileType python,vim setlocal foldmethod=indent
-
-" Song files should be read as json
-autocmd BufRead *.song set filetype=json
-
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP

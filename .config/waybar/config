@@ -1,19 +1,22 @@
 {
     "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    /*"modules-center": ["sway/window"],*/
     "modules-right": [
         "custom/media",
         "network",
+        "backlight",
+        "custom/volume",
         "custom/battery",
         "custom/battery#2",
         "clock"
     ],
     "sway/window": {
-        "max-length": 50,
+        "max-length": 30,
         "tooltip": false
     },
     "custom/media": {
+        "max-length": 30,
         "interval": 30,
         "exec": "echo  $(playerctl metadata artist) - $(playerctl metadata title)",
         "exec-if": "playerctl status",
