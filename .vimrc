@@ -27,7 +27,6 @@ set scrolloff=5
 set splitbelow
 set splitright
 set ttimeoutlen=10
-set foldmethod=manual
 set foldlevel=20
 set foldlevelstart=1
 set foldnestmax=2
@@ -73,13 +72,14 @@ endif
 
 call plug#begin('~/.vim/bundle')
     Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
+    Plug 'agude/vim-eldar'
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/nerdcommenter'
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
-    Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-fugitive'
+    Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-surround'
     Plug 'raimondi/delimitMate'
     Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
@@ -90,13 +90,16 @@ call plug#end()
 " -------------------------------------------------------------"
 " Signify
 let g:signify_vcs_list=['git']
-let g:signify_disable_by_default=0
+let g:signify_disable_by_default=1
 
 " NERDTree
 let g:NERDTreeSortHiddenFirst=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeMinimalUI=1
+
+" NERDCommenter
+let g:NERDCreateDefaultMappings=0
 
 " DelimitMate
 let delimitMate_expand_cr=1
@@ -106,6 +109,20 @@ let delimitMate_jump_expansion = 1
 " Color scheme
 set termguicolors
 color dracula
+
+" Restore some overriden colors
+highlight CocUnderLine cterm=underline gui=underline
+highlight link CocErrorSign Error
+highlight link CocWarningSign WarningMsg
+highlight link CocInfoSign Special
+highlight link CocHintSign NonText
+highlight link CocSelectedText Visual
+highlight link CocCodeLens LineNr
+
+highlight link CocErrorHighlight SpellBad
+highlight link CocWarningHighlight SpellLocal
+highlight link CocInfoHighlight SpellRare
+highlight link CocHintHighlight Conceal
 
 " -------------------------------------------------------------"
 " Language Server Protocol settings                         LS
@@ -219,13 +236,17 @@ nnoremap <Leader>gd :Git pull<CR>
 " NERDTree
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
+" NERDCommenter
+nnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
+vnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
+
 " FSwitch
 nnoremap <silent> <F4> :FSHere<CR>
 
 " LSP Diagnostics
 nnoremap <Leader>i :<C-u>CocList --normal --no-sort diagnostics<CR>
-nnoremap <silent> [c <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> <c <Plug>(coc-diagnostic-prev)
+nmap <silent> >c <Plug>(coc-diagnostic-next)
 
 " LSP Autocompletion
 inoremap <silent> <expr><c-space> coc#refresh()
@@ -249,7 +270,7 @@ nnoremap <Leader>t :<C-u>CocList --normal --no-sort symbols<CR>
 nnoremap <Leader>x :<C-u>CocList --normal --no-sort extensions<CR>
 
 " LSP Documentation
-nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
+"nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
 
 " LSP Format
 nmap <silent> <Leader>f <Plug>(coc-format)
@@ -273,10 +294,10 @@ set statusline+=%{ChangeStatuslineColor()}
 set statusline+=%#statusline#
 set statusline+=%=
 set statusline+=%#keyword#
-set statusline+=%(\ [%{toupper(&filetype)}]%)
-set statusline+=\%#rubyinstancevariable#
+set statusline+=%(\ [%{toupper(&filetype)}]\ %)
+set statusline+=\%#helpCommand#
 "set statusline+=%(\ %{toupper(&fileencoding)}%)
-set statusline+=\ <%{&fileformat}>
+set statusline+=\ %(<%{&fileformat}>\ %)
 "set statusline+=\%#string#
 "set statusline+=\ %{PrintIndentStyle()}
 set statusline+=\%#rubyfunction#
