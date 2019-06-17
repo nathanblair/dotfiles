@@ -27,6 +27,7 @@ set scrolloff=5
 set splitbelow
 set splitright
 set ttimeoutlen=10
+set foldmethod=syntax
 set foldlevel=20
 set foldlevelstart=1
 set foldnestmax=2
@@ -58,7 +59,7 @@ set makeprg=ninja\ -C\ builds
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 
 " Python-specific settings
-autocmd FileType python,vim setlocal foldmethod=indent
+"autocmd FileType python,vim setlocal foldmethod=indent
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
@@ -71,8 +72,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-    Plug 'nathanblair/vim-dracula-theme', {'as': 'vim-dracula-theme'}
-    Plug 'agude/vim-eldar'
+    Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/nerdcommenter'
     Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
@@ -81,8 +81,9 @@ call plug#begin('~/.vim/bundle')
     Plug 'tpope/vim-fugitive'
     Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-surround'
-    Plug 'raimondi/delimitMate'
+    "Plug 'raimondi/delimitMate'
     Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
+    "Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " -------------------------------------------------------------"
@@ -108,6 +109,12 @@ let delimitMate_jump_expansion = 1
 
 " Color scheme
 set termguicolors
+augroup colorscheme_customization
+  autocmd ColorScheme dracula highlight Normal ctermbg=244 guibg=#050506 
+  autocmd ColorScheme dracula highlight DraculaBgDark ctermbg=244 guibg=#172030 
+  autocmd ColorScheme dracula highlight DraculaBgDarker ctermbg=244 guibg=#101220
+  autocmd ColorScheme dracula highlight DraculaTodo cterm=bold ctermfg=cyan gui=bold guifg=cyan guibg=none
+augroup END
 color dracula
 
 " Restore some overriden colors
@@ -270,7 +277,7 @@ nnoremap <Leader>t :<C-u>CocList --normal --no-sort symbols<CR>
 nnoremap <Leader>x :<C-u>CocList --normal --no-sort extensions<CR>
 
 " LSP Documentation
-"nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
+nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
 
 " LSP Format
 nmap <silent> <Leader>f <Plug>(coc-format)

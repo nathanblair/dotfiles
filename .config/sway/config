@@ -197,8 +197,6 @@ exec swayidle -w \
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-    #assign [title="nvim"] $ws2
-    assign [title=$web] $ws3
     assign [title="Chromium"] $ws3
     assign [title="Slack"] $ws4
     assign [title="Spotify"] $ws5
