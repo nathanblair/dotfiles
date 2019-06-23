@@ -72,5 +72,6 @@
 	"workbench.settings.enableNaturalLanguageSearch": false,
 	"update.enableWindowsBackgroundUpdates": false,
 	"telemetry.enableCrashReporter": false,
-	"telemetry.enableTelemetry": false
+	"telemetry.enableTelemetry": false,
+	"java.configuration.checkProjectSettingsExclusions": false
 }

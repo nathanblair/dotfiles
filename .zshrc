@@ -86,6 +86,8 @@ else
     SPACESHIP_GIT_BRANCH_PREFIX=√\ 
 fi
 
+source ~/.profile
+
 export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
 export CC=$(which clang)

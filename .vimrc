@@ -27,7 +27,7 @@ set scrolloff=5
 set splitbelow
 set splitright
 set ttimeoutlen=10
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevel=20
 set foldlevelstart=1
 set foldnestmax=2
@@ -43,7 +43,7 @@ set softtabstop=2
 set backspace=indent,eol,start
 
 " Folding and filetype specific settings
-let javaScript_fold=1
+"let javaScript_fold=1
 
 " Project Management
 if (system('uname -o') !~ 'Msys')
