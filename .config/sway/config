@@ -209,8 +209,8 @@ assign [title="Chromium"] $ws3
 assign [title="Slack"] $ws4
 assign [title="Spotify"] $ws5
 assign [title="Zoom"] $ws6
-assign [title="gotop"] $ws9
-assign [title="htop"] $ws9
+assign [title="gotop"] $ws7
+assign [title="htop"] $ws7
 for_window [title="Launcher"] floating enable
 
 no_focus [app_id="waybar"]
