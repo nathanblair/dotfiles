@@ -1,16 +1,48 @@
 {
     "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    /*"modules-center": ["sway/window"],*/
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+        /*"sway/window"*/
+    ],
+    "modules-center": ["sway/window"],
     "modules-right": [
         "custom/media",
+        /*"tray,"*/
+        "network#vpn",
         "network",
-        "backlight",
+        "custom/backlight",
         "custom/volume",
         "custom/battery",
         "custom/battery#2",
+        "idle_inhibitor",
         "clock"
+        /*"custom/clock"*/
     ],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "persistant_workspaces": {
+          "1":[],
+          "2":[],
+          "3":[],
+          "4":[],
+          "5":[],
+          "6":[],
+          "9":[]
+        },
+        "format-icons": {
+          "1":"",
+          "2":"",
+          "3":"",
+          "4":"",
+          "5":"",
+          "6":"",
+          "7":"",
+          "8":"",
+          "9":""
+        },
+        "format": "{icon}"
+    },
     "sway/window": {
         "max-length": 30,
         "tooltip": false
@@ -22,9 +54,14 @@
         "exec-if": "playerctl status",
         "tooltip": false
     },
+    "network#vpn": {
+        "interface": "cscotun0",
+        "format": "",
+        "tooltip-format": "{ipaddr}"
+    },
     "network": {
-        "format-wifi": " {essid} - {signalStrength}",
-        "tooltip": false
+        "format-wifi": "",
+        "tooltip-format": "{essid} ({frequency} MHz) - {signalStrength}%"
     },
     "custom/memory": {
         "exec": "echo  $(free -h --si | grep Mem: | awk -F ' ' '{ print $7 }')",
@@ -47,27 +84,61 @@
         "format": "{}",
         "tooltip": false
     },
+    "custom/backlight": {
+        "exec": "backlight",
+        "return-type": "json",
+        "signal": 11,
+        "interval": "once",
+        "format-icons": [
+          "-         ",
+          "--        ",
+          "---       ",
+          "----      ",
+          "-----     ",
+          "------    ",
+          "-------   ",
+          "--------  ",
+          "--------- ",
+          "----------"
+        ],
+        "format": ""
+    },
+    "pulseaudio": {
+        "states": [33, 66, 100],
+        "format-icons": { "default": ["","",""] },
+        "format-muted": "",
+        "format": "{volume} {icon}"
+    },
     "custom/volume": {
         "exec": "volume",
         "signal": 10,
-        "interval": 60,
-        "format": "{}",
-        "tooltip": false
-    },
-    "backlight": {
-        "format": " {percent}",
-        "tooltip": false
+        "return-type": "json",
+        "interval": "once",
+        "format-icons": [
+          "          ",
+          "-         ",
+          "--        ",
+          "---       ",
+          "----      ",
+          "-----     ",
+          "------    ",
+          "-------   ",
+          "--------  ",
+          "--------- ",
+          "----------"
+        ],
+        "format": " {icon}"
     },
     "custom/battery": {
-        "exec": "battery 0 1 1 1",
+        "exec": "battery 0",
+        "return-type": "json",
         "interval": 60,
-        "tooltip": false,
         "format": "{}"
     },
     "custom/battery#2": {
-        "exec": "battery 1 1 1 1",
+        "exec": "battery 1",
+        "return-type": "json",
         "interval": 60,
-        "tooltip": false,
         "format": "{}"
     },
     "custom/system": {
@@ -76,7 +147,15 @@
         "tooltip": false
     },
     "clock": {
-        "format": "{:%a %D %I:%M %P}",
+        "format": "{:%a %D %_I:%M %p}",
+        "tooltip": false
+    },
+    "custom/clock": {
+        "exec": "date +'%a %D %_I:%M %p';cal -3; echo ''"
+    },
+    "idle_inhibitor": {
+        "format": "",
+        "format-icons": { "activated": "", "deactivated":"" },
         "tooltip": false
     }
 }

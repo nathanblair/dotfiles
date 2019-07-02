@@ -84,6 +84,7 @@ call plug#begin('~/.vim/bundle')
     "Plug 'raimondi/delimitMate'
     Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
     "Plug 'sheerun/vim-polyglot'
+    Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " -------------------------------------------------------------"

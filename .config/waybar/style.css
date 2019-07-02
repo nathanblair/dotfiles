@@ -19,7 +19,7 @@ window#waybar {
     border-bottom: 3px solid #6272a4;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor {
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-clock, #custom-backlight, #custom-volume {
     padding: 0 6px;
     margin: 0 6px;
     border-bottom: 3px solid #50fa7b;
@@ -65,12 +65,15 @@ window#waybar {
     border-bottom: 3px solid #8be9fd;
 }
 
-#backlight {
+#backlight, #custom-backlight {
     border-bottom: 3px solid #bd93f9;
 }
 
 #network {
-    border-bottom: 3px solid #8be9fd;
+    border-bottom: 3px solid #50fa7b;
+}
+#network.disconnected {
+    border-bottom: 3px solid #ff5555;
 }
 
 #custom-media {
@@ -78,7 +81,13 @@ window#waybar {
 }
 
 #custom-volume {
-    border-bottom: 3px solid #ff5555;
+    border-bottom: 3px solid #8be9fd;
+    font-family: Hack;
+    font-size: 14px;
+}
+#custom-volume.off {
+    border-bottom: 3px solid #6272a4;
+    color: #2a5c45;
 }
 
 #memory {
@@ -112,6 +121,9 @@ window#waybar {
     background-color: #44475a;
 }
 
-#idle_inhibitor.activated {
+#idle_inhibitor.deactivated {
     border-bottom: 3px solid #f8f8f2;
+}
+#idle_inhibitor.activated {
+    border-bottom: 3px solid #50fa7b;
 }
