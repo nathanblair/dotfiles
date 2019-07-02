@@ -83,11 +83,9 @@ window#waybar {
 #custom-volume {
     border-bottom: 3px solid #8be9fd;
     font-family: Hack;
-    font-size: 14px;
 }
 #custom-volume.off {
-    border-bottom: 3px solid #6272a4;
-    color: #2a5c45;
+    border-bottom: 3px solid #333333;
 }
 
 #memory {

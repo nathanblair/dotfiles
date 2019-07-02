@@ -207,8 +207,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 
 assign [title="Chromium"] $ws3
 assign [title="Slack"] $ws4
-assign [title="Spotify"] $ws5
-assign [title="Zoom"] $ws6
+assign [title="Zoom"] $ws5
+assign [title="Spotify"] $ws6
 assign [title="gotop"] $ws7
 assign [title="htop"] $ws7
 for_window [title="Launcher"] floating enable
