@@ -90,13 +90,9 @@ source ~/.profile
 
 export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
-export CC=$(which clang)
-export CXX=$(which clang++)
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
 export QT_QPA_PLATFORM=wayland
 #export GDK_BACKEND=wayland
 export CLUTTER_BACKEND=wayland
