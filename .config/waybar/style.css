@@ -10,8 +10,8 @@ window#waybar {
 
 #workspaces button {
     color: #f8f8f2;
-    padding: 0 8px;
-    margin: 0 6px;
+    padding: 0 24px;
+    margin: 4px 0 0 0;
     border-bottom: 3px solid transparent;
 }
 

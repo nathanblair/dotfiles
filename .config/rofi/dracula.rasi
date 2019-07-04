@@ -35,8 +35,9 @@
     background-color: @normal-background;
 }
 #window {
-    border:           5;
-    padding:          100;
+    border:  5;
+    padding: 50;
+    width:   500;
 }
 #mainbox {
     background-color: inherit;
@@ -48,7 +49,7 @@
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 1;
 }
 #element.normal.normal {
     background-color: @normal-background;

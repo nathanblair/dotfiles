@@ -9,6 +9,7 @@ settings:
         '`': config-cycle 'content.user_stylesheets' tomorrow_night.css ""
         d: null
         dd: tab-close
+        x: nop
   content.user_stylesheets:
     global: null
   editor.encoding:

@@ -4,7 +4,8 @@ rofi.font: Hack 14
 rofi.theme: dracula
 rofi.terminal: termite
 rofi.lines: 5
-rofi.modi: combi
+rofi.modi: run,drun
 rofi.combi-modi: run,drun
 rofi.display-run:
+rofi.display-drun:
 rofi.display-combi:
