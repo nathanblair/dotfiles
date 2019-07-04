@@ -11,7 +11,7 @@ window#waybar {
 #workspaces button {
     color: #f8f8f2;
     padding: 0 24px;
-    margin: 4px 0 0 0;
+    margin: 6px 0 0 0;
     border-bottom: 3px solid transparent;
 }
 
@@ -19,10 +19,12 @@ window#waybar {
     border-bottom: 3px solid #6272a4;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-clock, #custom-backlight, #custom-volume {
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-clock, #custom-backlight, #custom-volume, #custom-battery {
+    min-width: 36px;
     padding: 0 6px;
-    margin: 0 6px;
-    border-bottom: 3px solid #50fa7b;
+    margin: 2px 4px 0 4px;
+    /*border-top: 1px solid #50fa7b;*/
+    border-bottom: 2px solid #50fa7b;
 }
 
 #clock {
@@ -40,8 +42,6 @@ window#waybar {
 
 #custom-battery, #custom-memory, #custom-home, #custom-root {
     border-bottom: 3px solid #f8f8f2;
-    padding: 0 6px;
-    margin: 0 6px;
 }
 
 #custom-battery.FULL {
