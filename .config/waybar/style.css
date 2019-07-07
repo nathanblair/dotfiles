@@ -19,7 +19,7 @@ window#waybar {
     border-bottom: 3px solid #6272a4;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-clock, #custom-backlight, #custom-volume, #custom-battery {
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-clock, #custom-backlight, #custom-volume, #custom-battery, #custom-media {
     min-width: 36px;
     padding: 0 6px;
     margin: 2px 4px 0 4px;

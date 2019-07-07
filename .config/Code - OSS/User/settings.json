@@ -7,14 +7,15 @@
 	"editor.insertSpaces": true,
 	"editor.cursorBlinking": "solid",
 	"editor.minimap.renderCharacters": false,
-	"editor.rulers": [ 80 ],
+	"editor.rulers": [
+		80
+	],
 	"editor.smoothScrolling": false,
 	"window.restoreWindows": "folders",
 	"files.insertFinalNewline": true,
 	"window.zoomLevel": 2,
 	"editor.minimap.enabled": false,
-	"workbench.colorCustomizations": {
-	},
+	"workbench.colorCustomizations": {},
 	"editor.tokenColorCustomizations": {
 		"comments": "#5a008a"
 	},
@@ -44,16 +45,41 @@
 	"vim.leader": "<space>",
 	"vim.normalModeKeyBindingsNonRecursive": [
 		{
-			"before": ["<space>", "w"],
-			"after": [":","w","<CR>"]
+			"before": [
+				"<space>",
+				"w"
+			],
+			"after": [
+				":",
+				"w",
+				"<CR>"
+			]
 		},
 		{
-			"before": ["J"],
-			"after": ["m","a","o","<ESC>","`","a"]
+			"before": [
+				"J"
+			],
+			"after": [
+				"m",
+				"a",
+				"o",
+				"<ESC>",
+				"`",
+				"a"
+			]
 		},
 		{
-			"before": ["K"],
-			"after": ["m","a","O","<ESC>","`","a"]
+			"before": [
+				"K"
+			],
+			"after": [
+				"m",
+				"a",
+				"O",
+				"<ESC>",
+				"`",
+				"a"
+			]
 		}
 	],
 	"files.trimTrailingWhitespace": true,
@@ -63,7 +89,6 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"editor.roundedSelection": false,
 	"vim.foldfix": true,
-	"git.autofetch": true,
 	"git.decorations.enabled": false,
 	"editor.codeLens": false,
 	"editor.showFoldingControls": "always",
@@ -73,5 +98,13 @@
 	"update.enableWindowsBackgroundUpdates": false,
 	"telemetry.enableCrashReporter": false,
 	"telemetry.enableTelemetry": false,
-	"java.configuration.checkProjectSettingsExclusions": false
+	"java.configuration.checkProjectSettingsExclusions": false,
+	"C_Cpp.clang_format_path": "/usr/bin/clang-format",
+	"breadcrumbs.enabled": false,
+	"scm.diffDecorations": "none",
+	"git.openDiffOnClick": false,
+	"git.autorefresh": false,
+	"git.enabled": false,
+	"zenMode.centerLayout": false,
+	"zenMode.hideLineNumbers": false
 }

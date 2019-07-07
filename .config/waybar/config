@@ -50,11 +50,10 @@
         "tooltip": false
     },
     "custom/media": {
-        "max-length": 30,
         "interval": 30,
-        "exec": "echo  $(playerctl metadata artist) - $(playerctl metadata title)",
-        "exec-if": "playerctl status",
-        "tooltip": false
+        "exec": "music",
+        "return-type": "json",
+        "exec-if": "playerctl status"
     },
     "network#vpn": {
         "interface": "cscotun0",
@@ -69,21 +68,18 @@
         "exec": "echo  $(free -h --si | grep Mem: | awk -F ' ' '{ print $7 }')",
         "signal": 10,
         "interval": 60,
-        "format": "{}",
         "tooltip": false
     },
     "custom/home": {
         "exec": "echo  $(df -h ~ | awk -F ' ' 'FNR==2{print $4}')",
         "signal": 10,
         "interval": 60,
-        "format": "{}",
         "tooltip": false
     },
     "custom/root": {
         "exec": "echo  $(df -h / | awk -F ' ' 'FNR==2{print $4}')",
         "signal": 10,
         "interval": 60,
-        "format": "{}",
         "tooltip": false
     },
     "custom/backlight": {
@@ -127,24 +123,20 @@
           "--------  ",
           "--------- ",
           "----------"
-        ],
-        "format": "{}"
+        ]
     },
     "custom/battery": {
         "exec": "battery 0",
         "return-type": "json",
-        "interval": 60,
-        "format": "{}"
+        "interval": 60
     },
     "custom/battery#2": {
         "exec": "battery 1",
         "return-type": "json",
-        "interval": 60,
-        "format": "{}"
+        "interval": 60
     },
     "custom/system": {
         "exec": "echo $(whoami) @ $(hostname)",
-        "format": "{}",
         "tooltip": false
     },
     "clock": {
