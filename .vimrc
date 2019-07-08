@@ -75,7 +75,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/nerdcommenter'
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install() }}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
     Plug 'tpope/vim-fugitive'
