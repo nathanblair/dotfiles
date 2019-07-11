@@ -105,5 +105,6 @@
 	"git.autorefresh": false,
 	"zenMode.centerLayout": false,
 	"zenMode.hideLineNumbers": false,
-	"files.hotExit": "off"
+	"files.hotExit": "off",
+	"workbench.tips.enabled": false
 }
