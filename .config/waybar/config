@@ -5,10 +5,13 @@
         "sway/mode"
         /*"sway/window"*/
     ],
-    "modules-center": ["sway/window"],
+    "modules-center": [
+        "sway/window"
+        /*"custom/media"*/
+    ],
     "modules-right": [
+        /*"tray",*/
         "custom/media",
-        /*"tray,"*/
         "network#vpn",
         "network",
         "custom/backlight",
@@ -46,7 +49,7 @@
         "format": "{icon}"
     },
     "sway/window": {
-        "max-length": 30,
+        "max-length": 20,
         "tooltip": false
     },
     "custom/media": {
