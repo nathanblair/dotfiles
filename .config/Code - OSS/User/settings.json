@@ -10,7 +10,7 @@
 		80
 	],
 	"editor.smoothScrolling": false,
-	"window.restoreWindows": "folders",
+	"window.restoreWindows": "none",
 	"files.insertFinalNewline": true,
 	"window.zoomLevel": 2,
 	"editor.minimap.enabled": false,
@@ -104,5 +104,6 @@
 	"git.openDiffOnClick": false,
 	"git.autorefresh": false,
 	"zenMode.centerLayout": false,
-	"zenMode.hideLineNumbers": false
+	"zenMode.hideLineNumbers": false,
+	"files.hotExit": "off"
 }
