@@ -2,7 +2,7 @@
   "languageserver": {
     "clangd": {
       "command": "clangd",
-      "rootPatterns": ["compile_commands.json"],
+      "rootPatterns": [".git/", "build/", "build/debug/", "build/release/", "compile_commands.json"],
       "filetypes": ["cpp", "c"]
     }
   }

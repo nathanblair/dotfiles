@@ -1,6 +1,5 @@
 {
 	"workbench.startupEditor": "none",
-	"editor.formatOnSave": true,
 	"editor.renderLineHighlight": "gutter",
 	"editor.fontFamily": "Hack",
 	"editor.fontSize": 14,
@@ -20,7 +19,7 @@
 		"comments": "#5a008a"
 	},
 	"explorer.confirmDragAndDrop": false,
-	"workbench.activityBar.visible": false,
+	"workbench.activityBar.visible": true,
 	"zenMode.hideStatusBar": false,
 	"zenMode.hideTabs": false,
 	"vim.useSystemClipboard": true,
@@ -104,7 +103,6 @@
 	"scm.diffDecorations": "none",
 	"git.openDiffOnClick": false,
 	"git.autorefresh": false,
-	"git.enabled": false,
 	"zenMode.centerLayout": false,
 	"zenMode.hideLineNumbers": false
 }
