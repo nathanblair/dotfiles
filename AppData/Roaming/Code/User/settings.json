@@ -12,9 +12,12 @@
 	"editor.smoothScrolling": false,
 	"window.restoreWindows": "none",
 	"files.insertFinalNewline": true,
-	"window.zoomLevel": 0,
+	"window.zoomLevel": 1,
 	"editor.minimap.enabled": false,
-	"workbench.colorCustomizations": {},
+	"workbench.colorCustomizations": {
+		"statusBar.noFolderBackground": "#005f5f",
+		"statusBar.debuggingBackground": "#005f5f"
+	},
 	"editor.tokenColorCustomizations": {
 		"comments": "#5a008a"
 	},
@@ -28,7 +31,6 @@
 	"editor.wordWrap": "off",
 	"editor.wordWrapColumn": 80,
 	"editor.wrappingIndent": "indent",
-	"editor.selectionClipboard": false,
 	"python.pythonPath": "python3",
 	"files.exclude": {
 		"**/.git": true,
@@ -85,20 +87,17 @@
 	"editor.cursorStyle": "block",
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
-	"workbench.iconTheme": "eq-material-theme-icons-light",
+	"workbench.iconTheme": "material-icon-theme",
 	"editor.roundedSelection": false,
 	"vim.foldfix": true,
 	"git.decorations.enabled": false,
 	"editor.codeLens": false,
 	"editor.showFoldingControls": "always",
-	"workbench.statusBar.feedback.visible": false,
 	"workbench.editor.enablePreview": false,
 	"workbench.settings.enableNaturalLanguageSearch": false,
-	"update.enableWindowsBackgroundUpdates": false,
 	"telemetry.enableCrashReporter": false,
 	"telemetry.enableTelemetry": false,
 	"java.configuration.checkProjectSettingsExclusions": false,
-	"C_Cpp.clang_format_path": "/usr/bin/clang-format",
 	"breadcrumbs.enabled": false,
 	"scm.diffDecorations": "none",
 	"git.openDiffOnClick": false,
@@ -106,5 +105,14 @@
 	"zenMode.centerLayout": false,
 	"zenMode.hideLineNumbers": false,
 	"files.hotExit": "off",
-	"workbench.tips.enabled": false
+	"workbench.tips.enabled": false,
+	"editor.glyphMargin": false,
+	"editor.tabCompletion": "on",
+	"workbench.enableExperiments": false,
+	"workbench.quickOpen.closeOnFocusLost": false,
+	"window.newWindowDimensions": "maximized",
+	"search.location": "panel",
+	"debug.internalConsoleOptions": "neverOpen",
+	"debug.openDebug": "openOnDebugBreak",
+	"debug.toolBarLocation": "docked"
 }
