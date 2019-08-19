@@ -12,7 +12,7 @@
 	"editor.smoothScrolling": false,
 	"window.restoreWindows": "none",
 	"files.insertFinalNewline": true,
-	"window.zoomLevel": 2,
+	"window.zoomLevel": 0,
 	"editor.minimap.enabled": false,
 	"workbench.colorCustomizations": {},
 	"editor.tokenColorCustomizations": {
