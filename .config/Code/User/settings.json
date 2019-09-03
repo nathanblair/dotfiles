@@ -2,7 +2,6 @@
 	"workbench.startupEditor": "none",
 	"editor.renderLineHighlight": "gutter",
 	"editor.fontFamily": "Hack",
-	"editor.fontSize": 18,
 	"editor.insertSpaces": true,
 	"editor.cursorBlinking": "solid",
 	"editor.minimap.renderCharacters": false,
@@ -12,7 +11,7 @@
 	"editor.smoothScrolling": false,
 	"window.restoreWindows": "none",
 	"files.insertFinalNewline": true,
-	"window.zoomLevel": 1,
+	"window.zoomLevel": 2,
 	"editor.minimap.enabled": false,
 	"workbench.colorCustomizations": {},
 	"editor.tokenColorCustomizations": {
@@ -29,7 +28,6 @@
 	"editor.wordWrapColumn": 80,
 	"editor.wrappingIndent": "indent",
 	"editor.selectionClipboard": false,
-	"python.pythonPath": "python3",
 	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,
@@ -39,7 +37,8 @@
 		"**/bin": true,
 		"**/obj": true,
 		"**/lib": true,
-		"**/dist": true
+		"**/dist": true,
+		"**/build": true
 	},
 	"vim.leader": "<space>",
 	"vim.normalModeKeyBindingsNonRecursive": [
@@ -91,12 +90,9 @@
 	"git.decorations.enabled": false,
 	"editor.codeLens": false,
 	"editor.showFoldingControls": "always",
-	"workbench.statusBar.feedback.visible": false,
 	"workbench.settings.enableNaturalLanguageSearch": false,
-	"update.enableWindowsBackgroundUpdates": false,
 	"telemetry.enableCrashReporter": false,
 	"telemetry.enableTelemetry": false,
-	"java.configuration.checkProjectSettingsExclusions": false,
 	"C_Cpp.clang_format_path": "/usr/bin/clang-format",
 	"breadcrumbs.enabled": false,
 	"scm.diffDecorations": "none",
@@ -105,5 +101,8 @@
 	"zenMode.centerLayout": false,
 	"zenMode.hideLineNumbers": false,
 	"files.hotExit": "off",
-	"workbench.tips.enabled": false
+	"workbench.tips.enabled": false,
+	"editor.fontSize": 16,
+	"vim.cursorStylePerMode.insert": "line",
+	"vim.cursorStylePerMode.replace": "underline"
 }
