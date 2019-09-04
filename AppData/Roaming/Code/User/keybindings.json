@@ -20,11 +20,7 @@
 		"command": "-editor.action.copyLinesUpAction",
 		"when": "editorTextFocus && !editorReadonly"
 	},
-	{
-		"key": "ctrl+w",
-		"command": "workbench.action.closeActiveEditor"
-	},
-	{
+  {
 		"key": "ctrl+w",
 		"command": "-workbench.action.closeActiveEditor"
 	},
@@ -105,5 +101,39 @@
 		"key": "f5",
 		"command": "workbench.action.debug.start",
 		"when": "!inDebugMode"
-	}
+  },
+  {
+    "key": "ctrl+shift+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.terminal.deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "-workbench.action.terminal.deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "-deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  }
 ]

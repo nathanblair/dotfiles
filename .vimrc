@@ -258,7 +258,7 @@ nmap <silent> >c <Plug>(coc-diagnostic-next)
 
 " LSP Autocompletion
 inoremap <silent> <expr><c-space> coc#refresh()
-inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
+"inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 "inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 "inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 

@@ -14,10 +14,6 @@
 	"files.insertFinalNewline": true,
 	"window.zoomLevel": 1,
 	"editor.minimap.enabled": false,
-	"workbench.colorCustomizations": {
-		"statusBar.noFolderBackground": "#005f5f",
-		"statusBar.debuggingBackground": "#005f5f"
-	},
 	"editor.tokenColorCustomizations": {
 		"comments": "#5a008a"
 	},
@@ -31,7 +27,6 @@
 	"editor.wordWrap": "off",
 	"editor.wordWrapColumn": 80,
 	"editor.wrappingIndent": "indent",
-	"python.pythonPath": "python3",
 	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,
@@ -41,10 +36,20 @@
 		"**/bin": true,
 		"**/obj": true,
 		"**/lib": true,
-		"**/dist": true
+    "**/dist": true,
+    "**/build": true
 	},
 	"vim.leader": "<space>",
 	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"<space>",
+				"d"
+			],
+			"commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+		},
 		{
 			"before": [
 				"<space>",
@@ -87,7 +92,7 @@
 	"editor.cursorStyle": "block",
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": "eq-material-theme-icons-light",
 	"editor.roundedSelection": false,
 	"vim.foldfix": true,
 	"git.decorations.enabled": false,
@@ -97,7 +102,6 @@
 	"workbench.settings.enableNaturalLanguageSearch": false,
 	"telemetry.enableCrashReporter": false,
 	"telemetry.enableTelemetry": false,
-	"java.configuration.checkProjectSettingsExclusions": false,
 	"breadcrumbs.enabled": false,
 	"scm.diffDecorations": "none",
 	"git.openDiffOnClick": false,
@@ -106,7 +110,6 @@
 	"zenMode.hideLineNumbers": false,
 	"files.hotExit": "off",
 	"workbench.tips.enabled": false,
-	"editor.glyphMargin": false,
 	"editor.tabCompletion": "on",
 	"workbench.enableExperiments": false,
 	"workbench.quickOpen.closeOnFocusLost": false,
@@ -114,5 +117,15 @@
 	"search.location": "panel",
 	"debug.internalConsoleOptions": "neverOpen",
 	"debug.openDebug": "openOnDebugBreak",
-	"debug.toolBarLocation": "docked"
+	"debug.toolBarLocation": "docked",
+	"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+	"explorer.confirmDelete": false,
+	"editor.tabSize": 2,
+  "vim.cursorStylePerMode.insert": "line",
+	"vim.cursorStylePerMode.replace": "underline",
+	"vim.cursorStylePerMode.visualline": "underline",
+  "editor.detectIndentation": false,
+  "vim.camelCaseMotion.enable": true,
+  "vim.cursorStylePerMode.visualblock": "block-outline",
+  "vim.debug.silent": true,
 }
