@@ -79,12 +79,11 @@ call plug#begin('~/.vim/bundle')
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
     Plug 'tpope/vim-fugitive'
-    Plug 'mhinz/vim-signify'
     Plug 'tpope/vim-surround'
-    "Plug 'raimondi/delimitMate'
+    Plug 'tpope/vim-repeat'
+    Plug 'mhinz/vim-signify'
     Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
     Plug 'sheerun/vim-polyglot'
-    "Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " -------------------------------------------------------------"

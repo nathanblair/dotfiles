@@ -207,11 +207,14 @@ bindsym $mod+Shift+0 move container to workspace $ws91
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 
+assign [title="Visual Studio Code"] $ws2
+assign [title="code"] $ws2
+assign [title="nvim"] $ws2
 assign [title="Chromium"] $ws3
 assign [title="Slack"] $ws4
 assign [title="Zoom"] $ws5
 assign [title="Spotify"] $ws6
-#assign [title="htop"] $ws7
+assign [title="htop"] $ws0
 #assign [title="ranger"] $ws8
 for_window [app_id="Launcher"] floating enable, resize set width 100 ppt height 100 ppt, move position 0 px 0 px
 
