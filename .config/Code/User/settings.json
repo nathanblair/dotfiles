@@ -45,6 +45,16 @@
 		{
 			"before": [
 				"<space>",
+				"c",
+				"c"
+			],
+			"commands": [
+				"editor.action.commentLine",
+			]
+		},
+		{
+			"before": [
+				"<space>",
 				"w"
 			],
 			"after": [

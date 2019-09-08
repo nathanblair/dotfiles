@@ -1,32 +1,13 @@
 // Place your key bindings in this file to overwrite the defaults
 [
 	{
-		"key": "ctrl+shift+down",
-		"command": "editor.action.copyLinesDownAction",
-		"when": "editorTextFocus && !editorReadonly"
+		"key": "ctrl+j",
+		"command": "editor.action.joinLines"
 	},
 	{
-		"key": "ctrl+shift+alt+down",
-		"command": "-editor.action.copyLinesDownAction",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+shift+up",
-		"command": "editor.action.copyLinesUpAction",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+shift+alt+up",
-		"command": "-editor.action.copyLinesUpAction",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+w",
-		"command": "workbench.action.closeActiveEditor"
-	},
-	{
-		"key": "ctrl+w",
-		"command": "-workbench.action.closeActiveEditor"
+		"key": "f5",
+		"command": "workbench.action.debug.start",
+		"when": "!inDebugMode"
 	},
 	{
 		"key": "ctrl+w",
@@ -34,76 +15,43 @@
 		"when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
 	},
 	{
-		"key": "ctrl+b",
-		"command": "-extension.vim_ctrl+b",
-		"when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+		"key": "f4",
+		"command": "C_Cpp.SwitchHeaderSource",
+		"when": "editorTextFocus && editorLangId == 'c'"
 	},
 	{
-		"key": "ctrl+j",
-		"command": "-extension.vim_ctrl+j",
-		"when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl && vim.mode != 'Insert'"
+		"key": "alt+o",
+		"command": "-C_Cpp.SwitchHeaderSource",
+		"when": "editorTextFocus && editorLangId == 'c'"
 	},
 	{
-		"key": "ctrl+]",
-		"command": "-extension.vim_ctrl+]",
-		"when": "editorTextFocus && vim.active && vim.use<C-]> && !inDebugRepl"
+		"key": "f4",
+		"command": "-references-view.next",
+		"when": "reference-list.hasResult"
 	},
 	{
-		"key": "ctrl+k",
-		"command": "-extension.vim_ctrl+k",
-		"when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl && vim.mode != 'Insert'"
+		"key": "f4",
+		"command": "-goToNextReference",
+		"when": "referenceSearchVisible"
 	},
 	{
-		"key": "ctrl+o",
-		"command": "-extension.vim_ctrl+o",
-		"when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
+		"key": "f4",
+		"command": "-goToNextReferenceFromEmbeddedEditor",
+		"when": "inReferenceSearchEditor"
 	},
 	{
-		"key": "ctrl+u",
-		"command": "-extension.vim_ctrl+u",
-		"when": "editorTextFocus && vim.active && vim.use<C-u> && !inDebugRepl"
+		"key": "f4",
+		"command": "-search.action.focusNextSearchResult",
+		"when": "hasSearchResult"
 	},
 	{
-		"key": "ctrl+v",
-		"command": "-extension.vim_ctrl+v",
-		"when": "editorTextFocus && vim.active && vim.use<C-v> && !inDebugRepl && vim.mode != 'Insert'"
+		"key": "f4",
+		"command": "C_Cpp.SwitchHeaderSource",
+		"when": "editorTextFocus && editorLangId == 'cpp'"
 	},
 	{
-		"key": "ctrl+y",
-		"command": "-extension.vim_ctrl+y",
-		"when": "editorTextFocus && vim.active && vim.use<C-y> && !inDebugRepl"
+		"key": "alt+o",
+		"command": "-C_Cpp.SwitchHeaderSource",
+		"when": "editorTextFocus && editorLangId == 'cpp'"
 	},
-	{
-		"key": "delete",
-		"command": "-extension.vim_delete",
-		"when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
-	},
-	{
-		"key": "ctrl+f",
-		"command": "-extension.vim_ctrl+f",
-		"when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl"
-	},
-	{
-		"key": "ctrl+j",
-		"command": "editor.action.joinLines"
-	},
-	{
-		"key": "ctrl+shift+o",
-		"command": "workbench.view.extension.outline"
-	},
-	{
-		"key": "ctrl+k ctrl+0",
-		"command": "-editor.foldAll",
-		"when": "editorTextFocus"
-	},
-	{
-		"key": "f5",
-		"command": "-workbench.action.debug.start",
-		"when": "!inDebugMode"
-	},
-	{
-		"key": "f5",
-		"command": "workbench.action.debug.start",
-		"when": "!inDebugMode"
-	}
 ]
