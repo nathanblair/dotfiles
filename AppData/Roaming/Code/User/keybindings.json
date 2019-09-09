@@ -6,17 +6,30 @@
 	},
 	{
 		"key": "f5",
-		"command": "-workbench.action.debug.start",
+		"command": "workbench.action.debug.start",
 		"when": "!inDebugMode"
-	},
-	{
-		"key": "ctrl+backspace",
-		"command": "-workbench.action.terminal.deleteWordLeft",
-		"when": "terminalFocus"
-	},
-	{
-		"key": "ctrl+backspace",
-		"command": "-deleteWordLeft",
-		"when": "textInputFocus && !editorReadonly"
-	}
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+backspace",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.closeActiveEditor"
+  }
 ]
