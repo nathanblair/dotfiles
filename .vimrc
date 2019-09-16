@@ -46,14 +46,14 @@ set backspace=indent,eol,start
 "let javaScript_fold=1
 
 " Project Management
-if (system('uname -o') !~ 'Msys')
+if (system('uname -o') == 'GNU/Linux')
   autocmd BufEnter * call s:CDToGitRoot()
 endif
 "autocmd BufWritePost * call s:GetGitDiffNumstat()
 let g:projectName=fnamemodify(getcwd(), ":t")
 
 " Make system
-set makeprg=ninja\ -C\ builds
+set makeprg=ninja\ -C\ build
 
 " Don't wrap if in preview window
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
@@ -77,12 +77,13 @@ call plug#begin('~/.vim/bundle')
     Plug 'scrooloose/nerdcommenter'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'shougo/neco-vim'
+    Plug 'shougo/echodoc',
     Plug 'neoclide/coc-neco'
+    Plug 'cohama/lexima.vim',
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'mhinz/vim-signify'
-    Plug 'derekwyatt/vim-fswitch', { 'for': 'cpp' }
     Plug 'sheerun/vim-polyglot'
 call plug#end()
 
@@ -102,10 +103,9 @@ let g:NERDTreeMinimalUI=1
 " NERDCommenter
 let g:NERDCreateDefaultMappings=0
 
-" DelimitMate
-let delimitMate_expand_cr=1
-let delimitMate_expand_space=1
-let delimitMate_jump_expansion = 1
+" Echodoc
+let g:echodoc#enable_at_startup=1
+let g:echodoc#type='signature'
 
 " Color scheme
 set termguicolors
@@ -136,12 +136,14 @@ highlight link CocHintHighlight Conceal
 " -------------------------------------------------------------"
 " Completion
 "autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-set keywordprg=:call\ <SID>show_documentation()
+"set keywordprg=:call\ <SID>show_documentation()
+set keywordprg=:call\ <SID>ShowDocumentation()
 
 " Documentation
-"autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 autocmd! User CocLocationsChange CocList --normal -A location
 "autocmd! CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " LSP Snippets
 let g:coc_snippet_next='<TAB>'
@@ -248,7 +250,6 @@ nnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
 vnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
 
 " FSwitch
-nnoremap <silent> <F4> :FSHere<CR>
 
 " LSP Diagnostics
 nnoremap <Leader>i :<C-u>CocList --normal --no-sort diagnostics<CR>
@@ -282,6 +283,10 @@ nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
 " LSP Format
 nmap <silent> <Leader>f <Plug>(coc-format)
 vmap <silent> <Leader>f <Plug>(coc-format-selected)
+
+" Source/Header Switch
+" FIXME Need to output return of CocRequest() to the 'e' command...
+nnoremap <silent> <F4> :e $(call CocRequest('clangd', 'textDocument/switchSourceHeader', @%))<CR>
 
 " -------------------------------------------------------------"
 " Statusline Customization                                  SL

@@ -1,10 +1,15 @@
 {
+  "suggest.echodocSupport": true,
+  "suggest.enablePreview": true,
   "languageserver": {
     "clangd": {
       "command": "clangd",
-      "rootPatterns": [".git/", "build/", "build/debug/", "build/release/", "compile_commands.json"],
-      "filetypes": ["cpp", "c"]
+      "filetypes": [
+        "cpp",
+        "c",
+        "h",
+        "hpp"
+      ]
     }
   }
 }
-
