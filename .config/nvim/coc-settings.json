@@ -1,15 +1,1 @@
-{
-  "suggest.echodocSupport": true,
-  "suggest.enablePreview": true,
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "filetypes": [
-        "cpp",
-        "c",
-        "h",
-        "hpp"
-      ]
-    }
-  }
-}
+../../.vim/coc-settings.json

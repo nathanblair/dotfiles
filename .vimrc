@@ -13,7 +13,7 @@ set background=dark
 set noswapfile
 set nobackup
 set shortmess=WIcFT
-set updatetime=1000
+set updatetime=400
 set nohlsearch
 set wildcharm=<C-z>
 
@@ -105,7 +105,7 @@ let g:NERDCreateDefaultMappings=0
 
 " Echodoc
 let g:echodoc#enable_at_startup=1
-let g:echodoc#type='signature'
+let g:echodoc#type='floating'
 
 " Color scheme
 set termguicolors
@@ -113,7 +113,7 @@ augroup colorscheme_customization
   autocmd ColorScheme dracula highlight Normal ctermbg=244 guibg=#050506 
   autocmd ColorScheme dracula highlight DraculaBgDark ctermbg=244 guibg=#172030 
   autocmd ColorScheme dracula highlight DraculaBgDarker ctermbg=244 guibg=#101220
-  autocmd ColorScheme dracula highlight DraculaTodo cterm=bold ctermfg=cyan gui=bold guifg=cyan guibg=none
+  autocmd ColorScheme dracula highlight DraculaTodo cterm=bold ctermfg=cyan gui=bold guifg=cyan guibg=black
 augroup END
 color dracula
 
@@ -142,7 +142,6 @@ set keywordprg=:call\ <SID>ShowDocumentation()
 " Documentation
 autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 autocmd! User CocLocationsChange CocList --normal -A location
-"autocmd! CursorHoldI,CursorMovedI * call CocActionAsync('showSignatureHelp')
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " LSP Snippets
