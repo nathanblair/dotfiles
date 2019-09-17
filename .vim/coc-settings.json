@@ -4,10 +4,10 @@
     "clangd": {
       "command": "clangd",
       "filetypes": [
-        "cpp",
-        "c",
         "h",
-        "hpp"
+        "hpp",
+        "c",
+        "cpp"
       ]
     }
   }

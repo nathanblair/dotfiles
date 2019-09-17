@@ -117,7 +117,7 @@ augroup colorscheme_customization
 augroup END
 color dracula
 
-" Restore some overriden colors
+ "Restore some overriden colors
 highlight CocUnderLine cterm=underline gui=underline
 highlight link CocErrorSign Error
 highlight link CocWarningSign WarningMsg
@@ -135,13 +135,11 @@ highlight link CocHintHighlight Conceal
 " Language Server Protocol settings                         LS
 " -------------------------------------------------------------"
 " Completion
-"autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-"set keywordprg=:call\ <SID>show_documentation()
 set keywordprg=:call\ <SID>ShowDocumentation()
 
 " Documentation
 autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-autocmd! User CocLocationsChange CocList --normal -A location
+"autocmd! User CocLocationsChange CocList --normal -A location
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " LSP Snippets
@@ -256,7 +254,7 @@ nmap <silent> <c <Plug>(coc-diagnostic-prev)
 nmap <silent> >c <Plug>(coc-diagnostic-next)
 
 " LSP Autocompletion
-inoremap <silent> <expr><c-space> coc#refresh()
+inoremap <silent> <expr><C-Space> coc#refresh()
 "inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
 "inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 "inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -273,8 +271,8 @@ nmap <Leader>cn <Plug>(coc-rename)
 " LSP CodeAction
 nmap <Leader>a <Plug>(coc-codeaction)
 nnoremap <Leader>; :<C-u>CocList --normal --no-sort<CR>
-nnoremap <Leader>t :<C-u>CocList --normal --no-sort symbols<CR>
-nnoremap <Leader>x :<C-u>CocList --normal --no-sort extensions<CR>
+"nnoremap <Leader>t :<C-u>CocList --normal --no-sort symbols<CR>
+"nnoremap <Leader>x :<C-u>CocList --normal --no-sort extensions<CR>
 
 " LSP Documentation
 nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
@@ -284,8 +282,7 @@ nmap <silent> <Leader>f <Plug>(coc-format)
 vmap <silent> <Leader>f <Plug>(coc-format-selected)
 
 " Source/Header Switch
-" FIXME Need to output return of CocRequest() to the 'e' command...
-nnoremap <silent> <F4> :e $(call CocRequest('clangd', 'textDocument/switchSourceHeader', @%))<CR>
+nnoremap <silent> <F4> :call ToggleSourceHeaderDocFile()<CR>
 
 " -------------------------------------------------------------"
 " Statusline Customization                                  SL
@@ -321,6 +318,10 @@ set statusline+=\ %*
 " -------------------------------------------------------------"
 " Helper functions                                          HF
 " -------------------------------------------------------------"
+function! ToggleSourceHeaderDocFile() abort
+  execute 'edit' CocRequest('clangd', 'textDocument/switchSourceHeader', {'uri': 'file://'.expand("%:p")})
+endfunction
+
 function! s:CDToGitRoot() abort
     silent let b:is_git_dir = len(system('git rev-parse --git-dir 2>/dev/null')) > 0
     let b:git_branch = ''
