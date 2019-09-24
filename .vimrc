@@ -27,13 +27,17 @@ set scrolloff=5
 set splitbelow
 set splitright
 set ttimeoutlen=10
-set foldmethod=indent
-set foldlevel=20
-set foldlevelstart=1
-set foldnestmax=2
 set colorcolumn=79
 set nowrap
 set t_Co=256
+
+" Folding
+set foldmethod=indent
+set foldlevelstart=1
+set foldlevel=5
+set foldnestmax=2
+set foldcolumn=2
+set foldclose="all"
 
 " Tabbing and indentation
 set expandtab
@@ -73,18 +77,19 @@ endif
 
 call plug#begin('~/.vim/bundle')
     Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/nerdcommenter'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'shougo/neco-vim'
-    Plug 'shougo/echodoc',
-    Plug 'neoclide/coc-neco'
-    Plug 'cohama/lexima.vim',
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-repeat'
     Plug 'mhinz/vim-signify'
+    Plug 'cohama/lexima.vim',
+    Plug 'machakann/vim-sandwich'
     Plug 'sheerun/vim-polyglot'
+    Plug 'shougo/neco-vim'
+    Plug 'neoclide/coc-neco'
+    "Plug 'shougo/echodoc',
+    "Plug 'tpope/vim-surround'
+    "Plug 'tpope/vim-repeat'
+    "Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " -------------------------------------------------------------"
