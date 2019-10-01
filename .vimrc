@@ -81,15 +81,12 @@ call plug#begin('~/.vim/bundle')
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/nerdcommenter'
     Plug 'mhinz/vim-signify'
-    Plug 'cohama/lexima.vim',
+    Plug 'cohama/lexima.vim'
+    Plug 'thaerkh/vim-indentguides'
     Plug 'machakann/vim-sandwich'
     Plug 'sheerun/vim-polyglot'
     Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
-    "Plug 'shougo/echodoc',
-    "Plug 'tpope/vim-surround'
-    "Plug 'tpope/vim-repeat'
-    "Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " -------------------------------------------------------------"
