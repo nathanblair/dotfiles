@@ -13,10 +13,15 @@
 	"window.restoreWindows": "none",
 	"files.insertFinalNewline": true,
 	"window.zoomLevel": 1,
-	"editor.minimap.enabled": false,
+  "editor.minimap.enabled": false,
 	"editor.tokenColorCustomizations": {
 		"comments": "#5a008a"
-	},
+  },
+  "workbench.colorCustomizations": {
+    "editor.background": "#090909",
+    "terminal.background": "#070707",
+    "sideBar.background": "#050505"
+  },
 	"explorer.confirmDragAndDrop": false,
 	"workbench.activityBar.visible": true,
 	"zenMode.hideStatusBar": false,
@@ -128,4 +133,6 @@
   "vim.camelCaseMotion.enable": true,
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "vim.debug.silent": true,
+  "workbench.statusBar.visible": true,
+  "javascript.updateImportsOnFileMove.enabled": "prompt",
 }
