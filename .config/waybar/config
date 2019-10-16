@@ -56,8 +56,11 @@
     "tooltip-format": "{ipaddr}"
   },
   "network": {
+    "format-disconnected": "",
+    "format-ethernet": "",
     "format-wifi": "",
-    "tooltip-format": "{essid} ({frequency} MHz) - {signalStrength}%"
+    "tooltip-format-wifi": "{essid} ({frequency} MHz) - {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} - {ipaddr}"
   },
   "custom/memory": {
     "exec": "echo  $(free -h --si | grep Mem: | awk -F ' ' '{ print $7 }')",
