@@ -2,6 +2,7 @@
 	"workbench.startupEditor": "none",
 	"editor.renderLineHighlight": "gutter",
 	"editor.fontFamily": "Hack",
+	"editor.fontSize": 16,
 	"editor.insertSpaces": true,
 	"editor.cursorBlinking": "solid",
 	"editor.minimap.renderCharacters": false,
@@ -11,11 +12,15 @@
 	"editor.smoothScrolling": false,
 	"window.restoreWindows": "none",
 	"files.insertFinalNewline": true,
-	"window.zoomLevel": 2,
+	"window.zoomLevel": 1,
 	"editor.minimap.enabled": false,
-	"workbench.colorCustomizations": {},
 	"editor.tokenColorCustomizations": {
 		"comments": "#5a008a"
+	},
+	"workbench.colorCustomizations": {
+		"editor.background": "#090909",
+		"terminal.background": "#070707",
+		"sideBar.background": "#050505"
 	},
 	"explorer.confirmDragAndDrop": false,
 	"workbench.activityBar.visible": true,
@@ -27,7 +32,6 @@
 	"editor.wordWrap": "off",
 	"editor.wordWrapColumn": 80,
 	"editor.wrappingIndent": "indent",
-	"editor.selectionClipboard": false,
 	"files.exclude": {
 		"**/.git": true,
 		"**/.svn": true,
@@ -50,6 +54,15 @@
 			],
 			"commands": [
 				"editor.action.commentLine",
+			]
+		},
+		{
+			"before": [
+				"<space>",
+				"d"
+			],
+			"commands": [
+				"workbench.action.closeActiveEditor"
 			]
 		},
 		{
@@ -94,11 +107,11 @@
 	"editor.cursorStyle": "block",
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
-	"workbench.iconTheme": "eq-material-theme-icons-light",
+	"workbench.iconTheme": "material-icon-theme",
 	"editor.roundedSelection": false,
 	"vim.foldfix": true,
 	"git.decorations.enabled": false,
-	"editor.codeLens": false,
+	"editor.codeLens": true,
 	"editor.showFoldingControls": "always",
 	"workbench.settings.enableNaturalLanguageSearch": false,
 	"telemetry.enableCrashReporter": false,
@@ -112,7 +125,10 @@
 	"zenMode.hideLineNumbers": false,
 	"files.hotExit": "off",
 	"workbench.tips.enabled": false,
-	"editor.fontSize": 16,
 	"vim.cursorStylePerMode.insert": "line",
-	"vim.cursorStylePerMode.replace": "underline"
+	"vim.cursorStylePerMode.replace": "underline",
+	"vim.cursorStylePerMode.visualline": "underline",
+	"vim.cursorStylePerMode.visualblock": "block-outline",
+	"vim.camelCaseMotion.enable": true,
+	"debug.toolBarLocation": "docked",
 }

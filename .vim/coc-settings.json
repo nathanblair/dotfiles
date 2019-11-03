@@ -1,5 +1,6 @@
 {
   "suggest.enablePreview": true,
+  "python.jediEnabled": false,
   "languageserver": {
     "clangd": {
       "command": "clangd",

@@ -11,47 +11,43 @@
 	},
 	{
 		"key": "ctrl+w",
-		"command": "-extension.vim_ctrl+w",
-		"when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+		"command": "-workbench.action.closeGroup",
+		"when": "activeEditorGroupEmpty && multipleEditorGroups"
 	},
 	{
-		"key": "f4",
-		"command": "C_Cpp.SwitchHeaderSource",
-		"when": "editorTextFocus && editorLangId == 'c'"
+		"key": "ctrl+backspace",
+		"command": "deleteWordLeft",
+		"when": "textInputFocus && !editorReadonly"
 	},
 	{
-		"key": "alt+o",
-		"command": "-C_Cpp.SwitchHeaderSource",
-		"when": "editorTextFocus && editorLangId == 'c'"
+		"key": "ctrl+w",
+		"command": "-workbench.action.closeWindow",
+		"when": "!editorIsOpen && !multipleEditorGroups"
 	},
 	{
-		"key": "f4",
-		"command": "-references-view.next",
-		"when": "reference-list.hasResult"
+		"key": "ctrl+f4",
+		"command": "-workbench.action.closeActiveEditor"
 	},
 	{
-		"key": "f4",
-		"command": "-goToNextReference",
-		"when": "referenceSearchVisible"
+		"key": "ctrl+b",
+		"command": "-extension.vim_ctrl+b",
+		"when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
 	},
 	{
-		"key": "f4",
-		"command": "-goToNextReferenceFromEmbeddedEditor",
-		"when": "inReferenceSearchEditor"
+		"key": "ctrl+n",
+		"command": "-workbench.action.files.newUntitledFile"
 	},
 	{
-		"key": "f4",
-		"command": "-search.action.focusNextSearchResult",
-		"when": "hasSearchResult"
+		"key": "ctrl+p",
+		"command": "-workbench.action.quickOpen"
 	},
 	{
-		"key": "f4",
-		"command": "C_Cpp.SwitchHeaderSource",
-		"when": "editorTextFocus && editorLangId == 'cpp'"
+		"key": "ctrl+w",
+		"command": "-workbench.action.closeActiveEditor"
 	},
 	{
-		"key": "alt+o",
-		"command": "-C_Cpp.SwitchHeaderSource",
-		"when": "editorTextFocus && editorLangId == 'cpp'"
-	},
+		"key": "ctrl+w",
+		"command": "workbench.action.closeActiveEditor",
+		"when": "vim.mode != 'Insert'"
+	}
 ]

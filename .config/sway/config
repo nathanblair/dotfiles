@@ -23,9 +23,10 @@ set $termLauncher $term --name Launcher -c ~/.config/$term/launcher
 set $menu rofi -show drun
 
 exec_always {
-  gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-  gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-  gsettings set org.gnome.desktop.interface cursor-theme 'Breeze-Snow'
+  gsettings set org.gnome.desktop.interface gtk-theme 'breeze-dark'
+  gsettings set org.gnome.desktop.interface icon-theme 'breeze-dark'
+  gsettings set org.gnome.desktop.interface cursor-theme 'breeze-snow'
+  gsettings set org.gnome.desktop.interface cursor-size 36
 }
 exec mako
 
@@ -64,11 +65,11 @@ output * bg $bg "center" #282A36
 # Example configuration:
 #
 exec swayidle -w \
-    timeout 300 'swaymsg "output * dpms off"' \
-       resume 'swaymsg "output * dpms on"' \
-    timeout 360 'swaylock -f -i $bg' \
-    timeout 600 'systemctl suspend' \
-    before-sleep 'swaylock -f -i $bg'
+  timeout 300 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+  timeout 360 'swaylock -f -i $bg' \
+  timeout 600 'systemctl suspend' \
+  before-sleep 'swaylock -f -i $bg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -158,11 +159,7 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
-# ditto, with arrow keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+
 #
 # Workspaces:
 #
@@ -206,6 +203,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws91
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
+
+# Move Workspaces amongst outputs
+#bindsym $mod+Tab+$left move workspace to output Left
+#bindsym $mod+Tab+$right move workspace to output Right
 
 assign [title="Visual Studio Code"] $ws2
 assign [title="code"] $ws2

@@ -14,7 +14,7 @@ if ! zgen saved; then
 fi
 
 # Prompt configuration
-SPACESHIP_CHAR_SYMBOL_ROOT=#
+SPACESHIP_CHAR_SYMBOL_ROOT=#\ 
 SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
 SPACESHIP_PROMPT_PREFIXES_SHOW=true
 SPACESHIP_PROMPT_ADD_NEWLINE=false
@@ -90,7 +90,6 @@ export EDITOR=$(which nvim)
 export VISUAL=$(which nvim)
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export GTK_THEME=Arc-Dark
 export QT_QPA_PLATFORM=wayland
 export CLUTTER_BACKEND=wayland
 export XDG_SESSION_TYPE=wayland
@@ -100,9 +99,10 @@ export MOZ_ENABLE_WAYLAND=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export DOTNET_ROOT="/opt/dotnet"
+export DOTNET_ROOT="/opt/dotnet3-0"
+export DOTNET2_ROOT="/opt/dotnet2-2"
 export CC=clang
 export CXX=clang++
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$DOTNET_ROOT/:$DOTNET2_ROOT/:$PATH"
 

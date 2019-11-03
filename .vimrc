@@ -119,7 +119,7 @@ augroup colorscheme_customization
 augroup END
 color dracula
 
- "Restore some overriden colors
+" Restore some overridden colors
 highlight CocUnderLine cterm=underline gui=underline
 highlight link CocErrorSign Error
 highlight link CocWarningSign WarningMsg
@@ -136,6 +136,9 @@ highlight link CocHintHighlight Conceal
 " -------------------------------------------------------------"
 " Language Server Protocol settings                         LS
 " -------------------------------------------------------------"
+" Extension List
+let g:coc_global_extensions=['coc-tsserver', 'coc-css', 'coc-html', 'coc-python', 'coc-json', 'coc-omnisharp']
+
 " Completion
 set keywordprg=:call\ <SID>ShowDocumentation()
 
