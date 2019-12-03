@@ -10,6 +10,12 @@
         "c",
         "cpp"
       ]
+    },
+    "dart": {
+      "command": "dart",
+      "args": ["/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot", "--lsp"],
+      "disableDynamicRegister": true,
+      "filetypes": ["dart"]
     }
   }
 }
