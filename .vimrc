@@ -137,7 +137,7 @@ highlight link CocHintHighlight Conceal
 " Language Server Protocol settings                         LS
 " -------------------------------------------------------------"
 " Extension List
-let g:coc_global_extensions=['coc-tsserver', 'coc-css', 'coc-html', 'coc-python', 'coc-json', 'coc-omnisharp']
+let g:coc_global_extensions=['coc-tsserver', 'coc-css', 'coc-html', 'coc-python', 'coc-json', 'coc-omnisharp', 'coc-rls']
 
 " Completion
 set keywordprg=:call\ <SID>ShowDocumentation()

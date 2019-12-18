@@ -4,15 +4,24 @@
 }
 
 window#waybar {
-    background-color: transparent;
+    background: transparent;
     color: #f8f8f2;
 }
 
 #workspaces button {
     color: #f8f8f2;
+    background: transparent;
+    border: none;
     padding: 0 24px;
     margin: 6px 0 0 0;
     border-bottom: 3px solid transparent;
+}
+
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: transparent;
+    color: #50fa7b;
 }
 
 #workspaces button.focused, #mode {
@@ -23,7 +32,6 @@ window#waybar {
     min-width: 36px;
     padding: 0 6px;
     margin: 2px 4px 0 4px;
-    /*border-top: 1px solid #50fa7b;*/
     border-bottom: 2px solid #50fa7b;
 }
 
