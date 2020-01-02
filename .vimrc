@@ -16,6 +16,7 @@ set shortmess=WIcFT
 set updatetime=400
 set nohlsearch
 set wildcharm=<C-z>
+set mouse=nv
 
 " Viewing and getting around
 set nostartofline
@@ -137,7 +138,14 @@ highlight link CocHintHighlight Conceal
 " Language Server Protocol settings                         LS
 " -------------------------------------------------------------"
 " Extension List
-let g:coc_global_extensions=['coc-tsserver', 'coc-css', 'coc-html', 'coc-python', 'coc-json', 'coc-omnisharp', 'coc-rls']
+let g:coc_global_extensions=[
+  \'coc-tsserver',
+  \'coc-css',
+  \'coc-html',
+  \'coc-json',
+  \'coc-python',
+  \'coc-omnisharp',
+  \'coc-rls']
 
 " Completion
 set keywordprg=:call\ <SID>ShowDocumentation()

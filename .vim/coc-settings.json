@@ -1,6 +1,7 @@
 {
-  "suggest.enablePreview": true,
   "python.jediEnabled": false,
+  "diagnostic.messageTarget": "float",
+  "signature.target": "float",
   "languageserver": {
     "clangd": {
       "command": "clangd",
@@ -14,8 +15,9 @@
     "dart": {
       "command": "dart",
       "args": ["/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot", "--lsp"],
-      "disableDynamicRegister": true,
-      "filetypes": ["dart"]
+      "filetypes": ["dart"],
+      "requireRootPattern": true,
+      "rootPatterns": ["pubspec.yaml"]
     }
   }
 }

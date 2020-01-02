@@ -21,7 +21,7 @@
   ],
   "sway/workspaces": {
     "disable-scroll": true,
-    "persistant_workspaces": {
+    "persistent_workspaces": {
       "1": [],
       "2": [],
       "3": []
