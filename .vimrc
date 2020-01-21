@@ -20,6 +20,7 @@ set mouse=nv
 
 " Viewing and getting around
 set nostartofline
+set listchars=""
 set cmdheight=1
 set previewheight=6
 set sidescroll=1
@@ -81,12 +82,10 @@ call plug#begin('~/.vim/bundle')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/nerdcommenter'
-    Plug 'mhinz/vim-signify'
     Plug 'cohama/lexima.vim'
     Plug 'thaerkh/vim-indentguides'
     Plug 'machakann/vim-sandwich'
     Plug 'sheerun/vim-polyglot'
-    Plug 'shougo/neco-vim'
     Plug 'neoclide/coc-neco'
 call plug#end()
 
@@ -102,6 +101,7 @@ let g:NERDTreeSortHiddenFirst=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeMinimalUI=1
+let g:NERDTreeIgnore=['^__pycache__']
 
 " NERDCommenter
 let g:NERDCreateDefaultMappings=0
@@ -143,6 +143,7 @@ let g:coc_global_extensions=[
   \'coc-css',
   \'coc-html',
   \'coc-json',
+  \'coc-yaml',
   \'coc-python',
   \'coc-omnisharp',
   \'coc-rls']
