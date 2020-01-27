@@ -1,7 +1,9 @@
 {
   "python.jediEnabled": true,
-  "diagnostic.messageTarget": "float",
-  "signature.target": "float",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["-S", "-l 79"],
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": false,
   "languageserver": {
     "clangd": {
       "command": "clangd",

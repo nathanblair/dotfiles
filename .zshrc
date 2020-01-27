@@ -9,7 +9,8 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
     zgen load zdharma/fast-syntax-highlighting
-    zgen load denysdovhan/spaceship-prompt spaceship
+    #zgen load denysdovhan/spaceship-prompt spaceship
+    zgen load subnixr/minimal
     zgen save
 fi
 
@@ -96,13 +97,7 @@ export XDG_SESSION_TYPE=wayland
 #export GDK_BACKEND=wayland
 
 export MOZ_ENABLE_WAYLAND=1
-export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export DOTNET_ROOT="/opt/dotnet3-0"
-export DOTNET2_ROOT="/opt/dotnet2-2"
 export CC=clang
 export CXX=clang++
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$DOTNET_ROOT/:$DOTNET2_ROOT/:$PATH"
-
