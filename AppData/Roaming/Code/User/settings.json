@@ -107,7 +107,7 @@
 	"editor.cursorStyle": "block",
 	"editor.scrollBeyondLastLine": false,
 	"workbench.editor.restoreViewState": false,
-	"workbench.iconTheme": "eq-material-theme-icons-light",
+	"workbench.iconTheme": "material-icon-theme",
 	"editor.roundedSelection": false,
 	"vim.foldfix": true,
 	"git.decorations.enabled": false,
