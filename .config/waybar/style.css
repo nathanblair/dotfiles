@@ -36,7 +36,7 @@ window#waybar {
 }
 
 #clock {
-    border-bottom: 3px solid #f8f8f2;
+    border-bottom: 0px solid #f8f8f2;
 }
 
 #battery.charging {

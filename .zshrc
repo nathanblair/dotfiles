@@ -9,8 +9,8 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
     zgen load zdharma/fast-syntax-highlighting
-    #zgen load denysdovhan/spaceship-prompt spaceship
-    zgen load subnixr/minimal
+    zgen load denysdovhan/spaceship-prompt spaceship
+    #zgen load subnixr/minimal
     zgen save
 fi
 
@@ -101,3 +101,5 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export CC=clang
 export CXX=clang++
+
+export PATH=/usr/local/bin:$PATH

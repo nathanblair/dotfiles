@@ -13,28 +13,35 @@ settings:
         d: null
         dd: tab-close
         x: nop
+  content.notifications:
+    https://app.slack.com: true
+    https://www.reddit.com: false
   content.user_stylesheets:
-    global: tomorrow_night.css
+    global: null
   editor.encoding:
     global: utf-8
   fonts.completion.entry:
-    global: 14pt monospace
+    global: 14pt default_family
   fonts.debug_console:
-    global: 14pt Hack, 14pt monospace
+    global: 14pt Hack, 14pt default_family
+  fonts.default_family:
+    global:
+    - 14pt Hack
+    - Menlo
+    - Terminus
+    - Monospace
   fonts.downloads:
-    global: 14pt Hack, 14pt monospace
+    global: 14pt Hack, 14pt default_family
   fonts.hints:
-    global: 14pt Hack, 13pt monospace
+    global: 14pt Hack, 13pt default_family
   fonts.keyhint:
-    global: 14pt Hack, 14pt monospace
+    global: 14pt Hack, 14pt default_family
   fonts.messages.error:
-    global: 14pt Hack, 14pt monospace
+    global: 14pt Hack, 14pt default_family
   fonts.messages.info:
-    global: 14pt Hack, 14pt monospace
+    global: 14pt Hack, 14pt default_family
   fonts.messages.warning:
-    global: 14pt Hack, 14pt monospace
-  fonts.monospace:
-    global: 14pt Hack, Menlo, Terminus, Monospace
+    global: 14pt Hack, 14pt default_family
   fonts.prompts:
     global: 18pt Hack, Monospace
   fonts.statusbar:

@@ -31,7 +31,7 @@ exec_always {
 exec mako
 
 # The system background image
-set $bg ~/Pictures/wallpaper3.png
+set $bg ~/Pictures/wallpaper.jpg
 #
 # Your preferred screen locker
 set $locker swaylock -i $bg -s "center"
@@ -51,7 +51,7 @@ focus_wrapping no
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $bg "center" #282A36
+output * bg $bg "fill"
 #
 # Example configuration:
 #

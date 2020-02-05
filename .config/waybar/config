@@ -2,22 +2,21 @@
   "layer": "top",
   "modules-left": [
     "sway/workspaces",
-    "sway/mode"
+    "sway/mode",
+    "sway/window"
   ],
   "modules-center": [
-    "sway/window"
+    "clock"
   ],
   "modules-right": [
     "tray",
     "custom/media",
-    "network#vpn",
     "network",
     "custom/backlight",
     "custom/volume",
     "custom/battery",
     "custom/battery#2",
-    "idle_inhibitor",
-    "clock"
+    "idle_inhibitor"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -49,11 +48,6 @@
     "exec": "music",
     "return-type": "json",
     "exec-if": "playerctl status"
-  },
-  "network#vpn": {
-    "interface": "cscotun0",
-    "format": "",
-    "tooltip-format": "{ipaddr}"
   },
   "network": {
     "format-disconnected": "",
