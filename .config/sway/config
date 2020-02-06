@@ -211,6 +211,7 @@ assign [title="Chromium"] $ws3
 assign [app_id="firefoxdeveloperedition"] $ws3
 assign [app_id="firefox"] $ws3
 assign [title="Slack"] $ws4
+assign [title="Microsoft Teams"] $ws4
 assign [class="discord"] $ws4
 assign [title="Zoom"] $ws5
 assign [title="Spotify"] $ws6
