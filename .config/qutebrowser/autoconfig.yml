@@ -17,7 +17,7 @@ settings:
     https://app.slack.com: true
     https://www.reddit.com: false
   content.user_stylesheets:
-    global: tomorrow_night.css
+    global: null
   editor.encoding:
     global: utf-8
   fonts.completion.entry:

@@ -31,6 +31,7 @@ set splitright
 set ttimeoutlen=10
 set colorcolumn=79
 set nowrap
+set nolist
 set t_Co=256
 
 " Folding
@@ -113,7 +114,8 @@ let g:echodoc#type='floating'
 " Color scheme
 set termguicolors
 augroup colorscheme_customization
-  autocmd ColorScheme dracula highlight Normal ctermbg=244 guibg=#050506 
+  "autocmd ColorScheme dracula highlight Normal ctermbg=244 guibg=#050506 ctermbg=NONE
+  autocmd ColorScheme dracula highlight Normal ctermbg=244 guibg=NONE ctermbg=NONE
   autocmd ColorScheme dracula highlight DraculaBgDark ctermbg=244 guibg=#172030 
   autocmd ColorScheme dracula highlight DraculaBgDarker ctermbg=244 guibg=#101220
   autocmd ColorScheme dracula highlight DraculaTodo cterm=bold ctermfg=cyan gui=bold guifg=cyan guibg=black
@@ -143,6 +145,7 @@ let g:coc_global_extensions=[
   \'coc-css',
   \'coc-html',
   \'coc-json',
+  \'coc-emmet',
   \'coc-yaml',
   \'coc-python',
   \'coc-omnisharp',
