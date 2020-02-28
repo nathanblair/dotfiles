@@ -12,7 +12,8 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term termite
+#set $term termite
+set $term konsole
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher

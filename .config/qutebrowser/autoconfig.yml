@@ -76,3 +76,5 @@ settings:
       aw: https://wiki.archlinux.org/?search={}
   url.start_pages:
     global: https://google.com
+  zoom.default:
+    global: 125%

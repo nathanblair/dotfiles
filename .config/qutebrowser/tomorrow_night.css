@@ -11,7 +11,7 @@ scrollbar {opacity: .75 !important;}
 
 /* Base */
 *, ::before, ::after {
-color: #c5c8c6 !important;
+color: #ffffff !important;
 border-color: #5F9F9F !important;
 outline-color: #5F9F9F !important;
 text-shadow: none !important;
@@ -95,7 +95,7 @@ img:hover, svg:hover {opacity: 1 !important;}
 /* Highlight */
 ::-moz-selection {
 background-color: #373b41 !important;
-color: #c5c8c6 !important;
+color: #ffffff !important;
 }
 
 /* ::: anchor/links ::: */
@@ -153,7 +153,7 @@ th, caption {background: #1d1f21 !important;}
 input, textarea, button,
 select,option,optgroup{
 
-color: #c5c8c6 !important;
+color: #ffffff !important;
 background: none #303030 !important;
 -moz-appearance: none !important;
 -webkit-appearance: none !important;
@@ -179,7 +179,7 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 button:hover {
-color: #c5c8c6 !important;
+color: #ffffff !important;
 background: #373b41 !important;
 }
 
@@ -195,8 +195,6 @@ html [id*="lightbox"] img {opacity: 1 !important;}
 
 /* Mozilla addons shrink/expand sections */
 .expando a {background: none transparent  !important;}
-
-}
 
 
 @-moz-document url(about:newtab) {
