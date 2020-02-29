@@ -102,4 +102,12 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export CC=clang
 export CXX=clang++
 
+if test -z "${XDG_RUNTIME_DIR}"; then
+  export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+  if ! test -d "${XDG_RUNTIME_DIR}"; then
+    mkdir "${XDG_RUNTIME_DIR}" >> /dev/null
+    chmod 0700 "${XDG_RUNTIME_DIR}"
+  fi
+fi
+
 export PATH=/usr/local/bin:$PATH

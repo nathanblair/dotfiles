@@ -1,0 +1,5 @@
+mode=drun
+prompt=>
+# allow_images=true
+allow_markup=true
+style=./dracula.css

@@ -1,6 +1,6 @@
 # Read `man 5 sway` for a complete reference.
 
-#xwayland disable
+xwayland disable
 
 ### Variables
 #
@@ -13,7 +13,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 #set $term termite
-set $term konsole
+set $term kitty
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher
@@ -21,7 +21,8 @@ set $termLauncher $term --name Launcher -c ~/.config/$term/launcher
 #set $menu $termLauncher
 #set $menu BEMENU_BACKEND=wayland bemenu-run -ibl50 -p " > " -P ":" --tb "#282a36" --tf "#f8f8f2" --fn 'Hack 18'
 #set $menu BEMENU_BACKEND=curses $termLauncher -e "bemenu-run -ip ' > ' -P :"
-set $menu rofi -show drun
+#set $menu rofi -show drun
+set $menu wofi --show drun
 
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme 'breeze-dark'
@@ -69,7 +70,7 @@ exec swayidle -w \
   timeout 300 'swaymsg "output * dpms off"' \
     resume 'swaymsg "output * dpms on"' \
   timeout 360 'swaylock -f -i $bg' \
-  timeout 600 'systemctl suspend' \
+  timeout 600 'sudo zzz' \
   before-sleep 'swaylock -f -i $bg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off

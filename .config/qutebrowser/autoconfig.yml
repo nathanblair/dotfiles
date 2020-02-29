@@ -26,10 +26,12 @@ settings:
     global: 14pt Hack, 14pt default_family
   fonts.default_family:
     global:
-    - 14pt Hack
+    - 14pt Ubuntu
     - Menlo
     - Terminus
     - Monospace
+  fonts.default_size:
+    global: 14pt
   fonts.downloads:
     global: 14pt Hack, 14pt default_family
   fonts.hints:
@@ -45,9 +47,9 @@ settings:
   fonts.prompts:
     global: 18pt Hack, Monospace
   fonts.statusbar:
-    global: 14pt Sans
+    global: 14pt Ubuntu
   fonts.tabs:
-    global: 14pt DejaVu Sans
+    global: 14pt Ubuntu
   fonts.web.family.cursive:
     global: Cursive
   fonts.web.family.fantasy:
@@ -55,11 +57,11 @@ settings:
   fonts.web.family.fixed:
     global: Hack, DejaVu Sans Mono, Symbola
   fonts.web.family.sans_serif:
-    global: DejaVu Sans
+    global: Ubuntu
   fonts.web.family.serif:
-    global: DejaVu Serif
+    global: Ubuntu
   fonts.web.family.standard:
-    global: DejaVu Sans
+    global: Ubuntu
   fonts.web.size.default:
     global: 16
   fonts.web.size.default_fixed:
