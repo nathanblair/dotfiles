@@ -2,8 +2,8 @@
   "layer": "top",
   "modules-left": [
     "sway/workspaces",
-    "sway/mode",
-    "sway/window"
+    "sway/window",
+    "sway/mode"
   ],
   "modules-center": [
     "clock"

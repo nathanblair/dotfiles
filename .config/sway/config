@@ -12,17 +12,11 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-#set $term termite
 set $term kitty
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher
-set $termLauncher $term --name Launcher -c ~/.config/$term/launcher
-#set $menu $termLauncher
-#set $menu BEMENU_BACKEND=wayland bemenu-run -ibl50 -p " > " -P ":" --tb "#282a36" --tf "#f8f8f2" --fn 'Hack 18'
-#set $menu BEMENU_BACKEND=curses $termLauncher -e "bemenu-run -ip ' > ' -P :"
-#set $menu rofi -show drun
-set $menu wofi --show drun
+set $menu wofi -I
 
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme 'breeze-dark'

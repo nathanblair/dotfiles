@@ -35,6 +35,10 @@ window#waybar {
     border-bottom: 2px solid #50fa7b;
 }
 
+#window {
+  margin: 0 15px;
+}
+
 #clock {
     border-bottom: 0px solid #f8f8f2;
 }
