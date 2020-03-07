@@ -1,6 +1,6 @@
 # Read `man 5 sway` for a complete reference.
 
-xwayland disable
+#xwayland disable
 
 ### Variables
 #
@@ -16,7 +16,8 @@ set $term kitty
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher
-set $menu wofi -I
+#set $menu wofi
+set $menu rofi -show combi
 
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme 'breeze-dark'
@@ -24,7 +25,7 @@ exec_always {
   gsettings set org.gnome.desktop.interface cursor-theme 'breeze-snow'
   gsettings set org.gnome.desktop.interface cursor-size 36
 }
-exec mako
+#exec mako
 
 # The system background image
 set $bg ~/Pictures/wallpaper.jpg
@@ -192,7 +193,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws91
+bindsym $mod+Shift+0 move container to workspace $ws0
 # Note: workspaces can have any name you want, not just numbers.
 # We just use 1-10 as the default.
 

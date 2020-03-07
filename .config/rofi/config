@@ -2,10 +2,10 @@ rofi.icon-theme: Papirus
 rofi.show-icons: true
 rofi.font: Hack 14
 rofi.theme: dracula
-rofi.terminal: termite
+rofi.terminal: kitty
 rofi.lines: 5
-rofi.modi: run,drun
-rofi.combi-modi: run,drun
+rofi.modi: drun
+rofi.combi-modi: drun
 rofi.display-run:
 rofi.display-drun:
 rofi.display-combi:

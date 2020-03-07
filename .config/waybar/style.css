@@ -36,7 +36,9 @@ window#waybar {
 }
 
 #window {
-  margin: 0 15px;
+  padding: 0 15px;
+  background-color: #ff79c6;
+  border-radius: 4px;
 }
 
 #clock {

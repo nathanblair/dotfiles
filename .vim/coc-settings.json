@@ -1,4 +1,7 @@
 {
+  "prettier.semi": false,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": true,
   "python.jediEnabled": true,
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-S", "-l 79"],
@@ -7,16 +10,14 @@
   "languageserver": {
     "clangd": {
       "command": "clangd",
-      "filetypes": [
-        "h",
-        "hpp",
-        "c",
-        "cpp"
-      ]
+      "filetypes": ["h", "hpp", "c", "cpp"]
     },
     "dart": {
       "command": "dart",
-      "args": ["/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot", "--lsp"],
+      "args": [
+        "/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
+        "--lsp"
+      ],
       "filetypes": ["dart"],
       "requireRootPattern": true,
       "rootPatterns": ["pubspec.yaml"]

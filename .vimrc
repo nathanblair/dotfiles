@@ -62,7 +62,7 @@ let g:projectName=fnamemodify(getcwd(), ":t")
 " Make system
 set makeprg=ninja\ -C\ build
 
-" Don't wrap if in preview window
+" Wrap if in preview window
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 
 " Python-specific settings
@@ -149,6 +149,7 @@ let g:coc_global_extensions=[
   \'coc-yaml',
   \'coc-python',
   \'coc-omnisharp',
+  \'coc-prettier',
   \'coc-rls']
 
 " Completion
