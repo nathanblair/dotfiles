@@ -1,7 +1,10 @@
 {
   "prettier.semi": false,
-  "prettier.useTabs": false,
+  "prettier.printWidth": 80,
   "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.format.semicolons": "remove",
   "python.jediEnabled": true,
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-S", "-l 79"],

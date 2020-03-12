@@ -64,6 +64,7 @@ set makeprg=ninja\ -C\ build
 
 " Wrap if in preview window
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
+autocmd BufWinEnter * if nvim_win_get_config(0)['relative'] != '' | setlocal nofoldenable | endif
 
 " Python-specific settings
 "autocmd FileType python,vim setlocal foldmethod=indent
@@ -141,15 +142,15 @@ highlight link CocHintHighlight Conceal
 " -------------------------------------------------------------"
 " Extension List
 let g:coc_global_extensions=[
-  \'coc-tsserver',
+  \'coc-tsserver@1.4.9',
   \'coc-css',
   \'coc-html',
   \'coc-json',
   \'coc-emmet',
   \'coc-yaml',
   \'coc-python',
-  \'coc-omnisharp',
   \'coc-prettier',
+  \'coc-omnisharp',
   \'coc-rls']
 
 " Completion
