@@ -34,7 +34,7 @@
     // Add custom color schemes to this array
     "schemes": [
       {
-            "background": "#282A36",
+            "background": "#090909",
             "black": "#21222C",
             "blue": "#BD93F9",
             "brightBlack": "#6272A4",

@@ -49,5 +49,25 @@
         "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor",
         "when": "vim.mode != 'Insert'"
+    },
+    {
+      "key": "ctrl+k",
+      "command": "-extension.vim_ctrl+k",
+      "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+      "key": "ctrl+k",
+      "command": "editor.action.showHover",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+k ctrl+i",
+      "command": "-editor.action.showHover",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+k ctrl+i",
+      "command": "-editor.debug.action.showDebugHover",
+      "when": "editorTextFocus && inDebugMode"
     }
 ]
