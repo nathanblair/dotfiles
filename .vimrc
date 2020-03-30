@@ -36,11 +36,11 @@ set t_Co=256
 
 " Folding
 set foldmethod=indent
-set foldlevelstart=1
-set foldlevel=5
-set foldnestmax=2
-set foldcolumn=2
-set foldclose="all"
+"set foldlevelstart=1
+"set foldlevel=5
+"set foldnestmax=2
+"set foldcolumn=2
+"set foldclose="all"
 
 " Tabbing and indentation
 set expandtab
@@ -142,7 +142,7 @@ highlight link CocHintHighlight Conceal
 " -------------------------------------------------------------"
 " Extension List
 let g:coc_global_extensions=[
-  \'coc-tsserver@1.4.9',
+  \'coc-tsserver',
   \'coc-css',
   \'coc-html',
   \'coc-json',

@@ -3,6 +3,7 @@
   "prettier.printWidth": 80,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "avoid",
   "typescript.preferences.quoteStyle": "single",
   "typescript.format.semicolons": "remove",
   "python.jediEnabled": true,

@@ -1,0 +1,12 @@
+{
+  "sidebar_width": 2,
+  "notify": "mention",
+  "emoji": true,
+  "theme": {
+    "message": {
+      "time": "fg-green,fg-bold",
+      "name": "fg-blue",
+      "text": ""
+    }
+  }
+}

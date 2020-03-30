@@ -73,6 +73,9 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
+# Enable bash completions
+autoload -U +X bashcompinit && bashcompinit
+
 if [[ -n "$DISPLAY" ]]; then
     # Use beam shape cursor on startup.
     echo -ne '\e[5 q'
@@ -111,4 +114,6 @@ if test -z "${XDG_RUNTIME_DIR}"; then
   fi
 fi
 
+source /usr/share/kubectl/completion.zsh
+source /opt/azure-cli/az.completion || return 0
 export PATH=/usr/local/bin:$PATH

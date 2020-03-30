@@ -1,6 +1,6 @@
 # Read `man 5 sway` for a complete reference.
 
-#xwayland disable
+xwayland disable
 
 ### Variables
 #
@@ -205,8 +205,8 @@ assign [title="Visual Studio Code"] $ws2
 assign [title="code"] $ws2
 assign [title="nvim"] $ws2
 assign [title="Chromium"] $ws3
-assign [app_id="firefoxdeveloperedition"] $ws3
-assign [app_id="firefox"] $ws3
+#assign [app_id="firefoxdeveloperedition"] $ws3
+#assign [app_id="firefox"] $ws3
 assign [title="Slack"] $ws5
 assign [title="Microsoft Teams"] $ws5
 assign [class="discord"] $ws5
