@@ -1,5 +1,12 @@
 mode=drun
-prompt=>
- allow_images=true
+prompt=Launch
+allow_images=true
 allow_markup=true
-style=./dracula.css
+
+# hide_search=true
+# no_actions=true
+
+width=500
+
+key_up=k
+key_down=j
