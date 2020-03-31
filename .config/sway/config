@@ -16,14 +16,15 @@ set $term kitty
 # Your preferred web browser
 set $web qutebrowser
 # Your preferred application launcher
-#set $menu wofi
-set $menu rofi -show combi
+set $menu wofi
+#set $menu rofi -show combi
 
+set $interface-schema org.gnome.desktop.interface
 exec_always {
-  gsettings set org.gnome.desktop.interface gtk-theme 'breeze-dark'
-  gsettings set org.gnome.desktop.interface icon-theme 'breeze-dark'
-  gsettings set org.gnome.desktop.interface cursor-theme 'breeze-snow'
-  gsettings set org.gnome.desktop.interface cursor-size 36
+  gsettings set $interface-schema gtk-theme 'Papirus-Dark'
+  gsettings set $interface-schema icon-theme 'Papirus-Dark'
+  gsettings set $interface-schema cursor-theme 'Breeze_Snow'
+  gsettings set $interface-schema cursor-size 36
 }
 #exec mako
 
