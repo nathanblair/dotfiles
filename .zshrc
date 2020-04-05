@@ -97,7 +97,7 @@ export LC_ALL=en_US.UTF-8
 export QT_QPA_PLATFORM=wayland
 export CLUTTER_BACKEND=wayland
 export XDG_SESSION_TYPE=wayland
-export XDG_CURRENT_DESKTOP=unity
+export XDG_CURRENT_DESKTOP=Unity
 #export GDK_BACKEND=wayland
 
 export MOZ_ENABLE_WAYLAND=1

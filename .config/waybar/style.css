@@ -1,38 +1,56 @@
 * {
-    font-family: Ubuntu;
-    font-size: 18px;
+  font-family: Ubuntu;
+  font-size: 18px;
 }
 
 window#waybar {
-    background: transparent;
-    color: #f8f8f2;
+  background: transparent;
+  color: #f8f8f2;
 }
 
 #workspaces button {
-    color: #f8f8f2;
-    background: transparent;
-    border: none;
-    padding: 0 24px;
-    margin: 6px 0 0 0;
-    border-bottom: 3px solid transparent;
+  color: #f8f8f2;
+  background: transparent;
+  border: none;
+  padding: 0 24px;
+  margin: 6px 0 0 0;
+  border-bottom: 3px solid transparent;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background: transparent;
-    color: #50fa7b;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: transparent;
+  color: #50fa7b;
 }
 
-#workspaces button.focused, #mode {
-    border-bottom: 3px solid #6272a4;
+#workspaces button.focused,
+#mode {
+  border-bottom: 3px solid #6272a4;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor, #custom-clock, #custom-backlight, #custom-volume, #custom-battery, #custom-media {
-    min-width: 36px;
-    padding: 0 6px;
-    margin: 2px 4px 0 4px;
-    border-bottom: 2px solid #50fa7b;
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-spotify,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-clock,
+#custom-backlight,
+#custom-volume,
+#custom-battery,
+#custom-media,
+#custom-network {
+  min-width: 36px;
+  padding: 0 6px;
+  margin: 2px 4px 0 4px;
+  border-bottom: 2px solid #50fa7b;
 }
 
 #window {
@@ -42,100 +60,106 @@ window#waybar {
 }
 
 #clock {
-    border-bottom: 0px solid #f8f8f2;
+  border-bottom: 0px solid #f8f8f2;
 }
 
 #battery.charging {
-    border-bottom: 3px solid #ffb86c;
+  border-bottom: 3px solid #ffb86c;
 }
 
 #battery.critical:not(.charging) {
-    color: #ffffff;
-    border-bottom: 3px solid #ff5555;
+  color: #ffffff;
+  border-bottom: 3px solid #ff5555;
 }
 
-#custom-battery, #custom-memory, #custom-home, #custom-root {
-    border-bottom: 3px solid #f8f8f2;
+#custom-battery,
+#custom-memory,
+#custom-home,
+#custom-root {
+  border-bottom: 3px solid #f8f8f2;
 }
 
 #custom-battery.FULL {
-    border-bottom: 3px solid #50fa7b;
+  border-bottom: 3px solid #50fa7b;
 }
 
 #custom-battery.DIS {
-    border-bottom: 3px solid #f1fa8c;
+  border-bottom: 3px solid #f1fa8c;
 }
 
 #custom-battery.CHR {
-    border-bottom: 3px solid #ffb86c;
+  border-bottom: 3px solid #ffb86c;
 }
 
 #custom-battery.CRI {
-    border-bottom: 3px solid #ff5555;
+  border-bottom: 3px solid #ff5555;
 }
 
 #cpu {
-    color: #000000;
-    border-bottom: 3px solid #8be9fd;
+  color: #000000;
+  border-bottom: 3px solid #8be9fd;
 }
 
-#backlight, #custom-backlight {
-    border-bottom: 3px solid #bd93f9;
+#backlight,
+#custom-backlight {
+  border-bottom: 3px solid #bd93f9;
 }
 
-#network {
-    border-bottom: 3px solid #50fa7b;
+#network,
+#custom-network {
+  border-bottom: 3px solid #50fa7b;
 }
-#network.disconnected {
-    border-bottom: 3px solid #ff5555;
+#network.disconnected,
+#custom-network.disconnected {
+  border-bottom: 3px solid #ff5555;
 }
 
 #custom-media {
-    border-bottom: 3px solid #6272a4;
+  border-bottom: 3px solid #6272a4;
 }
 
 #custom-volume {
-    border-bottom: 3px solid #8be9fd;
-    font-family: Hack;
+  border-bottom: 3px solid #8be9fd;
+  font-family: Hack;
 }
 #custom-volume.off {
-    border-bottom: 3px solid #333333;
+  border-bottom: 3px solid #333333;
 }
 
 #memory {
-    border-bottom: 3px solid #bd93f9;
+  border-bottom: 3px solid #bd93f9;
 }
 
 #pulseaudio {
-    border-bottom: 3px solid #50fa7b;
-    color: #000000;
+  border-bottom: 3px solid #50fa7b;
+  color: #000000;
 }
 
 #pulseaudio.muted {
-    border-bottom: 3px solid #6272a4;
-    color: #2a5c45;
+  border-bottom: 3px solid #6272a4;
+  color: #2a5c45;
 }
 
 #custom-spotify {
-    border-bottom: 3px solid #66cc99;
-    color: #2a5c45;
+  border-bottom: 3px solid #66cc99;
+  color: #2a5c45;
 }
 
 #temperature {
-    border-bottom: 3px solid #44475a;
+  border-bottom: 3px solid #44475a;
 }
 
 #temperature.critical {
-    border-bottom: 3px solid #ff5555;
+  border-bottom: 3px solid #ff5555;
 }
 
 #tray {
-    background-color: #44475a;
+  background-color: #44475a;
 }
 
 #idle_inhibitor.deactivated {
-    border-bottom: 3px solid #f8f8f2;
+  border-bottom: 3px solid #f8f8f2;
 }
 #idle_inhibitor.activated {
-    border-bottom: 3px solid #50fa7b;
+  border-bottom: 3px solid #50fa7b;
 }
