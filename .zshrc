@@ -117,3 +117,4 @@ fi
 source /usr/share/kubectl/completion.zsh
 source /opt/azure-cli/az.completion || return 0
 export PATH=/usr/local/bin:$PATH
+

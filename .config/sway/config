@@ -22,7 +22,7 @@ set $menu wofi
 set $interface-schema org.gnome.desktop.interface
 exec_always {
   gsettings set $interface-schema gtk-theme 'Arc-Dark'
-  gsettings set $interface-schema icon-theme 'Arc-Dark'
+  gsettings set $interface-schema icon-theme 'Papirus-Dark'
   gsettings set $interface-schema cursor-theme 'Breeze_Snow'
   gsettings set $interface-schema cursor-size 36
 }

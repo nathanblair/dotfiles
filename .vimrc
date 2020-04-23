@@ -103,7 +103,7 @@ let g:NERDTreeSortHiddenFirst=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeIgnore=['^__pycache__', 'node_modules', 'dist']
+let g:NERDTreeIgnore=['^__pycache__', 'node_modules']
 
 " NERDCommenter
 let g:NERDCreateDefaultMappings=0
