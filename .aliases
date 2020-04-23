@@ -39,8 +39,9 @@ alias glgp='git log --graph --patch'
 alias tree='tree --dirsfirst --noreport'
 
 # Void package manager
-alias xi='xbps-install -S'
-alias xu='xbps-install -Su'
 alias xs='xbps-query -Rs'
 alias xf='xbps-query'
+alias xi='sudo xbps-install -S'
+alias xu='sudo xbps-install -Su'
+alias xr='sudo xbps-remove -Ro'
 

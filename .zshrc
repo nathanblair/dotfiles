@@ -73,6 +73,9 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
+# Zsh completions
+fpath+='~/.zfunc'
+
 # Enable bash completions
 autoload -U +X bashcompinit && bashcompinit
 
