@@ -14,10 +14,6 @@
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
   "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "filetypes": ["h", "hpp", "c", "cpp"]
-    },
     "dart": {
       "command": "dart",
       "args": [

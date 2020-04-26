@@ -88,7 +88,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'thaerkh/vim-indentguides'
     Plug 'machakann/vim-sandwich'
     Plug 'sheerun/vim-polyglot'
-    Plug 'neoclide/coc-neco'
+    Plug 'ap/vim-buftabline'
 call plug#end()
 
 " -------------------------------------------------------------"
@@ -151,6 +151,8 @@ let g:coc_global_extensions=[
   \'coc-python',
   \'coc-prettier',
   \'coc-omnisharp',
+  \'coc-vimlsp',
+  \'coc-clangd',
   \'coc-rls']
 
 " Completion
@@ -320,6 +322,7 @@ set statusline+=\ %(%m%r%w\ %)
 set statusline+=%{ChangeStatuslineColor()}
 set statusline+=%#statusline#
 set statusline+=%=
+set statusline+=%{coc#status()}
 set statusline+=%#keyword#
 set statusline+=%(\ [%{toupper(&filetype)}]\ %)
 set statusline+=\%#helpCommand#
