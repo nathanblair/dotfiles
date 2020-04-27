@@ -10,7 +10,8 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
     zgen load zdharma/fast-syntax-highlighting
-    zgen load denysdovhan/spaceship-prompt spaceship
+    #zgen load denysdovhan/spaceship-prompt spaceship
+    zgen load subnixr/minimal
     zgen save
 fi
 
@@ -33,6 +34,7 @@ SPACESHIP_PROMPT_ORDER=(
 )
 SPACESHIP_RPROMPT_ORDER=(
     git
+    hg
     exec_time
     exit_code
     node
@@ -41,6 +43,8 @@ SPACESHIP_RPROMPT_ORDER=(
     time
     #line_sep
 )
+MNML_RPROMPT=(mnml_git mnml_hg)
+MNML_MAGICENTER=()
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
@@ -116,6 +120,8 @@ fi
 
 source /usr/share/kubectl/completion.zsh
 source /opt/azure-cli/az.completion || return 0
+#source $(rustc --print sysroot)/share/zsh/site-functions/_cargo
+
 export PATH=/usr/local/bin:$PATH
 export TERMINAL=kitty
 
