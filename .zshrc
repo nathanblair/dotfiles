@@ -73,9 +73,6 @@ function zle-keymap-select {
 }
 zle -N zle-keymap-select
 
-# Zsh completions
-fpath+='~/.zfunc'
-
 # Enable bash completions
 autoload -U +X bashcompinit && bashcompinit
 
@@ -120,4 +117,5 @@ fi
 source /usr/share/kubectl/completion.zsh
 source /opt/azure-cli/az.completion || return 0
 export PATH=/usr/local/bin:$PATH
+export TERMINAL=kitty
 

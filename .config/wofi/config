@@ -1,12 +1,17 @@
 mode=drun
-prompt=Launch
 allow_images=true
 allow_markup=true
+term=kitty
+sort_order=alphabetical
 
-# hide_search=true
-# no_actions=true
+hide_search=true
+#no_actions=true
 
-width=500
+width=400
+lines=6
 
 key_up=k
 key_down=j
+key_exit=Escape,Control_L-bracketleft
+key_expand=semicolon
+key_hide_search=slash
