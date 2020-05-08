@@ -141,6 +141,7 @@ highlight link CocHintHighlight Conceal
 " Language Server Protocol settings                         LS
 " -------------------------------------------------------------"
 " Extension List
+"\'coc-prettier',
 let g:coc_global_extensions=[
   \'coc-tsserver',
   \'coc-css',
@@ -149,7 +150,6 @@ let g:coc_global_extensions=[
   \'coc-emmet',
   \'coc-yaml',
   \'coc-python',
-  \'coc-prettier',
   \'coc-omnisharp',
   \'coc-vimlsp',
   \'coc-clangd',

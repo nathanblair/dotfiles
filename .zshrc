@@ -106,9 +106,12 @@ export XDG_CURRENT_DESKTOP=Unity
 
 export MOZ_ENABLE_WAYLAND=1
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export CC=clang
 export CXX=clang++
+
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 if test -z "${XDG_RUNTIME_DIR}"; then
   export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
@@ -118,10 +121,12 @@ if test -z "${XDG_RUNTIME_DIR}"; then
   fi
 fi
 
+export TERMINAL=kitty
+#export TERM=kitty
+#
 source /usr/share/kubectl/completion.zsh
 source /opt/azure-cli/az.completion || return 0
 #source $(rustc --print sysroot)/share/zsh/site-functions/_cargo
 
-export PATH=/usr/local/bin:$PATH
-export TERMINAL=kitty
+export PATH=/usr/local/bin:$ANDROID_SDK_ROOT/tools/bin:$PATH
 

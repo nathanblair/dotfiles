@@ -45,3 +45,10 @@ alias xi='sudo xbps-install -S'
 alias xu='sudo xbps-install -Su'
 alias xr='sudo xbps-remove -Ro'
 
+# Docker
+alias dcla='docker container list --all'
+alias dcp='docker container prune'
+alias dpsa='docker ps --all'
+alias dcrit='docker container run -i -t'
+alias dib='docker image build --force-rm --rm'
+
