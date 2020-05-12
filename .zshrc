@@ -102,9 +102,11 @@ export QT_QPA_PLATFORM=wayland
 export CLUTTER_BACKEND=wayland
 export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=Unity
+export NO_AT_BRIDGE=1
 #export GDK_BACKEND=wayland
 
 export MOZ_ENABLE_WAYLAND=1
+export MOZ_DBUS_REMOTE=1
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export CC=clang
 export CXX=clang++

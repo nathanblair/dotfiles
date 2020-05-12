@@ -9,9 +9,10 @@ settings:
   bindings.commands:
     global:
       normal:
+        <Ctrl+v>: null
         '`': config-cycle 'content.user_stylesheets' tomorrow_night.css ""
-        d: null
-        dd: tab-close
+        d: scroll-px 0 20
+        u: scroll-px 0 -20
         x: nop
   content.autoplay:
     global: false
@@ -21,7 +22,7 @@ settings:
     https://app.slack.com: true
     https://www.reddit.com: false
   content.user_stylesheets:
-    global: null
+    global: tomorrow_night.css
   editor.command:
     global:
     - nvim
@@ -81,6 +82,8 @@ settings:
     global: 20
   fonts.web.size.minimum_logical:
     global: 12
+  statusbar.hide:
+    global: false
   tabs.background:
     global: true
   tabs.mousewheel_switching:
