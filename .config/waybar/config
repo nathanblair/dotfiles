@@ -159,6 +159,7 @@
   "custom/clock": {
     "exec": "bartime",
     "return-type": "json",
+    "interval": 60,
     "tooltip": false
   },
   "idle_inhibitor": {
