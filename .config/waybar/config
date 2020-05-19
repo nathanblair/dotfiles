@@ -6,7 +6,7 @@
     "sway/mode"
   ],
   "modules-center": [
-    "clock"
+    "custom/clock"
   ],
   "modules-right": [
     "tray",
@@ -153,11 +153,13 @@
     "tooltip": false
   },
   "clock": {
-    "format": "{:%a %D %_I:%M %p}",
+    "format": "{:%a %D %l:%M %p}",
     "tooltip": false
   },
   "custom/clock": {
-    "exec": "date +'%a %D %_I:%M %p';cal -3; echo ''"
+    "exec": "bartime",
+    "return-type": "json",
+    "tooltip": false
   },
   "idle_inhibitor": {
     "format": "",

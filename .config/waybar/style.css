@@ -59,7 +59,7 @@ window#waybar {
   border-radius: 4px;
 }
 
-#clock {
+#clock, #custom-clock {
   border-bottom: 0px solid #f8f8f2;
 }
 

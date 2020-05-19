@@ -1,6 +1,10 @@
 {
   "typescript.preferences.quoteStyle": "single",
   "typescript.format.semicolons": "remove",
+  "prettier.semi": false,
+  "prettier.trailingComma": "es5",
+  "prettier.singleQuote": true,
+  "prettier.arrowParens": "always",
   "html.autoClosingTags": true,
   "html.format.indentInnerHtml": true,
   "python.jediEnabled": true,

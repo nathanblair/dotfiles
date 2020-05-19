@@ -126,8 +126,8 @@ fi
 export TERMINAL=kitty
 #export TERM=kitty
 #
-source /usr/share/kubectl/completion.zsh
-source /opt/azure-cli/az.completion || return 0
+source /usr/share/kubectl/completion.zsh 2>/dev/null
+source /opt/azure-cli/az.completion 2>/dev/null
 #source $(rustc --print sysroot)/share/zsh/site-functions/_cargo
 
 export PATH=/usr/local/bin:$ANDROID_SDK_ROOT/tools/bin:$PATH
