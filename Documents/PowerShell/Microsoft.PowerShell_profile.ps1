@@ -19,7 +19,9 @@ function gd { git diff }
 function ga { git add }
 function gaa { git add --all }
 function gc { git commit }
+function gca { git commit --all }
 function gcm ($msg) { git commit -m $msg }
+function gcam { git commit --all -m $msg }
 function gst { git status }
 function glg { git log --graph }
 function glgs { git log --graph --stat }
