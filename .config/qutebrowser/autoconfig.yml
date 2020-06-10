@@ -18,11 +18,15 @@ settings:
     global: false
   content.dns_prefetch:
     global: true
+  content.geolocation:
+    https://www.google.com: false
   content.notifications:
     https://app.slack.com: true
     https://www.reddit.com: false
+  content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
   content.user_stylesheets:
-    global: null
+    global: tomorrow_night.css
   editor.command:
     global:
     - nvim

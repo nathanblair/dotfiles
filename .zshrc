@@ -101,7 +101,7 @@ export LC_ALL=en_US.UTF-8
 export QT_QPA_PLATFORM=wayland
 export CLUTTER_BACKEND=wayland
 export XDG_SESSION_TYPE=wayland
-export XDG_CURRENT_DESKTOP=Unity
+#export XDG_CURRENT_DESKTOP=Unity
 export NO_AT_BRIDGE=1
 #export GDK_BACKEND=wayland
 
@@ -111,8 +111,8 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export CC=clang
 export CXX=clang++
 
-export ANDROID_SDK_ROOT=/opt/android-sdk
-export ANDROID_HOME=$ANDROID_SDK_ROOT
+#export ANDROID_SDK_ROOT=/opt/android-sdk
+#export ANDROID_HOME=$ANDROID_SDK_ROOT
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 if test -z "${XDG_RUNTIME_DIR}"; then
@@ -128,7 +128,6 @@ export TERMINAL=kitty
 #
 source /usr/share/kubectl/completion.zsh 2>/dev/null
 source /opt/azure-cli/az.completion 2>/dev/null
-#source $(rustc --print sysroot)/share/zsh/site-functions/_cargo
 
-export PATH=/usr/local/bin:$ANDROID_SDK_ROOT/tools/bin:$PATH
+#export PATH=$PATH
 
