@@ -36,7 +36,7 @@ SPACESHIP_PROMPT_ORDER=(
 )
 SPACESHIP_RPROMPT_ORDER=(
     git
-    hg
+    #hg
     exec_time
     exit_code
     node
