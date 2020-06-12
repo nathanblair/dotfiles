@@ -10,8 +10,9 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
     zgen load zdharma/fast-syntax-highlighting
-    #zgen load denysdovhan/spaceship-prompt spaceship
-    zgen load subnixr/minimal
+    #zgen load jackharrisonsherlock/common
+    zgen load denysdovhan/spaceship-prompt spaceship
+    #zgen load subnixr/minimal
     zgen save
 fi
 
