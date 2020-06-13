@@ -1,5 +1,6 @@
-source ~/.aliases
-source ~/.tokens
+source ~/.aliases || true
+source ~/.tokens || true
+
 if [[ ! -d ~/.zgen ]]; then
   git clone https://github.com/tarjoilija/zgen ~/.zgen
 fi
@@ -126,9 +127,9 @@ fi
 
 export TERMINAL=kitty
 #export TERM=kitty
-#
-source /usr/share/kubectl/completion.zsh 2>/dev/null
-source /opt/azure-cli/az.completion 2>/dev/null
+
+source /usr/share/kubectl/completion.zsh || true
+source /opt/azure-cli/az.completion || true
 
 #export PATH=$PATH
 
