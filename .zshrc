@@ -19,31 +19,38 @@ fi
 
 # Prompt configuration
 SPACESHIP_CHAR_SYMBOL_ROOT=#\ 
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true
+SPACESHIP_GIT_SYMBOL=
+SPACESHIP_GIT_BRANCH_PREFIX=
+SPACESHIP_GIT_STATUS_PREFIX=\(
+SPACESHIP_GIT_STATUS_SUFFIX=\)
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=false
 SPACESHIP_PROMPT_PREFIXES_SHOW=true
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_USER_SHOW=needed
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_12H=true
-SPACESHIP_TIME_SUFFIX=
+SPACESHIP_TIME_SUFFIX=\ 
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_PROMPT_ORDER=(
+    jobs
+    time
     user
     host
     dir
+    git
+    #hg
+    rust
+    node
+    ruby
+    dotnet
+    docker
+    kubectl
+    exit_code
     char
 )
 SPACESHIP_RPROMPT_ORDER=(
-    git
-    #hg
     exec_time
-    exit_code
-    node
-    dotnet
-    jobs
-    time
-    #line_sep
 )
 MNML_RPROMPT=(mnml_git mnml_hg)
 MNML_MAGICENTER=()
@@ -92,8 +99,6 @@ if [[ -n "$DISPLAY" ]]; then
 else
     SPACESHIP_CHAR_SYMBOL=\>
     SPACESHIP_CHAR_SUFFIX=\ 
-    SPACESHIP_GIT_SYMBOL=√
-    SPACESHIP_GIT_BRANCH_PREFIX=√\ 
 fi
 
 export EDITOR=$(which nvim)
