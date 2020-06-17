@@ -26,7 +26,7 @@ settings:
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
   content.user_stylesheets:
-    global: tomorrow_night.css
+    global: null
   editor.command:
     global:
     - nvim
