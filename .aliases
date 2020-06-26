@@ -7,6 +7,11 @@ alias cp='cp -vi'
 alias ln='ln -vi'
 
 # File listing
+if [[ "${OSTYPE}" == "darwin*" ]]; then
+    alias ls="ls -G"
+else
+    alias ls="ls --color=always"
+fi
 alias l='ls -h1'
 alias ll='ls -lh'
 alias la='ls -Ah1'

@@ -2,7 +2,7 @@ source ~/.aliases || true
 source ~/.tokens || true
 
 if [[ ! -d ~/.zgen ]]; then
-  git clone https://github.com/tarjoilija/zgen ~/.zgen
+    git clone https://github.com/tarjoilija/zgen ~/.zgen
 fi
 
 source ~/.zgen/zgen.zsh
@@ -137,15 +137,14 @@ export CXX=clang++
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 if test -z "${XDG_RUNTIME_DIR}"; then
-  export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
-  if ! test -d "${XDG_RUNTIME_DIR}"; then
-    mkdir "${XDG_RUNTIME_DIR}" >> /dev/null
-    chmod 0700 "${XDG_RUNTIME_DIR}"
-  fi
+    export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+    if ! test -d "${XDG_RUNTIME_DIR}"; then
+        mkdir "${XDG_RUNTIME_DIR}" >> /dev/null
+        chmod 0700 "${XDG_RUNTIME_DIR}"
+    fi
 fi
 
 export TERMINAL=kitty
-#export TERM=kitty
 
 source /usr/share/kubectl/completion.zsh || true
 source /opt/azure-cli/az.completion || true
