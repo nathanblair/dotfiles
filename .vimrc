@@ -59,6 +59,9 @@ endif
 "autocmd BufWritePost * call s:GetGitDiffNumstat()
 let g:projectName=fnamemodify(getcwd(), ":t")
 
+" Vim sh syntax fixing for arbitrary shells
+let g:is_posix=0
+
 " Make system
 set makeprg=ninja\ -C\ build
 
@@ -153,6 +156,7 @@ let g:coc_global_extensions=[
   \'coc-omnisharp',
   \'coc-vimlsp',
   \'coc-solargraph',
+  \'coc-sh',
   \'coc-clangd',
   \'coc-rls']
 
