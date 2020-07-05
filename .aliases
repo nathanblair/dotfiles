@@ -4,7 +4,6 @@ alias du='du -ch'
 alias df='df -H'
 alias mv='mv -vi'
 alias cp='cp -vi'
-alias ln='ln -vi'
 
 # File listing
 if [[ "${OSTYPE}" == "darwin"* ]]; then
