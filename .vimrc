@@ -69,51 +69,27 @@ set makeprg=ninja\ -C\ build
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 autocmd BufWinEnter * if nvim_win_get_config(0)['relative'] != '' | setlocal nofoldenable | endif
 
-" Python-specific settings
-"autocmd FileType python,vim setlocal foldmethod=indent
-
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
 " -------------------------------------------------------------"
 " Plugin loading and handling
 if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/bundle')
-    Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'scrooloose/nerdtree'
-    Plug 'scrooloose/nerdcommenter'
-    Plug 'cohama/lexima.vim'
-    Plug 'thaerkh/vim-indentguides'
-    Plug 'machakann/vim-sandwich'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'ap/vim-buftabline'
+  Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'cohama/lexima.vim'
+  Plug 'thaerkh/vim-indentguides'
+  Plug 'machakann/vim-sandwich'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'ap/vim-buftabline'
 call plug#end()
-
-" -------------------------------------------------------------"
-" vim-plug settings                                         PS
-" -------------------------------------------------------------"
-" Signify
-let g:signify_vcs_list=['git']
-let g:signify_disable_by_default=1
-
-" NERDTree
-let g:NERDTreeSortHiddenFirst=1
-let g:NERDTreeChDirMode=2
-let g:NERDTreeHijackNetrw=1
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeIgnore=['^__pycache__', 'node_modules']
-
-" NERDCommenter
-let g:NERDCreateDefaultMappings=0
-
-" Echodoc
-let g:echodoc#enable_at_startup=1
-let g:echodoc#type='floating'
 
 " Color scheme
 set termguicolors
@@ -139,6 +115,22 @@ highlight link CocErrorHighlight SpellBad
 highlight link CocWarningHighlight SpellLocal
 highlight link CocInfoHighlight SpellRare
 highlight link CocHintHighlight Conceal
+
+" -------------------------------------------------------------"
+" vim-plug settings                                         PS
+" -------------------------------------------------------------"
+" NERDTree
+let g:NERDTreeSortHiddenFirst=1
+let g:NERDTreeChDirMode=2
+let g:NERDTreeHijackNetrw=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeIgnore=['^__pycache__', 'node_modules']
+let g:NERDTreeCascadeSingleChildDir=0
+let g:NERDTreeCascadeOpenSingleChildDir=0
+let g:NERDTreeStatusline="  NERDTree"
+
+" NERDCommenter
+let g:NERDCreateDefaultMappings=0
 
 " -------------------------------------------------------------"
 " Language Server Protocol settings                         LS
