@@ -11,8 +11,8 @@ settings:
       normal:
         <Ctrl+v>: null
         '`': config-cycle 'content.user_stylesheets' tomorrow_night.css ""
-        d: scroll-px 0 20
-        u: scroll-px 0 -20
+        d: scroll down
+        u: scroll up
         x: nop
   content.autoplay:
     global: false
