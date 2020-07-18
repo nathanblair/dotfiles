@@ -1,0 +1,156 @@
+{
+	"workbench.startupEditor": "none",
+	"editor.renderLineHighlight": "gutter",
+	"editor.fontFamily": "Hack",
+	"editor.insertSpaces": true,
+	"editor.cursorBlinking": "solid",
+	"editor.minimap.renderCharacters": false,
+	"editor.rulers": [
+		80
+	],
+	"editor.smoothScrolling": false,
+	"window.restoreWindows": "none",
+	"files.insertFinalNewline": true,
+	"editor.minimap.enabled": false,
+	"editor.tokenColorCustomizations": {
+		"comments": "#5a008a"
+	},
+	"workbench.colorCustomizations": {
+		"editor.background": "#090909",
+		"terminal.background": "#070707",
+		"sideBar.background": "#050505",
+		"activityBarBadge.background": "#C6FF00",
+		"activityBar.activeBorder": "#C6FF00",
+		"list.activeSelectionForeground": "#C6FF00",
+		"list.inactiveSelectionForeground": "#C6FF00",
+		"list.highlightForeground": "#C6FF00",
+		"scrollbarSlider.activeBackground": "#C6FF0050",
+		"editorSuggestWidget.highlightForeground": "#C6FF00",
+		"textLink.foreground": "#C6FF00",
+		"progressBar.background": "#C6FF00",
+		"pickerGroup.foreground": "#C6FF00",
+		"tab.activeBorder": "#C6FF00",
+		"notificationLink.foreground": "#C6FF00",
+		"editorWidget.resizeBorder": "#C6FF00",
+		"editorWidget.border": "#C6FF00",
+		"settings.modifiedItemIndicator": "#C6FF00",
+		"settings.headerForeground": "#C6FF00",
+		"panelTitle.activeBorder": "#C6FF00",
+		"breadcrumb.activeSelectionForeground": "#C6FF00",
+		"menu.selectionForeground": "#C6FF00",
+		"menubar.selectionForeground": "#C6FF00",
+		"editor.findMatchBorder": "#C6FF00",
+		"selection.background": "#C6FF0040",
+		"statusBarItem.remoteBackground": "#C6FF00"
+	},
+	"explorer.confirmDragAndDrop": false,
+	"workbench.activityBar.visible": true,
+	"zenMode.hideStatusBar": false,
+	"zenMode.hideTabs": false,
+	"vim.useSystemClipboard": true,
+	"vim.disableExtension": false,
+	"editor.wordWrap": "off",
+	"editor.wordWrapColumn": 80,
+	"editor.wrappingIndent": "indent",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/bin": true,
+		"**/obj": true,
+		"**/dist": true,
+		"**/build": true
+	},
+	"vim.leader": "<space>",
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"<space>",
+				"c",
+				"c"
+			],
+			"commands": [
+				"editor.action.commentLine",
+			]
+		},
+		{
+			"before": [
+				"<space>",
+				"d"
+			],
+			"commands": [
+				"workbench.action.closeActiveEditor"
+			]
+		},
+		{
+			"before": [
+				"<space>",
+				"w"
+			],
+			"after": [
+				":",
+				"w",
+				"<CR>"
+			]
+		},
+		{
+			"before": [
+				"J"
+			],
+			"after": [
+				"m",
+				"a",
+				"o",
+				"<ESC>",
+				"`",
+				"a"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"after": [
+				"m",
+				"a",
+				"O",
+				"<ESC>",
+				"`",
+				"a"
+			]
+		}
+	],
+	"files.trimTrailingWhitespace": true,
+	"editor.cursorStyle": "block",
+	"editor.scrollBeyondLastLine": false,
+	"workbench.editor.restoreViewState": false,
+	"workbench.iconTheme": "material-icon-theme",
+	"editor.roundedSelection": false,
+	"vim.foldfix": true,
+	"git.decorations.enabled": false,
+	"editor.codeLens": false,
+	"editor.showFoldingControls": "always",
+	"workbench.settings.enableNaturalLanguageSearch": false,
+	"telemetry.enableCrashReporter": false,
+	"telemetry.enableTelemetry": false,
+	"C_Cpp.clang_format_path": "/usr/bin/clang-format",
+	"breadcrumbs.enabled": false,
+	"scm.diffDecorations": "none",
+	"git.openDiffOnClick": false,
+	"git.autorefresh": false,
+	"zenMode.centerLayout": false,
+	"zenMode.hideLineNumbers": false,
+	"files.hotExit": "off",
+	"workbench.tips.enabled": false,
+	"vim.cursorStylePerMode.insert": "line",
+	"vim.cursorStylePerMode.replace": "underline",
+	"vim.cursorStylePerMode.visualline": "underline",
+	"vim.cursorStylePerMode.visualblock": "block-outline",
+	"vim.camelCaseMotion.enable": true,
+	"debug.toolBarLocation": "docked",
+	"materialTheme.accent": "Acid Lime",
+	"workbench.colorTheme": "Dracula",
+	"editor.tabSize": 2,
+}
