@@ -153,4 +153,11 @@
 	"materialTheme.accent": "Acid Lime",
 	"workbench.colorTheme": "Dracula",
 	"editor.tabSize": 2,
+	"workbench.enableExperiments": false,
+	"workbench.preferredDarkColorTheme": "Dracula",
+	"update.enableWindowsBackgroundUpdates": false,
+	"update.mode": "start",
+	"terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+	"workbench.editor.enablePreviewFromQuickOpen": false,
+	"material-icon-theme.hidesExplorerArrows": true,
 }
