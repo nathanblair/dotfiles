@@ -31,7 +31,9 @@ exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 exec mako
 
 # The system background image
-set $bg ~/Pictures/wallpaper.jpg
+set $bg ~/Pictures/wallpaper.png
+#set $bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+
 #
 # Your preferred screen locker
 set $locker swaylock -i $bg -s "center"

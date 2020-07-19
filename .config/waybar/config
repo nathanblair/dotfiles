@@ -144,7 +144,7 @@
     "interval": 60
   },
   "custom/battery#2": {
-    "exec": "battery 1",
+    "exec-if": "battery 1",
     "return-type": "json",
     "interval": 60
   },
