@@ -1,11 +1,11 @@
-source ~/.aliases || true
-source ~/.tokens || true
+. ~/.aliases || true
+. ~/.tokens || true
 
 if [[ ! -d ~/.zgen ]]; then
     git clone https://github.com/tarjoilija/zgen ~/.zgen
 fi
 
-source ~/.zgen/zgen.zsh
+. ~/.zgen/zgen.zsh
 
 if ! zgen saved; then
     zgen load zsh-users/zsh-history-substring-search
@@ -135,6 +135,7 @@ export CXX=clang++
 #export ANDROID_SDK_ROOT=/opt/android-sdk
 #export ANDROID_HOME=$ANDROID_SDK_ROOT
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export AZURE_CORE_COLLECT_TELEMTRY=FALSE
 
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
@@ -146,8 +147,8 @@ fi
 
 export TERMINAL=kitty
 
-source /usr/share/kubectl/completion.zsh || true
-source /opt/azure-cli/az.completion || true
+. /usr/share/kubectl/completion.zsh || true
+. /opt/azure-cli/az.completion || true
 
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 
