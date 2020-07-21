@@ -18,8 +18,8 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 182
-    lines: 50
+    columns: 170
+    lines: 52
 
   # Window position (changes require restart)
   #
@@ -27,7 +27,7 @@ window:
   # If the position is not set, the window manager will handle the placement.
   position:
    x: 4
-   y: 80
+   y: 85
 
   # Window padding (changes require restart)
   #
@@ -348,7 +348,7 @@ selection:
   #thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
