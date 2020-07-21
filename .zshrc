@@ -150,5 +150,5 @@ export TERMINAL=kitty
 . /usr/share/kubectl/completion.zsh || true
 . /opt/azure-cli/az.completion || true
 
-export PATH=~/.gem/ruby/2.6.0/bin:$PATH
+export PATH=~/.gem/ruby/2.6.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
