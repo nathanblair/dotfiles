@@ -18,7 +18,7 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 170
+    columns: 171
     lines: 52
 
   # Window position (changes require restart)
@@ -27,7 +27,7 @@ window:
   # If the position is not set, the window manager will handle the placement.
   position:
    x: 4
-   y: 85
+   y: 72
 
   # Window padding (changes require restart)
   #
@@ -161,11 +161,11 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+  primary:
+   background: '#101010'
+   foreground: '#f8f8f2'
 
     # Bright and dim foreground colors
     #
@@ -201,9 +201,9 @@ font:
   #
   # Allowed values are CellForeground and CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
+  selection:
+   text: '#44475a'
+   background: CellForeground
 
   # Search colors
   #
@@ -221,26 +221,26 @@ font:
   #    foreground: CellBackground
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  normal:
+   black:   '#21222C'
+   red:     '#FF5555'
+   green:   '#50FA7B'
+   yellow:  '#F1FA8C'
+   blue:    '#BD93F9'
+   magenta: '#FF79C6'
+   cyan:    '#8BE9FD'
+   white:   '#F8F8F2'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+   black:   '#6272A4'
+   red:     '#FF6E6E'
+   green:   '#69FF94'
+   yellow:  '#FFFFA5'
+   blue:    '#D6ACFF'
+   magenta: '#FF92DF'
+   cyan:    '#A4FFFF'
+   white:   '#FFFFFF'
 
   # Dim colors
   #
