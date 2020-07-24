@@ -160,4 +160,5 @@
 	"terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"material-icon-theme.hidesExplorerArrows": true,
+	"terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
 }
