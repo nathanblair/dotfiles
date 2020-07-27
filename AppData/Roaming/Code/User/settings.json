@@ -165,4 +165,11 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"debug.allowBreakpointsEverywhere": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"prettier.semi": false,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 }
