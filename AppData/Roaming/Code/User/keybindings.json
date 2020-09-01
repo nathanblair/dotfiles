@@ -75,4 +75,14 @@
 		"command": "-extension.vim_ctrl+k",
 		"when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
 	},
+	{
+		"key": "space",
+		"command": "-filesExplorer.openFilePreserveFocus",
+		"when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+	},
+	{
+		"key": "space",
+		"command": "-list.toggleExpand",
+		"when": "listFocus && !inputFocus"
+	},
 ]

@@ -41,7 +41,14 @@
 		"menubar.selectionForeground": "#C6FF00",
 		"editor.findMatchBorder": "#C6FF00",
 		"selection.background": "#C6FF0040",
-		"statusBarItem.remoteBackground": "#C6FF00"
+		"statusBarItem.remoteBackground": "#C6FF00",
+		"titleBar.activeBackground": "#050810",
+		"titleBar.inactiveBackground": "#282a36",
+		"activityBar.background": "#050810",
+		"tab.activeBackground": "#081012",
+		"tab.inactiveBackground": "#081012",
+		"panel.background": "#050505",
+		"breadcrumb.background": "#050505",
 	},
 	"explorer.confirmDragAndDrop": false,
 	"workbench.activityBar.visible": true,
@@ -53,15 +60,14 @@
 	"editor.wordWrapColumn": 80,
 	"editor.wrappingIndent": "indent",
 	"files.exclude": {
-		"**/.git": true,
-		"**/.svn": true,
-		"**/.hg": true,
-		"**/CVS": true,
 		"**/.DS_Store": true,
-		"**/bin": true,
-		"**/obj": true,
+		"**/.git": true,
+		"**/.hg": true,
+		"**/.svn": true,
+		"**/build": true,
+		"**/CVS": true,
 		"**/dist": true,
-		"**/build": true
+		"**/obj": true
 	},
 	"vim.leader": "<space>",
 	"vim.normalModeKeyBindingsNonRecursive": [
@@ -74,6 +80,24 @@
 			"commands": [
 				"editor.action.commentLine",
 			]
+		},
+		{
+			"before": [
+				"<space>",
+				"h"
+			],
+			"commands": [
+				"workbench.action.focusSideBar",
+			]
+		},
+		{
+			"before": [
+				"<space>",
+				"l"
+			],
+			"commands": [
+				"workbench.action.focusLastEditorGroup",
+			],
 		},
 		{
 			"before": [
@@ -130,13 +154,10 @@
 	"editor.roundedSelection": false,
 	"vim.foldfix": true,
 	"git.decorations.enabled": false,
-	"editor.codeLens": false,
 	"editor.showFoldingControls": "always",
 	"workbench.settings.enableNaturalLanguageSearch": false,
 	"telemetry.enableCrashReporter": false,
 	"telemetry.enableTelemetry": false,
-	"C_Cpp.clang_format_path": "/usr/bin/clang-format",
-	"breadcrumbs.enabled": false,
 	"scm.diffDecorations": "none",
 	"git.openDiffOnClick": false,
 	"git.autorefresh": false,
@@ -150,7 +171,6 @@
 	"vim.cursorStylePerMode.visualblock": "block-outline",
 	"vim.camelCaseMotion.enable": true,
 	"debug.toolBarLocation": "docked",
-	"materialTheme.accent": "Acid Lime",
 	"workbench.colorTheme": "Dracula",
 	"editor.tabSize": 2,
 	"workbench.enableExperiments": false,
@@ -172,4 +192,9 @@
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
+	"editor.suggestSelection": "first",
+	"window.zoomLevel": 0,
+	"files.eol": "\n",
+	"diffEditor.codeLens": true,
+	"javascript.referencesCodeLens.enabled": true,
 }
