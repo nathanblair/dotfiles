@@ -197,4 +197,5 @@
 	"files.eol": "\n",
 	"diffEditor.codeLens": true,
 	"javascript.referencesCodeLens.enabled": true,
+	"window.newWindowDimensions": "maximized",
 }
