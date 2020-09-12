@@ -21,6 +21,8 @@
   // If enabled, formatted data is also copied to your clipboard
   "copyFormatting": false,
 
+  "alwaysShowTabs": false,
+
   // A profile specifies a command to execute paired with information about how it should look and feel.
   // Each one of them will appear in the 'New Tab' dropdown,
   //   and can be invoked from the commandline with `wt.exe -p xxx`
@@ -103,8 +105,6 @@
     // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
     // These two lines additionally bind them to Ctrl+C and Ctrl+V.
     // To learn more about selection, visit https://aka.ms/terminal-selection
-    { "command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
-    { "command": "paste", "keys": "ctrl+v" },
 
     // Press Ctrl+Shift+F to open the search box
     { "command": "find", "keys": "ctrl+shift+f" },
