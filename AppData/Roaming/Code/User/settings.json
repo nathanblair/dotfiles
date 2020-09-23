@@ -198,4 +198,16 @@
 	"diffEditor.codeLens": true,
 	"javascript.referencesCodeLens.enabled": true,
 	"window.newWindowDimensions": "maximized",
+	"githubIssues.queries": [
+		{
+			"label": "My Issues",
+			"query": "default"
+		},
+		{
+			"label": "Created Issues",
+			"query": "author:${user} state:open repo:${owner}/${repository} sort:created-desc"
+		}
+	],
+	"github-actions.org-features": true,
+	"extensions.ignoreRecommendations": true,
 }
