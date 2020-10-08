@@ -32,7 +32,7 @@
       // Put settings here that you want to apply to all profiles.
       // "fontFace": "Cascadia Mono",
       "fontFace": "Hack",
-      "fontSize": 11,
+      "fontSize": 9,
       "colorScheme": "Dracula"
     },
     "list": [
