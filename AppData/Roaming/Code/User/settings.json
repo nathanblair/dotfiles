@@ -208,4 +208,10 @@
 	"extensions.ignoreRecommendations": true,
 	"editor.tabSize": 2,
 	"editor.mouseWheelScrollSensitivity": 0.25,
+	"python.showStartPage": false,
+	"python.formatting.provider": "black",
+	"python.formatting.blackArgs": [
+		"-S",
+		"-l 79"
+	],
 }
