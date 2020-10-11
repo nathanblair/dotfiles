@@ -59,6 +59,7 @@
 	"editor.wordWrapColumn": 80,
 	"editor.wrappingIndent": "indent",
 	"files.exclude": {
+		"**/__pycache__": true,
 		"**/.DS_Store": true,
 		"**/.git": true,
 		"**/.hg": true,
@@ -209,9 +210,17 @@
 	"editor.tabSize": 2,
 	"editor.mouseWheelScrollSensitivity": 0.25,
 	"python.showStartPage": false,
+  "python.pythonPath": "C:\\Users\\nathan\\scoop\\shims\\python.exe",
+  "python.linting.pylintEnabled": false,
+  "python.linting.banditEnabled": true,
+  "python.linting.enabled": true,
 	"python.formatting.provider": "black",
 	"python.formatting.blackArgs": [
 		"-S",
 		"-l 79"
 	],
+	"python.languageServer": "Pylance",
+	"python.autoComplete.showAdvancedMembers": false,
+	"python.analysis.typeCheckingMode": "strict",
+	"python.analysis.diagnosticMode": "workspace",
 }
