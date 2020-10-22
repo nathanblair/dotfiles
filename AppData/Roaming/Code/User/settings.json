@@ -223,4 +223,5 @@
 	"python.autoComplete.showAdvancedMembers": false,
 	"python.analysis.typeCheckingMode": "strict",
 	"python.analysis.diagnosticMode": "workspace",
+	"terminal.integrated.shell.windows": "C:\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.exe",
 }
