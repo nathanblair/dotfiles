@@ -31,9 +31,11 @@
     "defaults": {
       // Put settings here that you want to apply to all profiles.
       // "fontFace": "Cascadia Mono",
+      "useAcrylic": true,
       "fontFace": "Hack",
       "fontSize": 9,
-      "colorScheme": "Dracula"
+      "colorScheme": "Dracula",
+      "acrylicOpacity": 0.1
     },
     "list": [
       {
