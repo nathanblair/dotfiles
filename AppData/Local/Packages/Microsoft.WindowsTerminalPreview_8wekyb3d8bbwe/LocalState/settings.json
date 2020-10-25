@@ -33,9 +33,9 @@
       // "fontFace": "Cascadia Mono",
       "useAcrylic": true,
       "fontFace": "Hack",
-      "fontSize": 9,
+      "fontSize": 11,
       "colorScheme": "Dracula",
-      "acrylicOpacity": 0.1
+      "acrylicOpacity": 0.8
     },
     "list": [
       {
