@@ -22,6 +22,7 @@
   "copyFormatting": false,
 
   "alwaysShowTabs": false,
+  "showTabsInTitlebar": true,
 
   // A profile specifies a command to execute paired with information about how it should look and feel.
   // Each one of them will appear in the 'New Tab' dropdown,
@@ -41,8 +42,8 @@
       {
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
         "hidden": false,
-        "name": "PowerShell",
-        "source": "Windows.Terminal.PowershellCore"
+        "name": "PWSH",
+        "commandline": "pwsh -nologo"
       },
       {
         // Make changes here to the cmd.exe profile.
