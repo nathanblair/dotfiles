@@ -10,7 +10,7 @@
   "files.insertFinalNewline": true,
   "editor.minimap.enabled": false,
   "editor.tokenColorCustomizations": {
-    "comments": "#6200ffa6"
+    "comments": "#a268ff"
   },
   "workbench.colorCustomizations": {
     "editor.background": "#090909",
@@ -155,5 +155,9 @@
   "glassit.alpha": 225,
   "window.zoomLevel": 0,
   "editor.fontSize": 13,
-  "material-icon-theme.activeIconPack": "nest"
+  "material-icon-theme.activeIconPack": "nest",
+  "github-actions.preview-features": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
