@@ -1,5 +1,5 @@
 . ~/.aliases 2>/dev/null || true
-. ~/.token 2>/dev/null || true
+. ~/.tokens 2>/dev/null || true
 
 if [[ ! -d ~/.zgen ]]; then
     git clone https://github.com/tarjoilija/zgen ~/.zgen
@@ -149,7 +149,7 @@ export TERMINAL=kitty
 
 . /usr/share/kubectl/completion.zsh 2>/dev/null || true
 . /opt/azure-cli/az.completion 2>/dev/null || true
-. ~/.gh.completion || true
+. ~/.gh.completion 2>/dev/null || true
 
 export PATH=~/.gem/ruby/2.6.0/bin:~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
