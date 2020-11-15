@@ -20,9 +20,11 @@
     "copyFormatting": false,
 
     "launchMode": "maximized",
+    "tabWidthMode": "compact",
 
     "alwaysShowTabs": false,
     "showTabsInTitlebar": true,
+    "useTabSwitcher": false,
 
     // A profile specifies a command to execute paired with information about how it should look and feel.
     // Each one of them will appear in the 'New Tab' dropdown,
