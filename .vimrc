@@ -147,7 +147,6 @@ let g:coc_global_extensions=[
   \'coc-python',
   \'coc-omnisharp',
   \'coc-vimlsp',
-  \'coc-solargraph',
   \'coc-sh',
   \'coc-clangd',
   \'coc-rls']
