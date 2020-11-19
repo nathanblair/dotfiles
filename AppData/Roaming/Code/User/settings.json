@@ -42,7 +42,6 @@
     "**/.git": true,
     "**/.hg": true,
     "**/.svn": true,
-    "**/build": true,
     "**/CVS": true,
     "**/dist": true,
     "**/obj": true
