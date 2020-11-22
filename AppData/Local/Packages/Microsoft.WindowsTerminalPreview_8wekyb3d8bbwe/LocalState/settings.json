@@ -55,7 +55,7 @@
                 // Make changes here to the VS Command Line Tools profile.
                 "hidden": false,
                 "name": "VS Command Line Tools",
-                "commandline": "pwsh -nologo -noe -c \"&{Import-Module \"\"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 3bd82611}\"",
+                "commandline": "pwsh -nologo -noe -c \"&{Import-Module \"\"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 3bd82611 -DevCmdArguments '-arch=x64 -no_logo'}\"",
                 "icon": "C:\\Users\\nathan\\AppData\\Local\\Packages\\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\\LocalState\\VS_Icon.png",
                 "startingDirectory": "${env:HOME}"
             },
