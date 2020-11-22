@@ -52,23 +52,18 @@
                 "commandline": "pwsh -nologo"
             },
             {
+                // Make changes here to the VS Command Line Tools profile.
+                "hidden": false,
+                "name": "VS Command Line Tools",
+                "commandline": "pwsh -nologo -noe -c \"&{Import-Module \"\"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell 3bd82611}\"",
+                "icon": "C:\\Users\\nathan\\AppData\\Local\\Packages\\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\\LocalState\\VS_Icon.png"
+            },
+            {
                 // Make changes here to the cmd.exe profile.
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "name": "Command Prompt",
                 "commandline": "cmd.exe",
                 "hidden": false
-            },
-            {
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "hidden": false,
-                "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
-            },
-            {
-                "guid": "{f2afcc16-6d0a-5368-a684-ea2ad6794659}",
-                "hidden": false,
-                "name": "VoidMusl",
-                "source": "Windows.Terminal.Wsl"
             },
             {
                 "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
