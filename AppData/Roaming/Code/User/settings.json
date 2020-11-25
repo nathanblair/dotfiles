@@ -100,7 +100,6 @@
   "vim.cursorStylePerMode.replace": "underline",
   "vim.cursorStylePerMode.visualline": "underline",
   "vim.cursorStylePerMode.visualblock": "block-outline",
-  "vim.camelCaseMotion.enable": true,
   "debug.toolBarLocation": "docked",
   "workbench.colorTheme": "Dracula",
   "workbench.enableExperiments": false,
@@ -160,5 +159,15 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "deno.enable": true,
-  "C_Cpp.default.includePath": ["include", "src/include"]
+  "C_Cpp.default.includePath": [
+    "include",
+    "src/include"
+  ],
+  "vim.autoindent": false,
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.mouseSelectionGoesIntoVisualMode": false,
+  "vim.surround": false,
+  "files.associations": {
+    "meson.build": "python"
+  }
 }
