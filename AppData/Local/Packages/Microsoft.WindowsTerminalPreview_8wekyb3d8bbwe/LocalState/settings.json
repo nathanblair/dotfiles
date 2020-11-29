@@ -36,9 +36,9 @@
         {
             // Put settings here that you want to apply to all profiles.
             "useAcrylic": true,
-            "fontFace": "Hack",
-            "fontSize": 11,
-            "colorScheme": "Dracula",
+            "fontFace": "Fira Code",
+            "fontSize": 16,
+            // "colorScheme": "Dracula",
             "acrylicOpacity": 0.8,
             "bellStyle": "none"
         },
