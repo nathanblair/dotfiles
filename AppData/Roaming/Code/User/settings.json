@@ -13,9 +13,25 @@
   "files.insertFinalNewline": true,
   "editor.minimap.enabled": false,
   "editor.tokenColorCustomizations": {
-    // "comments": "#a268ff"
+    "[Alabaster]": {
+      "keywords": {
+        "fontStyle": "bold"
+      },
+      "types": {
+        "foreground": "#282828"
+      }
+    },
+    "[Rubber]": {
+      "keywords": {
+        "fontStyle": "bold"
+      }
+    }
   },
   "workbench.colorCustomizations": {
+    "[Alabaster]": {
+      "sideBar.foreground": "#111",
+      "activityBar.foreground": "#111"
+    }
   },
   "explorer.confirmDragAndDrop": false,
   "workbench.activityBar.visible": true,
@@ -80,9 +96,9 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "scm.diffDecorations": "none",
-  "git.openDiffOnClick": false,
+  "git.openDiffOnClick": true,
   "git.autorefresh": false,
-  "zenMode.centerLayout": false,
+  "zenMode.centerLayout": true,
   "zenMode.hideLineNumbers": false,
   "files.hotExit": "off",
   "workbench.tips.enabled": false,
@@ -90,9 +106,11 @@
   "vim.cursorStylePerMode.replace": "underline",
   "vim.cursorStylePerMode.visualline": "underline",
   "vim.cursorStylePerMode.visualblock": "block-outline",
-"debug.toolBarLocation": "docked",
+  "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.preferredDarkColorTheme": "Dracula",
+  "workbench.colorTheme": "Alabaster",
+  "workbench.preferredLightColorTheme": "Alabaster",
+  "workbench.preferredDarkColorTheme": "Rubber",
   "update.enableWindowsBackgroundUpdates": false,
   "update.mode": "start",
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -147,10 +165,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "deno.enable": true,
-  "C_Cpp.default.includePath": [
-    "include",
-    "src/include"
-  ],
+  "C_Cpp.default.includePath": ["include", "src/include"],
   "vim.autoindent": false,
   "vim.cursorStylePerMode.normal": "block",
   "vim.mouseSelectionGoesIntoVisualMode": false,
@@ -158,7 +173,11 @@
   "files.associations": {
     "meson.build": "python"
   },
-  "jupyter.allowImportFromNotebook": false,
-"jupyter.enableCellCodeLens": false,
-"workbench.colorTheme": "Rubber"
+  "bracketPairColorizer.consecutivePairColors": [
+    "()",
+    "[]",
+    "{}",
+    ["Orchid", "Aqua", "Red"],
+    "Red"
+  ]
 }
