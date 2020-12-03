@@ -49,7 +49,6 @@
     "**/.hg": true,
     "**/.svn": true,
     "**/CVS": true,
-    "**/dist": true,
     "**/obj": true
   },
   "vim.leader": "<space>",
