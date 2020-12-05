@@ -97,7 +97,6 @@
   "scm.diffDecorations": "none",
   "git.openDiffOnClick": true,
   "git.autorefresh": false,
-  "zenMode.centerLayout": true,
   "zenMode.hideLineNumbers": false,
   "files.hotExit": "off",
   "workbench.tips.enabled": false,
@@ -107,7 +106,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Rubber",
+  "workbench.colorTheme": "Alabaster",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Rubber",
   "update.enableWindowsBackgroundUpdates": false,
@@ -181,5 +180,6 @@
   ],
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "zenMode.centerLayout": false
 }
