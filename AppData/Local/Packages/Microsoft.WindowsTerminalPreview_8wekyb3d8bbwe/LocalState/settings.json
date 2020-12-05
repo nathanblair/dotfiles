@@ -37,6 +37,7 @@
             // Put settings here that you want to apply to all profiles.
             "useAcrylic": true,
             "fontFace": "Fira Code",
+            // "fontFace": "Cascadia Code",
             "fontSize": 16,
             // "colorScheme": "Dracula",
             "acrylicOpacity": 0.8,
