@@ -4,6 +4,9 @@
 #     New-Item -ItemType SymbolicLink -Path $target -Name $destination
 # }
 
+# env-like behavior
+function env { Get-ChildItem env: }
+
 # File listing
 # Some variation of Get-ChildItem
 function ll ($dir) { Get-ChildItem -Path $dir }
@@ -50,7 +53,7 @@ Set-PSReadLineOption @PSReadLineOptions
 # Key bindings
 Set-PSReadLineKeyHandler -Chord Ctrl+p -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Chord Ctrl+n -Function HistorySearchForward
-Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardKillWord
+Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardDeleteWord
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Source token variables

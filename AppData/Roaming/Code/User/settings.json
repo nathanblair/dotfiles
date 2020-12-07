@@ -1,7 +1,7 @@
 {
   "workbench.startupEditor": "none",
   "editor.renderLineHighlight": "gutter",
-  "editor.fontSize": 17,
+  "editor.fontSize": 16,
   "editor.fontFamily": "'Fira Code', Hack, 'Cascadia Code Light', Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
   "editor.semanticHighlighting.enabled": true,
   "editor.fontLigatures": true,
@@ -184,5 +184,6 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
-  }
+  },
+  "javascript.referencesCodeLens.showOnAllFunctions": true
 }
