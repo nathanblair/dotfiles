@@ -90,7 +90,6 @@
   "editor.roundedSelection": false,
   "vim.foldfix": true,
   "git.decorations.enabled": false,
-  "editor.showFoldingControls": "always",
   "workbench.settings.enableNaturalLanguageSearch": false,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
@@ -185,5 +184,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "javascript.referencesCodeLens.showOnAllFunctions": true
+  "editor.showFoldingControls": "always",
+  "editor.tabCompletion": "onlySnippets"
 }
