@@ -106,7 +106,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Rubber",
+  "workbench.colorTheme": "Alabaster",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Rubber",
   "update.enableWindowsBackgroundUpdates": false,
@@ -120,7 +120,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.semi": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -185,5 +184,6 @@
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "editor.showFoldingControls": "always",
-  "editor.tabCompletion": "onlySnippets"
+  "editor.tabCompletion": "onlySnippets",
+  "prettier.semi": false
 }

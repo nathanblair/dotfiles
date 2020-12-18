@@ -50,7 +50,7 @@
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PWSH",
-                "commandline": "pwsh -nologo"
+                "commandline": "%USERPROFILE%\\scoop\\apps\\pwsh\\current\\pwsh.exe -nologo"
             },
             {
                 // Make changes here to the VS Command Line Tools profile.
