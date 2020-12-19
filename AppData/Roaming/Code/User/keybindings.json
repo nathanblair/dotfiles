@@ -85,4 +85,13 @@
 		"command": "-list.toggleExpand",
 		"when": "listFocus && !inputFocus"
 	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.quickOpen",
+		"when": "!suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
 ]

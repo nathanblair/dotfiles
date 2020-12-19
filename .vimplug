@@ -1,0 +1,153 @@
+" Plugin loading and handling
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+  Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'cohama/lexima.vim'
+  Plug 'thaerkh/vim-indentguides'
+  Plug 'machakann/vim-sandwich'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'ap/vim-buftabline'
+call plug#end()
+
+" Color scheme
+set termguicolors
+augroup colorscheme_customization
+  "autocmd ColorScheme dracula highlight Normal ctermbg=244 guibg=#050506 ctermbg=NONE
+  autocmd ColorScheme dracula highlight Normal ctermbg=244 guibg=NONE ctermbg=NONE
+  autocmd ColorScheme dracula highlight DraculaBgDark ctermbg=244 guibg=#172030
+  autocmd ColorScheme dracula highlight DraculaBgDarker ctermbg=244 guibg=#101220
+  autocmd ColorScheme dracula highlight DraculaTodo cterm=bold ctermfg=cyan gui=bold guifg=cyan guibg=black
+augroup END
+color dracula
+
+" Restore some overridden colors
+highlight CocUnderLine cterm=underline gui=underline
+highlight link CocErrorSign Error
+highlight link CocWarningSign WarningMsg
+highlight link CocInfoSign Special
+highlight link CocHintSign NonText
+highlight link CocSelectedText Visual
+highlight link CocCodeLens LineNr
+
+highlight link CocErrorHighlight SpellBad
+highlight link CocWarningHighlight SpellLocal
+highlight link CocInfoHighlight SpellRare
+highlight link CocHintHighlight Conceal
+
+" -------------------------------------------------------------"
+" vim-plug settings                                         PS
+" -------------------------------------------------------------"
+" NERDTree
+let g:NERDTreeSortHiddenFirst=1
+let g:NERDTreeChDirMode=2
+let g:NERDTreeHijackNetrw=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeIgnore=['^__pycache__', 'node_modules']
+let g:NERDTreeCascadeSingleChildDir=0
+let g:NERDTreeCascadeOpenSingleChildDir=0
+let g:NERDTreeStatusline="  NERDTree"
+
+" NERDCommenter
+let g:NERDCreateDefaultMappings=0
+
+" -------------------------------------------------------------"
+" Language Server Protocol settings                         LS
+" -------------------------------------------------------------"
+" Extension List
+let g:coc_global_extensions=[
+  \'coc-tsserver',
+  \'coc-css',
+  \'coc-html',
+  \'coc-json',
+  \'coc-prettier',
+  \'coc-emmet',
+  \'coc-yaml',
+  \'coc-python',
+  \'coc-omnisharp',
+  \'coc-vimlsp',
+  \'coc-sh',
+  \'coc-clangd',
+  \'coc-rls']
+
+" Completion
+set keywordprg=:call\ <SID>ShowDocumentation()
+
+" Documentation
+autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+"autocmd! User CocLocationsChange CocList --normal -A location
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" LSP Snippets
+let g:coc_snippet_next='<TAB>'
+let g:coc_snippet_prev='<S-TAB>'
+
+" -------------------------------------------------------------"
+" vim-plug keymaps                                          PK
+" -------------------------------------------------------------"
+" Vim-Signify
+nnoremap <silent> <Leader>- :SignifyToggle<CR>
+
+" Fugitive
+" Show git status window minimized
+nnoremap <silent> <Leader>gs :G<CR>8<C-w>_<C-w>p
+nnoremap <silent> <Leader>gh :bd .git/index<CR>
+nnoremap <silent> <Leader>gb :Gblame<CR>
+nnoremap <silent> <Leader>gc :Gcommit<CR>
+nnoremap <silent> <Leader>gl :Glog<CR>
+nnoremap <Leader>gu :Git push<CR>
+nnoremap <Leader>gd :Git pull<CR>
+
+" NERDTree
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+
+" NERDCommenter
+nnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
+vnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
+
+" FSwitch
+
+" LSP Diagnostics
+nnoremap <Leader>i :<C-u>CocList --normal --no-sort diagnostics<CR>
+nmap <silent> <c <Plug>(coc-diagnostic-prev)
+nmap <silent> >c <Plug>(coc-diagnostic-next)
+
+" LSP Autocompletion
+inoremap <silent> <expr><C-Space> coc#refresh()
+"inoremap <expr><TAB> pumvisible() ? "\<C-y>" : "\<TAB>"
+"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+" LSP Gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-defintion)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" LSP Rename
+nmap <Leader>cn <Plug>(coc-rename)
+
+" LSP CodeAction
+nmap <Leader>a <Plug>(coc-codeaction)
+nnoremap <Leader>; :<C-u>CocList --normal --no-sort<CR>
+"nnoremap <Leader>t :<C-u>CocList --normal --no-sort symbols<CR>
+"nnoremap <Leader>x :<C-u>CocList --normal --no-sort extensions<CR>
+
+" LSP Documentation
+nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
+
+" LSP Format
+nmap <silent> <Leader>f <Plug>(coc-format)
+vmap <silent> <Leader>f <Plug>(coc-format-selected)
+
+" Source/Header Switch
+nnoremap <silent> <F4> :call ToggleSourceHeaderDocFile()<CR>
+
+" vim:ft=vim
