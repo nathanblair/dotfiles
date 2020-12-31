@@ -8,6 +8,11 @@ window#waybar {
   color: #f8f8f2;
 }
 
+#workspaces {
+  border: 3px solid #50fa7b;
+  border-radius: 4px;
+}
+
 #workspaces button {
   color: #f8f8f2;
   background: transparent;
@@ -26,7 +31,12 @@ window#waybar {
 
 #workspaces button.focused,
 #mode {
-  border-bottom: 3px solid #6272a4;
+  color: #ffb86c;
+}
+
+#window {
+  margin: 0 4px;
+  background-color: #44475a;
 }
 
 #clock,
