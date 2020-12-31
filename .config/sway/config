@@ -82,15 +82,15 @@ exec swayidle -w \
 # Example configuration:
 #
 input type:touchpad {
-   dwt enabled
-   #tap enabled
-   natural_scroll enabled
-   middle_emulation enabled
+    dwt enabled
+    #tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
 }
 
 input "2:10:TPPS/2_IBM_Trackpoint" {
-   #dwt enabled
-   natural_scroll enabled
+    #dwt enabled
+    natural_scroll enabled
 }
 
 input type:keyboard {
@@ -134,12 +134,12 @@ bindsym $mod+F5 reload
 # exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaymsg exit
 
-bindsym XF86AudioMute exec amixer set Master toggle; exec pkill -RTMIN+10 waybar
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+; exec pkill -RTMIN+10 waybar
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-; exec pkill -RTMIN+10 waybar
+bindsym XF86AudioMute exec pkill -RTMIN+10 waybar
+bindsym XF86AudioRaiseVolume exec pkill -RTMIN+10 waybar
+bindsym XF86AudioLowerVolume exec pkill -RTMIN+10 waybar
 
-bindsym XF86MonBrightnessUp exec backlight +5%; exec pkill -RTMIN+11 waybar
-bindsym XF86MonBrightnessDown exec backlight -5%; exec pkill -RTMIN+11 waybar
+bindsym XF86MonBrightnessUp exec pkill -RTMIN+11 waybar
+bindsym XF86MonBrightnessDown exec pkill -RTMIN+11 waybar
 
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 #bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
