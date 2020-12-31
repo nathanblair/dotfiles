@@ -15,7 +15,6 @@
     "custom/backlight",
     "custom/volume",
     "custom/battery",
-    "custom/battery#2",
     "idle_inhibitor"
   ],
   "sway/workspaces": {
