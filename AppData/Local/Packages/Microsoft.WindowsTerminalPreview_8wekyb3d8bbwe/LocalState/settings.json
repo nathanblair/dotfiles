@@ -53,6 +53,12 @@
                 "commandline": "%USERPROFILE%\\scoop\\apps\\pwsh\\current\\pwsh.exe -nologo"
             },
             {
+                "guid": "{96933987-e7b7-55a2-a499-f9d06dcf0997}",
+                "hidden": false,
+                "name": "Alpine Linux WSL2",
+                "commandline": "wsl ~"
+            },
+            {
                 // Make changes here to the VS Command Line Tools profile.
                 "hidden": false,
                 "name": "VS Command Line Tools",
@@ -66,12 +72,6 @@
                 "name": "Command Prompt",
                 "commandline": "cmd.exe",
                 "hidden": false
-            },
-            {
-                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
-                "hidden": false,
-                "name": "Alpine",
-                "source": "Windows.Terminal.Wsl"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
