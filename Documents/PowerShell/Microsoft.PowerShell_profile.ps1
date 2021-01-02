@@ -7,6 +7,9 @@
 # env-like behavior
 function env { Get-ChildItem env: }
 
+# touch-like behavior
+function touch ($item) { new-item $item }
+
 # File listing
 # Some variation of Get-ChildItem
 function ll ($dir) { Get-ChildItem -Path $dir }
