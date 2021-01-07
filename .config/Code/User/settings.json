@@ -155,7 +155,7 @@
   "python.analysis.diagnosticMode": "workspace",
   "terminal.integrated.shell.windows": "C:\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.exe",
   "glassit.alpha": 225,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "material-icon-theme.activeIconPack": "nest",
   "github-actions.preview-features": true,
   "[html]": {
