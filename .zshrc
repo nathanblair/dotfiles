@@ -146,7 +146,6 @@ if test -z "${XDG_RUNTIME_DIR}"; then
 fi
 
 export NVM_DIR="${HOME}/.config/nvm"
-. "${NVM_DIR}/nvm.sh" || true
 
 . /usr/share/kubectl/completion.zsh 2>/dev/null || true
 . /opt/azure-cli/az.completion 2>/dev/null || true
