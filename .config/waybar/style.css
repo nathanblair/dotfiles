@@ -1,5 +1,4 @@
 * {
-  font-family: Ubuntu;
   font-size: 18px;
 }
 
@@ -70,6 +69,7 @@ window#waybar {
 }
 
 #clock, #custom-clock {
+  font-family: "Ubuntu";
   border-bottom: 0px solid #f8f8f2;
 }
 

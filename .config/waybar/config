@@ -78,18 +78,6 @@
     "return-type": "json",
     "signal": 11,
     "interval": "once",
-    "format-icons": [
-      "-         ",
-      "--        ",
-      "---       ",
-      "----      ",
-      "-----     ",
-      "------    ",
-      "-------   ",
-      "--------  ",
-      "--------- ",
-      "----------"
-    ],
     "format": ""
   },
   "pulseaudio": {
@@ -112,19 +100,7 @@
     "exec": "volume",
     "signal": 10,
     "return-type": "json",
-    "interval": "once",
-    "format-icons": [
-      "-         ",
-      "--        ",
-      "---       ",
-      "----      ",
-      "-----     ",
-      "------    ",
-      "-------   ",
-      "--------  ",
-      "--------- ",
-      "----------"
-    ]
+    "interval": "once"
   },
   "custom/network": {
     "exec": "network",
