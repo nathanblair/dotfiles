@@ -145,12 +145,15 @@ if test -z "${XDG_RUNTIME_DIR}"; then
     fi
 fi
 
-export NVM_DIR="${HOME}/.config/nvm"
+export NVM_DIR="${HOME}/.nvm"
+export PYENV_ROOT="${HOME}/.pyenv"
+
+. "${NVM_DIR}/nvm.sh"
 
 . /usr/share/kubectl/completion.zsh 2>/dev/null || true
 . /opt/azure-cli/az.completion 2>/dev/null || true
 . ~/.gh.completion 2>/dev/null || true
 
-export PATH=~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
 # vim:ft=sh
