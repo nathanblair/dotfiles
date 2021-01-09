@@ -145,11 +145,6 @@ if test -z "${XDG_RUNTIME_DIR}"; then
     fi
 fi
 
-export NVM_DIR="${HOME}/.nvm"
-export PYENV_ROOT="${HOME}/.pyenv"
-
-. "${NVM_DIR}/nvm.sh"
-
 . /usr/share/kubectl/completion.zsh 2>/dev/null || true
 . /opt/azure-cli/az.completion 2>/dev/null || true
 . ~/.gh.completion 2>/dev/null || true
