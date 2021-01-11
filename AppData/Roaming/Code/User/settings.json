@@ -185,5 +185,6 @@
   },
   "editor.showFoldingControls": "always",
   "editor.tabCompletion": "onlySnippets",
-  "prettier.semi": false
+  "prettier.semi": false,
+  "workbench.sideBar.location": "left"
 }
