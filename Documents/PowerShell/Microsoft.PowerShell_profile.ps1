@@ -34,11 +34,22 @@ function glgs { git log --graph --stat }
 function glgp { git log --graph --patch }
 
 function Prompt {
-    Write-Host ' ' -NoNewline
-    $path = $(Get-Location) -replace [Regex]::Escape($HOME), '~'
-    $path = $path -replace '\w{1}:', ''
-    $path = $path -replace '\\', '/'
-    Write-Host $path -ForegroundColor DarkCyan -NoNewLine
+    $branch = git branch --show-current
+
+    if ($LASTEXITCODE -eq 0) {
+        if (Test-Path '.git') {
+            Write-Host " $((Get-Item $(Get-Location)).Name)" -ForegroundColor DarkCyan -NoNewLine
+        } else {
+            Write-Host " $($(Get-Location) -replace [Regex]::Escape($HOME), '~')" -ForegroundColor DarkCyan -NoNewLine
+        }
+        Write-Host " (" -ForegroundColor Blue -NoNewLine
+        Write-Host "$branch" -ForegroundColor DarkMagenta -NoNewLine
+        Write-Host ")" -ForegroundColor Blue -NoNewLine
+    }
+    else {
+        Write-Host " $($(Get-Location) -replace [Regex]::Escape($HOME), '~')" -ForegroundColor DarkCyan -NoNewLine
+    }
+
     Write-Host (' >') -ForegroundColor Green -NoNewLine
     return " "
 }
@@ -60,4 +71,4 @@ Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardDeleteWord
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Source token variables
-. ~/repos/personal/keys/tokens.ps1 | Out-Null
+# . ~/repos/personal/keys/tokens.ps1 | Out-Null

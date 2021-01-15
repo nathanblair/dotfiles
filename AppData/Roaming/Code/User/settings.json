@@ -113,16 +113,7 @@
   "update.mode": "start",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "material-icon-theme.hidesExplorerArrows": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "debug.allowBreakpointsEverywhere": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.suggestSelection": "first",
   "files.eol": "\n",
   "diffEditor.codeLens": true,
@@ -158,9 +149,6 @@
   "window.zoomLevel": 0,
   "material-icon-theme.activeIconPack": "nest",
   "github-actions.preview-features": true,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "deno.enable": true,
   "C_Cpp.default.includePath": ["include", "src/include"],
   "vim.autoindent": false,
@@ -170,6 +158,11 @@
   "files.associations": {
     "meson.build": "python"
   },
+  "editor.showFoldingControls": "always",
+  "editor.tabCompletion": "onlySnippets",
+  "prettier.semi": false,
+  "workbench.sideBar.location": "left",
+  "js/ts.implicitProjectConfig.checkJs": true,
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
@@ -177,14 +170,31 @@
     ["Maroon", "Aqua", "Red"],
     "Red"
   ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "editor.showFoldingControls": "always",
-  "editor.tabCompletion": "onlySnippets",
-  "prettier.semi": false,
-  "workbench.sideBar.location": "left"
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "powershell.codeFormatting.useCorrectCasing": true,
+  "powershell.powerShellAdditionalExePaths": [
+    {
+      "versionName": "7",
+      "exePath": "C:\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.EXE"
+    }
+  ],
+  "powershell.powerShellDefaultVersion": "7",
+  "powershell.promptToUpdatePowerShell": false
 }
