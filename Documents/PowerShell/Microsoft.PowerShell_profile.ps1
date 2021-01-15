@@ -1,6 +1,5 @@
-# Directory Manipulation
+# ln-like behavior
 # function ln ($target, $destination) {
-#     # Check if path or name is empty and exit if they are
 #     New-Item -ItemType SymbolicLink -Path $target -Name $destination
 # }
 
@@ -8,7 +7,10 @@
 function env { Get-ChildItem env: }
 
 # touch-like behavior
-function touch ($item) { new-item $item }
+function touch ($item) { New-Item $item }
+
+# which-like behavior
+function which ($command) { Get-Command $command }
 
 # File listing
 # Some variation of Get-ChildItem

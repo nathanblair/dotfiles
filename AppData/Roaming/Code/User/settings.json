@@ -196,5 +196,10 @@
     }
   ],
   "powershell.powerShellDefaultVersion": "7",
-  "powershell.promptToUpdatePowerShell": false
+  "powershell.promptToUpdatePowerShell": false,
+  "githubPullRequests.remotes": [
+    "origin",
+    "upstream",
+    "github"
+  ]
 }
