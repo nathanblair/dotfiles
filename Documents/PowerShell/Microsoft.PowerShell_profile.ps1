@@ -73,4 +73,4 @@ Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardDeleteWord
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Source token variables
-# . ~/repos/personal/keys/tokens.ps1 | Out-Null
+. ~/repos/personal/keys/tokens.ps1 | Out-Null
