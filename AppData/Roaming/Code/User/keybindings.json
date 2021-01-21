@@ -216,7 +216,7 @@
 	{
 		"key": "space w",
 		"command": "workbench.action.files.save",
-		"when": "vim.mode != 'Insert'"
+		"when": "editorTextFocus && vim.mode != 'Insert'"
 	},
 	{
 		"key": "ctrl+s",
