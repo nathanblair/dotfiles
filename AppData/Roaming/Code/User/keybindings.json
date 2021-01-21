@@ -94,4 +94,124 @@
 		"key": "ctrl+e",
 		"command": "-workbench.action.quickOpen"
 	},
+	{
+		"key": ";",
+		"command": "editor.toggleFold",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+l",
+		"command": "-editor.toggleFold",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z a",
+		"command": "editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+0",
+		"command": "-editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 1",
+		"command": "editor.foldLevel1",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+1",
+		"command": "-editor.foldLevel1",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 2",
+		"command": "editor.foldLevel2",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+2",
+		"command": "-editor.foldLevel2",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 3",
+		"command": "editor.foldLevel3",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+3",
+		"command": "-editor.foldLevel3",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 4",
+		"command": "editor.foldLevel4",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+4",
+		"command": "-editor.foldLevel4",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 5",
+		"command": "editor.foldLevel5",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+5",
+		"command": "-editor.foldLevel5",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 6",
+		"command": "editor.foldLevel6",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+6",
+		"command": "-editor.foldLevel6",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 7",
+		"command": "editor.foldLevel7",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+7",
+		"command": "-editor.foldLevel7",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z m",
+		"command": "editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+j",
+		"command": "-editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "space z",
+		"command": "editor.foldRecursively",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+[",
+		"command": "-editor.foldRecursively",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "space shift+z",
+		"command": "editor.unfoldRecursively",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+]",
+		"command": "-editor.unfoldRecursively",
+		"when": "editorTextFocus && foldingEnabled"
+	}
 ]
