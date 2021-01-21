@@ -46,9 +46,8 @@
 		"command": "-workbench.action.closeActiveEditor"
 	},
 	{
-		"key": "space d",
-		"command": "workbench.action.closeActiveEditor",
-		"when": "vim.mode != 'Insert'"
+		"key": "ctrl+w",
+		"command": "workbench.action.closeActiveEditor"
 	},
 	{
 		"key": "ctrl+k ctrl+i",
@@ -222,5 +221,10 @@
 	{
 		"key": "ctrl+s",
 		"command": "-workbench.action.files.save"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "-extension.vim_ctrl+w",
+		"when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
 	}
 ]

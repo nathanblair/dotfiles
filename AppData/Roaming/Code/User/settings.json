@@ -86,7 +86,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Default High Contrast",
+  "workbench.colorTheme": "Rubber",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Rubber",
   "update.enableWindowsBackgroundUpdates": false,
