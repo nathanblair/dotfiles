@@ -46,7 +46,7 @@
 		"command": "-workbench.action.closeActiveEditor"
 	},
 	{
-		"key": "ctrl+w",
+		"key": "space d",
 		"command": "workbench.action.closeActiveEditor",
 		"when": "vim.mode != 'Insert'"
 	},
@@ -213,5 +213,14 @@
 		"key": "ctrl+k ctrl+]",
 		"command": "-editor.unfoldRecursively",
 		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "space w",
+		"command": "workbench.action.files.save",
+		"when": "vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+s",
+		"command": "-workbench.action.files.save"
 	}
 ]

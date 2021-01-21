@@ -54,26 +54,6 @@
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>", "c", "c"],
-      "commands": ["editor.action.commentLine"]
-    },
-    {
-      "before": ["<space>", "h"],
-      "commands": ["workbench.action.focusSideBar"]
-    },
-    {
-      "before": ["<space>", "l"],
-      "commands": ["workbench.action.focusLastEditorGroup"]
-    },
-    {
-      "before": ["<space>", "d"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["<space>", "w"],
-      "after": [":", "w", "<CR>"]
-    },
-    {
       "before": ["J"],
       "after": ["m", "a", "o", "<ESC>", "`", "a"]
     },
