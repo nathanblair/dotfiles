@@ -11,6 +11,8 @@
   "python.formatting.blackArgs": ["-S", "-l 79"],
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.integratedConsole.focusConsoleOnExecute": false,
   "languageserver": {
     "dart": {
       "command": "dart",
