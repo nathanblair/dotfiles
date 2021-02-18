@@ -106,7 +106,7 @@
 	{
 		"key": "z a",
 		"command": "editor.foldAll",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+0",
@@ -116,7 +116,7 @@
 	{
 		"key": "z 1",
 		"command": "editor.foldLevel1",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+1",
@@ -126,7 +126,7 @@
 	{
 		"key": "z 2",
 		"command": "editor.foldLevel2",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+2",
@@ -136,7 +136,7 @@
 	{
 		"key": "z 3",
 		"command": "editor.foldLevel3",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+3",
@@ -146,7 +146,7 @@
 	{
 		"key": "z 4",
 		"command": "editor.foldLevel4",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+4",
@@ -156,7 +156,7 @@
 	{
 		"key": "z 5",
 		"command": "editor.foldLevel5",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+5",
@@ -166,7 +166,7 @@
 	{
 		"key": "z 6",
 		"command": "editor.foldLevel6",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+6",
@@ -176,7 +176,7 @@
 	{
 		"key": "z 7",
 		"command": "editor.foldLevel7",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+7",
@@ -196,7 +196,7 @@
 	{
 		"key": "space z",
 		"command": "editor.foldRecursively",
-		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
 	},
 	{
 		"key": "ctrl+k ctrl+[",

@@ -2,7 +2,7 @@
   "workbench.startupEditor": "none",
   "editor.renderLineHighlight": "gutter",
   "editor.fontSize": 16,
-  "editor.fontFamily": "'Fira Code', Hack, 'Cascadia Code Light', Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code Light', Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
   "editor.semanticHighlighting.enabled": true,
   "editor.fontLigatures": true,
   "editor.insertSpaces": true,
@@ -37,6 +37,10 @@
   "workbench.activityBar.visible": true,
   "zenMode.hideStatusBar": false,
   "zenMode.hideTabs": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideActivityBar": false,
+  "zenMode.restore": false,
+  "zenMode.centerLayout": false,
   "vim.useSystemClipboard": true,
   "vim.disableExtension": false,
   "editor.wordWrap": "off",
@@ -76,8 +80,6 @@
   "scm.diffDecorations": "none",
   "git.openDiffOnClick": true,
   "git.autorefresh": false,
-  "zenMode.centerLayout": true,
-  "zenMode.hideLineNumbers": false,
   "files.hotExit": "off",
   "workbench.tips.enabled": false,
   "vim.cursorStylePerMode.insert": "line",
@@ -181,5 +183,6 @@
     "origin",
     "upstream",
     "github"
-  ]
+  ],
+  "workbench.editor.centeredLayoutAutoResize": false
 }
