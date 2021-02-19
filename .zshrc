@@ -150,6 +150,6 @@ fi
 . /opt/azure-cli/az.completion 2>/dev/null || true
 . ~/.gh.completion 2>/dev/null || true
 
-export PATH=${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=/snap/bin:~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
 # vim:ft=sh
