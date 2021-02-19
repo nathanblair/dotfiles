@@ -1,8 +1,7 @@
 {
   "workbench.startupEditor": "none",
   "editor.renderLineHighlight": "gutter",
-  "editor.fontSize": 16,
-  "editor.fontFamily": "'Fira Code', Hack, 'Cascadia Code Light', Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code Light', Hack, Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
   "editor.semanticHighlighting.enabled": true,
   "editor.fontLigatures": true,
   "editor.insertSpaces": true,
@@ -37,6 +36,10 @@
   "workbench.activityBar.visible": true,
   "zenMode.hideStatusBar": false,
   "zenMode.hideTabs": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.hideActivityBar": false,
+  "zenMode.restore": false,
+  "zenMode.centerLayout": false,
   "vim.useSystemClipboard": true,
   "vim.disableExtension": false,
   "editor.wordWrap": "off",
@@ -54,26 +57,6 @@
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>", "c", "c"],
-      "commands": ["editor.action.commentLine"]
-    },
-    {
-      "before": ["<space>", "h"],
-      "commands": ["workbench.action.focusSideBar"]
-    },
-    {
-      "before": ["<space>", "l"],
-      "commands": ["workbench.action.focusLastEditorGroup"]
-    },
-    {
-      "before": ["<space>", "d"],
-      "commands": ["workbench.action.closeActiveEditor"]
-    },
-    {
-      "before": ["<space>", "w"],
-      "after": [":", "w", "<CR>"]
-    },
-    {
       "before": ["J"],
       "after": ["m", "a", "o", "<ESC>", "`", "a"]
     },
@@ -86,7 +69,6 @@
   "editor.cursorStyle": "block",
   "editor.scrollBeyondLastLine": false,
   "workbench.editor.restoreViewState": false,
-  "workbench.iconTheme": "material-icon-theme",
   "editor.roundedSelection": false,
   "vim.foldfix": true,
   "git.decorations.enabled": false,
@@ -96,8 +78,6 @@
   "scm.diffDecorations": "none",
   "git.openDiffOnClick": true,
   "git.autorefresh": false,
-  "zenMode.centerLayout": true,
-  "zenMode.hideLineNumbers": false,
   "files.hotExit": "off",
   "workbench.tips.enabled": false,
   "vim.cursorStylePerMode.insert": "line",
@@ -106,23 +86,13 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Rubber",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Rubber",
   "update.enableWindowsBackgroundUpdates": false,
   "update.mode": "start",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "material-icon-theme.hidesExplorerArrows": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "debug.allowBreakpointsEverywhere": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.suggestSelection": "first",
   "files.eol": "\n",
   "diffEditor.codeLens": true,
@@ -141,7 +111,6 @@
   "github-actions.org-features": true,
   "extensions.ignoreRecommendations": true,
   "editor.tabSize": 2,
-  "editor.mouseWheelScrollSensitivity": 0.25,
   "python.showStartPage": false,
   "python.pythonPath": "C:\\Users\\nathan\\scoop\\shims\\python.exe",
   "python.linting.pylintEnabled": false,
@@ -158,9 +127,6 @@
   "window.zoomLevel": 0,
   "material-icon-theme.activeIconPack": "nest",
   "github-actions.preview-features": true,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "deno.enable": true,
   "C_Cpp.default.includePath": ["include", "src/include"],
   "vim.autoindent": false,
@@ -170,6 +136,11 @@
   "files.associations": {
     "meson.build": "python"
   },
+  "editor.showFoldingControls": "always",
+  "editor.tabCompletion": "onlySnippets",
+  "prettier.semi": false,
+  "workbench.sideBar.location": "left",
+  "js/ts.implicitProjectConfig.checkJs": true,
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
@@ -177,13 +148,39 @@
     ["Maroon", "Aqua", "Red"],
     "Red"
   ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
-  "editor.showFoldingControls": "always",
-  "editor.tabCompletion": "onlySnippets",
-  "prettier.semi": false
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "powershell.codeFormatting.useCorrectCasing": true,
+  "powershell.powerShellAdditionalExePaths": [
+    {
+      "versionName": "7",
+      "exePath": "C:\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.EXE"
+    }
+  ],
+  "powershell.powerShellDefaultVersion": "7",
+  "powershell.promptToUpdatePowerShell": false,
+  "githubPullRequests.remotes": [
+    "origin",
+    "upstream",
+    "github"
+  ],
+  "workbench.editor.centeredLayoutAutoResize": false,
+  "editor.fontSize": 16,
+  "workbench.colorTheme": "Rubber"
 }
