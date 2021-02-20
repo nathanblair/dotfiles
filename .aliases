@@ -59,3 +59,5 @@ alias dpsa='docker ps --all'
 alias dcrit='docker container run -i -t'
 alias dib='docker image build --force-rm --rm'
 
+# Terraform
+alias tf='terraform'

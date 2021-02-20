@@ -1,3 +1,5 @@
+# vim:ft=sh
+
 . ~/.aliases 2>/dev/null || true
 . ~/.tokens 2>/dev/null || true
 
@@ -152,4 +154,5 @@ fi
 
 export PATH=/snap/bin:~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
-# vim:ft=sh
+complete -o nospace -C /usr/local/bin/terraform terraform
+
