@@ -11,18 +11,11 @@
   "python.formatting.blackArgs": ["-S", "-l 79"],
   "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": false,
+  "python.linting.mypyEnabled": false,
+  "python.linting.pep8Enabled": false,
+  "python.linting.pylamaEnabled": false,
+  "python.linting.banditEnabled": false,
+  "python.linting.prospectorEnabled": false,
   "powershell.integratedConsole.showOnStartup": false,
-  "powershell.integratedConsole.focusConsoleOnExecute": false,
-  "languageserver": {
-    "dart": {
-      "command": "dart",
-      "args": [
-        "/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
-        "--lsp"
-      ],
-      "filetypes": ["dart"],
-      "requireRootPattern": true,
-      "rootPatterns": ["pubspec.yaml"]
-    }
-  }
+  "powershell.integratedConsole.focusConsoleOnExecute": false
 }
