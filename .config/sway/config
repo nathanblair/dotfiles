@@ -27,11 +27,11 @@ exec_always {
   gsettings set org.gnome.desktop.default-applications.terminal exec $term
   gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
 }
-exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+#exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 exec mako
 
 # The system background image
-set $bg ~/Pictures/wallpaper.png
+#set $bg ~/Pictures/wallpaper.png
 #set $bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
 #
@@ -53,7 +53,8 @@ focus_wrapping no
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg $bg "fill"
+#output * bg $bg "fill"
+output * bg #000000 solid_color
 #
 # Example configuration:
 #
