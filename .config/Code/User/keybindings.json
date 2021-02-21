@@ -47,8 +47,7 @@
 	},
 	{
 		"key": "ctrl+w",
-		"command": "workbench.action.closeActiveEditor",
-		"when": "vim.mode != 'Insert'"
+		"command": "workbench.action.closeActiveEditor"
 	},
 	{
 		"key": "ctrl+k ctrl+i",
@@ -75,4 +74,167 @@
 		"command": "-extension.vim_ctrl+k",
 		"when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
 	},
+	{
+		"key": "space",
+		"command": "-filesExplorer.openFilePreserveFocus",
+		"when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
+	},
+	{
+		"key": "space",
+		"command": "-list.toggleExpand",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "workbench.action.quickOpen",
+		"when": "!suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": ";",
+		"command": "editor.toggleFold",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+l",
+		"command": "-editor.toggleFold",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z a",
+		"command": "editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+0",
+		"command": "-editor.foldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 1",
+		"command": "editor.foldLevel1",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+1",
+		"command": "-editor.foldLevel1",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 2",
+		"command": "editor.foldLevel2",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+2",
+		"command": "-editor.foldLevel2",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 3",
+		"command": "editor.foldLevel3",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+3",
+		"command": "-editor.foldLevel3",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 4",
+		"command": "editor.foldLevel4",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+4",
+		"command": "-editor.foldLevel4",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 5",
+		"command": "editor.foldLevel5",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+5",
+		"command": "-editor.foldLevel5",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 6",
+		"command": "editor.foldLevel6",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+6",
+		"command": "-editor.foldLevel6",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z 7",
+		"command": "editor.foldLevel7",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+7",
+		"command": "-editor.foldLevel7",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "z m",
+		"command": "editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+j",
+		"command": "-editor.unfoldAll",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "space z",
+		"command": "editor.foldRecursively",
+		"when": "editorTextFocus && foldingEnabled && vim.mode == 'Normal'"
+	},
+	{
+		"key": "ctrl+k ctrl+[",
+		"command": "-editor.foldRecursively",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "space shift+z",
+		"command": "editor.unfoldRecursively",
+		"when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+k ctrl+]",
+		"command": "-editor.unfoldRecursively",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "space w",
+		"command": "workbench.action.files.save",
+		"when": "editorTextFocus && vim.mode != 'Insert'"
+	},
+	{
+		"key": "ctrl+s",
+		"command": "-workbench.action.files.save"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "-extension.vim_ctrl+w",
+		"when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+	},
+	{
+		"key": "space f",
+		"command": "editor.action.formatDocument",
+		"when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor && vim.mode != 'Insert'"
+	},
+	{
+		"key": "shift+alt+f",
+		"command": "-editor.action.formatDocument",
+		"when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+	}
 ]

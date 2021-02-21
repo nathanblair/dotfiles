@@ -1,6 +1,7 @@
 {
   "workbench.startupEditor": "none",
   "editor.renderLineHighlight": "gutter",
+  "editor.fontSize": 16,
   "editor.fontFamily": "'Fira Code', 'Cascadia Code Light', Hack, Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
   "editor.semanticHighlighting.enabled": true,
   "editor.fontLigatures": true,
@@ -69,6 +70,7 @@
   "editor.cursorStyle": "block",
   "editor.scrollBeyondLastLine": false,
   "workbench.editor.restoreViewState": false,
+  "workbench.iconTheme": "material-icon-theme",
   "editor.roundedSelection": false,
   "vim.foldfix": true,
   "git.decorations.enabled": false,
@@ -86,6 +88,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
+  "workbench.colorTheme": "Alabaster",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Rubber",
   "update.enableWindowsBackgroundUpdates": false,
@@ -180,7 +183,5 @@
     "upstream",
     "github"
   ],
-  "workbench.editor.centeredLayoutAutoResize": false,
-  "editor.fontSize": 16,
-  "workbench.colorTheme": "Rubber"
+  "workbench.editor.centeredLayoutAutoResize": false
 }
