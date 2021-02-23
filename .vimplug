@@ -15,7 +15,11 @@ call plug#begin('~/.vim/bundle')
   Plug 'machakann/vim-sandwich'
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/goyo.vim'
-  Plug 'ap/vim-buftabline'
+  "Plug 'ap/vim-buftabline'
+  "Plug 'vim-airline/vim-airline'
+  "Plug 'ctrlpvim/ctrlp.vim'
+  "Plug 'tpope/vim-fugitive'
+  "Plug 'bling/vim-bufferline'
 call plug#end()
 
 " Color scheme
@@ -54,10 +58,25 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeIgnore=['^__pycache__']
 let g:NERDTreeCascadeSingleChildDir=0
 let g:NERDTreeCascadeOpenSingleChildDir=0
-let g:NERDTreeStatusline="  NERDTree"
+let g:NERDTreeStatusline='%( %{pathshorten(fnamemodify(getcwd(), ":~"))}%)'
 
 " NERDCommenter
 let g:NERDCreateDefaultMappings=0
+
+" Vim Airline
+"let g:airline_extensions = [ ]
+let g:airline_extensions=[
+  \'branch',
+  \'quickfix',
+  \'coc',
+  \'ctrlp',
+  \'bufferline',
+\]
+let g:airline_powerline_fonts = 1
+
+" Bufferline
+let g:bufferline_echo = 0
+let g:bufferline_show_bufnr = 0
 
 " -------------------------------------------------------------"
 " Language Server Protocol settings                         LS
@@ -77,7 +96,8 @@ let g:coc_global_extensions=[
   \'coc-sh',
   \'coc-powershell',
   \'coc-clangd',
-  \'coc-rls']
+  \'coc-rls',
+\]
 
 " Completion
 set keywordprg=:call\ <SID>ShowDocumentation()
@@ -148,8 +168,5 @@ nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
 " LSP Format
 nmap <silent> <Leader>f <Plug>(coc-format)
 vmap <silent> <Leader>f <Plug>(coc-format-selected)
-
-" Source/Header Switch
-nnoremap <silent> <F4> :call ToggleSourceHeaderDocFile()<CR>
 
 " vim:ft=vim
