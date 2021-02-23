@@ -15,9 +15,9 @@
 		"when": "activeEditorGroupEmpty && multipleEditorGroups"
 	},
 	{
-		"key": "ctrl+backspace",
+		"key": "ctrl+w",
 		"command": "deleteWordLeft",
-		"when": "textInputFocus && !editorReadonly"
+		"when": "textInputFocus && !editorReadonly && vim.mode == 'Insert'"
 	},
 	{
 		"key": "ctrl+w",
@@ -47,7 +47,8 @@
 	},
 	{
 		"key": "ctrl+w",
-		"command": "workbench.action.closeActiveEditor"
+		"command": "workbench.action.closeActiveEditor",
+		"when": "vim.mode != 'Insert'"
 	},
 	{
 		"key": "ctrl+k ctrl+i",
