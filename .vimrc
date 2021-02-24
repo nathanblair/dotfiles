@@ -55,12 +55,11 @@ set backspace=indent,eol,start
 " Vim sh syntax fixing for arbitrary shells
 let g:is_posix=0
 
-" Make system
-set makeprg=ninja\ -C\ build
-
 " Wrap if in preview window
 autocmd BufWinEnter * if &previewwindow | setlocal wrap | endif
 autocmd BufWinEnter * if nvim_win_get_config(0)["relative"] != "" | setlocal nofoldenable | endif
+
+autocmd BufWinEnter * :call UpdateWorkingPathRoot()
 
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
@@ -148,88 +147,101 @@ nnoremap <C-h> :h
 " Statusline Customization                                  SL
 " -------------------------------------------------------------"
 set statusline=%#WildMenu#%(\ %{PrettyPrintCurrentDirectory()}\ %)
-set statusline+=\%#rubyfunction#
-" FIXME Show git status
-"set statusline+=%(\ \ %{b:git_branch}%)
+set statusline+=%#modemsg#%(\ %{ShowVCSBranch()}\ %)
 set statusline+=%#TermCursor#%(\ %{PrettyPrintCurrentFilePath()}\ %)
-set statusline+=%(%#modemsg#%m%r%w%)
-"set statusline+=%(%#keyword#\ %)
-set statusline+=%(%{ChangeStatuslineColor()}%#statusline#%)
+set statusline+=%#modemsg#%(\ %m%r%w\ %)
+set statusline+=%(%{ChangeStatuslineColor()}%#StatusLine#%)
 set statusline+=%=
-set statusline+=%(\ %{ShowBufferList()}\ %)
-set statusline+=%=
-set statusline+=%(%#keyword#\ [%{&filetype}]%)
-set statusline+=%#helpCommand#
-set statusline+=%(\ %{&fileencoding}%)
-set statusline+=%(<%{&fileformat}>%)
+"set statusline+=%(%{ShowBufferList()}%)
+"set statusline+=%=
+set statusline+=%#keyword#%(\ [%{&filetype}]%)
+set statusline+=%#helpCommand#%-10(\ %{&fileencoding}<%{&fileformat}>%)
 set statusline+=%#string#
 "set statusline+=%(%{&expandtab ? '[ ]' : '[\\t]'}%)
-"set statusline+=%(%#Title#\ C:%v%)
-set statusline+=%(%#normal#%{GetFileSize()}\ %)
+"set statusline+=%-5(%#Title#\ C:%v%)
+set statusline+=%-10(%#normal#%{GetFileSize()}%)
 
 " -------------------------------------------------------------"
 " Helper functions                                          HF
 " -------------------------------------------------------------"
-function! ChangeStatuslineColor() abort
-  let l:mode=mode()
-  if (l:mode =~# "\v(n|no)")
-    execute "hi! StatusLine guibg=#282a36"
-  elseif (l:mode =~# "\v(c|cv|ce)")
-    execute "hi! StatusLine guibg=#f1fa8c"
-  elseif (l:mode =~# "\v(i|ic|ix)")
-    execute "hi! StatusLine guibg=#50fa7b"
-  elseif (l:mode =~# "\v(R|Rc|Rx)")
-    execute "hi! StatusLine guibg=#8be9fd"
-  elseif (l:mode ==# "t")
-    execute "hi! StatusLine guibg=#ff5555"
-  elseif (l:mode ==? "v" || l:mode ==? "")
-    execute "hi! StatusLine guibg=#ff79c6"
-  else
-    execute "hi! StatusLine guibg=#282a36"
+function! UpdateWorkingPathRoot() abort
+  let b:git_root_path = substitute(
+    \system("basename $(git rev-parse --show-toplevel 2> /dev/null) 2> /dev/null || echo ''"),
+    \"\n",
+    \"",
+    \"")
+endfunction
+
+function! ShowVCSBranch() abort
+  if b:git_root_path != "" && &filetype != "help"
+    let l:branch_name = substitute(
+      \system("basename $(git branch --show-current 2> /dev/null) 2> /dev/null || echo ''"),
+      \"\n",
+      \"",
+      \"")
+    return " " . l:branch_name
   endif
   return ""
 endfunction
 
-function! UpdateVCSStatus() abort
-
+" FIXME
+function! ChangeStatuslineColor() abort
+  let l:mode=mode()
+  if (l:mode ==# "\v(i|ic|ix)")
+    execute "hi! StatusLine guibg=#50fa7b ctermbg=Green"
+  elseif (l:mode ==# "\v(c|cv|ce)")
+    execute "hi! StatusLine guibg=#f1fa8c ctermbg=Black"
+  elseif (l:mode ==# "\v(R|Rc|Rx)")
+    execute "hi! StatusLine guibg=#8be9fd ctermbg=Cyan"
+  elseif (l:mode ==# "t")
+    execute "hi! StatusLine guibg=#ff5555 ctermbg=Magenta"
+  elseif (l:mode ==? "v" || l:mode ==? "")
+    execute "hi! StatusLine guibg=#ff79c6 ctermbg=LightRed"
+  else
+    execute "hi! StatusLine guibg=#282a36 ctermbg=White"
+  endif
+  return ""
 endfunction
 
 function! PrettyPrintCurrentDirectory() abort
-  if &filetype=="help" | return "" | endif
-
-  " FIXME If we're in a git directory, show that directory name
-
-  let l:dir_path = pathshorten(fnamemodify(getcwd(), ":~"))
-  return l:dir_path
+  if &filetype=="help"
+    return "" 
+  elseif b:git_root_path != ""  
+    return b:git_root_path 
+  else
+    return pathshorten(fnamemodify(getcwd(), ":~"))
+  endif
 endfunction
 
 function! PrettyPrintCurrentFilePath() abort
-  if &filetype=="help" | return "" | endif
+  if &filetype == "help"
+    return "" 
+  " FIXME show file path relative to 'UpdateWorkingPathRoot'
+  "elseif b:git_root_path != ""  
+    "return b:git_root_path 
+  else
+    let l:dir_path = pathshorten(expand("%:~:."))
+    return len(l:dir_path) ? l:dir_path : "[NO NAME]"
+  endif
 
-  " FIXME If we're in a git directory, show file path relative to that
-  " directory
-
-  let l:dir_path = pathshorten(expand("%:~:."))
-  return len(l:dir_path) ? l:dir_path : "[NO NAME]"
 endfunction
 
 function! ShowBufferList() abort
   let l:buffer_array = ""
 
   let l:raw_buffer_array = split(execute("ls"), "\n")
-  if len(l:raw_buffer_array) == 1
-    return ""
-  endif
+  if len(l:raw_buffer_array) == 1 || &filetype == "help" | return "" | endif
 
   for each_raw_buffer in l:raw_buffer_array
     let l:each_raw_buffer_split = split(each_raw_buffer)
     
     let l:filename_index = 1
     let l:active = 0
-    if len(l:each_raw_buffer_split) == 5
+    let l:each_raw_buffer_length = len(l:each_raw_buffer_split)
+    if l:each_raw_buffer_length == 5
       let l:filename_index = 2
       let l:active = l:each_raw_buffer_split[1] =~ "a"
-    elseif len(l:each_raw_buffer_split) == 6
+    elseif l:each_raw_buffer_length == 6
       let l:filename_index = 3
       let l:active = l:each_raw_buffer_split[1] =~ "a"
     endif
@@ -244,14 +256,6 @@ function! ShowBufferList() abort
   endfor
 
   return l:buffer_array
-endfunction
-
-function! ShowDocumentation() abort
-  if &filetype == "vim"
-    execute "h ".expand("<cword>")
-  else
-    call CocAction("doHover")
-  endif
 endfunction
 
 function! GetFileSize() abort

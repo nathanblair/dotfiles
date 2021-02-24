@@ -15,11 +15,8 @@ call plug#begin('~/.vim/bundle')
   Plug 'machakann/vim-sandwich'
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/goyo.vim'
-  "Plug 'ap/vim-buftabline'
-  "Plug 'vim-airline/vim-airline'
+  Plug 'ap/vim-buftabline'
   "Plug 'ctrlpvim/ctrlp.vim'
-  "Plug 'tpope/vim-fugitive'
-  "Plug 'bling/vim-bufferline'
 call plug#end()
 
 " Color scheme
@@ -73,10 +70,6 @@ let g:airline_extensions=[
   \'bufferline',
 \]
 let g:airline_powerline_fonts = 1
-
-" Bufferline
-let g:bufferline_echo = 0
-let g:bufferline_show_bufnr = 0
 
 " -------------------------------------------------------------"
 " Language Server Protocol settings                         LS
@@ -168,5 +161,13 @@ nnoremap <silent> <C-k> :call ShowDocumentation()<CR>
 " LSP Format
 nmap <silent> <Leader>f <Plug>(coc-format)
 vmap <silent> <Leader>f <Plug>(coc-format-selected)
+
+function! ShowDocumentation() abort
+  if &filetype == "vim"
+    execute "h ".expand("<cword>")
+  else
+    call CocAction("doHover")
+  endif
+endfunction
 
 " vim:ft=vim
