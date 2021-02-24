@@ -261,18 +261,18 @@ endfunction
 function! GetFileSize() abort
   let l:bytes = getfsize(expand("%"))
   let l:divisor = 1.0
-  let l:suffix = "B "
+  let l:suffix = 'B '
 
   if l:bytes <= 0
-    return ""
+    return ''
   elseif l:bytes >= 1000000
     let l:divisor = 10000000.0
-    let l:suffix = "MB"
+    let l:suffix = 'MB'
   elseif l:bytes >= 1000
     let l:divisor = 1000.0
-    let l:suffix = "KB"
+    let l:suffix = 'KB'
   endif
 
-  return printf("%6.1f %s", l:bytes / l:divisor, l:suffix)
+  return printf('%6.1f %s', l:bytes / l:divisor, l:suffix)
 endfunction
 

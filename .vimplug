@@ -15,10 +15,11 @@ call plug#begin('~/.vim/bundle')
   Plug 'machakann/vim-sandwich'
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/goyo.vim'
-  Plug 'ap/vim-buftabline'
+  "Plug 'ap/vim-buftabline'
   "Plug 'ctrlpvim/ctrlp.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
+  "Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Color scheme
@@ -68,10 +69,20 @@ let g:airline_extensions=[
   \'branch',
   \'quickfix',
   \'coc',
-  \'ctrlp',
-  \'bufferline',
+  \'tabline',
 \]
 let g:airline_powerline_fonts = 1
+function! AirlineInit()
+  call airline#parts#define_function('filesize', 'GetFileSize')
+  call airline#parts#define_condition('filesize', 'expand("%:t") != ""')
+
+  let g:airline_section_a = airline#section#create(['%{PrettyPrintCurrentDirectory()}'])
+  "let g:airline_section_z = airline#section#create(['filesize', ':%{col(\'.\')}'])
+  let g:airline_section_z = airline#section#create(['filesize'])
+
+  let g:airline_symbols.dirty='✗'
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
 
 " -------------------------------------------------------------"
 " Language Server Protocol settings                         LS
