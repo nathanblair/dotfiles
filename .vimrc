@@ -146,20 +146,20 @@ nnoremap <C-h> :h
 " -------------------------------------------------------------"
 " Statusline Customization                                  SL
 " -------------------------------------------------------------"
-set statusline=%#WildMenu#%(\ %{PrettyPrintCurrentDirectory()}\ %)
-set statusline+=%#modemsg#%(\ %{ShowVCSBranch()}\ %)
-set statusline+=%#TermCursor#%(\ %{PrettyPrintCurrentFilePath()}\ %)
-set statusline+=%#modemsg#%(\ %m%r%w\ %)
-set statusline+=%(%{ChangeStatuslineColor()}%#StatusLine#%)
-set statusline+=%=
+"set statusline=%#WildMenu#%(\ %{PrettyPrintCurrentDirectory()}\ %)
+"set statusline+=%#modemsg#%(\ %{ShowVCSBranch()}\ %)
+"set statusline+=%#TermCursor#%(\ %{PrettyPrintCurrentFilePath()}\ %)
+"set statusline+=%#modemsg#%(\ %m%r%w\ %)
+"set statusline+=%(%{ChangeStatuslineColor()}%#StatusLine#%)
+"set statusline+=%=
 "set statusline+=%(%{ShowBufferList()}%)
 "set statusline+=%=
-set statusline+=%#keyword#%(\ [%{&filetype}]%)
-set statusline+=%#helpCommand#%-10(\ %{&fileencoding}<%{&fileformat}>%)
-set statusline+=%#string#
+"set statusline+=%#keyword#%(\ [%{&filetype}]%)
+"set statusline+=%#helpCommand#%-10(\ %{&fileencoding}<%{&fileformat}>%)
+"set statusline+=%#string#
 "set statusline+=%(%{&expandtab ? '[ ]' : '[\\t]'}%)
 "set statusline+=%-5(%#Title#\ C:%v%)
-set statusline+=%-10(%#normal#%{GetFileSize()}%)
+"set statusline+=%-10(%#normal#%{GetFileSize()}%)
 
 " -------------------------------------------------------------"
 " Helper functions                                          HF
