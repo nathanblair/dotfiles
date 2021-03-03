@@ -2,7 +2,7 @@
   "workbench.startupEditor": "none",
   "editor.renderLineHighlight": "gutter",
   "editor.fontSize": 16,
-  "editor.fontFamily": "'Fira Code', 'Cascadia Code Light', Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
+  "editor.fontFamily": "'Fira Code', 'Cascadia Code Light', Hack, Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
   "editor.semanticHighlighting.enabled": true,
   "editor.fontLigatures": true,
   "editor.insertSpaces": true,
@@ -25,6 +25,9 @@
       "keywords": {
         "fontStyle": "bold"
       }
+    },
+    "[The Best Theme]": {
+      "comments": "#FF0000"
     }
   },
   "workbench.colorCustomizations": {
@@ -35,12 +38,7 @@
   },
   "explorer.confirmDragAndDrop": false,
   "workbench.activityBar.visible": true,
-  "zenMode.hideStatusBar": false,
-  "zenMode.hideTabs": false,
-  "zenMode.hideLineNumbers": false,
-  "zenMode.hideActivityBar": false,
   "zenMode.restore": false,
-  "zenMode.centerLayout": false,
   "vim.useSystemClipboard": true,
   "vim.disableExtension": false,
   "editor.wordWrap": "off",
@@ -88,7 +86,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Rubber",
+  "workbench.colorTheme": "The Best Theme",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Rubber",
   "update.enableWindowsBackgroundUpdates": false,
@@ -114,7 +112,6 @@
   "github-actions.org-features": true,
   "extensions.ignoreRecommendations": true,
   "editor.tabSize": 2,
-  "editor.mouseWheelScrollSensitivity": 0.25,
   "python.showStartPage": false,
   "python.pythonPath": "C:\\Users\\nathan\\scoop\\shims\\python.exe",
   "python.linting.pylintEnabled": false,
@@ -128,7 +125,6 @@
   "python.analysis.diagnosticMode": "workspace",
   "terminal.integrated.shell.windows": "C:\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.exe",
   "glassit.alpha": 225,
-  "window.zoomLevel": 0,
   "material-icon-theme.activeIconPack": "nest",
   "github-actions.preview-features": true,
   "deno.enable": true,
@@ -184,5 +180,10 @@
     "upstream",
     "github"
   ],
-  "workbench.editor.centeredLayoutAutoResize": false
+  "workbench.editor.centeredLayoutAutoResize": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "task.problemMatchers.neverPrompt": {
+    "npm": true
+  },
+  "editor.linkedEditing": true
 }

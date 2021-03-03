@@ -35,6 +35,9 @@ function glg { git log --graph }
 function glgs { git log --graph --stat }
 function glgp { git log --graph --patch }
 
+# Terraform alias
+Set-Alias -Name tf -Value terraform
+
 function Prompt {
     $branch = git branch --show-current
 
