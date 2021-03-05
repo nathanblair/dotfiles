@@ -185,5 +185,6 @@
   "task.problemMatchers.neverPrompt": {
     "npm": true
   },
-  "editor.linkedEditing": true
+  "editor.linkedEditing": true,
+  "window.zoomLevel": 1
 }

@@ -29,11 +29,15 @@ function gaa { git add --all }
 function gc { git commit }
 function gca { git commit --all }
 function gcm ($msg) { git commit -m $msg }
-function gcam { git commit --all -m $msg }
+function gcam ($msg) { git commit --all -m $msg }
 function gst { git status }
 function glg { git log --graph }
 function glgs { git log --graph --stat }
 function glgp { git log --graph --patch }
+function gs ($branch) { git switch $branch }
+function gsc ($branch) { git switch -c $branch }
+function gpush ($args) { git push $args}
+function gpull { git pull }
 
 # Terraform alias
 Set-Alias -Name tf -Value terraform
