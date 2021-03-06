@@ -186,5 +186,6 @@
     "npm": true
   },
   "editor.linkedEditing": true,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "workbench.productIconTheme": "fluent-icons"
 }

@@ -82,3 +82,5 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Source token variables
 . ~/repos/personal/keys/tokens.ps1 | Out-Null
+
+Import-Module posh-git
