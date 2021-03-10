@@ -88,7 +88,7 @@
   "workbench.enableExperiments": false,
   "workbench.colorTheme": "The Best Theme",
   "workbench.preferredLightColorTheme": "Alabaster",
-  "workbench.preferredDarkColorTheme": "Rubber",
+  "workbench.preferredDarkColorTheme": "The Best Theme",
   "update.enableWindowsBackgroundUpdates": false,
   "update.mode": "start",
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -166,6 +166,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
   "powershell.codeFormatting.useCorrectCasing": true,
   "powershell.powerShellAdditionalExePaths": [
     {
@@ -175,17 +178,15 @@
   ],
   "powershell.powerShellDefaultVersion": "7",
   "powershell.promptToUpdatePowerShell": false,
-  "githubPullRequests.remotes": [
-    "origin",
-    "upstream",
-    "github"
-  ],
+  "githubPullRequests.remotes": ["origin", "upstream", "github"],
   "workbench.editor.centeredLayoutAutoResize": false,
   "liveServer.settings.donotShowInfoMsg": true,
   "task.problemMatchers.neverPrompt": {
     "npm": true
   },
   "editor.linkedEditing": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "svelte.plugin.svelte.format.config.svelteStrictMode": true,
   "window.zoomLevel": 1,
-  "workbench.productIconTheme": "fluent-icons"
+  "workbench.editor.enablePreview": false,
 }
