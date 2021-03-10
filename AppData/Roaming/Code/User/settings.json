@@ -151,6 +151,8 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[scss]": {
+  },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -187,6 +189,17 @@
   "editor.linkedEditing": true,
   "workbench.productIconTheme": "fluent-icons",
   "svelte.plugin.svelte.format.config.svelteStrictMode": true,
-  "window.zoomLevel": 1,
   "workbench.editor.enablePreview": false,
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.boxModel": "warning",
+  "scss.lint.float": "warning",
+  "scss.lint.idSelector": "warning",
+  "scss.lint.important": "warning",
+  "scss.lint.importStatement": "warning",
+  "scss.lint.universalSelector": "warning",
+  "scss.lint.unknownVendorSpecificProperties": "warning",
+  "scss.lint.zeroUnits": "warning",
+  "scss.showErrors": true,
+  "svelte.plugin.css.globals": "**/tokens.css,**/colors.css",
+  "prettier.useEditorConfig": false
 }
