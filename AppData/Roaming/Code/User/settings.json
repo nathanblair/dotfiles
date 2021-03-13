@@ -21,18 +21,32 @@
       "types": "#282828"
     },
     "[Alabaster]": {
-      "types": {
-        "foreground": "#282828"
-      },
+      "types": { "foreground": "#282828" },
       "variables": "#333",
-      "strings": "#FF0000",
-      "functions": "#2222ff",
-      "numbers": "#333",
+      "strings": "#A00101",
+      "functions": {
+        "foreground": "#333",
+        "fontStyle": "italic"
+      },
+      "numbers": "#026100",
       "textMateRules": [
         {
           "scope": "constant",
           "settings": {
-            "foreground": "#bb22dd"
+            "foreground": "#A00191",
+            "fontStyle": "bold"
+          }
+        },
+        {
+          "scope": "variable.other.property",
+          "settings": {
+            "foreground": "#555"
+          }
+        },
+        {
+          "scope": "variable.other.constant",
+          "settings": {
+            "foreground": "#000DF7"
           }
         }
       ]
