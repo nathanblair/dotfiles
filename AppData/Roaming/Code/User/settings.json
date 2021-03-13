@@ -13,19 +13,31 @@
   "files.insertFinalNewline": true,
   "editor.minimap.enabled": false,
   "editor.tokenColorCustomizations": {
+    "keywords": {
+      "fontStyle": "bold"
+    },
+    "[GitHub Light]": {
+      "strings": "#049c04",
+      "types": "#282828"
+    },
     "[Alabaster]": {
-      "keywords": {
-        "fontStyle": "bold"
-      },
       "types": {
         "foreground": "#282828"
-      }
+      },
+      "variables": "#333",
+      "strings": "#FF0000",
+      "functions": "#2222ff",
+      "numbers": "#333",
+      "textMateRules": [
+        {
+          "scope": "constant",
+          "settings": {
+            "foreground": "#bb22dd"
+          }
+        }
+      ]
     },
-    "[Rubber]": {
-      "keywords": {
-        "fontStyle": "bold"
-      }
-    },
+    "[Rubber]": {},
     "[The Best Theme]": {
       "comments": "#FF0000"
     }
@@ -86,7 +98,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "The Best Theme",
+  "workbench.colorTheme": "Alabaster",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "The Best Theme",
   "update.enableWindowsBackgroundUpdates": false,
@@ -140,7 +152,6 @@
   "editor.tabCompletion": "onlySnippets",
   "prettier.semi": false,
   "workbench.sideBar.location": "left",
-  "js/ts.implicitProjectConfig.checkJs": true,
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
@@ -151,8 +162,7 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[scss]": {
-  },
+  "[scss]": {},
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -201,5 +211,14 @@
   "scss.lint.zeroUnits": "warning",
   "scss.showErrors": true,
   "svelte.plugin.css.globals": "**/tokens.css,**/colors.css",
-  "prettier.useEditorConfig": false
+  "prettier.useEditorConfig": false,
+  "editor.lineNumbers": "off",
+  "js/ts.implicitProjectConfig.strictNullChecks": true,
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.tsserver.maxTsServerMemory": 1028,
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "javascript.referencesCodeLens.showOnAllFunctions": true,
+  "js/ts.implicitProjectConfig.checkJs": true,
+  "javascript.suggest.completeFunctionCalls": true
 }
