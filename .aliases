@@ -37,6 +37,8 @@ alias gst='git status'
 alias glg='git log --graph'
 alias glgs='git log --graph --stat'
 alias glgp='git log --graph --patch'
+alias gpull='git pull'
+alias gpush='git push'
 
 # Tree command should always show directories first
 alias tree='tree --dirsfirst --noreport'
