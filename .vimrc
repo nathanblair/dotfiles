@@ -32,7 +32,7 @@ set ttimeoutlen=10
 set colorcolumn=79
 set nowrap
 set nolist
-set iskeyword-=_
+"set iskeyword-=_
 set t_Co=256
 
 " Folding
