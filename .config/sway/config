@@ -44,9 +44,9 @@ set $locker swaylock -i $bg -s "center"
 client.unfocused #000000 #000000 #000000 #BD93F905 #BD93F905
 client.focused_inactive #000000 #000000 #000000 #BD93F905 #BD93F905
 client.focused #000000 #000000 #000000 #BD93F990 #BD93F990
-default_border pixel 5
+default_border pixel 2
 
-gaps inner 10
+gaps inner 2
 
 focus_wrapping no
 
@@ -141,9 +141,6 @@ bindsym XF86AudioLowerVolume exec pkill -RTMIN+10 waybar
 
 bindsym XF86MonBrightnessUp exec pkill -RTMIN+11 waybar
 bindsym XF86MonBrightnessDown exec pkill -RTMIN+11 waybar
-
-#bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-#bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 #
 # Moving around:
@@ -292,12 +289,5 @@ bindsym $mod+r mode "resize"
 bar {
     swaybar_command waybar
 }
-
-# Startup script
-#exec termite --hold -e neofetch
-#exec termite
-#swaymsg focus left
-#swaymsg layout splitv
-#exec termite -e ranger
 
 include /etc/sway/config.d/*

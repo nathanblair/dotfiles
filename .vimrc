@@ -31,6 +31,8 @@ set splitright
 set ttimeoutlen=10
 set colorcolumn=79
 set nowrap
+set linebreak
+set breakindentopt=shift:2
 set nolist
 "set iskeyword-=_
 set t_Co=256
