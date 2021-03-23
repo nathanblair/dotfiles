@@ -152,7 +152,7 @@ fi
 . /opt/azure-cli/az.completion 2>/dev/null || true
 . ~/.gh.completion 2>/dev/null || true
 
-export PATH=/snap/bin:~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=/opt/go/bin:/snap/bin:~/.cargo/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
 complete -o nospace -C /usr/local/bin/terraform terraform
 

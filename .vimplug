@@ -103,6 +103,7 @@ let g:coc_global_extensions=[
   \'coc-powershell',
   \'coc-clangd',
   \'coc-rls',
+  \'coc-go',
 \]
 
 " Completion
