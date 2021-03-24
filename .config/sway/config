@@ -27,7 +27,7 @@ exec_always {
   gsettings set org.gnome.desktop.default-applications.terminal exec $term
   gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
 }
-#exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 exec mako
 
 # The system background image

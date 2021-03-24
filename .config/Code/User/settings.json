@@ -144,7 +144,7 @@
   "workbench.enableExperiments": false,
   "workbench.colorTheme": "Dracula Soft",
   "workbench.preferredLightColorTheme": "Alabaster",
-  "workbench.preferredDarkColorTheme": "The Best Theme",
+  "workbench.preferredDarkColorTheme": "Dracula Soft",
   "update.enableWindowsBackgroundUpdates": false,
   "update.mode": "start",
   "material-icon-theme.hidesExplorerArrows": true,
@@ -243,7 +243,6 @@
     "npm": true
   },
   "editor.linkedEditing": true,
-  "window.zoomLevel": 1,
   "svelte.plugin.svelte.format.config.svelteStrictMode": true,
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.boxModel": "warning",
