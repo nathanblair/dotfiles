@@ -57,6 +57,20 @@
     }
   },
   "workbench.colorCustomizations": {
+    "[Dracula Soft]": {
+      "activityBar.background": "#111",
+      "editor.background": "#111",
+      "titleBar.activeBackground": "#111",
+      "titleBar.inactiveBackground": "#000",
+      "sideBar.background": "#111"
+    },
+    "[The Best Theme]": {
+      "activityBar.background": "#111",
+      "editor.background": "#111",
+      "titleBar.activeBackground": "#111",
+      "titleBar.inactiveBackground": "#000",
+      "sideBar.background": "#111"
+    },
     "[Alabaster]": {
       "sideBar.foreground": "#111",
       "activityBar.foreground": "#111"
@@ -88,6 +102,22 @@
     {
       "before": ["K"],
       "after": ["m", "a", "O", "<ESC>", "`", "a"]
+    },
+    {
+      "before": ["leader", "z"],
+      "commands": ["editor.foldRecursively"]
+    },
+    {
+      "before": ["leader", "Z"],
+      "commands": ["editor.unfoldRecursively"]
+    },
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["leader", "f"],
+      "commands": ["editor.action.formatDocument"]
     }
   ],
   "files.trimTrailingWhitespace": true,
@@ -112,12 +142,11 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Alabaster",
+  "workbench.colorTheme": "Dracula Soft",
   "workbench.preferredLightColorTheme": "Alabaster",
-  "workbench.preferredDarkColorTheme": "The Best Theme",
+  "workbench.preferredDarkColorTheme": "Dracula Soft",
   "update.enableWindowsBackgroundUpdates": false,
   "update.mode": "start",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
   "material-icon-theme.hidesExplorerArrows": true,
   "debug.allowBreakpointsEverywhere": true,
   "editor.suggestSelection": "first",
@@ -184,7 +213,10 @@
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -211,9 +243,7 @@
     "npm": true
   },
   "editor.linkedEditing": true,
-  "workbench.productIconTheme": "fluent-icons",
   "svelte.plugin.svelte.format.config.svelteStrictMode": true,
-  "workbench.editor.enablePreview": false,
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.boxModel": "warning",
   "scss.lint.float": "warning",
@@ -226,7 +256,6 @@
   "scss.showErrors": true,
   "svelte.plugin.css.globals": "**/tokens.css,**/colors.css",
   "prettier.useEditorConfig": false,
-  "editor.lineNumbers": "off",
   "js/ts.implicitProjectConfig.strictNullChecks": true,
   "typescript.preferences.importModuleSpecifierEnding": "js",
   "typescript.suggest.completeFunctionCalls": true,
@@ -234,5 +263,35 @@
   "javascript.preferences.importModuleSpecifierEnding": "js",
   "javascript.referencesCodeLens.showOnAllFunctions": true,
   "js/ts.implicitProjectConfig.checkJs": true,
-  "javascript.suggest.completeFunctionCalls": true
+  "javascript.suggest.completeFunctionCalls": true,
+  "workbench.productIconTheme": "fluent-icons",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "search.showLineNumbers": true,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "clock.updateInterval": 60000,
+  "clock.priority": 60,
+  "clock.format": "hh:MM TT",
+  "clock.iconName": "clock",
+  "clock.alignment": "Right",
+  "window.menuBarVisibility": "compact",
+  "todo-tree.tree.showScanModeButton": false,
+  "go.buildOnSave": "off",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.lens.references": true,
+  "rust-analyzer.debug.engineSettings": {
+    "lldb": { "terminal": "integratedTerminal" }
+  }
 }
