@@ -176,5 +176,10 @@
 	{
 		"key": "ctrl+s",
 		"command": "workbench.action.files.save"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": "-rust-analyzer.matchingBrace",
+		"when": "editorTextFocus && editorLangId == 'rust'"
 	}
 ]

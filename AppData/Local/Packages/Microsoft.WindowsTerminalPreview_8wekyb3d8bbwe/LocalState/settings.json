@@ -128,7 +128,7 @@
             "colorScheme": "Dracula",
             "cursorShape": "filledBox",
             "experimental.retroTerminalEffect": false,
-            "fontFace": "Fira Code",
+            "fontFace": "FiraCode NF",
             "fontSize": 14,
             "padding": "0",
             "scrollbarState": "hidden",
@@ -172,7 +172,11 @@
                 "source": "Windows.Terminal.Azure"
             },
             {},
-            {}
+            {},
+            {
+                "commandline": "git-bash",
+                "name": "Bash"
+            }
         ]
     },
     "schemes": 
