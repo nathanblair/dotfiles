@@ -138,7 +138,7 @@ export CXX=clang++
 #export ANDROID_HOME=$ANDROID_SDK_ROOT
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export AZURE_CORE_COLLECT_TELEMTRY=FALSE
-export TERM=xterm-kitty
+export TERM=xterm-256color
 
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
