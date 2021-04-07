@@ -126,7 +126,7 @@
             "antialiasingMode": "cleartype",
             "bellStyle": "none",
             "colorScheme": "Dracula",
-            "cursorShape": "filledBox",
+            "cursorShape": "bar",
             "experimental.retroTerminalEffect": false,
             "fontFace": "Fira Code",
             "fontSize": 14,
@@ -164,19 +164,11 @@
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
             },
-            {
-                "commandline": "wsl.exe -d Alpine ~",
-                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
-                "hidden": false,
-                "name": "Alpine",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": null
-            },
+            {},
             {
                 "commandline": "git-bash",
                 "name": "Bash"
             },
-            {},
             {
                 "hidden": false
             }
