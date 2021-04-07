@@ -128,7 +128,7 @@
             "colorScheme": "Dracula",
             "cursorShape": "filledBox",
             "experimental.retroTerminalEffect": false,
-            "fontFace": "FiraCode NF",
+            "fontFace": "Fira Code",
             "fontSize": 14,
             "padding": "0",
             "scrollbarState": "hidden",
@@ -142,13 +142,6 @@
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PWSH"
-            },
-            {
-                "antialiasingMode": "cleartype",
-                "commandline": "wsl ~",
-                "guid": "{96933987-e7b7-55a2-a499-f9d06dcf0997}",
-                "hidden": false,
-                "name": "Alpine Linux WSL2"
             },
             {
                 "commandline": "cmd /k \"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat\" & pwsh\"",
@@ -171,11 +164,21 @@
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
             },
-            {},
-            {},
+            {
+                "commandline": "wsl.exe -d Alpine ~",
+                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
+                "hidden": false,
+                "name": "Alpine",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": null
+            },
             {
                 "commandline": "git-bash",
                 "name": "Bash"
+            },
+            {},
+            {
+                "hidden": false
             }
         ]
     },
