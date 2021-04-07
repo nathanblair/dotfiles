@@ -96,7 +96,6 @@ let g:coc_global_extensions=[
   \'coc-prettier',
   \'coc-emmet',
   \'coc-yaml',
-  \'coc-python',
   \'coc-omnisharp',
   \'coc-vimlsp',
   \'coc-sh',

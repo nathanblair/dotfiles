@@ -7,6 +7,7 @@
   "prettier.arrowParens": "always",
   "html.autoClosingTags": true,
   "html.format.indentInnerHtml": true,
+  //"python.jediEnabled": false,
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-S", "-l 79"],
   "python.linting.flake8Enabled": true,
