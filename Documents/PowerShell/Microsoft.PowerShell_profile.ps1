@@ -80,6 +80,9 @@ Set-PSReadLineKeyHandler -Chord Ctrl+n -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardDeleteWord
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
+# Pathing stuff
+$env:PATH = "$env:HOMEPATH/.local/bin;$env:PATH"
+
 # Source token variables
 . ~/repos/personal/keys/tokens.ps1 | Out-Null
 
