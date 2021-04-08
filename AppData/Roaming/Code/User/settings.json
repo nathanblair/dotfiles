@@ -293,5 +293,6 @@
   "rust-analyzer.lens.references": true,
   "rust-analyzer.debug.engineSettings": {
     "lldb": { "terminal": "integratedTerminal" }
-  }
+  },
+  "docker.showStartPage": false
 }
