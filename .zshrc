@@ -104,6 +104,9 @@ zle -N zle-keymap-select
 
 # Enable bash completions
 autoload -U +X bashcompinit && bashcompinit
+# Enable zsh fpath completions
+autoload -U compinit
+compinit -i
 
 if [[ -n "$DISPLAY" ]]; then
     # Use beam shape cursor on startup.
@@ -147,10 +150,6 @@ if test -z "${XDG_RUNTIME_DIR}"; then
         chmod 0700 "${XDG_RUNTIME_DIR}"
     fi
 fi
-
-. /usr/share/kubectl/completion.zsh 2>/dev/null || true
-. /opt/azure-cli/az.completion 2>/dev/null || true
-. ~/.gh.completion 2>/dev/null || true
 
 export PATH=/opt/go/bin:/snap/bin:~/.cargo/bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
