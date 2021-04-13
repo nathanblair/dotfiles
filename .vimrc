@@ -19,6 +19,7 @@ set wildcharm=<C-z>
 set mouse=nv
 
 " Viewing and getting around
+set relativenumber
 set nostartofline
 set listchars=""
 set cmdheight=1
@@ -91,11 +92,10 @@ map <Space> \
 "inoremap <C-Space> <ESC>
 
 " Sizing vim windows
-nnoremap = <C-w>+
-nnoremap + <C-w>_
-nnoremap - <C-w>-
-nnoremap <A-.> <C-w>>
-nnoremap <A-,> <C-w><
+nnoremap <A-j> <C-w>+
+nnoremap <A-k> <C-w>-
+nnoremap <A-h> <C-w>>
+nnoremap <A-l> <C-w><
 
 " Write buffer to filesystem
 nnoremap <silent> <Leader>w :w<CR>
@@ -114,8 +114,8 @@ nnoremap <Leader>n :noh<CR>
 nnoremap <silent> <C-j> :join<CR>
 
 " Swap lines
-nnoremap <silent> <A-j> :m+1<CR>
-nnoremap <silent> <A-k> :m-2<CR>
+"nnoremap <silent> <A-j> :m+1<CR>
+"nnoremap <silent> <A-k> :m-2<CR>
 
 " Add lines above and below
 nnoremap <silent> J mGo<ESC>`G
