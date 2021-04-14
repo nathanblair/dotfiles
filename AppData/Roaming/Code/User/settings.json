@@ -127,13 +127,11 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.roundedSelection": false,
   "vim.foldfix": true,
-  "git.decorations.enabled": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "scm.diffDecorations": "none",
   "git.openDiffOnClick": true,
-  "git.autorefresh": false,
   "files.hotExit": "off",
   "workbench.tips.enabled": false,
   "vim.cursorStylePerMode.insert": "line",
@@ -294,5 +292,13 @@
   "rust-analyzer.debug.engineSettings": {
     "lldb": { "terminal": "integratedTerminal" }
   },
-  "docker.showStartPage": false
+  "docker.showStartPage": false,
+  "git.allowNoVerifyCommit": true,
+  "git.autoRepositoryDetection": "subFolders",
+  "git.fetchOnPull": true,
+  "git.pruneOnFetch": true,
+  "git.showPushSuccessNotification": true,
+  "vim.camelCaseMotion.enable": true,
+  "git.enableSmartCommit": true,
+  "git.autofetch": false
 }
