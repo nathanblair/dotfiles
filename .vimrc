@@ -92,10 +92,10 @@ map <Space> \
 "inoremap <C-Space> <ESC>
 
 " Sizing vim windows
-nnoremap <A-j> <C-w>+
-nnoremap <A-k> <C-w>-
-nnoremap <A-h> <C-w>>
-nnoremap <A-l> <C-w><
+nnoremap <A-J> <C-w>+
+nnoremap <A-K> <C-w>-
+nnoremap <A-H> <C-w>>
+nnoremap <A-L> <C-w><
 
 " Write buffer to filesystem
 nnoremap <silent> <Leader>w :w<CR>
@@ -114,8 +114,8 @@ nnoremap <Leader>n :noh<CR>
 nnoremap <silent> <C-j> :join<CR>
 
 " Swap lines
-"nnoremap <silent> <A-j> :m+1<CR>
-"nnoremap <silent> <A-k> :m-2<CR>
+nnoremap <silent> <A-j> :m+1<CR>
+nnoremap <silent> <A-k> :m-2<CR>
 
 " Add lines above and below
 nnoremap <silent> J mGo<ESC>`G
