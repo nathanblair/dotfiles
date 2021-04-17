@@ -151,7 +151,7 @@ if test -z "${XDG_RUNTIME_DIR}"; then
     fi
 fi
 
-export PATH=/opt/go/bin:/snap/bin:~/.cargo/bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=/opt/go/bin:/snap/bin:~/.cargo/bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
 complete -o nospace -C /usr/local/bin/terraform terraform
 
