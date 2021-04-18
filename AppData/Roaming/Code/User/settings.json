@@ -208,7 +208,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "denoland.vscode-deno"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -241,7 +241,8 @@
     "npm": true
   },
   "editor.linkedEditing": true,
-  "svelte.plugin.svelte.format.config.svelteStrictMode": true,
+  // "svelte.plugin.svelte.format.config.svelteStrictMode": true,
+  // "svelte.plugin.css.globals": "**/tokens.css,**/colors.css",
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.boxModel": "warning",
   "scss.lint.float": "warning",
@@ -252,7 +253,6 @@
   "scss.lint.unknownVendorSpecificProperties": "warning",
   "scss.lint.zeroUnits": "warning",
   "scss.showErrors": true,
-  "svelte.plugin.css.globals": "**/tokens.css,**/colors.css",
   "prettier.useEditorConfig": false,
   "js/ts.implicitProjectConfig.strictNullChecks": true,
   "typescript.preferences.importModuleSpecifierEnding": "js",
@@ -277,9 +277,6 @@
   "window.menuBarVisibility": "compact",
   "todo-tree.tree.showScanModeButton": false,
   "go.buildOnSave": "off",
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
@@ -300,5 +297,6 @@
   "git.showPushSuccessNotification": true,
   "vim.camelCaseMotion.enable": true,
   "git.enableSmartCommit": true,
-  "git.autofetch": false
+  "git.autofetch": false,
+  "editor.renderWhitespace": "all"
 }
