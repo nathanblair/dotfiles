@@ -117,6 +117,7 @@
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
     "disableAnimations": true,
+    "experimental.rendering.software": false,
     "launchMode": "maximized",
     "profiles": 
     {
@@ -137,13 +138,22 @@
         "list": 
         [
             {
+                "acrylicOpacity": 0.5,
+                "altGrAliasing": false,
                 "commandline": "%USERPROFILE%\\scoop\\apps\\pwsh\\current\\pwsh.exe -nologo",
+                "experimental.retroTerminalEffect": false,
+                "fontFace": "Cascadia Mono",
+                "fontWeight": "normal",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
-                "name": "PWSH"
+                "name": "PWSH",
+                "padding": "10",
+                "useAcrylic": false
             },
             {
+                "colorScheme": "One Half Dark",
                 "commandline": "cmd /k \"\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat\" & pwsh\"",
+                "fontFace": "Cascadia Mono",
                 "hidden": false,
                 "icon": "C:\\Users\\nathan\\AppData\\Local\\Packages\\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\\LocalState\\VS_Icon.png",
                 "name": "VS Command Line Tools",
@@ -151,6 +161,7 @@
             },
             {
                 "commandline": "cmd.exe",
+                "fontFace": "Cascadia Mono",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "icon": "\ue756",
@@ -165,19 +176,25 @@
             },
             {
                 "commandline": "wsl -d alpine",
+                "fontFace": "Fira Code Retina",
                 "guid": "{96933987-e7b7-55a2-a499-f9d06dcf0997}",
                 "hidden": false,
                 "name": "Alpine",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "%USERPROFILE%"
             },
-            {},
-            {},
             {
+                "fontFace": "Fira Code Retina",
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "name": "Debian",
                 "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "fontFace": "Fira Code Retina"
+            },
+            {
+                "fontFace": "Cascadia Mono"
             }
         ]
     },

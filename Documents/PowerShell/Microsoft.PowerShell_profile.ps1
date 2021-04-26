@@ -47,12 +47,12 @@ function Prompt {
 
     if ($LASTEXITCODE -eq 0) {
         if (Test-Path '.git') {
-            Write-Host " $((Get-Item $(Get-Location)).Name)" -ForegroundColor DarkCyan -NoNewLine
+            Write-Host "$((Get-Item $(Get-Location)).Name)" -ForegroundColor DarkCyan -NoNewLine
         } else {
             # FIXME When inside a git directory, only show the path relative to the git root
-            Write-Host " $($(Get-Location) -replace [Regex]::Escape($HOME), '~')" -ForegroundColor DarkCyan -NoNewLine
+            Write-Host "$($(Get-Location) -replace [Regex]::Escape($HOME), '~')" -ForegroundColor DarkCyan -NoNewLine
         }
-        Write-Host " (" -ForegroundColor Blue -NoNewLine
+        Write-Host "(" -ForegroundColor Blue -NoNewLine
         Write-Host "$branch" -ForegroundColor DarkMagenta -NoNewLine
         Write-Host ")" -ForegroundColor Blue -NoNewLine
     }
