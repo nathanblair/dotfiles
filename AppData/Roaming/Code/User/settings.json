@@ -298,5 +298,6 @@
   "vim.camelCaseMotion.enable": true,
   "git.enableSmartCommit": true,
   "git.autofetch": false,
-  "editor.renderWhitespace": "all"
+  "editor.renderWhitespace": "all",
+  "go.lintOnSave": "workspace"
 }
