@@ -101,7 +101,7 @@ let g:coc_global_extensions=[
   \'coc-sh',
   \'coc-powershell',
   \'coc-clangd',
-  \'coc-rls',
+  \'coc-rust-analyzer',
   \'coc-go',
 \]
 
