@@ -19,7 +19,7 @@ call plug#begin('~/.vim/bundle')
   "Plug 'ctrlpvim/ctrlp.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
-  "Plug 'ryanoasis/vim-devicons'
+  Plug 'mhinz/vim-signify'
 call plug#end()
 
 " Color scheme
