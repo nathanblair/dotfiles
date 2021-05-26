@@ -24,10 +24,6 @@
       "types": { "foreground": "#282828" },
       "variables": "#333",
       "strings": "#A00101",
-      "functions": {
-        "foreground": "#333",
-        "fontStyle": "italic"
-      },
       "numbers": "#026100",
       "textMateRules": [
         {
@@ -176,7 +172,6 @@
   "python.autoComplete.showAdvancedMembers": false,
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.diagnosticMode": "workspace",
-  "terminal.integrated.shell.windows": "C:\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.exe",
   "glassit.alpha": 225,
   "material-icon-theme.activeIconPack": "nest",
   "github-actions.preview-features": true,
@@ -283,6 +278,9 @@
   "[rust]": {
     "editor.defaultFormatter": "matklad.rust-analyzer"
   },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "rust-analyzer.lens.methodReferences": true,
   "rust-analyzer.lens.references": true,
@@ -299,5 +297,15 @@
   "git.enableSmartCommit": true,
   "git.autofetch": false,
   "editor.renderWhitespace": "all",
-  "go.lintOnSave": "workspace"
+  "go.lintOnSave": "workspace",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  }
 }
