@@ -1,0 +1,14 @@
+import:
+  - ~/.config/alacritty/alacritty.yml
+
+window:
+  title: Terminal
+  decorations: full
+  startup_mode: Maximized
+  # dynamic_title: true
+  dynamic_title: false
+
+shell:
+  program: pwsh
+  args:
+    - -nologo

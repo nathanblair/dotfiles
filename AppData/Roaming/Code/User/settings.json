@@ -218,6 +218,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[svelte]": {
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "powershell.codeFormatting.useCorrectCasing": true,
@@ -272,6 +273,9 @@
   "window.menuBarVisibility": "compact",
   "todo-tree.tree.showScanModeButton": false,
   "go.buildOnSave": "off",
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
+  },
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
@@ -307,5 +311,6 @@
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
-  }
+  },
+  "editor.codeActionsOnSave": null
 }

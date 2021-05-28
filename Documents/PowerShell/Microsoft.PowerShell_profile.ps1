@@ -36,7 +36,7 @@ function glgs { git log --graph --stat }
 function glgp { git log --graph --patch }
 function gs ($branch) { git switch $branch }
 function gsc ($branch) { git switch -c $branch }
-function gpush ($args) { git push $args}
+function gpush ($arguments) { git push $arguments }
 function gpull { git pull }
 
 # Terraform alias
@@ -46,21 +46,17 @@ function Prompt {
     $branch = git branch --show-current
 
     if ($LASTEXITCODE -eq 0) {
-        if (Test-Path '.git') {
-            Write-Host "$((Get-Item $(Get-Location)).Name)" -ForegroundColor DarkCyan -NoNewLine
-        } else {
-            # FIXME When inside a git directory, only show the path relative to the git root
-            Write-Host "$($(Get-Location) -replace [Regex]::Escape($HOME), '~')" -ForegroundColor DarkCyan -NoNewLine
-        }
-        Write-Host "(" -ForegroundColor Blue -NoNewLine
-        Write-Host "$branch" -ForegroundColor DarkMagenta -NoNewLine
-        Write-Host ")" -ForegroundColor Blue -NoNewLine
+        $formatted_root_path = $(git rev-parse --show-toplevel) -replace '/', '\'
+        Write-Host $($(Get-Location) -replace [Regex]::Escape($formatted_root_path), $(Get-Item $formatted_root_path).Name) -ForegroundColor DarkCyan -NoNewline
+        Write-Host "(" -ForegroundColor Blue -NoNewline
+        Write-Host "$branch" -ForegroundColor DarkMagenta -NoNewline
+        Write-Host ")" -ForegroundColor Blue -NoNewline
     }
     else {
-        Write-Host " $($(Get-Location) -replace [Regex]::Escape($HOME), '~')" -ForegroundColor DarkCyan -NoNewLine
+        Write-Host $(Get-Location) -replace [Regex]::Escape($HOME), '~' -ForegroundColor DarkCyan -NoNewline
     }
 
-    Write-Host (' >') -ForegroundColor Green -NoNewLine
+    Write-Host (' >') -ForegroundColor Green -NoNewline
     return " "
 }
 
@@ -81,7 +77,7 @@ Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardDeleteWord
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Pathing stuff
-$env:PATH = "$env:HOMEPATH/.local/bin;$env:PATH"
+$env:PATH = "$env:HOMEPATH/.local/bin; $env:PATH"
 
 # Source token variables
 . ~/repos/personal/keys/tokens.ps1 | Out-Null
