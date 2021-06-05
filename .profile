@@ -1,7 +1,6 @@
 . ~/.aliases
+. ~/.tokens
 
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
-
-source "$HOME/.cargo/env"
