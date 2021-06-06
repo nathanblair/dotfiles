@@ -39,7 +39,7 @@ font:
 
 # Background opacity
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.5
+background_opacity: 0.8
 
 selection:
   # This string contains all characters that are used as separators for
@@ -66,7 +66,7 @@ shell:
 
 colors:
   primary:
-    background: "0x282a36"
+    background: "0x050505"
     foreground: "0xf8f8f2"
 
   cursor:
