@@ -9,6 +9,6 @@ window:
   dynamic_title: false
 
 shell:
-  program: "\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.exe"
+  program: pwsh
   args:
     - -nologo
