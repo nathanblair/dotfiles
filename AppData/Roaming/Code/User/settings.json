@@ -312,5 +312,5 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
-  "editor.codeActionsOnSave": null
+  "terminal.integrated.tabs.enabled": true
 }
