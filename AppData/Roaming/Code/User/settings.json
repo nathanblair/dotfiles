@@ -314,5 +314,6 @@
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "Lua.telemetry.enable": false,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "security.workspace.trust.untrustedFiles": "open"
 }
