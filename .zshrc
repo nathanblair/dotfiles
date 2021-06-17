@@ -153,5 +153,5 @@ fi
 
 export PATH=/opt/go/bin:/snap/bin:~/.cargo/bin:/opt/homebrew/bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
-complete -o nospace -C /usr/local/bin/terraform terraform
+complete -o nospace -C $(which terraform) terraform
 
