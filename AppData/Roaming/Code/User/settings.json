@@ -125,7 +125,7 @@
   "workbench.settings.enableNaturalLanguageSearch": false,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "scm.diffDecorations": "none",
+  "scm.diffDecorations": "gutter",
   "git.openDiffOnClick": true,
   "files.hotExit": "off",
   "workbench.tips.enabled": false,
@@ -135,7 +135,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Dracula Soft",
+  "workbench.colorTheme": "Alabaster",
   "workbench.preferredLightColorTheme": "Alabaster",
   "workbench.preferredDarkColorTheme": "Dracula Soft",
   "update.enableWindowsBackgroundUpdates": false,
@@ -161,8 +161,6 @@
   "extensions.ignoreRecommendations": true,
   "python.showStartPage": false,
   "python.pythonPath": "C:\\Users\\nathan\\scoop\\shims\\python.exe",
-  "python.linting.pylintEnabled": false,
-  "python.linting.banditEnabled": true,
   "python.linting.enabled": true,
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-S", "-l 79"],
@@ -194,29 +192,38 @@
     "Red"
   ],
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[scss]": {},
   "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[svelte]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "powershell.codeFormatting.useCorrectCasing": true,
@@ -261,7 +268,8 @@
   "search.showLineNumbers": true,
   "typescript.disableAutomaticTypeAcquisition": true,
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "clock.updateInterval": 60000,
   "clock.priority": 60,
@@ -275,15 +283,24 @@
     "editor.defaultFormatter": "ms-vscode.powershell"
   },
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+      "source.fixAll": true
+    }
   },
   "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer"
+    "editor.defaultFormatter": "matklad.rust-analyzer",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    }
   },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "rust-analyzer.lens.methodReferences": true,
   "rust-analyzer.lens.references": true,
   "rust-analyzer.debug.engineSettings": {
@@ -310,10 +327,35 @@
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": false
   },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": true
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.formatOnSave": true
+  },
   "terminal.integrated.tabs.enabled": true,
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "Lua.telemetry.enable": false,
   "editor.tabSize": 2,
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "redhat.telemetry.enabled": false,
+  "go.enableCodeLens": {
+    "references": true
+  },
+  "go.lintTool": "revive",
+  "window.dialogStyle": "custom",
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "type",
+  "debug.console.fontSize": 16,
+  "scm.defaultViewMode": "tree",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 16,
+  "breadcrumbs.enabled": false
 }
