@@ -18,6 +18,10 @@
   "python.linting.prospectorEnabled": false,
   "powershell.integratedConsole.showOnStartup": false,
   "powershell.integratedConsole.focusConsoleOnExecute": false,
+  "yaml.schemaStore.enable": false,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/*/*.yaml"
+  },
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
