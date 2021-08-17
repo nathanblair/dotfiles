@@ -1,8 +1,16 @@
-# Directory Manipulation
+# ln-like behavior
 # function ln ($target, $destination) {
-#     # Check if path or name is empty and exit if they are
 #     New-Item -ItemType SymbolicLink -Path $target -Name $destination
 # }
+
+# env-like behavior
+function env { Get-ChildItem env: }
+
+# touch-like behavior
+function touch ($item) { New-Item $item }
+
+# which-like behavior
+function which ($command) { Get-Command $command }
 
 # File listing
 # Some variation of Get-ChildItem
@@ -19,19 +27,36 @@ function gd { git diff }
 function ga { git add }
 function gaa { git add --all }
 function gc { git commit }
+function gca { git commit --all }
 function gcm ($msg) { git commit -m $msg }
+function gcam ($msg) { git commit --all -m $msg }
 function gst { git status }
 function glg { git log --graph }
 function glgs { git log --graph --stat }
 function glgp { git log --graph --patch }
+function gs ($branch) { git switch $branch }
+function gsc ($branch) { git switch -c $branch }
+function gpush ($arguments) { git push $arguments }
+function gpull { git pull }
+
+# Terraform alias
+Set-Alias -Name tf -Value terraform
 
 function Prompt {
-    Write-Host ' ' -NoNewline
-    $path = $(Get-Location) -replace [Regex]::Escape($HOME), '~'
-    $path = $path -replace '\w{1}:', ''
-    $path = $path -replace '\\', '/'
-    Write-Host $path -ForegroundColor DarkCyan -NoNewLine
-    Write-Host (' >') -ForegroundColor Green -NoNewLine
+    $branch = git branch --show-current
+
+    if ($LASTEXITCODE -eq 0) {
+        $formatted_root_path = $(git rev-parse --show-toplevel) -replace '/', '\'
+        Write-Host $($(Get-Location) -replace [Regex]::Escape($formatted_root_path), $(Get-Item $formatted_root_path).Name) -ForegroundColor DarkCyan -NoNewline
+        Write-Host "(" -ForegroundColor Blue -NoNewline
+        Write-Host "$branch" -ForegroundColor DarkMagenta -NoNewline
+        Write-Host ")" -ForegroundColor Blue -NoNewline
+    }
+    else {
+        Write-Host $(Get-Location) -replace [Regex]::Escape($HOME), '~' -ForegroundColor DarkCyan -NoNewline
+    }
+
+    Write-Host (' >') -ForegroundColor Green -NoNewline
     return " "
 }
 
@@ -48,10 +73,14 @@ Set-PSReadLineOption @PSReadLineOptions
 # Key bindings
 Set-PSReadLineKeyHandler -Chord Ctrl+p -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Chord Ctrl+n -Function HistorySearchForward
-Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardKillWord
+Set-PSReadLineKeyHandler -Chord Ctrl+w -Function BackwardDeleteWord
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
-# Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
+# Pathing stuff
+$env:PATH = "$env:HOMEPATH/.local/bin; $env:PATH"
+
+# Source token variables
+. ~/repos/personal/keys/tokens.ps1 | Out-Null
+New-Item -Name PIPENV_VENV_IN_PROJECT -Path env: -ItemType Variable -Value 1 -ErrorAction SilentlyContinue | Out-Null
+
+Import-Module posh-git
