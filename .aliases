@@ -41,7 +41,7 @@ alias glgp='git log --graph --patch'
 alias gpull='git pull'
 alias gpush='git push'
 alias gfetch='git fetch'
-alias gswitch='git switch'
+alias gs='git switch'
 
 # Tree command should always show directories first
 alias tree='tree --dirsfirst --noreport'
@@ -57,11 +57,11 @@ alias xr='sudo xbps-remove -Ro'
 alias dcp='docker container prune'
 alias dis='docker images'
 alias disa='docker images -a'
-alias dp='dcp -f && docker image prune -f && dis'
+alias dp='dcp -f && docker image prune -f && disa'
 alias dpa='dcp -f && docker image prune -af && disa'
 alias dcla='docker container list --all'
 alias dpsa='docker ps --all'
-alias dcrit='docker container run -i -t'
+alias dcrit='docker container run --rm -it'
 alias dib='docker image build --force-rm --rm'
 
 # Python
