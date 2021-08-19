@@ -48,12 +48,12 @@ function Prompt {
     if ($LASTEXITCODE -eq 0) {
         $formatted_root_path = $(git rev-parse --show-toplevel) -replace '/', '\'
         Write-Host $($(Get-Location) -replace [Regex]::Escape($formatted_root_path), $(Get-Item $formatted_root_path).Name) -ForegroundColor DarkCyan -NoNewline
-        Write-Host "(" -ForegroundColor Blue -NoNewline
-        Write-Host "$branch" -ForegroundColor DarkMagenta -NoNewline
+        Write-Host " (" -ForegroundColor Blue -NoNewline
+        Write-Host "$branch" -ForegroundColor Magenta -NoNewline
         Write-Host ")" -ForegroundColor Blue -NoNewline
     }
     else {
-        Write-Host $(Get-Location) -replace [Regex]::Escape($HOME), '~' -ForegroundColor DarkCyan -NoNewline
+        Write-Host $($(Get-Location) -replace [Regex]::Escape($HOME)), '~' -ForegroundColor DarkCyan -NoNewline
     }
 
     Write-Host (' >') -ForegroundColor Green -NoNewline
@@ -83,4 +83,4 @@ $env:PATH = "$env:HOMEPATH/.local/bin; $env:PATH"
 . ~/repos/personal/keys/tokens.ps1 | Out-Null
 New-Item -Name PIPENV_VENV_IN_PROJECT -Path env: -ItemType Variable -Value 1 -ErrorAction SilentlyContinue | Out-Null
 
-Import-Module posh-git
+# Import-Module posh-git

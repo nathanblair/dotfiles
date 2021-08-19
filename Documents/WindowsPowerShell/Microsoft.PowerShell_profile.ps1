@@ -48,12 +48,12 @@ function Prompt {
     if ($LASTEXITCODE -eq 0) {
         $formatted_root_path = $(git rev-parse --show-toplevel) -replace '/', '\'
         Write-Host $($(Get-Location) -replace [Regex]::Escape($formatted_root_path), $(Get-Item $formatted_root_path).Name) -ForegroundColor DarkCyan -NoNewline
-        Write-Host "(" -ForegroundColor Blue -NoNewline
-        Write-Host "$branch" -ForegroundColor DarkMagenta -NoNewline
+        Write-Host " (" -ForegroundColor Blue -NoNewline
+        Write-Host "$branch" -ForegroundColor Magenta -NoNewline
         Write-Host ")" -ForegroundColor Blue -NoNewline
     }
     else {
-        Write-Host $(Get-Location) -replace [Regex]::Escape($HOME), '~' -ForegroundColor DarkCyan -NoNewline
+        Write-Host $($(Get-Location) -replace [Regex]::Escape($HOME)), '~' -ForegroundColor DarkCyan -NoNewline
     }
 
     Write-Host (' >') -ForegroundColor Green -NoNewline
