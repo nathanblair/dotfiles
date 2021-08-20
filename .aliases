@@ -42,6 +42,7 @@ alias gpull='git pull'
 alias gpush='git push'
 alias gfetch='git fetch'
 alias gs='git switch'
+alias gsc='git switch -c'
 
 # Tree command should always show directories first
 alias tree='tree --dirsfirst --noreport'
