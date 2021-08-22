@@ -146,6 +146,10 @@ noremap <Leader>e :e **/*
 " Help shortcut
 nnoremap <C-h> :h 
 
+" NVIM Terminal Mode
+tnoremap <ESC> <C-\><C-n>
+tnoremap <C-\> <C-\><C-n>
+
 " -------------------------------------------------------------"
 " Statusline Customization                                  SL
 " -------------------------------------------------------------"
