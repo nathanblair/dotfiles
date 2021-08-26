@@ -120,8 +120,8 @@ else
     SPACESHIP_CHAR_SUFFIX=\ 
 fi
 
-export EDITOR=$(which nvim)
-export VISUAL=$(which nvim)
+export EDITOR=nvim
+export VISUAL=code
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export QT_QPA_PLATFORM=wayland
