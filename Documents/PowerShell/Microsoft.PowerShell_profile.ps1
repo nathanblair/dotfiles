@@ -83,4 +83,4 @@ $env:PATH = "$env:HOMEPATH/.local/bin; $env:PATH"
 . ~/repos/personal/keys/tokens.ps1 | Out-Null
 New-Item -Name PIPENV_VENV_IN_PROJECT -Path env: -ItemType Variable -Value 1 -ErrorAction SilentlyContinue | Out-Null
 
-Import-Module posh-git
+# Import-Module posh-git
