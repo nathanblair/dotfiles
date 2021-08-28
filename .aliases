@@ -6,7 +6,7 @@ alias mv='mv -vi'
 alias cp='cp -vi'
 
 # File listing
-if [[ "${OSTYPE}" == "darwin"* ]]; then
+if [ "${OSTYPE}" = "darwin"* ]; then
     alias make="gmake"
     alias ls="ls -G"
 else
