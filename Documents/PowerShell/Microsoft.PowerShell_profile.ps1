@@ -25,11 +25,14 @@ Remove-Item Alias:gcm -Force
 Remove-Item Alias:gl -Force
 function gd { git diff }
 function ga { git add }
+function gb ($options) { git branch $options }
+function gba { git branch -a }
 function gaa { git add --all }
 function gc { git commit }
 function gca { git commit --all }
 function gcm ($msg) { git commit -m $msg }
 function gcam ($msg) { git commit --all -m $msg }
+function gfp { git fetch --prune }
 function gst { git status }
 function glg { git log --graph }
 function glgs { git log --graph --stat }
