@@ -16,10 +16,11 @@ call plug#begin('~/.vim/bundle')
   Plug 'sheerun/vim-polyglot'
   Plug 'junegunn/goyo.vim'
   "Plug 'ap/vim-buftabline'
-  "Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
   Plug 'mhinz/vim-signify'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Color scheme
@@ -104,6 +105,7 @@ let g:coc_global_extensions=[
   \'coc-rust-analyzer',
   \'coc-pyright',
   \'coc-go',
+  \'coc-docker',
 \]
 
 " Completion
@@ -128,9 +130,9 @@ nnoremap <silent> <Leader>- :SignifyToggle<CR>
 " Show git status window minimized
 nnoremap <silent> <Leader>gs :G<CR>8<C-w>_<C-w>p
 nnoremap <silent> <Leader>gh :bd .git/index<CR>
-nnoremap <silent> <Leader>gb :Gblame<CR>
-nnoremap <silent> <Leader>gc :Gcommit<CR>
-nnoremap <silent> <Leader>gl :Glog<CR>
+nnoremap <silent> <Leader>gb :Git blame<CR>
+nnoremap <silent> <Leader>gc :Git commit<CR>
+nnoremap <silent> <Leader>gl :Gclog<CR>
 nnoremap <Leader>gu :Git push<CR>
 nnoremap <Leader>gd :Git pull<CR>
 
@@ -138,8 +140,8 @@ nnoremap <Leader>gd :Git pull<CR>
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " NERDCommenter
-nnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
-vnoremap <silent> <Leader>cc :call NERDComment(0, 'toggle')<CR>
+nnoremap <silent> <Leader>cc :call nerdcommenter#Comment(0, 'toggle')<CR>
+vnoremap <silent> <Leader>cc :call nerdcommenter#Comment(0, 'toggle')<CR>
 
 " FSwitch
 
