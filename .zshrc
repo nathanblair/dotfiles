@@ -1,5 +1,6 @@
 # vim:ft=sh
 
+. ~/.env 2>/dev/null || true
 . ~/.aliases 2>/dev/null || true
 . ~/.tokens 2>/dev/null || true
 
@@ -13,9 +14,7 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-autosuggestions
     zgen load zdharma/fast-syntax-highlighting
-    #zgen load jackharrisonsherlock/common
     zgen load denysdovhan/spaceship-prompt spaceship
-    #zgen load subnixr/minimal
     zgen save
 fi
 
@@ -68,8 +67,6 @@ SPACESHIP_RPROMPT_ORDER=(
     exit_code
     exec_time
 )
-MNML_RPROMPT=(mnml_git mnml_hg)
-MNML_MAGICENTER=()
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
@@ -119,39 +116,6 @@ else
     SPACESHIP_CHAR_SYMBOL=\>
     SPACESHIP_CHAR_SUFFIX=\ 
 fi
-
-export EDITOR=nvim
-export VISUAL=code
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export QT_QPA_PLATFORM=wayland
-export CLUTTER_BACKEND=wayland
-export XDG_SESSION_TYPE=wayland
-#export XDG_CURRENT_DESKTOP=Unity
-export NO_AT_BRIDGE=1
-#export GDK_BACKEND=wayland
-
-export MOZ_ENABLE_WAYLAND=1
-export MOZ_DBUS_REMOTE=1
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export CC=clang
-export CXX=clang++
-
-#export ANDROID_SDK_ROOT=/opt/android-sdk
-#export ANDROID_HOME=$ANDROID_SDK_ROOT
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export AZURE_CORE_COLLECT_TELEMTRY=FALSE
-export TERM=xterm-256color
-
-if test -z "${XDG_RUNTIME_DIR}"; then
-    export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
-    if ! test -d "${XDG_RUNTIME_DIR}"; then
-        mkdir "${XDG_RUNTIME_DIR}" >> /dev/null
-        chmod 0700 "${XDG_RUNTIME_DIR}"
-    fi
-fi
-
-export PATH=/usr/local/share/dotnet:/opt/go/bin:/snap/bin:~/.cargo/bin:/opt/homebrew/bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:$PATH
 
 complete -o nospace -C $(which terraform) terraform
 
