@@ -33,7 +33,7 @@ function gca { git commit --all }
 function gcm ($msg) { git commit -m $msg }
 function gcam ($msg) { git commit --all -m $msg }
 function gfp { git fetch --prune }
-function gst { git status }
+function g { git status }
 function glg { git log --graph }
 function glgs { git log --graph --stat }
 function glgp { git log --graph --patch }
