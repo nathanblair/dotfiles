@@ -65,6 +65,9 @@ autocmd BufWinEnter * if nvim_win_get_config(0)["relative"] != "" | setlocal nof
 
 autocmd BufWinEnter * :call UpdateWorkingPathRoot()
 
+" Don't include terminal buffers when cycling through buffers
+autocmd TermOpen * setlocal nobuflisted
+
 " -------------------------------------------------------------"
 " vim-plug                                                  VP
 " -------------------------------------------------------------"
