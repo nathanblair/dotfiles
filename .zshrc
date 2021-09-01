@@ -1,8 +1,8 @@
 # vim:ft=sh
 
-. ~/.env 2>/dev/null || true
-. ~/.aliases 2>/dev/null || true
-. ~/.tokens 2>/dev/null || true
+. ~/.env || true
+. ~/.aliases || true
+. ~/.tokens || true
 
 if [[ ! -d ~/.zgen ]]; then
     git clone https://github.com/tarjoilija/zgen ~/.zgen
