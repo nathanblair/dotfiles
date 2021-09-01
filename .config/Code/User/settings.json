@@ -2,10 +2,9 @@
   "workbench.startupEditor": "none",
   "editor.renderLineHighlight": "gutter",
   "editor.fontSize": 16,
-  "editor.fontFamily": "'Fira Code', 'Cascadia Code Light', Hack, Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
+  "editor.fontFamily": "'Fira Code', 'FiraCode NF', 'Cascadia Code', Hack, Menlo, 'Font Awesome 5 Brands', 'Font Awesome 5 Free', 'Font Awesome 5 Free Solid', monospace",
   "editor.semanticHighlighting.enabled": true,
   "editor.fontLigatures": true,
-  "editor.insertSpaces": true,
   "editor.cursorBlinking": "solid",
   "editor.minimap.renderCharacters": false,
   "editor.rulers": [80],
@@ -24,10 +23,6 @@
       "types": { "foreground": "#282828" },
       "variables": "#333",
       "strings": "#A00101",
-      "functions": {
-        "foreground": "#333",
-        "fontStyle": "italic"
-      },
       "numbers": "#026100",
       "textMateRules": [
         {
@@ -77,11 +72,9 @@
     }
   },
   "explorer.confirmDragAndDrop": false,
-  "workbench.activityBar.visible": true,
   "zenMode.restore": false,
   "vim.useSystemClipboard": true,
   "vim.disableExtension": false,
-  "editor.wordWrap": "off",
   "editor.wordWrapColumn": 80,
   "editor.wrappingIndent": "indent",
   "files.exclude": {
@@ -121,19 +114,17 @@
     }
   ],
   "files.trimTrailingWhitespace": true,
-  "editor.cursorStyle": "block",
+  "editor.cursorStyle": "line",
   "editor.scrollBeyondLastLine": false,
   "workbench.editor.restoreViewState": false,
   "workbench.iconTheme": "material-icon-theme",
   "editor.roundedSelection": false,
   "vim.foldfix": true,
-  "git.decorations.enabled": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "scm.diffDecorations": "none",
+  "scm.diffDecorations": "gutter",
   "git.openDiffOnClick": true,
-  "git.autorefresh": false,
   "files.hotExit": "off",
   "workbench.tips.enabled": false,
   "vim.cursorStylePerMode.insert": "line",
@@ -142,9 +133,9 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "debug.toolBarLocation": "docked",
   "workbench.enableExperiments": false,
-  "workbench.colorTheme": "Dracula Soft",
-  "workbench.preferredLightColorTheme": "Alabaster",
-  "workbench.preferredDarkColorTheme": "Dracula Soft",
+  "workbench.colorTheme": "Andromeda Italic",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "update.enableWindowsBackgroundUpdates": false,
   "update.mode": "start",
   "material-icon-theme.hidesExplorerArrows": true,
@@ -166,11 +157,8 @@
   ],
   "github-actions.org-features": true,
   "extensions.ignoreRecommendations": true,
-  "editor.tabSize": 2,
   "python.showStartPage": false,
   "python.pythonPath": "C:\\Users\\nathan\\scoop\\shims\\python.exe",
-  "python.linting.pylintEnabled": false,
-  "python.linting.banditEnabled": true,
   "python.linting.enabled": true,
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["-S", "-l 79"],
@@ -178,7 +166,6 @@
   "python.autoComplete.showAdvancedMembers": false,
   "python.analysis.typeCheckingMode": "strict",
   "python.analysis.diagnosticMode": "workspace",
-  "terminal.integrated.shell.windows": "C:\\Users\\nathan\\scoop\\apps\\pwsh\\current\\pwsh.exe",
   "glassit.alpha": 225,
   "material-icon-theme.activeIconPack": "nest",
   "github-actions.preview-features": true,
@@ -194,7 +181,6 @@
   "editor.showFoldingControls": "always",
   "editor.tabCompletion": "onlySnippets",
   "prettier.semi": false,
-  "workbench.sideBar.location": "left",
   "bracketPairColorizer.consecutivePairColors": [
     "()",
     "[]",
@@ -203,28 +189,38 @@
     "Red"
   ],
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[scss]": {},
   "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "denoland.vscode-deno"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[svelte]": {
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "powershell.codeFormatting.useCorrectCasing": true,
@@ -243,7 +239,8 @@
     "npm": true
   },
   "editor.linkedEditing": true,
-  "svelte.plugin.svelte.format.config.svelteStrictMode": true,
+  // "svelte.plugin.svelte.format.config.svelteStrictMode": true,
+  // "svelte.plugin.css.globals": "**/tokens.css,**/colors.css",
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.boxModel": "warning",
   "scss.lint.float": "warning",
@@ -254,7 +251,6 @@
   "scss.lint.unknownVendorSpecificProperties": "warning",
   "scss.lint.zeroUnits": "warning",
   "scss.showErrors": true,
-  "svelte.plugin.css.globals": "**/tokens.css,**/colors.css",
   "prettier.useEditorConfig": false,
   "js/ts.implicitProjectConfig.strictNullChecks": true,
   "typescript.preferences.importModuleSpecifierEnding": "js",
@@ -264,12 +260,12 @@
   "javascript.referencesCodeLens.showOnAllFunctions": true,
   "js/ts.implicitProjectConfig.checkJs": true,
   "javascript.suggest.completeFunctionCalls": true,
-  "workbench.productIconTheme": "fluent-icons",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "search.showLineNumbers": true,
   "typescript.disableAutomaticTypeAcquisition": true,
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "clock.updateInterval": 60000,
   "clock.priority": 60,
@@ -279,11 +275,167 @@
   "window.menuBarVisibility": "compact",
   "todo-tree.tree.showScanModeButton": false,
   "go.buildOnSave": "off",
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
   },
   "[go]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+      "source.fixAll": true
+    }
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    }
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
+  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.lens.references": true,
+  "rust-analyzer.debug.engineSettings": {
+    "lldb": { "terminal": "integratedTerminal" }
+  },
+  "docker.showStartPage": false,
+  "git.allowNoVerifyCommit": true,
+  "git.autoRepositoryDetection": "subFolders",
+  "git.fetchOnPull": true,
+  "git.pruneOnFetch": true,
+  "git.showPushSuccessNotification": true,
+  "vim.camelCaseMotion.enable": true,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "editor.renderWhitespace": "all",
+  "go.lintOnSave": "workspace",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnSave": true
+  },
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.formatOnSave": true
+  },
+  "terminal.integrated.tabs.enabled": true,
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "Lua.telemetry.enable": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "redhat.telemetry.enabled": false,
+  "go.enableCodeLens": {
+    "references": true
+  },
+  "go.lintTool": "revive",
+  "window.dialogStyle": "custom",
+  "explorer.compactFolders": false,
+  "explorer.sortOrder": "type",
+  "debug.console.fontSize": 16,
+  "scm.defaultViewMode": "tree",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontSize": 16,
+  "livePreview.hostIP": "0.0.0.0",
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": [
+      ".github/*"
+    ]
+  },
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "githubPullRequests.fileListLayout": "tree",
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "aws.telemetry": false,
+  "aws.profile": "env:variables",
+  "cSpell.userWords": [
+    "ORGBOT",
+    "autocrlf",
+    "buildx",
+    "cardioflux",
+    "elif",
+    "genetesis",
+    "kubernetes",
+    "kubes",
+    "msvc",
+    "musl",
+    "pathing",
+    "subcommands"
+  ],
+  "cSpell.ignoreWords": [
+    "msetegn",
+    "Asar",
+    "rcedit",
+    "libc"
+  ],
+  "gitlens.codeLens.scopes": [
+    "document"
+  ],
+  "gitlens.blame.highlight.locations": [
+    "gutter",
+    "line"
+  ],
+  "gitlens.changes.locations": [
+    "gutter"
+  ],
+  "gitlens.heatmap.locations": [
+    "gutter"
+  ],
+  "settingsSync.ignoredSettings": [
+    "workbench.iconTheme",
+    "workbench.productIconTheme"
+],
+"gitlens.currentLine.enabled": false
 }
