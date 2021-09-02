@@ -272,7 +272,7 @@
   "clock.format": "hh:MM TT",
   "clock.iconName": "clock",
   "clock.alignment": "Right",
-  "window.menuBarVisibility": "compact",
+  "window.menuBarVisibility": "toggle",
   "todo-tree.tree.showScanModeButton": false,
   "go.buildOnSave": "off",
   "[powershell]": {
@@ -437,5 +437,7 @@
     "workbench.iconTheme",
     "workbench.productIconTheme"
 ],
-"gitlens.currentLine.enabled": false
+"gitlens.currentLine.enabled": false,
+"workbench.productIconTheme": "material-product-icons",
+"window.zoomLevel": 1
 }

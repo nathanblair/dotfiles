@@ -23,6 +23,8 @@ call plug#begin('~/.vim/bundle')
   Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
 " Color scheme
 set termguicolors
 augroup colorscheme_customization
