@@ -17,25 +17,23 @@ function precmd() {
   unset time_info
 }
 
-function last_command_status() {
-  if [ ${last_command_exit_code} -ne 0 ]; then echo -n "%{%F{red}%}(${?})"; fi
-}
+function last_command_status() { echo -n "%(?..%{%F{red}%}(%?%))" }
 
-function current_dir_info() {
-  echo -n '%{%F{blue}%}%~'
-}
+function current_dir_info() { echo -n '%{%F{blue}%}%~' }
+
+function prompt_char() { echo -n "%(!.#.>)" }
 
 function show_git_info() {
   local b=$(git branch --show-current 2>/dev/null || printf "")
   if [ "${b}" = "" ]; then
     echo -n " "
   else
-    echo -n " %{%F{cyan}%}${b} "
+    echo -n " %{%F{cyan}%}${b}%{%f%}["
+    echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null| grep -c "^M")"
+    echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null| grep -c "^ M")"
+    echo -n "%{%F{magenta}%}$(git status --porcelain 2>/dev/null| grep -c "^??")"
+    echo -n "%{%f%}] "
   fi
-}
-
-function prompt_char() {
-  if [ $UID -eq 0 ]; then echo -n "#"; else echo -n ">"; fi
 }
 
 function my_prompt() {
@@ -54,5 +52,4 @@ function my_prompt() {
 
 setopt promptsubst
 
-last_command_exit_code=$?
 PROMPT='$(my_prompt)'
