@@ -32,22 +32,26 @@ function show_git_info() {
   echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null | grep -c '^M')"
   echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null | grep -c '^ M')"
   echo -n "%{%F{red}%}$(git status --porcelain 2>/dev/null | grep -c '^ D')"
-  echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null | grep -c '^??') "
+  echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null | grep -c '^??')"
 
   ahead=$(git status --porcelain --branch --ahead-behind | awk '/ahead/ {print substr($4,1,length($4)-1)}')
-  if [ "${ahead}" -gt 0 ]; then
-    echo -n "%{%F{blue}%}${ahead}↑"
-  fi
   behind=$(git status --porcelain --branch --ahead-behind | awk '/behind/ {print substr($4,1,length($4)-1)}')
-  if [ "${behind}" -gt 0 ]; then
-    echo -n "%{%F{blue}%}${behind}↓ "
+
+  if [ "${ahead}" -gt 0 ] || [ "${behind}" -gt 0 ]; then
+    echo -n " "
+    if [ "${ahead}" -gt 0 ]; then
+      echo -n "%{%F{blue}%}${ahead}↑"
+    fi
+    if [ "${behind}" -gt 0 ]; then
+      echo -n "%{%F{blue}%}${behind}↓"
+    fi
   fi
 }
 
 function current_dir_info() {
   echo -n '%{%B%F{blue}%}'
   local b=$(git branch --show-current 2>/dev/null || printf "")
-  if [ "${b}" = "" ]; then echo -n '%~ '; else show_git_info "${b}"; fi
+  if [ "${b}" = "" ]; then echo -n '%~'; else show_git_info "${b}"; fi
 }
 
 function prompt_char() { echo -n "%(!.#.>)" }
@@ -59,6 +63,7 @@ function my_prompt() {
   echo -n " "
   current_dir_info
   clean
+  echo -n " "
   prompt_char
   clean
   echo -n " "
