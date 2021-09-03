@@ -233,7 +233,6 @@ function! PrettyPrintCurrentFilePath() abort
     let l:dir_path = pathshorten(expand("%:~:."))
     return len(l:dir_path) ? l:dir_path : "[NO NAME]"
   endif
-
 endfunction
 
 function! ShowBufferList() abort

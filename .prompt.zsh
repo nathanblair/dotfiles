@@ -17,36 +17,40 @@ function precmd() {
   unset time_info
 }
 
+function clean() {
+  echo -n "%{%b%k%f%}"
+}
+
 function last_command_status() { echo -n "%(?..%{%F{red}%}(%?%))" }
 
-function current_dir_info() { echo -n '%{%B%F{blue}%}%~' }
+function show_git_info() {
+  local git_toplevel="$(dirname $(git rev-parse --show-toplevel))"
+  local git_relative_path="${PWD##$git_toplevel/}"
+  echo -n "${git_relative_path/#$USER/~}"
+  echo -n " %{%F{cyan}%}${1}%{%K{black}%} "
+  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null| grep -c "^M")"
+  echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null| grep -c "^ M")"
+  echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null| grep -c "^??")"
+}
+
+function current_dir_info() {
+  echo -n '%{%B%F{blue}%}'
+  local b=$(git branch --show-current 2>/dev/null || printf "")
+  if [ "${b}" = "" ]; then echo -n '%~'; else show_git_info "${b}"; fi
+  echo -n " "
+}
 
 function prompt_char() { echo -n "%(!.#.>)" }
 
-function show_git_info() {
-  local b=$(git branch --show-current 2>/dev/null || printf "")
-  if [ "${b}" = "" ]; then
-    echo -n " "
-  else
-    echo -n " %{%F{cyan}%}${b}%{%f%}%{%K{black}%} "
-    echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null| grep -c "^M")"
-    echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null| grep -c "^ M")"
-    echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null| grep -c "^??")"
-    echo -n " "
-  fi
-}
-
 function my_prompt() {
-  echo -n "%{%b%k%f%}"
+  clean
   last_command_status
-  echo -n "%{%b%k%f%}"
+  clean
   echo -n " "
   current_dir_info
-  echo -n "%{%b%k%f%}"
-  show_git_info
-  echo -n "%{%b%k%f%}"
+  clean
   prompt_char
-  echo -n "%{%b%k%f%}"
+  clean
   echo -n " "
 }
 
