@@ -30,6 +30,7 @@ function show_git_info() {
   echo -n " %{%F{cyan}%}${1}%{%K{black}%} "
   echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null| grep -c "^M")"
   echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null| grep -c "^ M")"
+  echo -n "%{%F{red}%}$(git status --porcelain 2>/dev/null| grep -c "^ D")"
   echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null| grep -c "^??")"
 }
 
