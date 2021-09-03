@@ -34,8 +34,9 @@ function show_git_info() {
   echo -n "%{%F{red}%}$(git status --porcelain 2>/dev/null | grep -c '^ D')"
   echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null | grep -c '^??')"
 
-  ahead=$(git status --porcelain --branch --ahead-behind | awk '/ahead/ {print substr($4,1,length($4)-1)}')
-  behind=$(git status --porcelain --branch --ahead-behind | awk '/behind/ {print substr($4,1,length($4)-1)}')
+  local ahead_behind=$(git status --porcelain --branch --ahead-behind)
+  local ahead=$(echo -n "${ahead_behind}" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
+  local behind=$(echo -n "${ahead_behind}" | awk '/behind/ {print substr($4,1,length($4)-1)}')
 
   if [ "${ahead}" -gt 0 ] || [ "${behind}" -gt 0 ]; then
     echo -n " "
