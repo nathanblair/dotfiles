@@ -28,11 +28,11 @@ function show_git_info() {
   local git_relative_path="${PWD##$git_toplevel/}"
   echo -n "${git_relative_path/#$USER/~}"
   echo -n " %{%F{cyan}%}${1}%{%K{black}%} "
-  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null| grep -c "^A")"
-  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null| grep -c "^M")"
-  echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null| grep -c "^ M")"
-  echo -n "%{%F{red}%}$(git status --porcelain 2>/dev/null| grep -c "^ D")"
-  echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null| grep -c "^??")"
+  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null | grep -c "^A")"
+  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null | grep -c "^M")"
+  echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null | grep -c "^ M")"
+  echo -n "%{%F{red}%}$(git status --porcelain 2>/dev/null | grep -c "^ D")"
+  echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null | grep -c "^??")"
 }
 
 function current_dir_info() {

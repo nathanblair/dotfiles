@@ -18,13 +18,32 @@ function show_git_info($branch) {
     $pretty_path = $(user_path_replace "${git_relative_path}") -replace '/', '\'
 
     Write-Host "${pretty_path}" -ForegroundColor Cyan -NoNewline
-    Write-Host " $branch " -ForegroundColor Magenta -NoNewline
+    Write-Host " ${branch} " -ForegroundColor Magenta -NoNewline
 
     Write-Host (git status --porcelain | Select-String "^A").Length -ForegroundColor Green -NoNewline
     Write-Host (git status --porcelain | Select-String "^M").Length -ForegroundColor Green -NoNewline
     Write-Host (git status --porcelain | Select-String "^ M").Length -ForegroundColor White -NoNewline
     Write-Host (git status --porcelain | Select-String "^ D").Length -ForegroundColor Red -NoNewline
     Write-Host (git status --porcelain | Select-String "^\?\?").Length -ForegroundColor Blue -NoNewline
+
+    # Write-Host `
+    # (git status --porcelain | Select-String "^A").Length `
+    # (git status --porcelain | Select-String "^M").Length `
+    # (git status --porcelain | Select-String "^ M").Length `
+    # (git status --porcelain | Select-String "^ D").Length `
+    # (git status --porcelain | Select-String "^\?\?").Length `
+    #     -Separator "" `
+    #     -ForegroundColor Green -NoNewline
+
+    $ahead = git status --porcelain --branch --ahead-behind | Select-String "ahead (.+)]"
+    $behind = git status --porcelain --branch --ahead-behind | Select-String "behind (.+)]"
+
+    if ($ahead) {
+        Write-Host " ", $ahead.Matches.Groups[1].Value, ↑ -ForegroundColor Blue -Separator "" -NoNewline
+    }
+    if ($behind) {
+        Write-Host " ", $behind.Matches.Groups[1].Value, ↓ -ForegroundColor Blue -Separator "" -NoNewline
+    }
 
     Write-Host " " -NoNewline
 }
