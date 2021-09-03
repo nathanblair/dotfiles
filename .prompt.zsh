@@ -28,18 +28,26 @@ function show_git_info() {
   local git_relative_path="${PWD##$git_toplevel/}"
   echo -n "${git_relative_path/#$USER/~}"
   echo -n " %{%F{cyan}%}${1}%{%K{black}%} "
-  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null | grep -c "^A")"
-  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null | grep -c "^M")"
-  echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null | grep -c "^ M")"
-  echo -n "%{%F{red}%}$(git status --porcelain 2>/dev/null | grep -c "^ D")"
-  echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null | grep -c "^??")"
+  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null | grep -c '^A')"
+  echo -n "%{%F{green}%}$(git status --porcelain 2>/dev/null | grep -c '^M')"
+  echo -n "%{%F{white}%}$(git status --porcelain 2>/dev/null | grep -c '^ M')"
+  echo -n "%{%F{red}%}$(git status --porcelain 2>/dev/null | grep -c '^ D')"
+  echo -n "%{%F{blue}%}$(git status --porcelain 2>/dev/null | grep -c '^??') "
+
+  ahead=$(git status --porcelain --branch --ahead-behind | awk '/ahead/ {print substr($4,1,length($4)-1)}')
+  if [ "${ahead}" -gt 0 ]; then
+    echo -n "%{%F{blue}%}${ahead}↑"
+  fi
+  behind=$(git status --porcelain --branch --ahead-behind | awk '/behind/ {print substr($4,1,length($4)-1)}')
+  if [ "${behind}" -gt 0 ]; then
+    echo -n "%{%F{blue}%}${behind}↓ "
+  fi
 }
 
 function current_dir_info() {
   echo -n '%{%B%F{blue}%}'
   local b=$(git branch --show-current 2>/dev/null || printf "")
-  if [ "${b}" = "" ]; then echo -n '%~'; else show_git_info "${b}"; fi
-  echo -n " "
+  if [ "${b}" = "" ]; then echo -n '%~ '; else show_git_info "${b}"; fi
 }
 
 function prompt_char() { echo -n "%(!.#.>)" }
