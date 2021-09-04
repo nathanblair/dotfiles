@@ -20,11 +20,12 @@ function show_git_info($branch) {
     Write-Host "${pretty_path}" -ForegroundColor Cyan -NoNewline
     Write-Host " ${branch} " -ForegroundColor Magenta -NoNewline
 
-    Write-Host (git status --porcelain | Select-String "^A").Length -ForegroundColor Green -NoNewline
     Write-Host (git status --porcelain | Select-String "^M").Length -ForegroundColor Green -NoNewline
+    Write-Host (git status --porcelain | Select-String "^A").Length -ForegroundColor Green -NoNewline
+    Write-Host (git status --porcelain | Select-String "^D").Length -ForegroundColor Red -NoNewline
     Write-Host (git status --porcelain | Select-String "^ M").Length -ForegroundColor White -NoNewline
-    Write-Host (git status --porcelain | Select-String "^ D").Length -ForegroundColor Red -NoNewline
     Write-Host (git status --porcelain | Select-String "^\?\?").Length -ForegroundColor Blue -NoNewline
+    Write-Host (git status --porcelain | Select-String "^ D").Length -ForegroundColor Red -NoNewline
 
     # Write-Host `
     # (git status --porcelain | Select-String "^A").Length `
