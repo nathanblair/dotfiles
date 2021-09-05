@@ -32,12 +32,12 @@ function show_git_info() {
   git_porcelain="$(git status --porcelain 2>/dev/null)"
 
   echo -n " %{%F{cyan}%}${1} "
-  echo -n "%{%F{green}%}$(grep -c '^A' ${git_porcelain})"
-  echo -n "%{%F{green}%}$(grep -c '^M' ${git_porcelain})"
-  echo -n "%{%F{red}%}$(grep -c '^D' ${git_porcelain})"
-  echo -n "%{%F{white}%}$(grep -c '^ M' ${git_porcelain})"
-  echo -n "%{%F{blue}%}$(grep -c '^??' ${git_porcelain})"
-  echo -n "%{%F{red}%}$(grep -c '^ D' ${git_porcelain})"
+  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^A')"
+  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^M')"
+  echo -n "%{%F{red}%}$(printf "${git_porcelain}" | grep -c '^D')"
+  echo -n "%{%F{white}%}$(printf "${git_porcelain}" | grep -c '^ M')"
+  echo -n "%{%F{blue}%}$(printf "${git_porcelain}" | grep -c '^??')"
+  echo -n "%{%F{red}%}$(printf "${git_porcelain}" | grep -c '^ D')"
 
   local ahead_behind=$(git status --porcelain --branch --ahead-behind)
   local ahead=$(echo -n "${ahead_behind}" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
