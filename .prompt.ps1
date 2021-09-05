@@ -19,7 +19,7 @@ function show_git_info($branch) {
 
     $info = "`e[94m${pretty_path} `e[96m${branch} "
 
-    $git_porcelain = $(git status --porcelain)
+    $git_porcelain = $(git status --porcelain --branch --ahead-behind)
 
     $info += "`e[32m$(($git_porcelain | Select-String "^M").Length)"
     $info += "`e[32m$(($git_porcelain | Select-String "^A").Length)"
@@ -28,14 +28,16 @@ function show_git_info($branch) {
     $info += "`e[34m$(($git_porcelain | Select-String "^\?\?").Length)"
     $info += "`e[31m$(($git_porcelain | Select-String "^ D").Length)"
 
-    $ahead = git status --porcelain --branch --ahead-behind | Select-String "ahead (.+)]"
-    $behind = git status --porcelain --branch --ahead-behind | Select-String "behind (.+)]"
-
-    if ($ahead) {
-        $info += " `e[34m$(${ahead}.Matches.Groups[1].Value)↑"
-    }
-    if ($behind) {
-        $info += "`e[34m$(${behind}.Matches.Groups[1].Value)↓"
+    $ahead = $git_porcelain | Select-String "ahead (.+)]"
+    $behind = $git_porcelain | Select-String "behind (.+)]"
+    if ($ahead -or $behind) {
+        $info += " "
+        if ($ahead) {
+            $info += "`e[34m$(${ahead}.Matches.Groups[1].Value)↑"
+        }
+        if ($behind) {
+            $info += "`e[34m$(${behind}.Matches.Groups[1].Value)↓"
+        }
     }
 
     return "${info}"

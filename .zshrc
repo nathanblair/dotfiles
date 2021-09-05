@@ -1,6 +1,6 @@
 # vim:ft=sh
 
-. "${HOME}/.prompt.zsh" 2>/dev/null || true
+. "${HOME}/.prompt.zsh" || true
 . ~/.env || true
 . ~/.aliases || true
 . ~/.tokens || true

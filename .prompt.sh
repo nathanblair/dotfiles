@@ -25,16 +25,13 @@ function show_git_info() {
   ahead=$(printf "${git_porcelain}" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
   behind=$(printf "${git_porcelain}" | awk '/behind/ {print substr($4,1,length($4)-1)}')
 
-  printf "${ahead}"
-  printf "${behind}"
-
   if [ "${ahead}" ] || [ "${behind}" ]; then
     printf " "
-    if [ "${ahead}" -gt 0 ]; then
-      printf "\e[97m${ahead}↑"
+    if [ "${ahead}" ] && [ "${ahead}" -gt 0 ]; then
+      printf "\e[95m${ahead}↑"
     fi
-    if [ "${behind}" -gt 0 ]; then
-      printf "\e[97m${behind}↓"
+    if [ "${behind}" ] && [ "${behind}" -gt 0 ]; then
+      printf "\e[95m${behind}↓"
     fi
   fi
 }
