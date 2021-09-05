@@ -5,6 +5,11 @@
 . ~/.aliases || true
 . ~/.tokens || true
 
+printf "\e]0;$HOSTNAME\a"
+if [ "$(env | grep WSL)" ]; then
+  printf "\e]0;${HOSTNAME} [WSL]\a"
+fi
+
 if [ ! -d ~/.zgen ]; then git clone https://github.com/tarjoilija/zgen ~/.zgen; fi
 
 . ~/.zgen/zgen.zsh
