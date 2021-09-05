@@ -32,6 +32,7 @@ function gc { git commit }
 function gca { git commit --all }
 function gcm ($msg) { git commit -m $msg }
 function gcam ($msg) { git commit --all -m $msg }
+function gf ($arguments) { git fetch $arguments }
 function gfp { git fetch --prune }
 function g { git status -bs -u --ahead-behind }
 function gst { git status }
