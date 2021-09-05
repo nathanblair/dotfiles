@@ -8,7 +8,7 @@ function user_path_replace($path) {
 
 function last_command_status($last_exit_code) {
     if ($last_exit_code -ne 0) {
-        Write-Host "($last_exit_code) " -ForegroundColor Red -NoNewline
+        return "`e[31m($last_exit_code) "
     }
 }
 
@@ -17,52 +17,43 @@ function show_git_info($branch) {
     $git_relative_path = $(Get-Location) -replace [Regex]::Escape("${git_toplevel}\"), ""
     $pretty_path = $(user_path_replace "${git_relative_path}") -replace '/', '\'
 
-    Write-Host "${pretty_path}" -ForegroundColor Cyan -NoNewline
-    Write-Host " ${branch} " -ForegroundColor Magenta -NoNewline
+    $info = "`e[36m${pretty_path} `e[95m${branch} "
 
-    Write-Host (git status --porcelain | Select-String "^M").Length -ForegroundColor Green -NoNewline
-    Write-Host (git status --porcelain | Select-String "^A").Length -ForegroundColor Green -NoNewline
-    Write-Host (git status --porcelain | Select-String "^D").Length -ForegroundColor Red -NoNewline
-    Write-Host (git status --porcelain | Select-String "^ M").Length -ForegroundColor White -NoNewline
-    Write-Host (git status --porcelain | Select-String "^\?\?").Length -ForegroundColor Blue -NoNewline
-    Write-Host (git status --porcelain | Select-String "^ D").Length -ForegroundColor Red -NoNewline
+    $git_porcelain = $(git status --porcelain)
 
-    # Write-Host `
-    # (git status --porcelain | Select-String "^A").Length `
-    # (git status --porcelain | Select-String "^M").Length `
-    # (git status --porcelain | Select-String "^ M").Length `
-    # (git status --porcelain | Select-String "^ D").Length `
-    # (git status --porcelain | Select-String "^\?\?").Length `
-    #     -Separator "" `
-    #     -ForegroundColor Green -NoNewline
+    $info += "`e[32m$(($git_porcelain | Select-String "^M").Length)"
+    $info += "`e[32m$(($git_porcelain | Select-String "^A").Length)"
+    $info += "`e[31m$(($git_porcelain | Select-String "^D").Length)"
+    $info += "`e[97m$(($git_porcelain | Select-String "^ M").Length)"
+    $info += "`e[34m$(($git_porcelain | Select-String "^\?\?").Length)"
+    $info += "`e[31m$(($git_porcelain | Select-String "^ D").Length)"
 
     $ahead = git status --porcelain --branch --ahead-behind | Select-String "ahead (.+)]"
     $behind = git status --porcelain --branch --ahead-behind | Select-String "behind (.+)]"
 
     if ($ahead) {
-        Write-Host " ", $ahead.Matches.Groups[1].Value, ↑ -ForegroundColor Blue -Separator "" -NoNewline
+        $info += " `e[34m ${ahead.Matches.Groups[1].Value}↑"
     }
     if ($behind) {
-        Write-Host " ", $behind.Matches.Groups[1].Value, ↓ -ForegroundColor Blue -Separator "" -NoNewline
+        $info += "`e[34m ${behind.Matches.Groups[1].Value}↓"
     }
 
-    Write-Host " " -NoNewline
+    return "${info}"
 }
 
 function current_dir_info() {
     $branch = git branch --show-current
     if ($LASTEXITCODE -eq 0) {
-        show_git_info "${branch}"
+        return $(show_git_info "${branch}")
     }
     else {
-        Write-Host "$(home_path_replace $(Get-Location)) " -ForegroundColor DarkCyan -NoNewline
+        return "`e[36m$(home_path_replace $(Get-Location))"
     }
 }
 
 function prompt_char() {
-    # echo -n "%(!.#.>)"
     # FIXME Detect administrator privileges
-    Write-Host ('>') -NoNewline
+    return ">"
 }
 
 function right_prompt() {
@@ -86,9 +77,10 @@ function right_prompt() {
 
     $window_host.UI.RawUI.CursorPosition = $new_position
     if ("${right_message}".Length -gt 0) {
-        Write-Host "[" -ForegroundColor Blue -NoNewline
-        Write-Host $right_message -ForegroundColor DarkGray -NoNewline
-        Write-Host "]" -ForegroundColor Blue -NoNewline
+        # Write-Host "[" -ForegroundColor Blue -NoNewline
+        # Write-Host "${right_message}]" -ForegroundColor DarkGray -NoNewline
+        # Write-Host "]" -ForegroundColor Blue -NoNewline
+        Write-Host "`e[34m[`e[90m[${right_message}]`e[34m]" -ForegroundColor DarkGray -NoNewline
     }
     $window_host.UI.RawUI.CursorPosition = $original_position
 }
@@ -99,15 +91,9 @@ function my_prompt($last_exit_code) {
         $last_exit_code = $LASTEXITCODE
     }
 
-    last_command_status $last_exit_code
-
-    current_dir_info
-
-    prompt_char
-
     right_prompt
 
+    Write-Host "$(last_command_status $last_exit_code)`e[0m$(current_dir_info)`e[0m $(prompt_char)`e[0m" -NoNewline
     $LASTEXITCODE = $last_exit_code
     return " "
 }
-
