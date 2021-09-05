@@ -17,7 +17,7 @@ function show_git_info($branch) {
     $git_relative_path = $(Get-Location) -replace [Regex]::Escape("${git_toplevel}\"), ""
     $pretty_path = $(user_path_replace "${git_relative_path}") -replace '/', '\'
 
-    $info = "`e[36m${pretty_path} `e[95m${branch} "
+    $info = "`e[94m${pretty_path} `e[96m${branch} "
 
     $git_porcelain = $(git status --porcelain)
 
@@ -58,14 +58,12 @@ function prompt_char() {
 
 function right_prompt() {
     $right_message = ""
-    $extra_character_length = 0
 
     $last_command = Get-History -Count 1
     $execution_time = ($last_command.EndExecutionTime - $last_command.StartExecutionTime).Seconds
 
     if ($execution_time -gt 1) {
-        $right_message = "${execution_time}s"
-        $extra_character_length = 2
+        $right_message += "${execution_time}s"
     }
 
     $window_host = $(Get-Host)
@@ -73,14 +71,11 @@ function right_prompt() {
     $new_position = $original_position
 
     $buffer_size = $window_host.UI.RawUI.BufferSize
-    $new_position.X = $buffer_size.Width - ("${right_message}".Length + $extra_character_length)
+    $new_position.X = $buffer_size.Width - "${right_message}".Length
 
     $window_host.UI.RawUI.CursorPosition = $new_position
     if ("${right_message}".Length -gt 0) {
-        # Write-Host "[" -ForegroundColor Blue -NoNewline
-        # Write-Host "${right_message}]" -ForegroundColor DarkGray -NoNewline
-        # Write-Host "]" -ForegroundColor Blue -NoNewline
-        Write-Host "`e[34m[`e[90m[${right_message}]`e[34m]" -ForegroundColor DarkGray -NoNewline
+        Write-Host "`e[90m${right_message}" -ForegroundColor DarkGray -NoNewline
     }
     $window_host.UI.RawUI.CursorPosition = $original_position
 }
