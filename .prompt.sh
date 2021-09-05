@@ -1,9 +1,9 @@
 function clean() {
-  printf "\e[0m"
+  printf "\[\e[0m\]"
 }
 
 function last_command_status() {
-  if [ $1 -ne 0 ]; then printf "\e[31m($1)"; fi
+  if [ $1 -ne 0 ]; then printf "\[\e[31m\]($1)"; fi
 }
 
 function show_git_info() {
@@ -14,13 +14,13 @@ function show_git_info() {
 
   git_porcelain="$(git status --porcelain --branch --ahead-behind)"
 
-  printf " \e[96m${1} "
-  printf "\e[92m$(printf "${git_porcelain}" | grep -c '^A')"
-  printf "\e[92m$(printf "${git_porcelain}" | grep -c '^M')"
-  printf "\e[31m$(printf "${git_porcelain}" | grep -c '^D')"
-  printf "\e[97m$(printf "${git_porcelain}" | grep -c '^ M')"
-  printf "\e[94m$(printf "${git_porcelain}" | grep -c '^??')"
-  printf "\e[31m$(printf "${git_porcelain}" | grep -c '^ D')"
+  printf " \[\e[96m\]${1} "
+  printf "\[\e[92m\]$(printf "${git_porcelain}" | grep -c '^A')"
+  printf "\[\e[92m\]$(printf "${git_porcelain}" | grep -c '^M')"
+  printf "\[\e[31m\]$(printf "${git_porcelain}" | grep -c '^D')"
+  printf "\[\e[97m\]$(printf "${git_porcelain}" | grep -c '^ M')"
+  printf "\[\e[94m\]$(printf "${git_porcelain}" | grep -c '^??')"
+  printf "\[\e[31m\]$(printf "${git_porcelain}" | grep -c '^ D')"
 
   ahead=$(printf "${git_porcelain}" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
   behind=$(printf "${git_porcelain}" | awk '/behind/ {print substr($4,1,length($4)-1)}')
@@ -28,16 +28,16 @@ function show_git_info() {
   if [ "${ahead}" ] || [ "${behind}" ]; then
     printf " "
     if [ "${ahead}" ] && [ "${ahead}" -gt 0 ]; then
-      printf "\e[95m${ahead}↑"
+      printf "\[\e[95m\]${ahead}↑"
     fi
     if [ "${behind}" ] && [ "${behind}" -gt 0 ]; then
-      printf "\e[95m${behind}↓"
+      printf "\[\e[95m\]${behind}↓"
     fi
   fi
 }
 
 function current_dir_info() {
-  printf '\e[34m'
+  printf '\[\e[34m\]'
   b=$(git branch --show-current 2>/dev/null || printf "")
   if [ "${b}" = "" ]; then printf "\w"; else show_git_info "${b}"; fi
 }
