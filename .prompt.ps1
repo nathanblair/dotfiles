@@ -32,10 +32,10 @@ function show_git_info($branch) {
     $behind = git status --porcelain --branch --ahead-behind | Select-String "behind (.+)]"
 
     if ($ahead) {
-        $info += " `e[34m ${ahead.Matches.Groups[1].Value}↑"
+        $info += " `e[34m$(${ahead}.Matches.Groups[1].Value)↑"
     }
     if ($behind) {
-        $info += "`e[34m ${behind.Matches.Groups[1].Value}↓"
+        $info += "`e[34m$(${behind}.Matches.Groups[1].Value)↓"
     }
 
     return "${info}"
