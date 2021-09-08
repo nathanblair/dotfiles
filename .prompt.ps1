@@ -21,11 +21,12 @@ function show_git_info($branch) {
 
     $git_porcelain = $(git status --porcelain --branch --ahead-behind)
 
-    $info += "`e[32m$(($git_porcelain | Select-String "^M").Length)"
-    $info += "`e[32m$(($git_porcelain | Select-String "^A").Length)"
-    $info += "`e[31m$(($git_porcelain | Select-String "^D").Length)"
-    $info += "`e[97m$(($git_porcelain | Select-String "^ M").Length)"
-    $info += "`e[34m$(($git_porcelain | Select-String "^\?\?").Length)"
+    $info += "`e[32m$(($git_porcelain | Select-String "^M").Length)|"
+    $info += "`e[32m$(($git_porcelain | Select-String "^R").Length)|"
+    $info += "`e[32m$(($git_porcelain | Select-String "^A").Length)|"
+    $info += "`e[31m$(($git_porcelain | Select-String "^D").Length)|"
+    $info += "`e[97m$(($git_porcelain | Select-String "^ M").Length)|"
+    $info += "`e[34m$(($git_porcelain | Select-String "^\?\?").Length)|"
     $info += "`e[31m$(($git_porcelain | Select-String "^ D").Length)"
 
     $ahead = $git_porcelain | Select-String "ahead (.+)]"
