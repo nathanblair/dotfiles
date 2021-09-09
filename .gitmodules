@@ -1,6 +1,6 @@
 [submodule ".zfuncs/fsh"]
 	path = .zfuncs/fsh
 	url = https://github.com/zdharma/fast-syntax-highlighting
-[submodule "/Users/nathan/.zfuncs/zsh-autosuggestions"]
-	path = /Users/nathan/.zfuncs/zsh-autosuggestions
+[submodule ".zfuncs/zsh-autosuggestions"]
+	path = .zfuncs/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions

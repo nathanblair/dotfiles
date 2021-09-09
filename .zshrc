@@ -12,6 +12,14 @@ fi
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
+if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ]; then
+    git submodule update --init --recursive --depth 1
+fi
+
+if [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+    git submodule update --init --recursive --depth 1
+fi
+
 . ~/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh
 . ~/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh
 
