@@ -10,18 +10,10 @@ if [ "$(env | grep WSL)" ]; then
   printf "\e]0;${HOSTNAME} [WSL]\a"
 fi
 
-if [ ! -d ~/.zgen ]; then git clone https://github.com/tarjoilija/zgen ~/.zgen; fi
-
-. ~/.zgen/zgen.zsh
-
-if ! zgen saved; then
-    zgen load zsh-users/zsh-history-substring-search
-    zgen load zsh-users/zsh-autosuggestions
-    zgen load zdharma/fast-syntax-highlighting
-    zgen save
-fi
-
 ZSH_AUTOSUGGEST_USE_ASYNC=true
+
+. ~/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh
+. ~/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 KEYTIMEOUT=5
 

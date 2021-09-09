@@ -79,3 +79,4 @@ function my_prompt() {
 setopt promptsubst
 
 PROMPT='$(my_prompt)'
+PROMPT2=' > '
