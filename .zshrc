@@ -10,12 +10,9 @@ if [ "$(env | grep WSL)" ]; then
   printf "\e]0;${HOSTNAME} [WSL]\a"
 fi
 
-if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ]; then
-    git submodule update --init --recursive --depth 1
-fi
-
-if [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
-    git submodule update --init --recursive --depth 1
+if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ] ||
+   [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+  git submodule update --init --recursive --depth 1
 fi
 
 . ~/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh
