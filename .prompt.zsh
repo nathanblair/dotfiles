@@ -24,9 +24,8 @@ function clean() {
 function last_command_status() { echo -n "%(?..%{%F{red}%}(%?%))" }
 
 function host_info() {
-  env | grep SSH_CONNECTION 2>/dev/null
-  if [ $? -eq 0 ]; then
-    echo -n " %{%F{magenta}%}[%{%b%k%f%}%h%{%F{magenta}%}] "
+  if [ -n "${SSH_CONNECTION}" ]; then
+    echo -n "%{%F{magenta}%}[%{%b%k%f%}%m%{%F{magenta}%}]"
   fi
 }
 
