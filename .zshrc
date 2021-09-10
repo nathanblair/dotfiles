@@ -1,7 +1,5 @@
 # vim:ft=sh
 
-# FIXME Set up new prompt repo and submodule it like the below zsh plugins
-. "${HOME}/.prompt.zsh" || true
 . "${HOME}/.env" || true
 . "${HOME}/.aliases" || true
 . "${HOME}/.tokens" || true
@@ -13,12 +11,13 @@ fi
 
 if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ] ||
    [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ] ||
-   [ ! -f "${HOME}/.zfuncs/prompt.zsh" ]; then
+   [ ! -f "${HOME}/.zfuncs/prompt/prompt.zsh" ]; then
   git submodule update --init --recursive --depth 1
 fi
 
-. ~/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh
-. ~/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh
+. "${HOME}/.zfuncs/prompt/prompt.zsh"
+. "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh"
+. "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
