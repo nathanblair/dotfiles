@@ -2,9 +2,9 @@
 . "${HOME}/.aliases" || true
 . "${HOME}/.tokens" || true
 
-printf "\e]0;$HOSTNAME\a"
+printf "\e]0;$HOST\a"
 if [ "$(env | grep WSL)" ]; then
-  printf "\e]0;${HOSTNAME} [WSL]\a"
+  printf "\e]0;${HOST} [WSL]\a"
 fi
 
 if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ] ||
