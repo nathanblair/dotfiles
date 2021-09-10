@@ -1,5 +1,9 @@
-# Source other PS resources
-. ~/.prompt.ps1 | Out-Null
+if (-Not (Test-Path "~/.zfuncs/prompt/prompt.ps1")) {
+    git submodule update --init --recursive --depth 1
+}
+
+# Source PS resources
+. ~/.zfuncs/prompt/prompt.ps1 | Out-Null
 . ~/.aliases.ps1 | Out-Null
 . ~/.env.ps1 | Out-Null
 . ~/repos/personal/keys/tokens.ps1 | Out-Null
