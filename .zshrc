@@ -1,5 +1,6 @@
 # vim:ft=sh
 
+# FIXME Set up new prompt repo and submodule it like the below zsh plugins
 . "${HOME}/.prompt.zsh" || true
 . "${HOME}/.env" || true
 . "${HOME}/.aliases" || true
@@ -11,7 +12,8 @@ if [ "$(env | grep WSL)" ]; then
 fi
 
 if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ] ||
-   [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ]; then
+   [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ] ||
+   [ ! -f "${HOME}/.zfuncs/prompt.zsh" ]; then
   git submodule update --init --recursive --depth 1
 fi
 
