@@ -1,9 +1,9 @@
 # vim:ft=sh
 
 . "${HOME}/.prompt.zsh" || true
-. ~/.env || true
-. ~/.aliases || true
-. ~/.tokens || true
+. "${HOME}/.env" || true
+. "${HOME}/.aliases" || true
+. "${HOME}/.tokens" || true
 
 printf "\e]0;$HOSTNAME\a"
 if [ "$(env | grep WSL)" ]; then

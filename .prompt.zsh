@@ -23,6 +23,12 @@ function clean() {
 
 function last_command_status() { echo -n "%(?..%{%F{red}%}(%?%))" }
 
+function host_info() {
+  if [ $(env | grep SSH_CONNECTION) ]; then
+    echo -n " %{%F{magenta}%}[%{%b%k%f%}%h%{%F{magenta}%}] "
+  fi
+}
+
 function show_git_info() {
   local git_toplevel="$(dirname $(git rev-parse --show-toplevel))"
   local git_relative_path="${PWD##$git_toplevel/}"
@@ -66,6 +72,8 @@ function prompt_char() { echo -n "%(!.#.>)" }
 function my_prompt() {
   clean
   last_command_status
+  clean
+  host_info
   clean
   echo -n " "
   current_dir_info
