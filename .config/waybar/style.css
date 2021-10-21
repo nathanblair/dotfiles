@@ -69,7 +69,6 @@ window#waybar {
 }
 
 #clock, #custom-clock {
-  font-family: "Ubuntu";
   border-bottom: 0px solid #f8f8f2;
 }
 
@@ -130,7 +129,6 @@ window#waybar {
 
 #custom-volume {
   border-bottom: 3px solid #8be9fd;
-  font-family: Hack;
 }
 #custom-volume.off {
   border-bottom: 3px solid #333333;
