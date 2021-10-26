@@ -5,7 +5,7 @@
 window#waybar {
   background: transparent;
   color: #f8f8f2;
-  font-family: "FontAwesome 5 Free Solid", "Ubuntu", sans-serif;
+  font-family: "Ubuntu", "FontAwesome 5 Free Solid", sans-serif;
 }
 
 #workspaces {
