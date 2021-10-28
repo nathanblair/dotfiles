@@ -11,7 +11,7 @@
   "modules-right": [
     "tray",
     "custom/media",
-    "custom/network",
+    "network",
     "custom/backlight",
     "custom/volume",
     "custom/battery",
@@ -52,7 +52,7 @@
     "format-disconnected": "",
     "format-ethernet": "",
     "format-wifi": "",
-    "tooltip-format-wifi": "{essid} ({frequency} MHz) - {signalStrength}%",
+    "tooltip-format-wifi": "{essid} - {ipaddr} - {signalStrength}% ({frequency} MHz)",
     "tooltip-format-ethernet": "{ifname} - {ipaddr}"
   },
   "custom/memory": {
