@@ -49,6 +49,7 @@ alias gpull='git pull'
 alias gpush='git push'
 alias gf='git fetch'
 alias gfp='git fetch --prune'
+alias gfap='git fetch --all --prune'
 alias gs='git switch'
 alias gsc='git switch -c'
 
