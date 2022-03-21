@@ -8,6 +8,7 @@ alias cp='cp -vi'
 # File listing
 case "${OSTYPE}" in
     "darwin"*)
+        alias code='open -b com.microsoft.VSCode "$@"'
         alias make="gmake"
         alias ls="ls -G"
         ;;
