@@ -177,7 +177,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Block
+    shape: Beam
 
     # Cursor blinking state
     #
@@ -186,7 +186,7 @@ cursor:
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    blinking: Off
+    blinking: On
 
   # Vi mode cursor style
   #
@@ -194,7 +194,7 @@ cursor:
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  #vi_mode_style: None
+  vi_mode_style: Block
 
   # Cursor blinking interval in milliseconds.
   #blink_interval: 750
@@ -216,11 +216,25 @@ live_config_reload: true
 # directory of the parent process will be used.
 working_directory: None
 
+# Shell
+#
+# You can set `shell.program` to the path of your favorite shell, e.g.
+# `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
+# shell.
+#
+# Default:
+#   - (macOS) /bin/bash --login
+#   - (Linux/BSD) user login shell
+#   - (Windows) powershell
+shell:
+  program: sh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
-
-# Offer IPC using `alacritty msg` (unix only)
-#ipc_socket: true
 
 mouse:
   # Click settings
@@ -233,3 +247,7 @@ mouse:
 
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: false
+
+key_bindings:
+  - { key: H, mods: Command, action: None }
+  - { key: N, mods: Command, action: CreateNewWindow }
