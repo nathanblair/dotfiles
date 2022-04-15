@@ -94,7 +94,7 @@ font:
   use_thin_strokes: true
 
   # Point size
-  size: 16.0
+  size: 14.0
 
   # Normal (roman) font face
   normal:
