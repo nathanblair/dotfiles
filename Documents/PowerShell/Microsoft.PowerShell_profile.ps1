@@ -1,5 +1,5 @@
 if (-Not (Test-Path "~/.zfuncs/prompt/prompt.ps1")) {
-    git submodule update --init --recursive --depth 1
+    git submodule update --init --recursive --remote --depth 1
 }
 
 # Source PS resources
