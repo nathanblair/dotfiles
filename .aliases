@@ -65,11 +65,10 @@ alias xu='sudo xbps-install -Su'
 alias xr='sudo xbps-remove -Ro'
 
 # Docker
+#alias docker='colima nerdctl'
 alias dcp='docker container prune'
 alias dis='docker images'
 alias disa='docker images -a'
-alias dp='dcp -f && docker image prune -f && disa'
-alias dpa='dcp -f && docker image prune -af && disa'
 alias dcla='docker container list --all'
 alias dpsa='docker ps --all'
 alias dcrit='docker container run --rm -it'
@@ -81,6 +80,9 @@ alias pip='pip3'
 
 # Terraform
 alias tf='terraform'
+
+# Brew
+alias bu='brew update && brew upgrade'
 
 # AWS-CLI
 # Because no one is maintaining a reliable repository for it...
