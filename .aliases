@@ -65,7 +65,7 @@ alias xu='sudo xbps-install -Su'
 alias xr='sudo xbps-remove -Ro'
 
 # Docker
-#alias docker='colima nerdctl'
+#alias docker='colima nerdctl --'
 alias dcp='docker container prune'
 alias dis='docker images'
 alias disa='docker images -a'
