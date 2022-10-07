@@ -9,15 +9,11 @@ if [ "$(env | grep WSL)" ]; then
   printf "\e]0;${HOST} [WSL]\a"
 fi
 
-if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ] ||
-   [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ] ||
-   [ ! -f "${HOME}/.zfuncs/prompt/prompt.zsh" ]; then
+if [ ! -f "${HOME}/.zfuncs/prompt/prompt.zsh" ]; then
   git submodule update --init --recursive --depth 1
 fi
 
 . "${HOME}/.zfuncs/prompt/prompt.zsh"
-. "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh"
-. "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
