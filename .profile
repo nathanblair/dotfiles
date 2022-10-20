@@ -1,3 +1,5 @@
+# vim:ft=sh
+
 . "${HOME}/.env" || true
 . "${HOME}/.aliases" || true
 . "${HOME}/.tokens" || true
@@ -7,11 +9,12 @@ if [ "$(env | grep WSL)" ]; then
   printf "\e]0;${HOSTNAME} [WSL]\a"
 fi
 
-if [ ! -f "${HOME}/.zfuncs/fsh/fast-syntax-highlighting.plugin.zsh" ] ||
-   [ ! -f "${HOME}/.zfuncs/zsh-autosuggestions/zsh-autosuggestions.zsh" ] ||
-   [ ! -f "${HOME}/.zfuncs/prompt/prompt.sh" ]; then
-  git submodule update --init --recursive --remote --depth 1
-fi
-
 . "${HOME}/.zfuncs/prompt/prompt.sh"
 
+if test -z "${XDG_RUNTIME_DIR}"; then
+    export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
+    if ! test -d "${XDG_RUNTIME_DIR}"; then
+        mkdir "${XDG_RUNTIME_DIR}" >> /dev/null
+        chmod 0700 "${XDG_RUNTIME_DIR}"
+    fi
+fi

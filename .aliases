@@ -5,16 +5,6 @@ alias df='df -H'
 alias mv='mv -vi'
 alias cp='cp -vi'
 
-# File listing
-case "${OSTYPE}" in
-    "darwin"*)
-        alias code='open -b com.microsoft.VSCode "$@"'
-        alias make="gmake"
-        alias ls="ls -G"
-        ;;
-    *) alias ls="ls --color=always";;
-esac
-
 alias l='ls -h1'
 alias ll='ls -lh'
 alias la='ls -Ah1'

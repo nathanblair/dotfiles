@@ -4,13 +4,17 @@
 . "${HOME}/.aliases" || true
 . "${HOME}/.tokens" || true
 
-printf "\e]0;$HOST\a"
-if [ "$(env | grep WSL)" ]; then
-  printf "\e]0;${HOST} [WSL]\a"
+if [ $(uname) = "Darwin" ]; then
+  alias code='open -b com.microsoft.VSCode "$@"'
+  alias make="gmake"
+  alias ls="ls -G"
+else
+  alias ls="ls --color=always"
 fi
 
-if [ ! -f "${HOME}/.zfuncs/prompt/prompt.zsh" ]; then
-  git submodule update --init --recursive --depth 1
+printf "\e]0;${HOST}\a"
+if [ "$(env | grep WSL)" ]; then
+  printf "\e]0;${HOST} [WSL]\a"
 fi
 
 . "${HOME}/.zfuncs/prompt/prompt.zsh"
@@ -39,4 +43,3 @@ autoload -U +X bashcompinit && bashcompinit
 autoload -U compinit && compinit -i
 
 complete -o nospace -C $(which terraform) terraform
-
