@@ -17,7 +17,7 @@ if [ "$(env | grep WSL)" ]; then
   printf "\e]0;${HOST} [WSL]\a"
 fi
 
-. "${HOME}/.zfuncs/prompt/prompt.zsh"
+. "${HOME}/.prompt.zsh"
 
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
