@@ -2,6 +2,8 @@
 . "$HOME/.aliases" || true
 . "$HOME/.tokens" || true
 
+alias make="gmake"
+
 set -g fish_greeting
 set -g hydro_symbol_git_dirty " •"
 set -g hydro_color_pwd blue
