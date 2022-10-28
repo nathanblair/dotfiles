@@ -19,7 +19,7 @@ set wildcharm=<C-z>
 set mouse=nv
 
 " Viewing and getting around
-set relativenumber
+"set relativenumber
 set nostartofline
 set listchars=""
 set cmdheight=1
