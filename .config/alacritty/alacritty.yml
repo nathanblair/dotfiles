@@ -87,12 +87,6 @@ window:
 
 # Font configuration
 font:
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
-  use_thin_strokes: true
-
   # Point size
   size: 14.0
 
@@ -226,12 +220,12 @@ working_directory: None
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-shell:
-  program: sh
-  args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
+#shell:
+#program: sh
+#args:
+#- -l
+#- -c
+#- "tmux attach || tmux"
 
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
