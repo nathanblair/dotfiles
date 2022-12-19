@@ -1,22 +1,39 @@
 " Plugin loading and handling
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let plug_path = '~/.vim/autoload/plug.vim'
+if has('win32')
+  let plug_path = "$LOCALAPPDATA/nvim-data/site/autoload/plug.vim"
+endif
+"
+if empty(glob(plug_path))
+  echo "Installing vim-plug to ". plug_path
+  if has('win32')
+    silent !iwr -useb "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" | ni plug_path -Force
+  else
+    silent !curl -fLo plug_path --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  endif
+
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/bundle')
-  Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'cohama/lexima.vim'
-  Plug 'machakann/vim-sandwich'
-  Plug 'sheerun/vim-polyglot'
-  "Plug 'ap/vim-buftabline'
-  Plug 'vim-airline/vim-airline'
-  Plug 'mhinz/vim-signify'
-  Plug 'ryanoasis/vim-devicons'
+  if !exists('g:vscode')
+    Plug 'dracula/vim', {'as': 'vim-dracula-theme'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'cohama/lexima.vim'
+    Plug 'thaerkh/vim-indentguides'
+    Plug 'machakann/vim-sandwich'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'junegunn/goyo.vim'
+    "Plug 'ap/vim-buftabline'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'tpope/vim-fugitive'
+    Plug 'mhinz/vim-signify',
+    Plug 'ryanoasis/vim-devicons', !has('win32') ? {} : { 'on': [] }
+  endif
 call plug#end()
 
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
@@ -111,7 +128,7 @@ set keywordprg=:call\ <SID>ShowDocumentation()
 " Documentation
 autocmd! User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 "autocmd! User CocLocationsChange CocList --normal -A location
-autocmd CursorHold * silent call CocActionAsync('highlight')
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " LSP Snippets
 let g:coc_snippet_next='<TAB>'
