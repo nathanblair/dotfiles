@@ -3,6 +3,7 @@
 " -------------------------------------------------------------"
 set nocompatible
 set number
+set clipboard+=unnamedplus
 set laststatus=2
 set noruler
 set noshowmode
