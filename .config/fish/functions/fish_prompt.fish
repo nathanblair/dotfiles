@@ -3,13 +3,20 @@ function _git_status
 
     set -f _git_porcelain (git status --porcelain --ahead-behind 2>/dev/null)
 
-    printf "%s%s+ " (set_color green) (printf "$_git_porcelain" | grep -c '^A')
-    printf "%s%s~ " (set_color green) (printf "$_git_porcelain" | grep -c '^R')
-    printf "%s%s• " (set_color green) (printf "$_git_porcelain" | grep -c '^M')
-    printf "%s%s- " (set_color red) (printf "$_git_porcelain" | grep -c '^D')
-    printf "%s%s| " (set_color white) (printf "$_git_porcelain" | grep -c '^.M')
-    printf "%s%s? " (set_color blue) (printf "$_git_porcelain" | grep -c '^??')
-    printf "%s%s" (set_color red) (printf "$_git_porcelain" | grep -c '^.D')
+    set -f _staged_added (printf "$_git_porcelain" | grep -c '^A')
+    set -f _staged_renamed (printf "$_git_porcelain" | grep -c '^R')
+    set -f _staged_modified (printf "$_git_porcelain" | grep -c '^M')
+    set -f _staged_deleted (printf "$_git_porcelain" | grep -c '^D')
+    set -f _unstaged_modified (printf "$_git_porcelain" | grep -c '^.M')
+    set -f _unstaged_untracked (printf "$_git_porcelain" | grep -c '^??')
+    set -f _unstaged_deleted (printf "$_git_porcelain" | grep -c '^.D')
+
+    printf "%s%s+ %s~ %s• %s%s- %s%s• %s%s- %s%s? " \
+        (set_color green) $_staged_added $_staged_renamed $_staged_modified \
+        (set_color red) $_staged_deleted \
+        (set_color white) $_unstaged_modified \
+        (set_color red) $_unstaged_deleted \
+        (set_color blue) $_unstaged_untracked
 
     set -f _ahead (printf "$_git_porcelain" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
     set -f _behind (printf "$_git_porcelain" | awk '/behind/ {print substr($4,1,length($4)-1)}')
