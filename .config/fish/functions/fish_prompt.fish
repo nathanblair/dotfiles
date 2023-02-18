@@ -1,52 +1,54 @@
 function _git_status
-    printf " %s %s " (set_color cyan) (git branch --show-current 2>/dev/null || return)
+    printf " %s %s " (set_color brmagenta) (git branch --show-current 2>/dev/null || return)
 
-    set -f _git_porcelain (git status --porcelain --ahead-behind 2>/dev/null)
-
-    set -f _staged_added (printf "$_git_porcelain" | grep -c '^A')
-    set -f _staged_renamed (printf "$_git_porcelain" | grep -c '^R')
-    set -f _staged_modified (printf "$_git_porcelain" | grep -c '^M')
-    set -f _staged_deleted (printf "$_git_porcelain" | grep -c '^D')
-    set -f _unstaged_modified (printf "$_git_porcelain" | grep -c '^.M')
-    set -f _unstaged_untracked (printf "$_git_porcelain" | grep -c '^??')
-    set -f _unstaged_deleted (printf "$_git_porcelain" | grep -c '^.D')
-
-    printf "%s%s+ %s~ %s• %s%s- %s%s• %s%s- %s%s? " \
-        (set_color green) $_staged_added $_staged_renamed $_staged_modified \
-        (set_color red) $_staged_deleted \
-        (set_color white) $_unstaged_modified \
-        (set_color red) $_unstaged_deleted \
-        (set_color blue) $_unstaged_untracked
+    set -f _git_porcelain "$(git status --porcelain --branch --ahead-behind)"
 
     set -f _ahead (printf "$_git_porcelain" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
     set -f _behind (printf "$_git_porcelain" | awk '/behind/ {print substr($4,1,length($4)-1)}')
 
-    if [ "$_ahead" ] || [ "$_behind" ]
-        printf " "
-        if [ "$_ahead" -gt 0 ]
-            printf "%s%s↑" (set_color blue) $_ahead
+    if test $_ahead || test $_behind
+        printf "%s" (set_color blue)
+        if [ $_ahead ] && [ $_ahead -gt 0 ]
+            printf "%s↑ " $_ahead
         end
-        if [ "$_behind" -gt 0 ]
-            printf "%s%s↓" (set_color blue) $_behind
+        if [ $_behind ] &&  [ $_behind -gt 0 ]
+            printf "%s↓ " $_behind
         end
     end
 
-    set -f _git_stash_count "(git stash list | grep "" -c)"
-    # if [ $_git_stash_count -gt 0 ]
-    #     printf " %s%s✗" (set_color blue) $_git_stash_count
-    # end
+    set -f _staged_added (printf $_git_porcelain | grep -c '^A')
+    set -f _staged_renamed (printf $_git_porcelain | grep -c '^R')
+    set -f _staged_modified (printf $_git_porcelain | grep -c '^M')
+    set -f _staged_deleted (printf $_git_porcelain | grep -c '^D')
+    set -f _unstaged_modified (printf $_git_porcelain | grep -c '^.M')
+    set -f _unstaged_deleted (printf $_git_porcelain | grep -c '^.D')
+    set -f _unstaged_untracked (printf $_git_porcelain | grep -c '^??')
+
+    printf "%s%s• %s+ %s~ %s- %s%s• %s- %s?" \
+        (set_color white) $_staged_modified $_staged_added $_staged_renamed $_staged_deleted \
+        (set_color brblack) $_unstaged_modified $_unstaged_deleted $_unstaged_untracked
+
+    set -f _git_stash_count (git stash list | grep "" -c 2>/dev/null)
+    if test $_git_stash_count -gt 0
+        printf " %s%s✗" (set_color blue) $_git_stash_count
+    end
 end
 
 function _get_exit_status
     set -g _exit_code $status
     set -g _exit_status
     if test $_exit_code -ne 0
-        set -g _exit_status (printf "%s[%s] " (set_color red) $_exit_code)
+        set -g _exit_status (printf "%s[%s]" (set_color red) $_exit_code)
     end
 end
 
 function _get_duration
-    set -g _duration (printf "%s%s" (set_color $fish_color_comment) (echo "$CMD_DURATION 1000" | awk '{printf "%.3fs", $1 / $2}'))
+    set -f _raw_duration (echo "$CMD_DURATION 1000" | awk '{printf "%.1f", $1 / $2}')
+    if test $_raw_duration -gt 2
+        set -g _duration (printf " %s%ss" (set_color $fish_color_comment) $_raw_duration)
+    else
+        set -e _duration
+    end
 end
 
 function _get_info
