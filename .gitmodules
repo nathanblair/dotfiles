@@ -1,3 +1,0 @@
-[submodule ".zfuncs/prompt"]
-	path = .zfuncs/prompt
-	url = https://github.com/nathanblair/prompt
