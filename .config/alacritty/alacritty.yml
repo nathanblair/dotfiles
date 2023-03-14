@@ -42,7 +42,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: buttonless
+  decorations: full
 
   # Background opacity
   #
@@ -97,17 +97,17 @@ font:
   size: 16.0
 
   # Normal (roman) font face
-  normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    family: "FiraCode Nerd Font Mono"
+  # normal:
+  # Font family
+  #
+  # Default:
+  #   - (macOS) Menlo
+  #   - (Linux/BSD) monospace
+  #   - (Windows) Consolas
+  # family: "FiraCode Nerd Font Mono"
 
-    # The `style` can be specified to pick a specific face.
-    style: "Retina"
+  # The `style` can be specified to pick a specific face.
+  # style: "Retina"
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
