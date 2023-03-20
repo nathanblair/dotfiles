@@ -82,7 +82,7 @@ alias bu='brew update && brew upgrade'
 # Kubectl
 alias kc='kubectl'
 
-# Kubectl
+# Ruby
 alias rb='ruby'
 
 # AWS-CLI
