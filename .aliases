@@ -1,7 +1,6 @@
 # Default options for commands
 alias mkdir='mkdir -pv'
 alias du='du -ch'
-alias df='df -H'
 alias mv='mv -vi'
 alias cp='cp -vi'
 
@@ -15,10 +14,12 @@ alias dir='dir --color=auto'
 alias tmux='tmux -2'
 
 # Disk usage
+alias df='df -H'
 alias dfh='df -h ~'
 alias dfr='df -h /'
 
 # Git alias commands
+alias g='git'
 alias gd='git diff'
 alias ga='git add'
 alias gaa='git add --all'
@@ -29,7 +30,7 @@ alias gcm='git commit -m'
 alias gca='git commit --all'
 alias gcam='git commit --all -m'
 alias gch='git checkout'
-alias g='git status -bs -u --ahead-behind'
+alias gs='git status -bs -u --ahead-behind'
 alias gst='git status'
 alias glsg='git log --oneline --graph'
 alias glsgs='git log --oneline --graph --stat'
@@ -41,7 +42,7 @@ alias gpush='git push'
 alias gf='git fetch'
 alias gfp='git fetch --prune'
 alias gfap='git fetch --all --prune'
-alias gs='git switch'
+alias gsw='git switch'
 alias gsc='git switch -c'
 
 # Tree command should always show directories first
@@ -55,9 +56,9 @@ alias xu='sudo xbps-install -Su'
 alias xr='sudo xbps-remove -Ro'
 
 # Docker
+#alias docker='colima nerdctl --'
 alias dkr='docker'
 alias dc='docker compose'
-#alias docker='colima nerdctl --'
 alias dcp='docker container prune'
 alias dis='docker images'
 alias dvs='docker volume ls'
@@ -80,6 +81,9 @@ alias bu='brew update && brew upgrade'
 
 # Kubectl
 alias kc='kubectl'
+
+# Kubectl
+alias rb='ruby'
 
 # AWS-CLI
 # Because no one is maintaining a reliable repository for it...
