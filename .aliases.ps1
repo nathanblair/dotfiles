@@ -20,7 +20,6 @@ function la ($dir) { Get-ChildItem -Name -Force -Path $dir }
 function lla ($dir) { Get-ChildItem -Force -Path $dir }
 
 # Git function commands
-Remove-Item Alias:g -Force
 Remove-Item Alias:gc -Force
 Remove-Item Alias:gcm -Force
 Remove-Item Alias:gl -Force
