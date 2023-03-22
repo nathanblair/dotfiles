@@ -20,6 +20,7 @@ function la ($dir) { Get-ChildItem -Name -Force -Path $dir }
 function lla ($dir) { Get-ChildItem -Force -Path $dir }
 
 # Git function commands
+Remove-Item Alias:g -Force
 Remove-Item Alias:gc -Force
 Remove-Item Alias:gcm -Force
 Remove-Item Alias:gl -Force
@@ -35,7 +36,8 @@ function gcam ($msg) { git commit --all -m $msg }
 function gf ($arguments) { git fetch $arguments }
 function gfp { git fetch --prune }
 function gfap { git fetch --all --prune }
-function g { git status -bs -u --ahead-behind }
+function g ($options) { git $options }
+function gs { git status -bs -u --ahead-behind }
 function gst { git status }
 function glsg { git log --oneline --graph }
 function glsgs { git log --oneline --graph --stat }
