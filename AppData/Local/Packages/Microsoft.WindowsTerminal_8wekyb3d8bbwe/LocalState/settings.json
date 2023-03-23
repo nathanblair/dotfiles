@@ -67,13 +67,19 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{9f378eee-9ef3-5d60-afa8-97de315e463a}",
-                "hidden": true,
+                "guid": "{96933987-e7b7-55a2-a499-f9d06dcf0997}",
+                "hidden": false,
+                "name": "alpine",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{56d44f7f-9f85-5a52-90b8-684fbf236e07}",
+                "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{125b81ef-8444-5079-b247-59b02ab16db4}",
+                "guid": "{7ca4d682-4b4d-53b6-b640-fa0816ffa966}",
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
