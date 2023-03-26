@@ -43,7 +43,7 @@ function glsgs { git log --oneline --graph --stat }
 function glg { git log --graph }
 function glgs { git log --graph --stat }
 function glgp { git log --graph --patch }
-function gs ($branch) { git switch $branch }
+function gsw ($branch) { git switch $branch }
 function gsc ($branch) { git switch -c $branch }
 function gpush ($arguments) { git push $arguments }
 function gpull { git pull }
