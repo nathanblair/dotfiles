@@ -11,7 +11,7 @@ function _git_status
         if [ $_ahead ] && [ $_ahead -gt 0 ]
             printf "%s↑ " $_ahead
         end
-        if [ $_behind ] &&  [ $_behind -gt 0 ]
+        if [ $_behind ] && [ $_behind -gt 0 ]
             printf "%s↓ " $_behind
         end
     end
@@ -52,7 +52,6 @@ function _get_duration
 end
 
 function _get_info
-    set -g _current_time (printf "%s%s" (set_color normal) (date +%I:%M))
     set -g _git_prompt (printf "%s%s" (set_color $fish_color_keyword) (_git_status))
     set -g _pwd (printf " %s%s" (set_color $fish_color_cwd) (prompt_pwd))
 end
@@ -60,10 +59,19 @@ end
 function fish_prompt
     _get_exit_status
     _get_duration
-    printf "%s%s%s > " $_exit_status $_duration (set_color normal)
+    set -g _current_time (printf "%s%s" (set_color normal) (date +%I:%M))
+
+    if test "$TERM_PROGRAM" = WarpTerminal
+        _get_info
+        printf "%s%s%s%s%s%s > " $_current_time $_exit_status $_duration $_pwd $_git_prompt (set_color normal)
+    else
+        printf "%s%s%s > " $_exit_status $_duration (set_color normal)
+    end
 end
 
-function fish_right_prompt
-    _get_info
-    printf "%s%s %s%s" $_pwd $_git_prompt $_current_time (set_color normal)
+if test "$TERM_PROGRAM" != WarpTerminal
+    function fish_right_prompt
+        _get_info
+        printf "%s%s %s" $_pwd $_git_prompt $_current_time (set_color normal)
+    end
 end
