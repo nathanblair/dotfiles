@@ -1,0 +1,9 @@
+[user]
+  name = Nathan Blair
+  email = me@nathanblair.rocks
+#   signingKey = /Users/nathanblair/.ssh/labienus.pub
+  signingKey = 85F3E7999971BA03
+
+[core]
+  editor = code
+  excludesfile = /Users/nathanblair/.gitignore_global

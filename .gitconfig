@@ -1,0 +1,34 @@
+[include]
+  path = ~/personal.gitconfig
+
+[pull]
+  rebase = true
+
+[core]
+  autocrlf = false
+
+[init]
+  defaultBranch = default
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[credential "https://dev.azure.com"]
+  useHttpPath = true
+
+[gpg]
+  # format = ssh
+  format = openpgp
+
+[tag]
+  gpgSign = true
+
+[commit]
+  gpgSign = true
+
+[credential]
+	helper =
+	helper = /usr/local/share/gcm-core/git-credential-manager

@@ -2,15 +2,6 @@
 
 . "${HOME}/.env" || true
 . "${HOME}/.aliases" || true
-. "${HOME}/.tokens" || true
-
-if [ $(uname) = "Darwin" ]; then
-  alias code='open -b com.microsoft.VSCode "$@"'
-  alias make="gmake"
-  alias ls="ls -G"
-else
-  alias ls="ls --color=always"
-fi
 
 printf "\e]0;${HOST}\a"
 if [ "$(env | grep WSL)" ]; then
