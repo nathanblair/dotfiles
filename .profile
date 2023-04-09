@@ -2,14 +2,11 @@
 
 . "${HOME}/.env" || true
 . "${HOME}/.aliases" || true
-. "${HOME}/.tokens" || true
 
 printf "\e]0;${HOSTNAME}\a"
 if [ "$(env | grep WSL)" ]; then
   printf "\e]0;${HOSTNAME} [WSL]\a"
 fi
-
-. "${HOME}/.zfuncs/prompt/prompt.sh"
 
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
