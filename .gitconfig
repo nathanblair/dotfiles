@@ -1,6 +1,12 @@
 [include]
   path = ~/personal.gitconfig
 
+[include]
+  path = ~/macos.gitconfig
+
+[include]
+  path = ~/windows.gitconfig
+
 [pull]
   rebase = true
 
@@ -28,7 +34,3 @@
 
 [commit]
   gpgSign = true
-
-[credential]
-	helper =
-	helper = /usr/local/share/gcm-core/git-credential-manager

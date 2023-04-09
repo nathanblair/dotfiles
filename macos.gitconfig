@@ -1,0 +1,6 @@
+[user]
+  signingKey = 85F3E7999971BA03
+
+[credential]
+	helper =
+	helper = /usr/local/share/gcm-core/git-credential-manager
