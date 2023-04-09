@@ -6,4 +6,4 @@
 	helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager
 
 [gpg]
-	program = c:/Program Files (x86)/GnuPG/bin/gpg.exe
+	program = C:/Program Files (x86)/GnuPG/bin/gpg.exe

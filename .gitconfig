@@ -1,17 +1,20 @@
 [include]
-  path = ~/personal.gitconfig
+  path = personal.gitconfig
 
+# [includeIf "gitdir/i:$(prefix)/Users"]
 [include]
-  path = ~/macos.gitconfig
+  path = macos.gitconfig
 
-[include]
-  path = ~/windows.gitconfig
+[includeIf "gitdir/i:C:/Users/"]
+  path = windows.gitconfig
 
 [pull]
   rebase = true
 
 [core]
   autocrlf = false
+  attributesfile = .gitattributes
+  eol = LF
 
 [init]
   defaultBranch = default
