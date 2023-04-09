@@ -67,22 +67,20 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{96933987-e7b7-55a2-a499-f9d06dcf0997}",
+                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
                 "hidden": false,
-                "name": "alpine",
+                "name": "Alpine",
                 "source": "Windows.Terminal.Wsl"
             },
             {
-                "guid": "{56d44f7f-9f85-5a52-90b8-684fbf236e07}",
+                "colorScheme": "Campbell",
+                "commandline": "\"C:\\Users\\nathanblair\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe\"",
+                "elevate": true,
+                "guid": "{ff2202ae-25d4-44e9-86fb-d0d46dea48ea}",
                 "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{7ca4d682-4b4d-53b6-b640-fa0816ffa966}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
+                "icon": "ms-appx:///ProfileIcons/pwsh.png",
+                "name": "PowerShell (Admin)",
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
