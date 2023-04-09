@@ -20,10 +20,11 @@
   useHttpPath = true
 
 [gpg]
-  format = ssh
+  # format = ssh
+  format = openpgp
 
-# [commit]
-#   gpgSign = true
+[commit]
+  gpgSign = true
 
 [credential]
 	helper =
