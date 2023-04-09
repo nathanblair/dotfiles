@@ -23,6 +23,9 @@
   # format = ssh
   format = openpgp
 
+[tag]
+  gpgSign = true
+
 [commit]
   gpgSign = true
 
