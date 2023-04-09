@@ -107,7 +107,6 @@ function Prompt {
 # Source PS resources
 . ~/.aliases.ps1 | Out-Null
 . ~/.env.ps1 | Out-Null
-. ~/repos/personal/keys/tokens.ps1 | Out-Null
 
 $PSReadLineOptions = @{
     BellStyle                     = 'Visual'
