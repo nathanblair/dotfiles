@@ -148,7 +148,7 @@ nnoremap <silent> <Up> <C-y>
 noremap <Leader>e :e **/*
 
 " Help shortcut
-nnoremap <C-h> :h 
+nnoremap <C-h> :h
 
 " NVIM Terminal Mode
 tnoremap <ESC> <C-\><C-n>
@@ -216,9 +216,9 @@ endfunction
 
 function! PrettyPrintCurrentDirectory() abort
   if &filetype=="help"
-    return "" 
-  elseif b:git_root_path != ""  
-    return b:git_root_path 
+    return ""
+  elseif b:git_root_path != ""
+    return b:git_root_path
   else
     return pathshorten(fnamemodify(getcwd(), ":~"))
   endif
@@ -226,10 +226,10 @@ endfunction
 
 function! PrettyPrintCurrentFilePath() abort
   if &filetype == "help"
-    return "" 
+    return ""
   " FIXME show file path relative to 'UpdateWorkingPathRoot'
-  "elseif b:git_root_path != ""  
-    "return b:git_root_path 
+  "elseif b:git_root_path != ""
+    "return b:git_root_path
   else
     let l:dir_path = pathshorten(expand("%:~:."))
     return len(l:dir_path) ? l:dir_path : "[NO NAME]"
@@ -244,7 +244,7 @@ function! ShowBufferList() abort
 
   for each_raw_buffer in l:raw_buffer_array
     let l:each_raw_buffer_split = split(each_raw_buffer)
-    
+
     let l:filename_index = 1
     let l:active = 0
     let l:each_raw_buffer_length = len(l:each_raw_buffer_split)
