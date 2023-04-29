@@ -30,7 +30,6 @@
 
 [gpg]
   format = ssh
-  # format = openpgp
 
 [tag]
   gpgSign = true
