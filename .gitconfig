@@ -29,8 +29,8 @@
   useHttpPath = true
 
 [gpg]
-  # format = ssh
-  format = openpgp
+  format = ssh
+  # format = openpgp
 
 [tag]
   gpgSign = true

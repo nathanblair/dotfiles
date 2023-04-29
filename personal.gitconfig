@@ -1,7 +1,6 @@
 [user]
   name = Nathan Blair
   email = me@nathanblair.rocks
-#   signingKey = ~/.ssh/labienus.pub
 
 [core]
   editor = code
