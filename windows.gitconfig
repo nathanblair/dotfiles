@@ -1,10 +1,6 @@
 [user]
-#   signingKey = 61981398C91A0B4C
   signingKey = ~/.ssh/caeser.pub
 
 [credential]
 	helper =
 	helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager
-
-[gpg]
-	# program = C:/Program Files (x86)/GnuPG/bin/gpg.exe

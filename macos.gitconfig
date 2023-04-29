@@ -1,5 +1,4 @@
 [user]
-#   signingKey = 85F3E7999971BA03
   signingKey = ~/.ssh/labienus.pub
 
 [credential]
