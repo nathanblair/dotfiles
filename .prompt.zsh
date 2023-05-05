@@ -12,7 +12,11 @@ function precmd() {
     fi
   fi
 
-  RPROMPT="${time_info}%{%{$reset_color%}%}"
+  if [ "$TERM_PROGRAM" = WarpTerminal ]; then
+    RPROMPT="${time_info}%{%{$reset_color%}%}"
+  else
+    echo -n "${time_info}%{%{$reset_color%}%}"
+  fi
   unset timer
   unset time_info
 }
@@ -39,13 +43,13 @@ function show_git_info() {
   local git_stash_count="$(git stash list | grep "" -c)"
 
   echo -n " %{%F{cyan}%}${1} "
-  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^A')|"
-  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^R')|"
-  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^M')|"
-  echo -n "%{%F{red}%}$(printf "${git_porcelain}" | grep -c '^D')|"
-  echo -n "%{%F{white}%}$(printf "${git_porcelain}" | grep -c '^.M')|"
-  echo -n "%{%F{blue}%}$(printf "${git_porcelain}" | grep -c '^??')|"
-  echo -n "%{%F{red}%}$(printf "${git_porcelain}" | grep -c '^.D')"
+  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^A')• "
+  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^R')+ "
+  echo -n "%{%F{green}%}$(printf "${git_porcelain}" | grep -c '^M')~ "
+  echo -n "%{%F{red}%}$(printf "${git_porcelain}" | grep -c '^D')- "
+  echo -n "%{%F{white}%}$(printf "${git_porcelain}" | grep -c '^.M')• "
+  echo -n "%{%F{blue}%}$(printf "${git_porcelain}" | grep -c '^??')- "
+  echo -n "%{%F{red}%}$(printf "${git_porcelain}" | grep -c '^.D')?"
 
   local ahead=$(echo -n "${git_porcelain}" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
   local behind=$(echo -n "${git_porcelain}" | awk '/behind/ {print substr($4,1,length($4)-1)}')
@@ -91,5 +95,4 @@ function my_prompt() {
 setopt promptsubst
 
 PROMPT='$(my_prompt)'
-PROMPT2=' > '
-
+# PROMPT2=' > '

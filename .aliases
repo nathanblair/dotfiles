@@ -4,10 +4,10 @@ alias du='du -ch'
 alias mv='mv -vi'
 alias cp='cp -vi'
 
-alias l='ls -h1'
-alias ll='ls -lh'
-alias la='ls -Ah1'
-alias lla='ls -lAh'
+alias l='ls -h1 --color=always'
+alias ll='ls -lh --color=always'
+alias la='ls -Ah1 --color=always'
+alias lla='ls -lAh --color=always'
 
 # CLI application launching
 alias tmux='tmux -2'
