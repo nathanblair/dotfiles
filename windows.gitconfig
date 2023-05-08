@@ -1,5 +1,5 @@
 [user]
-  signingKey = ~/.ssh/caeser.pub
+  signingKey = ~/.ssh/caesar.pub
 
 [credential]
 	helper =
