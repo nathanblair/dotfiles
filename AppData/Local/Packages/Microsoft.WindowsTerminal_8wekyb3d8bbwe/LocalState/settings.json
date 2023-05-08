@@ -29,6 +29,7 @@
             "keys": "alt+shift+d"
         }
     ],
+    "autoHideWindow": false,
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -36,8 +37,9 @@
     {
         "defaults": 
         {
-            "opacity": 80,
+            "opacity": 95,
             "padding": "4",
+            "useAcrylic": true,
             "useAtlasEngine": true
         },
         "list": 
