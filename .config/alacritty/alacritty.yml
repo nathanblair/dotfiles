@@ -31,7 +31,15 @@ window:
     y: 0
 
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  dynamic_padding: false
+
+  position:
+    x: 0
+    y: 0
+
+  dimensions:
+    columns: 160
+    lines: 40
 
   # Window decorations
   #
@@ -42,7 +50,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: transparent
+  decorations: full
 
   # Background opacity
   #
@@ -59,31 +67,31 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized
+  startup_mode: Windowed
 
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
 
   # Window class (Linux/BSD only):
-  #class:
-  # Application instance name
-  instance: Alacritty
-  # General application class
-  general: Alacritty
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
 
   # GTK theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark`
   # and `light`. Set this to `None` to use the default theme variant.
-  gtk_theme_variant: None
+  # gtk_theme_variant: None
 
-  #scrolling:
-  # Maximum number of lines in the scrollback buffer.
-  # Specifying '0' will disable scrolling.
-  history: 10000
+  scrolling:
+    # Maximum number of lines in the scrollback buffer.
+    # Specifying '0' will disable scrolling.
+    history: 10000
 
-  # Scrolling distance multiplier.
-  multiplier: 3
+    # Scrolling distance multiplier.
+    multiplier: 3
 
 # Font configuration
 font:
@@ -98,16 +106,16 @@ font:
 
   # Normal (roman) font face
   normal:
-  # Font family
-  #
-  # Default:
-  #   - (macOS) Menlo
-  #   - (Linux/BSD) monospace
-  #   - (Windows) Consolas
-   family: "FiraCode Nerd Font Mono"
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    family: "FiraCode Nerd Font Mono"
 
-  # The `style` can be specified to pick a specific face.
-  style: "Retina"
+    # The `style` can be specified to pick a specific face.
+    style: "Retina"
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
