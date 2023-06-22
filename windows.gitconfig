@@ -1,6 +1,0 @@
-[user]
-  signingKey = ~/.ssh/caesar.pub
-
-[credential]
-	helper =
-	helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager
