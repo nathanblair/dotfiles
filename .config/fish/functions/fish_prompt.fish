@@ -61,17 +61,10 @@ function fish_prompt
     _get_duration
     set -g _current_time (printf "%s%s" (set_color normal) (date +%I:%M))
 
-    if test "$TERM_PROGRAM" = WarpTerminal
-        _get_info
-        printf "%s%s%s%s%s%s > " $_current_time $_exit_status $_duration $_pwd $_git_prompt (set_color normal)
-    else
-        printf "%s%s%s > " $_exit_status $_duration (set_color normal)
-    end
+    printf "%s%s%s > " $_exit_status $_duration (set_color normal)
 end
 
-if test "$TERM_PROGRAM" != WarpTerminal
-    function fish_right_prompt
-        _get_info
-        printf "%s%s %s" $_pwd $_git_prompt $_current_time (set_color normal)
-    end
+function fish_right_prompt
+    _get_info
+    printf "%s%s %s" $_pwd $_git_prompt $_current_time (set_color normal)
 end
