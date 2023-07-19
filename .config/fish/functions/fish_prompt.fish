@@ -1,18 +1,24 @@
 function _git_status
-    printf " %s %s " (set_color brmagenta) (git branch --show-current 2>/dev/null || return)
+    set -f _branch "$(git branch --show-current 2>/dev/null || return)"
 
+    set -f _is_bare "$(git config --get core.bare)"
+    if $_is_bare
+        return
+    end
+
+    printf " %s %s" (set_color brmagenta) $_branch
     set -f _git_porcelain "$(git status --porcelain --branch --ahead-behind)"
 
     set -f _ahead (printf "$_git_porcelain" | awk '/ahead/ {print substr($4,1,length($4)-1)}')
     set -f _behind (printf "$_git_porcelain" | awk '/behind/ {print substr($4,1,length($4)-1)}')
 
     if test $_ahead || test $_behind
-        printf "%s" (set_color blue)
+        printf " %s" (set_color blue)
         if [ $_ahead ] && [ $_ahead -gt 0 ]
-            printf "%s↑ " $_ahead
+            printf "%s↑" $_ahead
         end
         if [ $_behind ] && [ $_behind -gt 0 ]
-            printf "%s↓ " $_behind
+            printf "%s↓" $_behind
         end
     end
 
@@ -24,7 +30,7 @@ function _git_status
     set -f _unstaged_deleted (printf $_git_porcelain | grep -c '^.D')
     set -f _unstaged_untracked (printf $_git_porcelain | grep -c '^??')
 
-    printf "%s%s• %s+ %s~ %s- %s%s• %s- %s?" \
+    printf " %s%s• %s+ %s~ %s- %s%s• %s- %s?" \
         (set_color white) $_staged_modified $_staged_added $_staged_renamed $_staged_deleted \
         (set_color brblack) $_unstaged_modified $_unstaged_deleted $_unstaged_untracked
 
