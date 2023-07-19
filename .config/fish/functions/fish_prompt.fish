@@ -34,14 +34,6 @@ function _git_status
     end
 end
 
-function _get_exit_status
-    set -g _exit_code $status
-    set -g _exit_status
-    if test $_exit_code -ne 0
-        set -g _exit_status (printf "%s[%s]" (set_color red) $_exit_code)
-    end
-end
-
 function _get_duration
     set -f _raw_duration (echo "$CMD_DURATION 1000" | awk '{printf "%.1f", $1 / $2}')
     if test $_raw_duration -gt 2
@@ -51,20 +43,21 @@ function _get_duration
     end
 end
 
-function _get_info
-    set -g _git_prompt (printf "%s%s" (set_color $fish_color_keyword) (_git_status))
-    set -g _pwd (printf " %s%s" (set_color $fish_color_cwd) (prompt_pwd))
-end
-
 function fish_prompt
-    _get_exit_status
+    set -g _exit_code $status
+    set -g _exit_status
+    if test $_exit_code -ne 0
+        set -g _exit_status (printf "%s[%s]" (set_color red) $_exit_code)
+    end
+
     _get_duration
-    set -g _current_time (printf "%s%s" (set_color normal) (date +%I:%M))
 
     printf "%s%s%s > " $_exit_status $_duration (set_color normal)
 end
 
 function fish_right_prompt
-    _get_info
-    printf "%s%s %s" $_pwd $_git_prompt $_current_time (set_color normal)
+    set -g _pwd (printf " %s%s" (set_color $fish_color_cwd) (prompt_pwd))
+    set -g _git_prompt (printf "%s%s" (set_color $fish_color_keyword) (_git_status))
+
+    printf "%s%s %s%s" $_pwd $_git_prompt (set_color normal) (date +%I:%M)
 end
