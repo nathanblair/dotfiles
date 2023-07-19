@@ -15,6 +15,7 @@
   autocrlf = false
   attributesfile = .gitattributes
   eol = LF
+  excludesfile = /Users/nathanblair/.gitignore_global
 
 [init]
   defaultBranch = default
