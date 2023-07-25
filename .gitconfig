@@ -1,7 +1,6 @@
 [include]
   path = personal.gitconfig
 
-# [includeIf "gitdir/i:$(prefix)/Users"]
 [include]
   path = macos.gitconfig
 
@@ -15,7 +14,7 @@
   autocrlf = false
   attributesfile = .gitattributes
   eol = LF
-  excludesfile = /Users/nathanblair/.gitignore_global
+  excludesfile = ~/.gitignore_global
 
 [init]
   defaultBranch = default
@@ -25,6 +24,7 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
 [gpg]
   format = ssh
 

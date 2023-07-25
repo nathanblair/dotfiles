@@ -4,4 +4,3 @@
 
 [core]
   editor = code
-  excludesfile = ~/.gitignore_global
