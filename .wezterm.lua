@@ -5,6 +5,7 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+config.audible_bell = "Disabled"
 config.default_cursor_style = "SteadyBar"
 config.enable_scroll_bar = true
 config.macos_window_background_blur = 18
