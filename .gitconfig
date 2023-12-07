@@ -1,12 +1,3 @@
-[include]
-  path = personal.gitconfig
-
-[include]
-  path = macos.gitconfig
-
-[includeIf "gitdir/i:C:/Users/"]
-  path = windows.gitconfig
-
 [pull]
   rebase = true
 
@@ -39,3 +30,12 @@
 
 [push]
 	autoSetupRemote = true
+
+[include]
+  path = personal.gitconfig
+
+[include]
+  path = macos.gitconfig
+
+[includeIf "gitdir/i:C:/Users/"]
+  path = windows.gitconfig
