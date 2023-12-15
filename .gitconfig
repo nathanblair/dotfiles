@@ -29,7 +29,7 @@
   gpgSign = true
 
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true
 
 [include]
   path = personal.gitconfig
