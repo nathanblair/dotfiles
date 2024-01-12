@@ -1,0 +1,26 @@
+live_config_reload = true
+
+import = ["~/.config/alacritty/dracula.toml"]
+
+[window]
+decorations = "buttonless" # "Full" | "None" | "Transparent" | "Buttonless"
+dynamic_padding = true
+opacity = 0.8
+blur = true
+
+[font]
+size = 16
+normal.family = "FiraCode Nerd Font Mono"
+normal.style = "Retina"
+offset.y = 6
+
+[bell]
+duration = 500
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { blinking = "On", shape = "Beam" }
+vi_mode_style.shape = "Block"
+thickness = 0.2
