@@ -3,8 +3,12 @@ live_config_reload = true
 import = ["~/.config/alacritty/dracula.toml"]
 
 [window]
-decorations = "buttonless" # "Full" | "None" | "Transparent" | "Buttonless"
+# decorations = "buttonless" # "Full" | "None" | "Transparent" | "Buttonless"
+decorations = "Full"
+# decorations = "None"
+# decorations = "Transparent"
 dynamic_padding = true
+dynamic_title = true
 opacity = 0.8
 blur = true
 

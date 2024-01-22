@@ -8,6 +8,8 @@ if [ "$(env | grep WSL)" ]; then
 fi
 
 . "${HOME}/.prompt.zsh"
+precmd() { print -P "\e]0;%~\a"}
+preexec() { print -Pn "\e]0;$1\a" }
 
 KEYTIMEOUT=5
 
