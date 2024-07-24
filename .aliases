@@ -1,8 +1,4 @@
 # Default options for commands
-alias mkdir='mkdir -pv'
-alias du='du -ch'
-alias mv='mv -vi'
-alias cp='cp -vi'
 
 alias l='ls -h1 --color=always'
 alias ll='ls -lh --color=always'
@@ -13,7 +9,6 @@ alias lla='ls -lAh --color=always'
 alias tmux='tmux -2'
 
 # Disk usage
-alias df='df -H'
 alias dfh='df -h ~'
 alias dfr='df -h /'
 
@@ -44,9 +39,6 @@ alias gfap='git fetch --all --prune'
 alias gsw='git switch'
 alias gsc='git switch -c'
 
-# Tree command should always show directories first
-alias tree='tree --dirsfirst --noreport'
-
 # Docker
 #alias docker='colima nerdctl --'
 alias dkr='docker'
@@ -61,10 +53,6 @@ alias dpsa='docker ps --all'
 alias dcrit='docker container run --rm -it'
 alias dib='docker image build --force-rm --rm'
 
-# Python
-alias python='python3'
-alias pip='pip3'
-
 # Terraform
 alias tf='terraform'
 
@@ -73,7 +61,3 @@ alias kc='kubectl'
 
 # Ruby
 alias rb='ruby'
-
-# AWS-CLI
-# Because no one is maintaining a reliable repository for it...
-#alias aws='docker run --rm -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} -e AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} -it amazon/aws-cli'
